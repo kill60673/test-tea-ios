@@ -25,14 +25,22 @@ class LoginAPI: NSObject {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Login = try?
-            decoder.decode(LoginCodable.self, from: data)
+                decoder.decode(LoginCodable.self, from: data)
             {
                 if Login.success == true
                 {
-                DispatchQueue.main.async
-                    {   print(data.count)
-                        print("登入成功")
+                    DispatchQueue.main.async
+                        {   print(data.count)
+                            print("登入成功")
+                            MessageAlert.Instance.message(message: "登入成功")
                     }
+                }
+                else {
+                    DispatchQueue.main.async
+                        {  print("登入失敗")
+                            MessageAlert.Instance.message(message: "登入失敗")
+                    }
+                    
                 }
             }
         }
