@@ -49,6 +49,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if(TfPhone.text != ""){
             if(TfPassWord.text != ""){
                 LoginAPI.LoginInstance.Login(username: TfPhone.text!, password: TfPassWord.text!)
+                TfPassWord.text = ""
             } else {
                 MessageAlert.Instance.message(message: "密碼不得空白")
             }
