@@ -52,7 +52,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         LbName.text = ""
         LbPassword.text = ""
         if(account != "" && userpassword != ""){
-            LoginAPI.LoginInstance.Login(username: account, password: userpassword)
+            LoginAPI.LoginInstance.getLoginMessage(username: account, password: userpassword)
         }
         else if (account == "" && userpassword == ""){
             LbName.text = ""

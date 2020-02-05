@@ -9,14 +9,23 @@ import Foundation
 import UIKit
 class LoginAPI: NSObject {
     static let LoginInstance = LoginAPI()
+    var datas = Data()
+    func getLoginMessage(username: String,password : String){
+        let postSTring  = Loginmessage(naem: username, password: password)
+               let encoder = JSONEncoder()
+               if let data = try? encoder.encode(postSTring){
+                self.datas = data
+                Login()
+               }
+    }
     // 登入用API
-    func Login(username: String,password :String) {
+    func Login() {
         let url = URL(string: ApiUrl.ApiUrlInstance.LoginUrl)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
-        let postString = "username=\(username)&password=\(password)"
-        request.httpBody = postString.data(using: .utf8)
+        let postString = datas
+        request.httpBody = postString
         let task = URLSession.shared.dataTask(with: request)
         {
             data, response, error in
@@ -55,26 +64,4 @@ class LoginAPI: NSObject {
     }    
 }
 
-//if let data = data, let Login = try?
-//          decoder.decode(LoginCodable.self, from: data)
-//          {
-//              if Login.success == true
-//              {
-//                  DispatchQueue.main.async
-//                  {
-//                          MessageAlert.Instance.message(message: "登入成功")
-//                  }
-//              }
-//              else
-//              {
-//                  DispatchQueue.main.async
-//                  {
-//                          MessageAlert.Instance.message(message: "登入失敗")
-//                  }
-//
-//              }
-//          }
-//
-//
-//
-//
+
