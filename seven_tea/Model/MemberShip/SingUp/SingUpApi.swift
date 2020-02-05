@@ -7,27 +7,35 @@ import  UIKit
 class MemberRegisterAPI: NSObject {
     static let MemberRegisterInstance = MemberRegisterAPI()
     
-    func MemberRegister(username: String,password: String,password_confirmation: String,validators_code: String,email: String,phone: String,name: String) {
+    func MemberRegister(username: String , password: String , password_confirmation: String , validators_code: String , email: String , phone: String , name: String) {
         let url = URL(string: ApiUrl.ApiUrlInstance.MemberRegisterUrl)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue("ios", forHTTPHeaderField: "OS")
-        request.setValue("seventea", forHTTPHeaderField: "Prod")
         request.httpMethod = "POST"
-        let postString = "username=\(username)&password=\(password)&password_confirmation=\(password_confirmation)&validators_code=\(validators_code)&email=\(email)&phone=\(phone)&name=\(name)"
+        let postString =
+        """
+            username=\(username)&
+            password=\(password)&
+            password_confirmation=\(password_confirmation)&
+            validators_code=\(validators_code)&
+            email=\(email)&
+            phone=\(phone)&
+            name=\(name)
+        """
+// 把東西放成obj 
+//        var obj : {
+//            name: "name",
+//            password: "test123456",
+//        }
         request.httpBody = postString.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            
+        let task = URLSession.shared.dataTask(with: request) {
+            data, response, error in
             let responseString = String(data: data!, encoding: .utf8)
-            
-            
             let decoder = JSONDecoder()
-            
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Sms = try?
                 decoder.decode(MemberRegisterSmsCodable.self, from: data)
             {
-                
                 if(Sms.result == 0 ){
                     
                     

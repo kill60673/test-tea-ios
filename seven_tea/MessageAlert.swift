@@ -12,9 +12,9 @@ class MessageAlert: NSObject {
     var alert: UIAlertController!
     
     private override init() {
-         }
+    }
     
-    //取得最上層的畫面
+    // 取得最上層的畫面
     func getTopViewController() -> UIViewController? {
         if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
             var topViewControlelr: UIViewController = rootViewController
@@ -27,7 +27,7 @@ class MessageAlert: NSObject {
         }
     }
     
-    //每一個UIAlerController可以跳出tittle七盞茶 message自行輸入字串回傳顯示在畫面上
+    // 每一個UIAlerController可以跳出tittle七盞茶 message自行輸入字串回傳顯示在畫面上
     func message(message: String)  {
         let topViewController: UIViewController = getTopViewController()!
         let Alert = UIAlertController(title: "七盞茶", message: message, preferredStyle: .alert)

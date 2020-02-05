@@ -12,6 +12,7 @@ class ApiUrl: NSObject {
     var DoMain: String = "http://seventea.test/"
     var LoginUrl:String
     var MemberRegisterUrl:String
+    
     override init() {
         LoginUrl="\(DoMain)/api/new-login"
         MemberRegisterUrl="\(DoMain)/api/register"
