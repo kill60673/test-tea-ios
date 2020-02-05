@@ -49,6 +49,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func BtLogin(_ sender: Any) {
         let account = TfPhone.text ?? ""
         let userpassword = TfPassWord.text ?? ""
+        LbName.text = ""
+        LbPassword.text = ""
         if(account != "" && userpassword != ""){
             LoginAPI.LoginInstance.Login(username: account, password: userpassword)
         }
@@ -70,14 +72,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             LbPassword.text = "＊密碼不可為空"
             LbPassword.shake()
         }
-//        if(account != "" || userpassword != " "){
-//            if(userpassword != ""){
-//                LoginAPI.LoginInstance.Login(username: account, password: userpassword)
-//            } else {
-//                MessageAlert.Instance.message(message: "密碼不得空白")
-//            }
-//        } else {
-//            MessageAlert.Instance.message(message: "帳號不得空白")
-//        }
     }
 }

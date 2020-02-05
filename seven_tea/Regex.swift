@@ -37,6 +37,20 @@ struct Regex {
             return false
         }
     }
+    func isValidMobile(input: String) -> Bool {
+        // self matches是特定寫法而且不區別大小寫，代表input值必須符合參數pattern要求的格式 
+        let pattern = "09[0-9]{8}"
+        let predicate = NSPredicate(format: "self matches %@", pattern)
+        let isValid = predicate.evaluate(with: input)
+        return isValid
+    }
+    func isValidEmail(input: String) -> Bool {
+        // self matches是特定寫法而且不區別大小寫，代表input值必須符合參數pattern要求的格式
+        let pattern = "[A-Za-z0-9]{6,12}"
+        let predicate = NSPredicate(format: "self matches %@", pattern)
+        let isValid = predicate.evaluate(with: input)
+        return isValid
+    }
 }
 
 

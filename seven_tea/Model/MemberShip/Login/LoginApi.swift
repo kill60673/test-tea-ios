@@ -24,23 +24,30 @@ class LoginAPI: NSObject {
             print(responseString as Any)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            if let data = data, let Login = try?
-            decoder.decode(LoginCodable.self, from: data)
+            // 做 do catch 如果任何例外事件 就在catch print出error 
+            if let data = data
             {
-                if Login.success == true
+                do
                 {
-                    DispatchQueue.main.async
+                    let login = try decoder.decode(LoginCodable.self, from: data)
+                    if login.success == true
                     {
+                        DispatchQueue.main.async
+                        {
                             MessageAlert.Instance.message(message: "登入成功")
+                        }
+                    }
+                    else
+                    {
+                        DispatchQueue.main.async
+                        {
+                            MessageAlert.Instance.message(message: "登入失敗")
+                        }
                     }
                 }
-                else
+                catch
                 {
-                    DispatchQueue.main.async
-                    {
-                            MessageAlert.Instance.message(message: "登入失敗")
-                    }
-                    
+                    print(error)
                 }
             }
         }
@@ -48,6 +55,26 @@ class LoginAPI: NSObject {
     }    
 }
 
-
-
-
+//if let data = data, let Login = try?
+//          decoder.decode(LoginCodable.self, from: data)
+//          {
+//              if Login.success == true
+//              {
+//                  DispatchQueue.main.async
+//                  {
+//                          MessageAlert.Instance.message(message: "登入成功")
+//                  }
+//              }
+//              else
+//              {
+//                  DispatchQueue.main.async
+//                  {
+//                          MessageAlert.Instance.message(message: "登入失敗")
+//                  }
+//
+//              }
+//          }
+//
+//
+//
+//
