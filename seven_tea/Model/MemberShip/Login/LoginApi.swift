@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 class LoginAPI: NSObject {
     static let LoginInstance = LoginAPI()
-    //登入用API
+    // 登入用API
     func Login(username: String,password :String) {
         let url = URL(string: ApiUrl.ApiUrlInstance.LoginUrl)!
         var request = URLRequest(url: url)
@@ -18,29 +18,36 @@ class LoginAPI: NSObject {
         let postString = "username=\(username)&password=\(password)"
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request)
-        { data, response, error in
+        {
+            data, response, error in
             let responseString = String(data: data!, encoding: .utf8)
-            print("hellloooooooooooo哈囉")
             print(responseString as Any)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            if let data = data, let Login = try?
-                decoder.decode(LoginCodable.self, from: data)
+            // 做 do catch 如果任何例外事件 就在catch print出error 
+            if let data = data
             {
-                if Login.success == true
+                do
                 {
-                    DispatchQueue.main.async
-                        {   print(data.count)
-                            print("登入成功")
+                    let login = try decoder.decode(LoginCodable.self, from: data)
+                    if login.success == true
+                    {
+                        DispatchQueue.main.async
+                        {
                             MessageAlert.Instance.message(message: "登入成功")
+                        }
+                    }
+                    else
+                    {
+                        DispatchQueue.main.async
+                        {
+                            MessageAlert.Instance.message(message: "登入失敗")
+                        }
                     }
                 }
-                else {
-                    DispatchQueue.main.async
-                        {  print("登入失敗")
-                            MessageAlert.Instance.message(message: "登入失敗")
-                    }
-                    
+                catch
+                {
+                    print(error)
                 }
             }
         }
@@ -48,6 +55,26 @@ class LoginAPI: NSObject {
     }    
 }
 
-
-
-
+//if let data = data, let Login = try?
+//          decoder.decode(LoginCodable.self, from: data)
+//          {
+//              if Login.success == true
+//              {
+//                  DispatchQueue.main.async
+//                  {
+//                          MessageAlert.Instance.message(message: "登入成功")
+//                  }
+//              }
+//              else
+//              {
+//                  DispatchQueue.main.async
+//                  {
+//                          MessageAlert.Instance.message(message: "登入失敗")
+//                  }
+//
+//              }
+//          }
+//
+//
+//
+//

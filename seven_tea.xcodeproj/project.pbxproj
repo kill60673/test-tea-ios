@@ -45,8 +45,9 @@
 		84EEC64323D5388C005627FF /* ShoppingCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EEC64223D5388C005627FF /* ShoppingCart.storyboard */; };
 		84EEC64823D68429005627FF /* PermissionsHelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC64723D68429005627FF /* PermissionsHelpController.swift */; };
 		84F7C88023E5E9D70097EAD0 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7C87F23E5E9D70097EAD0 /* Regex.swift */; };
-		84F7C88223E5FD3E0097EAD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F7C88123E5FD3E0097EAD0 /* Main.storyboard */; };
 		84F7C88523E7FE460097EAD0 /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7C88423E7FE460097EAD0 /* MessageAlert.swift */; };
+		84F7C88823EA4F9C0097EAD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F7C88723EA4F9C0097EAD0 /* Main.storyboard */; };
+		84F7C88B23EA91A60097EAD0 /* Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7C88A23EA91A60097EAD0 /* Animate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,8 +91,9 @@
 		84EEC64223D5388C005627FF /* ShoppingCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShoppingCart.storyboard; sourceTree = "<group>"; };
 		84EEC64723D68429005627FF /* PermissionsHelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsHelpController.swift; sourceTree = "<group>"; };
 		84F7C87F23E5E9D70097EAD0 /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
-		84F7C88123E5FD3E0097EAD0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		84F7C88423E7FE460097EAD0 /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
+		84F7C88723EA4F9C0097EAD0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
+		84F7C88A23EA91A60097EAD0 /* Animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +128,9 @@
 			children = (
 				84EEC5F323D4127C005627FF /* UserInfo.swift */,
 				84F7C87F23E5E9D70097EAD0 /* Regex.swift */,
-				84F7C88123E5FD3E0097EAD0 /* Main.storyboard */,
 				84F7C88423E7FE460097EAD0 /* MessageAlert.swift */,
 				84EEC5CB23D1C314005627FF /* AppDelegate.swift */,
+				84F7C88723EA4F9C0097EAD0 /* Main.storyboard */,
 				84EEC5CF23D1C314005627FF /* ViewController.swift */,
 				84EEC5E223D3006E005627FF /* Model */,
 				84EEC5E123D3006B005627FF /* View */,
@@ -252,6 +254,7 @@
 		84EEC5FB23D412F9005627FF /* HelpController */ = {
 			isa = PBXGroup;
 			children = (
+				84F7C88923EA91860097EAD0 /* Animate */,
 				84EEC64623D683FD005627FF /* Permissions */,
 			);
 			path = HelpController;
@@ -393,6 +396,14 @@
 			path = Permissions;
 			sourceTree = "<group>";
 		};
+		84F7C88923EA91860097EAD0 /* Animate */ = {
+			isa = PBXGroup;
+			children = (
+				84F7C88A23EA91A60097EAD0 /* Animate.swift */,
+			);
+			path = Animate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -454,7 +465,7 @@
 				84EEC64323D5388C005627FF /* ShoppingCart.storyboard in Resources */,
 				84EEC60223D4134B005627FF /* MemberCenter.storyboard in Resources */,
 				84EEC5D823D1C315005627FF /* LaunchScreen.storyboard in Resources */,
-				84F7C88223E5FD3E0097EAD0 /* Main.storyboard in Resources */,
+				84F7C88823EA4F9C0097EAD0 /* Main.storyboard in Resources */,
 				84EEC5D523D1C315005627FF /* Assets.xcassets in Resources */,
 				84EEC5FE23D4131D005627FF /* Home.storyboard in Resources */,
 				84EEC64123D537FC005627FF /* Order.storyboard in Resources */,
@@ -469,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F7C88B23EA91A60097EAD0 /* Animate.swift in Sources */,
 				84EEC5D023D1C314005627FF /* ViewController.swift in Sources */,
 				84EEC63623D422EA005627FF /* SingUpViewController.swift in Sources */,
 				84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */,
