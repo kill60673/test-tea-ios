@@ -8,12 +8,11 @@ import UIKit
 
 import Foundation
 struct LoginCodable: Codable {
-    
-    
     var success: Bool?
     var message: String
+    var data: Data
 }
 struct Loginmessage: Codable {
-    var naem : String
+    var username : String
     var password : String
 }
