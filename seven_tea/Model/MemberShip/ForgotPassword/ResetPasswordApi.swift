@@ -10,11 +10,11 @@ import Foundation
 class RestPasswordApi : NSObject{
     static let RestPasswordApiInstance = RestPasswordApi()
     func RestPassword(Username : String , Phone : String , Validators_code : String , Password : String , Password_Confirmation : String ){
-        let url = URL(string: ApiUrl.ApiUrlInstance.SendResetForgotPasswordUrl)!
+        let url = URL(string: ApiUrl.ApiUrlInstance.RestPasswordUrl)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
-        let postString = "username\(Username)+phone\(Phone)+validators_code\(Validators_code)+password\(Password)+password_confirmation\(Password_Confirmation)"
+        let postString = "username=\(Username)&phone=\(Phone)&validators_code=\(Validators_code)&password=\(Password)&password_confirmation=\(Password_Confirmation)"
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request)
         {

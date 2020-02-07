@@ -15,17 +15,19 @@ static let SendResetForgotPasswordSmsInstance = SendResetForgotPasswordSmsAPI()
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
-        let postString = "username\(Username)+phone\(Phone)+validators_code\(Validators_code)"
+        let postString = "username=\(Username)&phone=\(Phone)&validators_code=\(Validators_code)"
         request.httpBody = postString.data(using: .utf8)
+        print(postString)
         let task = URLSession.shared.dataTask(with: request)
         {
             data, response, error in
-            //let responseString = String(data: data!, encoding: .utf8)
+//            let responseString = String(data: data!, encoding: .utf8)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let SendResetPassword = try?
                 decoder.decode(SendResetForgotPasswordCodable.self, from: data)
-            {
+            {   print(data)
+                print(SendResetPassword)
                 if(SendResetPassword.success == true )
                 {
                     //主線程

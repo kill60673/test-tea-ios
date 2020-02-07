@@ -5,7 +5,6 @@
 //
 
 import Foundation
-
 import UIKit
 class LoginAPI: NSObject {
     static let LoginInstance = LoginAPI()
@@ -57,14 +56,13 @@ class LoginAPI: NSObject {
                     {
                         DispatchQueue.main.async
                         {
-                            print(error)
                             MessageAlert.Instance.message(message: "登入失敗")
                         }
                     }
                 }
                 catch
                 {
-                    print(error)
+//                    print(error)
                 }
             }
         }

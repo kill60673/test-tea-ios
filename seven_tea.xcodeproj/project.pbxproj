@@ -12,14 +12,16 @@
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
 		84C2E2B123EBE8B1008AB33F /* SendResetForgotPasswordCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2B023EBE8B1008AB33F /* SendResetForgotPasswordCodable.swift */; };
 		84C2E2B323EBEB5B008AB33F /* ResetPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2B223EBEB5B008AB33F /* ResetPasswordApi.swift */; };
-		84C2E2B523EBF0A3008AB33F /* RestPasswordCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2B423EBF0A3008AB33F /* RestPasswordCodable.swift */; };
+		84C2E2B523EBF0A3008AB33F /* ResetPasswordCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2B423EBF0A3008AB33F /* ResetPasswordCodable.swift */; };
+		84C2E2B823EBF921008AB33F /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2B723EBF921008AB33F /* ForgotPasswordViewController.swift */; };
+		84C2E2BB23ED26A7008AB33F /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2BA23ED26A7008AB33F /* ResetPasswordViewController.swift */; };
 		84EEC5CC23D1C314005627FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5CB23D1C314005627FF /* AppDelegate.swift */; };
 		84EEC5CE23D1C314005627FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5CD23D1C314005627FF /* SceneDelegate.swift */; };
 		84EEC5D023D1C314005627FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5CF23D1C314005627FF /* ViewController.swift */; };
 		84EEC5D523D1C315005627FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EEC5D423D1C315005627FF /* Assets.xcassets */; };
 		84EEC5D823D1C315005627FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EEC5D623D1C315005627FF /* LaunchScreen.storyboard */; };
 		84EEC5EC23D410B8005627FF /* MemberRegisterSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5EB23D410B8005627FF /* MemberRegisterSmsCodable.swift */; };
-		84EEC5EE23D410E2005627FF /* SingUpApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5ED23D410E2005627FF /* SingUpApi.swift */; };
+		84EEC5EE23D410E2005627FF /* SignUpApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5ED23D410E2005627FF /* SignUpApi.swift */; };
 		84EEC5F423D4127C005627FF /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5F323D4127C005627FF /* UserInfo.swift */; };
 		84EEC5F623D412AF005627FF /* AccountCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5F523D412AF005627FF /* AccountCodable.swift */; };
 		84EEC5F823D412BB005627FF /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5F723D412BB005627FF /* Account.swift */; };
@@ -62,7 +64,9 @@
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
 		84C2E2B023EBE8B1008AB33F /* SendResetForgotPasswordCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordCodable.swift; sourceTree = "<group>"; };
 		84C2E2B223EBEB5B008AB33F /* ResetPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordApi.swift; sourceTree = "<group>"; };
-		84C2E2B423EBF0A3008AB33F /* RestPasswordCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPasswordCodable.swift; sourceTree = "<group>"; };
+		84C2E2B423EBF0A3008AB33F /* ResetPasswordCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordCodable.swift; sourceTree = "<group>"; };
+		84C2E2B723EBF921008AB33F /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		84C2E2BA23ED26A7008AB33F /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		84EEC5C823D1C314005627FF /* seven_tea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seven_tea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EEC5CB23D1C314005627FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EEC5CD23D1C314005627FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +75,7 @@
 		84EEC5D723D1C315005627FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84EEC5D923D1C315005627FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84EEC5EB23D410B8005627FF /* MemberRegisterSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRegisterSmsCodable.swift; sourceTree = "<group>"; };
-		84EEC5ED23D410E2005627FF /* SingUpApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpApi.swift; sourceTree = "<group>"; };
+		84EEC5ED23D410E2005627FF /* SignUpApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpApi.swift; sourceTree = "<group>"; };
 		84EEC5F323D4127C005627FF /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		84EEC5F523D412AF005627FF /* AccountCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCodable.swift; sourceTree = "<group>"; };
 		84EEC5F723D412BB005627FF /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -127,9 +131,18 @@
 				84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */,
 				84C2E2B023EBE8B1008AB33F /* SendResetForgotPasswordCodable.swift */,
 				84C2E2B223EBEB5B008AB33F /* ResetPasswordApi.swift */,
-				84C2E2B423EBF0A3008AB33F /* RestPasswordCodable.swift */,
+				84C2E2B423EBF0A3008AB33F /* ResetPasswordCodable.swift */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		84C2E2B623EBF8E2008AB33F /* ForgotPasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84C2E2B723EBF921008AB33F /* ForgotPasswordViewController.swift */,
+				84C2E2BA23ED26A7008AB33F /* ResetPasswordViewController.swift */,
+			);
+			path = ForgotPasswordViewController;
 			sourceTree = "<group>";
 		};
 		84EEC5BF23D1C314005627FF = {
@@ -213,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				84C2E2A923EBDD4C008AB33F /* ForgotPassword */,
-				84EEC5E623D3012C005627FF /* SingUp */,
+				84EEC5E623D3012C005627FF /* SignUp */,
 				84EEC5E523D30123005627FF /* Login */,
 			);
 			path = MemberShip;
@@ -238,13 +251,13 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		84EEC5E623D3012C005627FF /* SingUp */ = {
+		84EEC5E623D3012C005627FF /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				84EEC5EB23D410B8005627FF /* MemberRegisterSmsCodable.swift */,
-				84EEC5ED23D410E2005627FF /* SingUpApi.swift */,
+				84EEC5ED23D410E2005627FF /* SignUpApi.swift */,
 			);
-			path = SingUp;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		84EEC5E723D30147005627FF /* MyFavorite */ = {
@@ -392,6 +405,7 @@
 		84EEC63223D42280005627FF /* MenberShipViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84C2E2B623EBF8E2008AB33F /* ForgotPasswordViewController */,
 				84EEC63423D422BF005627FF /* SingUpViewController */,
 				84EEC63323D422B6005627FF /* LogInViewController */,
 			);
@@ -512,6 +526,7 @@
 				84EEC63623D422EA005627FF /* SingUpViewController.swift in Sources */,
 				84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */,
 				84EEC5CC23D1C314005627FF /* AppDelegate.swift in Sources */,
+				84C2E2BB23ED26A7008AB33F /* ResetPasswordViewController.swift in Sources */,
 				84EEC61123D41529005627FF /* AccountFomationViewController.swift in Sources */,
 				84F7C88523E7FE460097EAD0 /* MessageAlert.swift in Sources */,
 				84EEC62D23D421EE005627FF /* AccountinfomationModelController.swift in Sources */,
@@ -522,6 +537,7 @@
 				84C2E2B323EBEB5B008AB33F /* ResetPasswordApi.swift in Sources */,
 				84EEC64823D68429005627FF /* PermissionsHelpController.swift in Sources */,
 				84EEC61923D415A8005627FF /* MyFavoriteApi.swift in Sources */,
+				84C2E2B823EBF921008AB33F /* ForgotPasswordViewController.swift in Sources */,
 				84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */,
 				84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */,
 				84EEC60D23D41503005627FF /* MyFavoriteViewController.swift in Sources */,
@@ -538,13 +554,13 @@
 				84EEC61D23D415CB005627FF /* MyFavorite.swift in Sources */,
 				84EEC60523D41483005627FF /* MenberCenterViewController.swift in Sources */,
 				84EEC5FA23D412C9005627FF /* AccountApi.swift in Sources */,
-				84C2E2B523EBF0A3008AB33F /* RestPasswordCodable.swift in Sources */,
+				84C2E2B523EBF0A3008AB33F /* ResetPasswordCodable.swift in Sources */,
 				84F7C88023E5E9D70097EAD0 /* Regex.swift in Sources */,
 				84EEC61723D41586005627FF /* FrequentlyAskedQuestions.swift in Sources */,
 				84F7C89023EAD1C90097EAD0 /* LoginApi.swift in Sources */,
 				84EEC60F23D41518005627FF /* FrequentlyAskedQuestionsViewController.swift in Sources */,
 				84EEC61B23D415B5005627FF /* MyFavoriteCodable.swift in Sources */,
-				84EEC5EE23D410E2005627FF /* SingUpApi.swift in Sources */,
+				84EEC5EE23D410E2005627FF /* SignUpApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
