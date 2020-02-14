@@ -59,6 +59,7 @@
 		84FADF1923F66A7F00C824C6 /* MemberRegiseterSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF1823F66A7F00C824C6 /* MemberRegiseterSmsApi.swift */; };
 		84FADF1B23F66CBE00C824C6 /* MemberRegisterInfoCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF1A23F66CBE00C824C6 /* MemberRegisterInfoCodable.swift */; };
 		84FADF1D23F66E9200C824C6 /* MemberRegistrtCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF1C23F66E9200C824C6 /* MemberRegistrtCodable.swift */; };
+		84FADF1F23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF1E23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		84FADF1823F66A7F00C824C6 /* MemberRegiseterSmsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberRegiseterSmsApi.swift; sourceTree = "<group>"; };
 		84FADF1A23F66CBE00C824C6 /* MemberRegisterInfoCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberRegisterInfoCodable.swift; sourceTree = "<group>"; };
 		84FADF1C23F66E9200C824C6 /* MemberRegistrtCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberRegistrtCodable.swift; sourceTree = "<group>"; };
+		84FADF1E23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemberRegisterInfoApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 				84FADF1823F66A7F00C824C6 /* MemberRegiseterSmsApi.swift */,
 				84FADF1A23F66CBE00C824C6 /* MemberRegisterInfoCodable.swift */,
 				84FADF1C23F66E9200C824C6 /* MemberRegistrtCodable.swift */,
+				84FADF1E23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift */,
 				84EEC5EB23D410B8005627FF /* MemberRegisterSmsCodable.swift */,
 				84EEC5ED23D410E2005627FF /* SignUpApi.swift */,
 			);
@@ -545,6 +548,7 @@
 				84F7C88D23EAD19F0097EAD0 /* LogInViewController.swift in Sources */,
 				84C2E2B323EBEB5B008AB33F /* ResetPasswordApi.swift in Sources */,
 				84EEC64823D68429005627FF /* PermissionsHelpController.swift in Sources */,
+				84FADF1F23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift in Sources */,
 				84EEC61923D415A8005627FF /* MyFavoriteApi.swift in Sources */,
 				84C2E2B823EBF921008AB33F /* ForgotPasswordViewController.swift in Sources */,
 				84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */,
