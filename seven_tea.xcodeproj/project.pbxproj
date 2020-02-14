@@ -42,7 +42,6 @@
 		84EEC62D23D421EE005627FF /* AccountinfomationModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62C23D421EE005627FF /* AccountinfomationModelController.swift */; };
 		84EEC62F23D4220D005627FF /* MyFavoriteModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62E23D4220D005627FF /* MyFavoriteModelController.swift */; };
 		84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC63023D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift */; };
-		84EEC63623D422EA005627FF /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC63523D422EA005627FF /* SingUpViewController.swift */; };
 		84EEC63A23D493D0005627FF /* ApiUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC63923D493D0005627FF /* ApiUrl.swift */; };
 		84EEC63F23D537D1005627FF /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EEC63E23D537D1005627FF /* Menu.storyboard */; };
 		84EEC64123D537FC005627FF /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EEC64023D537FC005627FF /* Order.storyboard */; };
@@ -62,6 +61,7 @@
 		84FADF2123F6712800C824C6 /* SendMemberRegistrApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2023F6712700C824C6 /* SendMemberRegistrApi.swift */; };
 		84FADF2423F674B400C824C6 /* VerificationCodeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2323F674B400C824C6 /* VerificationCodeTimer.swift */; };
 		84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2523F675D200C824C6 /* SendMemberRegisterInfoViewController.swift */; };
+		84FADF2823F6775600C824C6 /* MemberRegiseterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2723F6775600C824C6 /* MemberRegiseterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,7 +102,6 @@
 		84EEC62C23D421EE005627FF /* AccountinfomationModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountinfomationModelController.swift; sourceTree = "<group>"; };
 		84EEC62E23D4220D005627FF /* MyFavoriteModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteModelController.swift; sourceTree = "<group>"; };
 		84EEC63023D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedQuestionsModelController.swift; sourceTree = "<group>"; };
-		84EEC63523D422EA005627FF /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
 		84EEC63923D493D0005627FF /* ApiUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrl.swift; sourceTree = "<group>"; };
 		84EEC63E23D537D1005627FF /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		84EEC64023D537FC005627FF /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
@@ -122,6 +121,7 @@
 		84FADF2023F6712700C824C6 /* SendMemberRegistrApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemberRegistrApi.swift; sourceTree = "<group>"; };
 		84FADF2323F674B400C824C6 /* VerificationCodeTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationCodeTimer.swift; sourceTree = "<group>"; };
 		84FADF2523F675D200C824C6 /* SendMemberRegisterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemberRegisterInfoViewController.swift; sourceTree = "<group>"; };
+		84FADF2723F6775600C824C6 /* MemberRegiseterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberRegiseterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,7 +440,7 @@
 		84EEC63423D422BF005627FF /* SingUpViewController */ = {
 			isa = PBXGroup;
 			children = (
-				84EEC63523D422EA005627FF /* SingUpViewController.swift */,
+				84FADF2723F6775600C824C6 /* MemberRegiseterViewController.swift */,
 				84FADF2523F675D200C824C6 /* SendMemberRegisterInfoViewController.swift */,
 			);
 			path = SingUpViewController;
@@ -549,12 +549,12 @@
 				84F7C88B23EA91A60097EAD0 /* Animate.swift in Sources */,
 				84EEC5D023D1C314005627FF /* ViewController.swift in Sources */,
 				84F7C89123EAD1C90097EAD0 /* LoginCodable.swift in Sources */,
-				84EEC63623D422EA005627FF /* SingUpViewController.swift in Sources */,
 				84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */,
 				84EEC5CC23D1C314005627FF /* AppDelegate.swift in Sources */,
 				84C2E2BB23ED26A7008AB33F /* ResetPasswordViewController.swift in Sources */,
 				84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */,
 				84EEC61123D41529005627FF /* AccountFomationViewController.swift in Sources */,
+				84FADF2823F6775600C824C6 /* MemberRegiseterViewController.swift in Sources */,
 				84F7C88523E7FE460097EAD0 /* MessageAlert.swift in Sources */,
 				84EEC62D23D421EE005627FF /* AccountinfomationModelController.swift in Sources */,
 				84EEC62F23D4220D005627FF /* MyFavoriteModelController.swift in Sources */,
