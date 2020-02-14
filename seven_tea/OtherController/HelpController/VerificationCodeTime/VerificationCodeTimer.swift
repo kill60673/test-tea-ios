@@ -17,7 +17,7 @@ class VerificationCodeTimer {
     var buttons = UIButton()
     @objc func showSmsCountDown(button : UIButton)
     {
-        print("這邊是第二個\(button)")
+//        print("這邊是第二個\(button)")
         button.setTitle("\(count)", for: .normal)
         count = count - 1
         if count<=0{
@@ -31,10 +31,10 @@ class VerificationCodeTimer {
 
     @objc func triggerTimer(button : UIButton ){
         button.isEnabled = false
-        print("這邊是第一個\(button)")
+//        print("這邊是第一個\(button)")
         count = 60
         //做bt裡面時間倒數 倒數完才可以使用
         timer = Timer.scheduledTimer(timeInterval: 1, target: button, selector:#selector(VerificationCodeTimer.showSmsCountDown(button:)), userInfo: nil, repeats: true)
-        print("我有跑到這裡")
+//        print("我有跑到這裡")
     }
 }

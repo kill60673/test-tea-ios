@@ -32,8 +32,9 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
         tfPhone.delegate = self
         tfUserName.delegate = self
         tfValidators_Code.delegate = self
+        
         //使用手勢 用tap把鍵盤收起來
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target : self, action : #selector(dismissKeyBoard))
         self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
         // Do any additional setup after loading the view.
     }
@@ -43,135 +44,153 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
         self.view.endEditing(true)
     }
     // 2/13利用正規表示法來修正判斷式 已修正完成
-    @IBAction func btSendSms(_ sender: Any)
+    @IBAction func btSendSms(_ sender : Any)
     {
         self.account = tfUserName.text ?? ""
         self.phone = tfPhone.text ?? ""
-        //        let verificationcode = VerificationCodeTimer()
+        
+        
         lbUserName.text = ""
         lbPhone.text = ""
-        if(checkValidAccount(input: account) == true && checkValidPhoneNumber(input: phone) == true)
+        
+//      let verificationcode = VerificationCodeTimer()
+        if ((checkValidAccount(input : account) == true) && (checkValidPhoneNumber(input : phone) == true))
         {
-            //            ForgotPasswordSmsAPI.ForgotPasswordSmsInstance.ForgotPasswordSms(Username: account , Phone : phone)
+//          ForgotPasswordSmsAPI.ForgotPasswordSmsInstance.ForgotPasswordSms(Username: account , Phone : phone)
             triggerTimer(button: btSendVerifyCode)
         }
         else if (checkValidAccount(input: account) == false )
         {
-            if(account == "")
+            if (account == "")
             {
                 lbUserName.text = regex_message
                 lbUserName.shake()
             }
             else
             {
-                print("這邊是帳號驗證"+regex_message)
+//                print("這邊是帳號驗證"+regex_message)
                 lbUserName.text = "格式錯誤請重新輸入"
                 lbUserName.shake()
             }
         }
-        else if(checkValidPhoneNumber(input: phone) == false)
+        else if (checkValidPhoneNumber(input : phone) == false)
         {
-            if(phone == "")
+            if (phone == "")
             {
                 lbPhone.text = regex_message
                 lbPhone.shake()
             }
             else
             {
-                print("這邊是電話驗證"+regex_message)
+//                print("這邊是電話驗證"+regex_message)
                 lbPhone.text = "格式錯誤請重新輸入"
                 lbPhone.shake()
             }
         }
     }
     // 2/13利用正規表示法來修正判斷式 已修正完成
-    @IBAction func btNexStep(_ sender: Any)
+    @IBAction func btNexStep(_ sender : Any)
     {
         self.account = tfUserName.text ?? ""
         self.phone = tfPhone.text ?? ""
         self.validators_code = tfValidators_Code.text ?? ""
+        
         lbUserName.text = ""
         lbValidators_Code.text = ""
         lbPhone.text = ""
-        if(checkValidAccount(input: account) == true && checkValidPhoneNumber(input: phone) == true && checkValidVerificationCode(input: validators_code) == true)
+        if
+            (
+                    (checkValidAccount(input: account) == true)
+                    &&
+                    (checkValidPhoneNumber(input: phone) == true)
+                    &&
+                    (checkValidVerificationCode(input: validators_code) == true)
+            )
         {
-            SendResetForgotPasswordSmsAPI.SendResetForgotPasswordSmsInstance.SendResetForgotPasswordSms(Username: account, Phone: phone, Validators_code: validators_code) { (result) in
+            SendResetForgotPasswordSmsAPI.SendResetForgotPasswordSmsInstance.SendResetForgotPasswordSms(Username : account , Phone : phone , Validators_code : validators_code)
+            {
+                (result) in
                 if result
                 {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5)
+                    DispatchQueue.main.asyncAfter(deadline : .now() + 0.5)
                     {
                         self.jump()
                     }
                 }
             }
         }
-        else if (checkValidAccount(input: account) == false )
+        else if (checkValidAccount(input : account) == false )
         {
-            if(account == "")
+            if (account == "")
             {
                 lbUserName.text = regex_message
                 lbUserName.shake()
             }
             else
             {
-                print("這邊是帳號驗證"+regex_message)
+//                print("這邊是帳號驗證"+regex_message)
                 lbUserName.text = "格式錯誤請重新輸入"
                 lbUserName.shake()
             }
-        }else if(checkValidPhoneNumber(input: phone) == false){
-            if(phone == "")
+        }
+        else if (checkValidPhoneNumber(input : phone) == false)
+        {
+            if (phone == "")
             {
                 lbPhone.text = regex_message
                 lbPhone.shake()
             }
             else
             {
-                print("這邊是電話驗證"+regex_message)
+//                print("這邊是電話驗證"+regex_message)
                 lbPhone.text = "格式錯誤請重新輸入"
                 lbPhone.shake()
             }
         }
-        else if(checkValidVerificationCode(input: validators_code) == false)
+        else if (checkValidVerificationCode(input : validators_code) == false)
         {
-            if(validators_code == "")
+            if (validators_code == "")
             {
                 lbValidators_Code.text = regex_message
                 lbValidators_Code.shake()
             }
             else
             {
-                print("這邊是電話驗證"+regex_message)
+//                print("這邊是電話驗證"+regex_message)
                 lbValidators_Code.text = "格式錯誤請重新輸入"
                 lbValidators_Code.shake()
             }
         }
     }
+    
     //timer部分
     @objc func showSmsCountDown(){
-        btSendVerifyCode.setTitle("\(count)", for: .normal)
+        btSendVerifyCode.setTitle("\(count)" , for : .normal)
         count = count - 1
         if count<=0
         {
-            btSendVerifyCode.setTitle("發送驗證碼", for: .normal)
+            btSendVerifyCode.setTitle("發送驗證碼" , for : .normal)
             timer?.invalidate()
             timer = nil
             btSendVerifyCode.isEnabled = true
         }
     }
+    
     //timer部分
     @objc func triggerTimer(button : UIButton ){
         button.isEnabled = false
         count = 60
         //做bt裡面時間倒數 倒數完才可以使用
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(self.showSmsCountDown), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1 , target: self , selector:#selector(self.showSmsCountDown) , userInfo : nil , repeats : true)
     }
+    
     //跳轉頁面以及送資料的部分
     func jump(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "RestPassword") as! ResetPasswordViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier : "RestPassword") as! ResetPasswordViewController
         vc.name = account
         vc.phonenumber = phone
         vc.uservalidatorscode = validators_code
-        show(vc, sender: self)
+        show(vc , sender : self)
     }
     
     

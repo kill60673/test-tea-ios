@@ -30,10 +30,10 @@ class MemberRegiseterViewController: UIViewController ,UITextFieldDelegate {
         tfValidators_Code.delegate = self
         
         //使用手勢 用tap把鍵盤收起來
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target : self, action : #selector(dismissKeyBoard))
         self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool
     {
         textField.resignFirstResponder()
         return true
@@ -43,20 +43,22 @@ class MemberRegiseterViewController: UIViewController ,UITextFieldDelegate {
         self.view.endEditing(true)
     }
     // 2/13利用正規表示法來修正判斷式 已修正完成
-    @IBAction func btVailidators_code(_ sender: UIButton) {
+    @IBAction func btVailidators_code(_ sender : UIButton) {
         let phone = tfPhone.text ?? ""
         //        let verifcationcode = VerificationCodeTimer()
         lbMessage.text = ""
+        
         // 使用正規表示法來去判斷說 是否為正確輸入文字 以及是否為空
-        if checkValidPhoneNumber(input: phone) == true
+        if checkValidPhoneNumber(input : phone) == true
         {
-            MemberRegiseterSmsApi.MemberRegisterSmsInstance.SendMemberRegisterSms(Phone: phone)
-            triggerTimer(button: btValidators_Code)
+            MemberRegiseterSmsApi.MemberRegisterSmsInstance.SendMemberRegisterSms(Phone : phone)
+            triggerTimer(button : btValidators_Code)
         }
         else
         {
             lbMessage.text = "＊輸入格式錯誤請檢查"
             lbMessage.shake()
+            
             if (phone == "")
             {
                 lbMessage.text = regex_message
@@ -65,14 +67,18 @@ class MemberRegiseterViewController: UIViewController ,UITextFieldDelegate {
         }
     }
     // 2/13利用正規表示法來修正判斷式 已修正完成
-    @IBAction func btSignUp(_ sender: Any) {
+    @IBAction func btSignUp(_ sender : Any) {
         let validators_code = tfValidators_Code.text ?? ""
         let phone = tfPhone.text ?? ""
+        
         lbMessage.text = ""
         lbValidators_Code.text = ""
-        if(checkValidVerificationCode(input: validators_code) == true && checkValidPhoneNumber(input: phone) == true)
+        
+        if ((checkValidVerificationCode(input : validators_code) == true) && (checkValidPhoneNumber(input: phone) == true))
         {
-            SendMemberRegistrApi.MemberRegisterInstance.SendMemberRegister(Phone: phone, Validators_code: validators_code) { (result) in
+            SendMemberRegistrApi.MemberRegisterInstance.SendMemberRegister(Phone : phone, Validators_code : validators_code)
+            {
+                (result) in
                 if result
                 {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5)
@@ -82,9 +88,9 @@ class MemberRegiseterViewController: UIViewController ,UITextFieldDelegate {
                 }
             }
         }
-        else if(checkValidVerificationCode(input: validators_code) == false)
+        else if (checkValidVerificationCode(input: validators_code) == false)
         {
-            if(validators_code == "")
+            if (validators_code == "")
             {
                 lbMessage.text = regex_message
                 lbMessage.shake()
@@ -96,9 +102,9 @@ class MemberRegiseterViewController: UIViewController ,UITextFieldDelegate {
             }
             
         }
-        else if(checkValidPhoneNumber(input: phone) == false)
+        else if (checkValidPhoneNumber(input: phone) == false)
         {
-            if(phone == "")
+            if (phone == "")
             {
                 lbMessage.text = regex_message
                 lbMessage.shake()
@@ -134,7 +140,7 @@ class MemberRegiseterViewController: UIViewController ,UITextFieldDelegate {
         button.isEnabled = false
         count = 60
         //做bt裡面時間倒數 倒數完才可以使用
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(self.showSmsCountDown), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval : 1, target : self , selector:#selector(self.showSmsCountDown) , userInfo : nil, repeats : true)
     }
     
 }

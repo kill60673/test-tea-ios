@@ -8,8 +8,8 @@ import UIKit
 
 import Foundation
 struct LoginCodable: Codable {
-    var success: Bool?
-    var message: String
+    var success : Bool?
+    var message : String
 }
 struct Loginmessage: Codable {
     var username : String
