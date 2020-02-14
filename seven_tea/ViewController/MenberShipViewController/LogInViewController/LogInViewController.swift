@@ -19,12 +19,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         LoginView = self
         btLogin.layer.borderWidth = 1.0//外框粗度
-        //      BtnLogin.layer.borderColor = sevenTeaColor.cgColor
         btLogin.layer.cornerRadius = 5//圓角
         
         tfPhone.delegate = self
@@ -36,41 +36,55 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // 關掉鍵盤
-    @objc func dismissKeyBoard() {
+    @objc func dismissKeyBoard()
+    {
         self.view.endEditing(true)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
         textField.resignFirstResponder()
         return true
     }
     
     // 登入按鈕 擷取輸入的帳號密碼傳入API Login 使用MessageAlert裡面的message跳出訊息是否成功登入
-    @IBAction func BtLogin(_ sender: Any) {
+    // 2/13利用正規表示法來修正判斷式 已修正完成
+    @IBAction func BtLogin(_ sender: Any)
+    {
         let account = tfPhone.text ?? ""
         let userpassword = tfPassWord.text ?? ""
         lbName.text = ""
         lbPassword.text = ""
-        if(account != "" && userpassword != ""){
-            LoginAPI.LoginInstance.Login(username: account, password: userpassword)
+        if(checkValidAccount(input: account) == true && checkValidPassword(input: userpassword) == true)
+        {
+            LoginAPI.LoginInstance.getLoginMessage(username: account, password: userpassword)
         }
-        else if (account == "" && userpassword == ""){
-            lbName.text = ""
-            lbPassword.text = ""
-            lbName.text = "＊帳號不可為空"
-            lbName.shake()
-            lbPassword.text = "＊密碼不可為空"
-            lbPassword.shake()
-        }else if(account == ""){
-            lbName.text = ""
-            lbPassword.text = ""
-            lbName.text = "＊帳號不可為空"
-            lbName.shake()
-        }else if(userpassword == ""){
-            lbName.text = ""
-            lbPassword.text = ""
-            lbPassword.text = "＊密碼不可為空"
-            lbPassword.shake()
+        else if(checkValidAccount(input: account) == false)
+        {
+            if(account == "")
+            {
+                lbName.text = regex_message
+                lbName.shake()
+            }
+            else
+            {
+                lbName.text = "格式錯誤請重新輸入"
+                lbName.shake()
+            }
         }
+        else if(checkValidPassword(input: userpassword) == false)
+        {
+            if(userpassword == "")
+            {
+                lbPassword.text = regex_message
+                lbPassword.shake()
+            }
+            else
+            {
+                lbPassword.text = "格式錯誤請重新輸入"
+                lbPassword.shake()
+            }
+        }
+        
     }
 }
