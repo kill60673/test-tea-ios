@@ -61,6 +61,7 @@
 		84FADF1F23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF1E23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift */; };
 		84FADF2123F6712800C824C6 /* SendMemberRegistrApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2023F6712700C824C6 /* SendMemberRegistrApi.swift */; };
 		84FADF2423F674B400C824C6 /* VerificationCodeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2323F674B400C824C6 /* VerificationCodeTimer.swift */; };
+		84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2523F675D200C824C6 /* SendMemberRegisterInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		84FADF1E23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemberRegisterInfoApi.swift; sourceTree = "<group>"; };
 		84FADF2023F6712700C824C6 /* SendMemberRegistrApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemberRegistrApi.swift; sourceTree = "<group>"; };
 		84FADF2323F674B400C824C6 /* VerificationCodeTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationCodeTimer.swift; sourceTree = "<group>"; };
+		84FADF2523F675D200C824C6 /* SendMemberRegisterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemberRegisterInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				84EEC63523D422EA005627FF /* SingUpViewController.swift */,
+				84FADF2523F675D200C824C6 /* SendMemberRegisterInfoViewController.swift */,
 			);
 			path = SingUpViewController;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */,
 				84EEC5CC23D1C314005627FF /* AppDelegate.swift in Sources */,
 				84C2E2BB23ED26A7008AB33F /* ResetPasswordViewController.swift in Sources */,
+				84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */,
 				84EEC61123D41529005627FF /* AccountFomationViewController.swift in Sources */,
 				84F7C88523E7FE460097EAD0 /* MessageAlert.swift in Sources */,
 				84EEC62D23D421EE005627FF /* AccountinfomationModelController.swift in Sources */,
