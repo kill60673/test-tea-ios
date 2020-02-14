@@ -22,7 +22,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         LoginView = self
         btLogin.layer.borderWidth = 1.0//外框粗度
         btLogin.layer.cornerRadius = 5//圓角
@@ -31,7 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         tfPassWord.delegate = self
         
         //使用手勢 用tap把鍵盤收起來
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target : self, action : #selector(dismissKeyBoard))
         self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
     }
     
@@ -41,7 +40,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool
     {
         textField.resignFirstResponder()
         return true
@@ -53,15 +52,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     {
         let account = tfPhone.text ?? ""
         let userpassword = tfPassWord.text ?? ""
+        
         lbName.text = ""
         lbPassword.text = ""
-        if(checkValidAccount(input: account) == true && checkValidPassword(input: userpassword) == true)
+        if ((checkValidAccount(input: account) == true) && (checkValidPassword(input : userpassword) == true))
         {
-            LoginAPI.LoginInstance.getLoginMessage(username: account, password: userpassword)
+            LoginAPI.LoginInstance.getLoginMessage(username : account , password : userpassword)
         }
-        else if(checkValidAccount(input: account) == false)
+        else if (checkValidAccount(input : account) == false)
         {
-            if(account == "")
+            if (account == "")
             {
                 lbName.text = regex_message
                 lbName.shake()
@@ -72,7 +72,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 lbName.shake()
             }
         }
-        else if(checkValidPassword(input: userpassword) == false)
+        else if (checkValidPassword(input : userpassword) == false)
         {
             if(userpassword == "")
             {

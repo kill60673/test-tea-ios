@@ -23,15 +23,16 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(sex)
+//        print(sex)
         SendMemberRegistrView = self
         btNextStep.layer.borderWidth = 1.0//外框粗度
         
         btNextStep.layer.cornerRadius = 5//圓角
         tfUserName.delegate = self
         tfName.delegate = self
+        
         //使用手勢 用tap把鍵盤收起來
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target : self, action : #selector(dismissKeyBoard))
         self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
         
     }
@@ -41,37 +42,39 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
         self.view.endEditing(true)
     }
     //textField消失
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool
     {
         textField.resignFirstResponder()
         return true
     }
     
     // 2/13利用正規表示法來修正判斷式 已修正完成
-    @IBAction func btNextStep(_ sender: Any) {
+    @IBAction func btNextStep(_ sender : Any) {
         self.username = tfUserName.text ?? ""
         self.name = tfName.text ?? ""
+        
         lbUserName.text = ""
         lbName.text = ""
-        if(checkValidAccount(input: username) == true && name != "")
+        
+        if(checkValidAccount(input : username) == true && name != "")
         {
             jump()
         }
-        else if (checkValidAccount(input: username) == false)
+        else if (checkValidAccount(input : username) == false)
         {
-            if(username == "")
+            if (username == "")
             {
                 lbUserName.text = regex_message
                 lbUserName.shake()
             }
             else
             {
-                print("密碼"+regex_message)
+//                print("密碼"+regex_message)
                 lbUserName.text = "格式錯誤請重新輸入"
                 lbUserName.shake()
             }
         }
-        else if(name == "")
+        else if (name == "")
         {
             lbUserName.text = ""
             lbName.text = ""
@@ -81,16 +84,16 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
     }
     //頁面跳轉部分送資料到下個頁面去
     func jump(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "SendMemberRegisterInfo") as! SendMemberRegisterInfoViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier : "SendMemberRegisterInfo") as! SendMemberRegisterInfoViewController
         vc.account = username
         vc.name = name
         vc.phone = phone
         vc.sex = sex
         vc.uservalidatorscode = uservalidatorscode
-        show(vc, sender: self)
+        show(vc, sender : self)
     }
     //使用UISegmentedControl來決定男女
-    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+    @IBAction func segmentedControlValueChanged(_ sender : UISegmentedControl) {
         setSex()
     }
     //UISegmentedControl男女裡面的 index設定
@@ -105,7 +108,7 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
         default:
             break
         }
-        print(sex)
+//        print(sex)
         
         // 依照被選取項目的index來取得該選項文字，並顯示在lbMessage上
     }

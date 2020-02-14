@@ -8,7 +8,7 @@
 
 import Foundation
 struct RestPasswordCodable : Codable {
-    var success:Bool?
-    var message:String
-    var data:Data
+    var success : Bool?
+    var message : String
+    var data : Data
 }

@@ -8,6 +8,6 @@
 
 import Foundation
 struct ForgotPasswordSmsCodable : Codable {
-    var success: Bool?
-    var message: String
+    var success : Bool?
+    var message : String
 }

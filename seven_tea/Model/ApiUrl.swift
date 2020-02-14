@@ -6,7 +6,7 @@
 
 import Foundation
 import UIKit
-class ApiUrl: NSObject {
+class ApiUrl : NSObject {
     
     static let ApiUrlInstance = ApiUrl()
     var DoMain: String = "http://seventea.test/"
