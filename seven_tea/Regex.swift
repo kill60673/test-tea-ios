@@ -20,38 +20,64 @@
 
 
 import Foundation
-
+var regex_message = ""
 //驗證格式
-struct Regex {
-    let regex: NSRegularExpression?
-    
-    init(_ pattern: String) {
-        regex = try? NSRegularExpression(pattern: pattern,
-                                         options: .caseInsensitive)
+
+// 這條是用來判斷電話號碼的正規表示式
+func checkValidPhoneNumber(input: String) -> Bool {
+    // self matches是特定寫法而且不區別大小寫，代表input值必須符合參數pattern要求的格式
+    let pattern = "09[0-9]{8}"
+    let predicate = NSPredicate(format: "self matches %@", pattern)
+    let isValid = predicate.evaluate(with: input)
+    if(input == ""){
+        regex_message = "＊請輸入電話號碼"
     }
-    
-    func match(input: String) -> Bool {
-        if let matches = regex?.matches(in: input,options: [],range: NSMakeRange(0, (input as NSString).length)) {
-            return matches.count > 0
-        } else {
-            return false
-        }
-    }
-    func isValidMobile(input: String) -> Bool {
-        // self matches是特定寫法而且不區別大小寫，代表input值必須符合參數pattern要求的格式 
-        let pattern = "09[0-9]{8}"
-        let predicate = NSPredicate(format: "self matches %@", pattern)
-        let isValid = predicate.evaluate(with: input)
-        return isValid
-    }
-    func isValidEmail(input: String) -> Bool {
-        // self matches是特定寫法而且不區別大小寫，代表input值必須符合參數pattern要求的格式
-        let pattern = "[A-Za-z0-9]{6,12}"
-        let predicate = NSPredicate(format: "self matches %@", pattern)
-        let isValid = predicate.evaluate(with: input)
-        return isValid
-    }
+    return isValid
 }
+
+// 這條是用來判斷帳號的正規表示式
+func checkValidAccount(input : String) -> Bool {
+    // self matches是特定寫法而且不區別大小寫，代表input值必須符合參數pattern要求的格式
+    let pattern = "^[a-z0-9_-]{3,16}$"
+    let predicate = NSPredicate(format: "self matches %@", pattern)
+    let isValid = predicate.evaluate(with: input)
+    if(input == ""){
+        regex_message = "＊請輸入帳號"
+    }
+    return isValid
+}
+// 這條是用來判斷密碼的正規表示式
+func checkValidPassword(input : String)-> Bool{
+    let pattern = "^[a-z0-9_-]{3,16}$"
+    let predicate = NSPredicate(format: "self matches %@",pattern)
+    let isValid = predicate.evaluate(with: input)
+    if(input == ""){
+        regex_message = "＊請輸入密碼"
+    }
+    return isValid
+}
+// 這條是用來判斷驗證碼的正規表示式
+func checkValidVerificationCode(input : String)-> Bool{
+    let pattern = "[0-9]{6}"
+    let predicate = NSPredicate(format: "self matches %@",pattern)
+    let isValid = predicate.evaluate(with: input)
+    if(input == ""){
+        regex_message = "＊請輸入電話驗證碼"
+    }
+    return isValid
+}
+// 這條是用來判斷email的正規表示式
+func checkValidEmail(input: String) -> Bool {
+    let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}"
+    //                                                  \\.為想跳脫.的特殊功能的符號
+    let predicate = NSPredicate(format: "self matches %@", pattern)
+    let isValid = predicate.evaluate(with: input)
+    if(input == ""){
+        regex_message = "＊請輸入信箱"
+    }
+    return isValid
+}
+
 
 
 
