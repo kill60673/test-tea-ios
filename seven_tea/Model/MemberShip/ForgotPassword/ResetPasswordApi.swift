@@ -13,6 +13,8 @@ class RestPasswordApi : NSObject{
         let url = URL(string: ApiUrl.ApiUrlInstance.RestPasswordUrl)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
+//用data放入尚未修改完
+//      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         let postString = "username=\(Username)&phone=\(Phone)&validators_code=\(Validators_code)&password=\(Password)&password_confirmation=\(Password_Confirmation)"
         request.httpBody = postString.data(using: .utf8)
