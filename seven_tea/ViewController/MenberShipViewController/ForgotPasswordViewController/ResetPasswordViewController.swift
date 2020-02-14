@@ -32,25 +32,34 @@ class ResetPasswordViewController: UIViewController , UITextFieldDelegate {
     @objc func dismissKeyBoard(){
         self.view.endEditing(true)
     }
-    
+    // 2/13利用正規表示法來修正判斷式 已修正完成
     @IBAction func btSubmit(_ sender: Any) {
         let password = tfPassword.text ?? ""
         let againenterpassword = tfAgainEnterPassword.text ?? ""
-        print (phonenumber)
-        print (name)
-        print(uservalidatorscode)
         lbPrompt.text = ""
-        if(password != "" && againenterpassword != "")
+        if(checkValidPassword(input: password) == true && checkValidPassword(input: againenterpassword) == true)
         {
             RestPasswordApi.RestPasswordApiInstance.RestPassword(Username: name, Phone: phonenumber, Validators_code: uservalidatorscode, Password: password, Password_Confirmation: againenterpassword)
         }
-        else if (password == "" || againenterpassword == "")
+        else if (checkValidPassword(input: password) == false)
         {
-            lbPrompt.text = ""
-            lbPrompt.text = "＊請輸入正確資訊"
-            lbPrompt.shake()
+            if(password == ""){
+                lbPrompt.text = regex_message
+                lbPrompt.shake()
+            }else{print("密碼"+regex_message)
+                lbPrompt.text = "格式錯誤請重新輸入"
+                lbPrompt.shake()
+            }
         }
-
+        else if (checkValidPassword(input: againenterpassword) == false)
+        {
+            if(againenterpassword == ""){
+                lbPrompt.text = regex_message
+                lbPrompt.shake()
+            }else{print("密碼再次確認"+regex_message)
+                lbPrompt.text = "格式錯誤請重新輸入"
+                lbPrompt.shake()
+            }
+        }
     }
-    
 }

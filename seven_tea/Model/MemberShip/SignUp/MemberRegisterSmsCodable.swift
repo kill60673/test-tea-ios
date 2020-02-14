@@ -9,7 +9,7 @@ import Foundation
 
 
 struct MemberRegisterSmsCodable: Codable {
-    var result: Int
+    var success: Bool?
     var message: String
     
 }
