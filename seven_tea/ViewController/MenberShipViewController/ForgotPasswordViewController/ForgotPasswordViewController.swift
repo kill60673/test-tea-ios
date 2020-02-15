@@ -59,33 +59,17 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
 //          ForgotPasswordSmsAPI.ForgotPasswordSmsInstance.ForgotPasswordSms(Username: account , Phone : phone)
             triggerTimer(button: btSendVerifyCode)
         }
+        //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if (checkValidAccount(input: account) == false )
         {
-            if (account == "")
-            {
                 lbUserName.text = regex_message
                 lbUserName.shake()
-            }
-            else
-            {
-//                print("這邊是帳號驗證"+regex_message)
-                lbUserName.text = "格式錯誤請重新輸入"
-                lbUserName.shake()
-            }
         }
+        //如果電話號碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if (checkValidPhoneNumber(input : phone) == false)
         {
-            if (phone == "")
-            {
                 lbPhone.text = regex_message
                 lbPhone.shake()
-            }
-            else
-            {
-//                print("這邊是電話驗證"+regex_message)
-                lbPhone.text = "格式錯誤請重新輸入"
-                lbPhone.shake()
-            }
         }
     }
     // 2/13利用正規表示法來修正判斷式 已修正完成
@@ -119,47 +103,23 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
                 }
             }
         }
+        //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if (checkValidAccount(input : account) == false )
         {
-            if (account == "")
-            {
                 lbUserName.text = regex_message
                 lbUserName.shake()
-            }
-            else
-            {
-//                print("這邊是帳號驗證"+regex_message)
-                lbUserName.text = "格式錯誤請重新輸入"
-                lbUserName.shake()
-            }
         }
+        //如果電話號碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if (checkValidPhoneNumber(input : phone) == false)
         {
-            if (phone == "")
-            {
                 lbPhone.text = regex_message
                 lbPhone.shake()
-            }
-            else
-            {
-//                print("這邊是電話驗證"+regex_message)
-                lbPhone.text = "格式錯誤請重新輸入"
-                lbPhone.shake()
-            }
         }
+        //如果電話驗證碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if (checkValidVerificationCode(input : validators_code) == false)
         {
-            if (validators_code == "")
-            {
                 lbValidators_Code.text = regex_message
                 lbValidators_Code.shake()
-            }
-            else
-            {
-//                print("這邊是電話驗證"+regex_message)
-                lbValidators_Code.text = "格式錯誤請重新輸入"
-                lbValidators_Code.shake()
-            }
         }
     }
     
@@ -181,7 +141,7 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
         button.isEnabled = false
         count = 60
         //做bt裡面時間倒數 倒數完才可以使用
-        timer = Timer.scheduledTimer(timeInterval: 1 , target: self , selector:#selector(self.showSmsCountDown) , userInfo : nil , repeats : true)
+        timer = Timer.scheduledTimer(timeInterval : 1 , target : self , selector : #selector(self.showSmsCountDown) , userInfo : nil , repeats : true)
     }
     
     //跳轉頁面以及送資料的部分
@@ -192,7 +152,5 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
         vc.uservalidatorscode = validators_code
         show(vc , sender : self)
     }
-    
-    
 }
 // DispatchQueue.main.asyncAfter(deadline: .now() + 0.5)
