@@ -23,7 +23,7 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(sex)
+        //print(sex)
         SendMemberRegistrView = self
         btNextStep.layer.borderWidth = 1.0//外框粗度
         
@@ -60,24 +60,15 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
         {
             jump()
         }
+        //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if (checkValidAccount(input : username) == false)
         {
-            if (username == "")
-            {
                 lbUserName.text = regex_message
                 lbUserName.shake()
-            }
-            else
-            {
-//                print("密碼"+regex_message)
-                lbUserName.text = "格式錯誤請重新輸入"
-                lbUserName.shake()
-            }
         }
-        else if (name == "")
+        //如果使用著名稱為空值提醒請輸入使用者名稱
+        else if  (name == "")
         {
-            lbUserName.text = ""
-            lbName.text = ""
             lbName.text = "＊請輸入使用者名稱"
             lbName.shake()
         }
@@ -92,6 +83,7 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
         vc.uservalidatorscode = uservalidatorscode
         show(vc, sender : self)
     }
+    
     //使用UISegmentedControl來決定男女
     @IBAction func segmentedControlValueChanged(_ sender : UISegmentedControl) {
         setSex()
@@ -108,7 +100,7 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
         default:
             break
         }
-//        print(sex)
+        //print(sex)
         
         // 依照被選取項目的index來取得該選項文字，並顯示在lbMessage上
     }
