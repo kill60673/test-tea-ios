@@ -57,22 +57,15 @@ class SendMemberRegisterInfoViewController: UIViewController ,UITextFieldDelegat
         {
             SendMemberRegisterInfoAPI.MemberRegisterInstance.SendMemberRegisterInfo(Username : account, Name : name, Sex : sex ,  Phone : phone, Password : password , Password_confirmation : againEnterpassword , Validators_code : uservalidatorscode)
         }
+        //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if (checkValidPassword(input : password) == false)
         {
-            if (password == "")
-            {
-                lbMessage.text = regex_message
-                lbMessage.shake()
-            }
-            else
-            {
-                lbMessage.text = "＊格式錯誤請重新輸入"
-                lbMessage.shake()
-            }
+            lbMessage.text = regex_message
+            lbMessage.shake()
         }
-        else if (againEnterpassword != password)
+        //如果密碼輸入兩次不一樣 回傳訊息告知
+        else
         {
-            lbMessage.text = ""
             lbMessage.text = "＊兩次密碼輸入不同"
             lbMessage.shake()
         }

@@ -51,7 +51,7 @@ class ResetPasswordViewController: UIViewController , UITextFieldDelegate {
                 lbPrompt.text = regex_message
                 lbPrompt.shake()
         }
-        //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
+        //如果密碼輸入兩次不一樣 回傳訊息告知 
         else
         {
                 lbPrompt.text = "兩次密碼輸入不同請確認"
