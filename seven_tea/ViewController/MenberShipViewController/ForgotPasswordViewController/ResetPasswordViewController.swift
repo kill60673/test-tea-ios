@@ -40,33 +40,22 @@ class ResetPasswordViewController: UIViewController , UITextFieldDelegate {
         
         lbPrompt.text = ""
         
-        if ((checkValidPassword(input : password) == true) && (checkValidPassword(input : againenterpassword) == true))
+        //送出資料
+        if ((checkValidPassword(input : password) == true) && (password == againenterpassword))
         {
             RestPasswordApi.RestPasswordApiInstance.RestPassword(Username: name, Phone : phonenumber , Validators_code : uservalidatorscode , Password: password, Password_Confirmation : againenterpassword)
         }
+        //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if (checkValidPassword(input : password) == false)
         {
-            if (password == ""){
                 lbPrompt.text = regex_message
                 lbPrompt.shake()
-            }else{print("密碼"+regex_message)
-                lbPrompt.text = "格式錯誤請重新輸入"
-                lbPrompt.shake()
-            }
         }
-        else if (checkValidPassword(input : againenterpassword) == false)
+        //如果密碼輸入兩次不一樣 回傳訊息告知 
+        else
         {
-            if (againenterpassword == "")
-            {
-                lbPrompt.text = regex_message
+                lbPrompt.text = "兩次密碼輸入不同請確認"
                 lbPrompt.shake()
-            }
-            else
-            {
-//                print("密碼再次確認"+regex_message)
-                lbPrompt.text = "格式錯誤請重新輸入"
-                lbPrompt.shake()
-            }
         }
     }
 }

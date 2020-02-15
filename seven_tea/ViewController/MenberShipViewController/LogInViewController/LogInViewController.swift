@@ -59,31 +59,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         {
             LoginAPI.LoginInstance.getLoginMessage(username : account , password : userpassword)
         }
+        //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if (checkValidAccount(input : account) == false)
         {
-            if (account == "")
-            {
                 lbName.text = regex_message
                 lbName.shake()
-            }
-            else
-            {
-                lbName.text = "格式錯誤請重新輸入"
-                lbName.shake()
-            }
         }
+        //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if (checkValidPassword(input : userpassword) == false)
         {
-            if(userpassword == "")
-            {
                 lbPassword.text = regex_message
                 lbPassword.shake()
-            }
-            else
-            {
-                lbPassword.text = "格式錯誤請重新輸入"
-                lbPassword.shake()
-            }
         }
         
     }

@@ -56,16 +56,11 @@ class MemberRegiseterViewController: UIViewController ,UITextFieldDelegate {
         }
         else
         {
-            lbMessage.text = "＊輸入格式錯誤請檢查"
-            lbMessage.shake()
-            
-            if (phone == "")
-            {
                 lbMessage.text = regex_message
                 lbMessage.shake()
-            }
         }
     }
+    
     // 2/13利用正規表示法來修正判斷式 已修正完成
     @IBAction func btSignUp(_ sender : Any) {
         let validators_code = tfValidators_Code.text ?? ""
@@ -88,33 +83,16 @@ class MemberRegiseterViewController: UIViewController ,UITextFieldDelegate {
                 }
             }
         }
-        else if (checkValidVerificationCode(input: validators_code) == false)
-        {
-            if (validators_code == "")
-            {
-                lbMessage.text = regex_message
-                lbMessage.shake()
-            }
-            else
-            {
-                lbMessage.text = "格式錯誤請重新輸入"
-                lbMessage.shake()
-            }
-            
-        }
         else if (checkValidPhoneNumber(input: phone) == false)
         {
-            if (phone == "")
-            {
-                lbMessage.text = regex_message
-                lbMessage.shake()
-            }
-            else
-            {
-                lbMessage.text = "格式錯誤請重新輸入"
-                lbMessage.shake()
-            }
+           lbMessage.text = regex_message
+           lbMessage.shake()
         }
+        else if (checkValidVerificationCode(input: validators_code) == false)
+               {
+                   lbMessage.text = regex_message
+                   lbMessage.shake()
+               }
     }
     //跳轉頁面的部分以及傳送檔案
     func jump(){
