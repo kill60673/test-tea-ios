@@ -33,16 +33,16 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
         tfUserName.delegate = self
         tfValidators_Code.delegate = self
         
+        keyboad()
         //使用手勢 用tap把鍵盤收起來
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target : self, action : #selector(dismissKeyBoard))
-        self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
-        // Do any additional setup after loading the view.
+       
     }
     // 關掉鍵盤
-    @objc func dismissKeyBoard()
-    {
-        self.view.endEditing(true)
-    }
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool
+     {
+         textField.resignFirstResponder()
+         return true
+     }
     // 2/13利用正規表示法來修正判斷式 已修正完成
     @IBAction func btSendSms(_ sender : Any)
     {

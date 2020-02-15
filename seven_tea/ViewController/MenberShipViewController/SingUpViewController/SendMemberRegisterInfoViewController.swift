@@ -31,17 +31,10 @@ class SendMemberRegisterInfoViewController: UIViewController ,UITextFieldDelegat
         
         tfPassword.delegate = self
         tfAgainEnterPassword.delegate = self
-        
+        keyboad()
         //使用手勢 用tap把鍵盤收起來
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target : self, action : #selector(dismissKeyBoard))
-        self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
-        
     }
-    @objc func dismissKeyBoard()
-    {
-        self.view.endEditing(true)
-    }
-    
+ 
     func textFieldShouldReturn(_ textField : UITextField) -> Bool
     {
         textField.resignFirstResponder()
