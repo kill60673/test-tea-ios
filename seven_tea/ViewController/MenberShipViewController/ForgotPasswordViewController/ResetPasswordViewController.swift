@@ -21,18 +21,18 @@ class ResetPasswordViewController: UIViewController , UITextFieldDelegate {
     override func viewDidLoad(){
         super.viewDidLoad()
         ResetPassword = self
-        btSubmit.layer.borderWidth = 1.0//外框粗度
-        btSubmit.layer.cornerRadius = 5//圓角
+        btSubmit.customized_button(button: btSubmit)
         tfPassword.delegate = self
         tfAgainEnterPassword.delegate = self
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
-        self.view.addGestureRecognizer(tap)
+        keyboad()
     }
     
-    @objc func dismissKeyBoard(){
-        self.view.endEditing(true)
-    }
-    
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool
+     {
+         textField.resignFirstResponder()
+         return true
+     }
+  
     // 2/13利用正規表示法來修正判斷式 已修正完成
     @IBAction func btSubmit(_ sender: Any) {
         let password = tfPassword.text ?? ""

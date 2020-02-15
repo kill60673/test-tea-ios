@@ -25,23 +25,14 @@ class SendMemberRegisterInfoViewController: UIViewController ,UITextFieldDelegat
         super.viewDidLoad()
         MemberRegiseterView = self
 //        print(sex)
-        btSendPassword.layer.borderWidth = 1.0//外框粗度
-        //      BtnLogin.layer.borderColor = sevenTeaColor.cgColor
-        btSendPassword.layer.cornerRadius = 5//圓角
+        btSendPassword.customized_button(button: btSendPassword)
         
         tfPassword.delegate = self
         tfAgainEnterPassword.delegate = self
-        
+        keyboad()
         //使用手勢 用tap把鍵盤收起來
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target : self, action : #selector(dismissKeyBoard))
-        self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
-        
     }
-    @objc func dismissKeyBoard()
-    {
-        self.view.endEditing(true)
-    }
-    
+ 
     func textFieldShouldReturn(_ textField : UITextField) -> Bool
     {
         textField.resignFirstResponder()

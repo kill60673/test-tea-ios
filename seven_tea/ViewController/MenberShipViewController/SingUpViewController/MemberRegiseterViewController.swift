@@ -21,27 +21,20 @@ class MemberRegiseterViewController: UIViewController ,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         MemberRegiseterView = self
-        btValidators_Code.layer.borderWidth = 1.0//外框粗度
-        //      BtnLogin.layer.borderColor = sevenTeaColor.cgColor
-        btValidators_Code.layer.cornerRadius = 5//圓角
-        btSignUp.layer.borderWidth = 1.0
-        btSignUp.layer.cornerRadius = 5.0
+        btValidators_Code.customized_button(button: btValidators_Code)
+        btSignUp.customized_button(button: btSignUp)
+        
         tfPhone.delegate = self
         tfValidators_Code.delegate = self
-        
         //使用手勢 用tap把鍵盤收起來
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target : self, action : #selector(dismissKeyBoard))
-        self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
+        keyboad()
     }
     func textFieldShouldReturn(_ textField : UITextField) -> Bool
     {
         textField.resignFirstResponder()
         return true
     }
-    @objc func dismissKeyBoard()
-    {
-        self.view.endEditing(true)
-    }
+    
     // 2/13利用正規表示法來修正判斷式 已修正完成
     @IBAction func btVailidators_code(_ sender : UIButton) {
         let phone = tfPhone.text ?? ""
