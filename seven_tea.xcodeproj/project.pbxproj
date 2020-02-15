@@ -63,6 +63,7 @@
 		84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2523F675D200C824C6 /* SendMemberRegisterInfoViewController.swift */; };
 		84FADF2823F6775600C824C6 /* MemberRegiseterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2723F6775600C824C6 /* MemberRegiseterViewController.swift */; };
 		84FADF2C23F678B600C824C6 /* SendMemberRegistrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2B23F678B600C824C6 /* SendMemberRegistrViewController.swift */; };
+		84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF3023F78AB300C824C6 /* RegexMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		84FADF2523F675D200C824C6 /* SendMemberRegisterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemberRegisterInfoViewController.swift; sourceTree = "<group>"; };
 		84FADF2723F6775600C824C6 /* MemberRegiseterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberRegiseterViewController.swift; sourceTree = "<group>"; };
 		84FADF2B23F678B600C824C6 /* SendMemberRegistrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemberRegistrViewController.swift; sourceTree = "<group>"; };
+		84FADF3023F78AB300C824C6 /* RegexMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				84F7C87F23E5E9D70097EAD0 /* Regex.swift */,
+				84FADF3023F78AB300C824C6 /* RegexMessage.swift */,
 			);
 			path = Regex;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				84EEC5CC23D1C314005627FF /* AppDelegate.swift in Sources */,
 				84C2E2BB23ED26A7008AB33F /* ResetPasswordViewController.swift in Sources */,
 				84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */,
+				84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */,
 				84EEC61123D41529005627FF /* AccountFomationViewController.swift in Sources */,
 				84FADF2823F6775600C824C6 /* MemberRegiseterViewController.swift in Sources */,
 				84F7C88523E7FE460097EAD0 /* MessageAlert.swift in Sources */,

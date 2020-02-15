@@ -21,11 +21,7 @@
 
 import Foundation
 var regex_message = ""
-var regex_phonenumber = ""
-var regex_account = ""
-var regex_password = ""
-var regex_VerificationCode = ""
-var regex_email = ""
+var regexmessage = RegexMessage()
 //驗證格式
 
 // 這條是用來判斷電話號碼的正規表示式
@@ -36,11 +32,11 @@ func checkValidPhoneNumber(input : String) -> Bool {
     let isValid = predicate.evaluate(with : input)
     if (input == "")
     {
-        regex_phonenumber = "＊請輸入電話號碼"
+        regex_message = regexmessage.phone_noinput
     }
     else
     {
-        regex_phonenumber = "輸入欄位不正確"
+        regex_message = regexmessage.input_excepion
     }
     return isValid
 }
@@ -53,11 +49,11 @@ func checkValidAccount(input : String) -> Bool {
     let isValid = predicate.evaluate(with : input)
     if (input == "")
     {
-        regex_account = "＊請輸入帳號"
+        regex_message = regexmessage.account_noinput
     }
     else
     {
-        regex_account = "＊輸入格式不正確"
+        regex_message = regexmessage.input_excepion
     }
     return isValid
 }
@@ -68,11 +64,11 @@ func checkValidPassword(input : String)-> Bool{
     let isValid = predicate.evaluate(with : input)
     if (input == "")
     {
-        regex_password = "＊請輸入密碼"
+        regex_message = regexmessage.password_noinput
     }
     else
     {
-        regex_password = "＊請輸入格式不正確"
+        regex_message = regexmessage.input_excepion
     }
     return isValid
 }
@@ -83,11 +79,11 @@ func checkValidVerificationCode(input : String)-> Bool{
     let isValid = predicate.evaluate(with : input)
     if(input == "")
     {
-        regex_VerificationCode = "＊請輸入電話驗證碼"
+        regex_message = regexmessage.verificationcode_noinput
     }
     else
     {
-        regex_VerificationCode = "＊輸入格式不正確"
+        regex_message = regexmessage.input_excepion
     }
     return isValid
 }
@@ -99,11 +95,11 @@ func checkValidEmail(input: String) -> Bool {
     let isValid = predicate.evaluate(with : input)
     if(input == "")
     {
-        regex_email = "＊請輸入信箱"
+        regex_message = regexmessage.email_noinput
     }
     else
     {
-        regex_email = "＊輸入格式不正確"
+        regex_message = regexmessage.input_excepion
     }
     return isValid
 }
