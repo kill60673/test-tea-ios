@@ -21,8 +21,7 @@ class ResetPasswordViewController: UIViewController , UITextFieldDelegate {
     override func viewDidLoad(){
         super.viewDidLoad()
         ResetPassword = self
-        btSubmit.layer.borderWidth = 1.0//外框粗度
-        btSubmit.layer.cornerRadius = 5//圓角
+        btSubmit.customized_button(button: btSubmit)
         tfPassword.delegate = self
         tfAgainEnterPassword.delegate = self
         keyboad()

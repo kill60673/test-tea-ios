@@ -25,9 +25,7 @@ class SendMemberRegisterInfoViewController: UIViewController ,UITextFieldDelegat
         super.viewDidLoad()
         MemberRegiseterView = self
 //        print(sex)
-        btSendPassword.layer.borderWidth = 1.0//外框粗度
-        //      BtnLogin.layer.borderColor = sevenTeaColor.cgColor
-        btSendPassword.layer.cornerRadius = 5//圓角
+        btSendPassword.customized_button(button: btSendPassword)
         
         tfPassword.delegate = self
         tfAgainEnterPassword.delegate = self

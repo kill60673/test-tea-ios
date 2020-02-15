@@ -25,9 +25,8 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
         super.viewDidLoad()
         //print(sex)
         SendMemberRegistrView = self
-        btNextStep.layer.borderWidth = 1.0//外框粗度
+        btNextStep.customized_button(button: btNextStep)
         
-        btNextStep.layer.cornerRadius = 5//圓角
         tfUserName.delegate = self
         tfName.delegate = self
         

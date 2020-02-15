@@ -27,12 +27,11 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
     {
         super.viewDidLoad()
         ForgotPasswordView = self
-        btnNextStep.layer.borderWidth = 1.0//外框粗度
-        btnNextStep.layer.cornerRadius = 5//圓角
+        btnNextStep.customized_button(button: btnNextStep)
+        btSendVerifyCode.customized_button(button: btSendVerifyCode)
         tfPhone.delegate = self
         tfUserName.delegate = self
         tfValidators_Code.delegate = self
-        
         keyboad()
         //使用手勢 用tap把鍵盤收起來
        
@@ -48,7 +47,6 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
     {
         self.account = tfUserName.text ?? ""
         self.phone = tfPhone.text ?? ""
-        
         
         lbUserName.text = ""
         lbPhone.text = ""

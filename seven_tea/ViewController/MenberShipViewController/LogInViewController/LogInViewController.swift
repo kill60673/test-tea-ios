@@ -23,8 +23,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     {
         super.viewDidLoad()
         LoginView = self
-        btLogin.layer.borderWidth = 1.0//外框粗度
-        btLogin.layer.cornerRadius = 5//圓角
+        btLogin.customized_button(button: btLogin)
         tfPhone.delegate = self
         tfPassWord.delegate = self
         //使用手勢 用tap把鍵盤收起來

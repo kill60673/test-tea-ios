@@ -23,10 +23,9 @@ class MemberRegiseterViewController: UIViewController ,UITextFieldDelegate {
         MemberRegiseterView = self
         btValidators_Code.customized_button(button: btValidators_Code)
         btSignUp.customized_button(button: btSignUp)
-        dismissKeyBoard()
+        
         tfPhone.delegate = self
         tfValidators_Code.delegate = self
-        
         //使用手勢 用tap把鍵盤收起來
         keyboad()
     }
