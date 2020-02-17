@@ -22,17 +22,12 @@ class ResetPasswordViewController: UIViewController , UITextFieldDelegate {
         super.viewDidLoad()
         ResetPassword = self
         btSubmit.customized_button(button: btSubmit)
+        
         tfPassword.delegate = self
         tfAgainEnterPassword.delegate = self
         keyboad()
     }
     
-    func textFieldShouldReturn(_ textField : UITextField) -> Bool
-     {
-         textField.resignFirstResponder()
-         return true
-     }
-  
     // 2/13利用正規表示法來修正判斷式 已修正完成
     @IBAction func btSubmit(_ sender: Any) {
         let password = tfPassword.text ?? ""
