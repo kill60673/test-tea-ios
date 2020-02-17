@@ -29,6 +29,7 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
         ForgotPasswordView = self
         btnNextStep.customized_button(button: btnNextStep)
         btSendVerifyCode.customized_button(button: btSendVerifyCode)
+        
         tfPhone.delegate = self
         tfUserName.delegate = self
         tfValidators_Code.delegate = self
@@ -36,12 +37,7 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
         //使用手勢 用tap把鍵盤收起來
        
     }
-    // 關掉鍵盤
-    func textFieldShouldReturn(_ textField : UITextField) -> Bool
-     {
-         textField.resignFirstResponder()
-         return true
-     }
+
     // 2/13利用正規表示法來修正判斷式 已修正完成
     @IBAction func btSendSms(_ sender : Any)
     {

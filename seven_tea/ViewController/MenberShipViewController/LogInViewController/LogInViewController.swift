@@ -24,18 +24,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         LoginView = self
         btLogin.customized_button(button: btLogin)
+        
         tfPhone.delegate = self
         tfPassWord.delegate = self
         //使用手勢 用tap把鍵盤收起來
         keyboad()
     }
     
-// 關掉鍵盤
-    func textFieldShouldReturn(_ textField : UITextField) -> Bool
-    {
-        textField.resignFirstResponder()
-        return true
-    }
+
     
     // 登入按鈕 擷取輸入的帳號密碼傳入API Login 使用MessageAlert裡面的message跳出訊息是否成功登入
     // 2/13利用正規表示法來修正判斷式 已修正完成
