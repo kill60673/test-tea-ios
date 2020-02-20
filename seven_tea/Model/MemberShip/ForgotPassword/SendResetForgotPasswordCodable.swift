@@ -12,6 +12,7 @@ struct SendResetForgotPasswordCodable : Codable {
     var message : String
     var data : Data
 }
+
 struct SendResetForgorPasswordMessage : Codable {
     var username : String
     var phone : String

@@ -14,7 +14,7 @@ class ForgotPasswordSmsAPI : NSObject {
     func ForgotPasswordSms(Username : String , Phone : String ) {
         let url = URL(string : ApiUrl.ApiUrlInstance.ForgotPasswordSmsUrl)!
         var request = URLRequest(url : url)
-        request.setValue("application/json" , forHTTPHeaderField: "Accept")
+        request.setValue("application/json" , forHTTPHeaderField : "Accept")
 //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         let postString = "username=\(Username)&phone=\(Phone)"
