@@ -7,13 +7,13 @@
 //
 
 import Foundation
-
+var datas = Data()
 class SendMemberRegistrApi : NSObject {
     static let MemberRegisterInstance = SendMemberRegistrApi()
-    var datas = Data()
+//    var datas = Data()
     
-    //將資料放進object的func
-//    func getMemberRegisterMessage(phone:String , validators_code:String)
+    //    將資料放進object的func
+//    func getMemberRegisterMessage(phone : String , validators_code : String)
 //    {
 //        let postSTring  = MemberRegisterMessage(phone: phone, validators_code: validators_code)
 //        let encoder = JSONEncoder()
@@ -22,18 +22,30 @@ class SendMemberRegistrApi : NSObject {
 //            print(postSTring)
 //            self.datas = data
 //            print(data)
-//            SendMemberRegister()
-//        }
+//            SendMemberRegister {
+//                (result) in
+//                if result
+//                {
+//                    return
+//                }
+//                else
+//                {
 //
+//                }
+//            }
+//
+//        }
 //    }
-    func SendMemberRegister(Phone : String , Validators_code : String , handler : @escaping (Bool)->()) {
+    
+    
+    func SendMemberRegister( handler : @escaping (Bool)->()) {
         let url = URL(string : ApiUrl.ApiUrlInstance.SendMemberRegistrUrl)!
         var request = URLRequest(url : url)
-        request.setValue("application/json" , forHTTPHeaderField : "Accept")
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.setValue("application/json" , forHTTPHeaderField : "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        let postString = "phone=\(Phone)&validators_code=\(Validators_code)"
-        request.httpBody = postString.data(using : .utf8)
+        let postString = datas
+        request.httpBody = postString
         let task = URLSession.shared.dataTask(with : request)
         {
             data , response , error in
@@ -47,18 +59,21 @@ class SendMemberRegistrApi : NSObject {
                 {
                     //主線程
                     DispatchQueue.main.async
-                    {
-                        MessageAlert.Instance.message(message : "\(MemberRegister.message)")
-                        handler(true)
+                        {
+                            MessageAlert.Instance.message(message : "\(MemberRegister.message)")
+                            handler(true)
+                            print("資料成功")
+                            
                     }
                 }
                 else
                 {
                     //主線程
                     DispatchQueue.main.async
-                    {
-                        MessageAlert.Instance.message(message : "\(MemberRegister.message)")
-                        handler(false)
+                        {
+                            MessageAlert.Instance.message(message : "\(MemberRegister.message)")
+                            handler(false)
+                               print("資料失敗")
                     }
                 }
             }
@@ -66,8 +81,8 @@ class SendMemberRegistrApi : NSObject {
             {
                 //主線程
                 DispatchQueue.main.async
-                {
-                      
+                    {
+                        
                 }
             }
         }
