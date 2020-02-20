@@ -25,7 +25,7 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
         super.viewDidLoad()
         //print(sex)
         SendMemberRegistrView = self
-        btNextStep.customized_button(button: btNextStep)
+        btNextStep.customized_button(button : btNextStep)
         
         tfUserName.delegate = self
         tfName.delegate = self
@@ -35,48 +35,26 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
     }
 
     // 2/13利用正規表示法來修正判斷式 已修正完成
-    @IBAction func btNextStep(_ sender : Any) {
+    @IBAction func btNextStep(_ sender : Any)
+    {
         self.username = tfUserName.text ?? ""
         self.name = tfName.text ?? ""
         
         lbUserName.text = ""
         lbName.text = ""
         
-        if(checkValidAccount(input : username) == true && name != "")
-        {
-            jump()
-        }
-        //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
-        else if (checkValidAccount(input : username) == false)
-        {
-                lbUserName.text = regex_message
-                lbUserName.shake()
-        }
-        //如果使用著名稱為空值提醒請輸入使用者名稱
-        else if  (name == "")
-        {
-            lbName.text = "＊請輸入使用者名稱"
-            lbName.shake()
-        }
+        predicates_func.jumpSendMemberRegisterInfo(username : username , name : name , lbUserName : lbUserName , lbName : lbName , phone : phone , sex : sex , uservalidatorscode : uservalidatorscode)
     }
-    //頁面跳轉部分送資料到下個頁面去
-    func jump(){
-        let vc = storyboard?.instantiateViewController(withIdentifier : "SendMemberRegisterInfo") as! SendMemberRegisterInfoViewController
-        vc.account = username
-        vc.name = name
-        vc.phone = phone
-        vc.sex = sex
-        vc.uservalidatorscode = uservalidatorscode
-        show(vc, sender : self)
-    }
-    
+   
     //使用UISegmentedControl來決定男女
-    @IBAction func segmentedControlValueChanged(_ sender : UISegmentedControl) {
+    @IBAction func segmentedControlValueChanged(_ sender : UISegmentedControl)
+    {
         setSex()
     }
+    
     //UISegmentedControl男女裡面的 index設定
     func setSex() {
-        // 依照被選取項目的index來決定男女 
+        // 依照被選取項目的index來決定男女
         let selectedIndex = segmentedControl.selectedSegmentIndex
         switch selectedIndex {
         case 0:
