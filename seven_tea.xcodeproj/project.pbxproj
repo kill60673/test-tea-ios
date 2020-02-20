@@ -65,6 +65,7 @@
 		84FADF2C23F678B600C824C6 /* SendMemberRegistrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2B23F678B600C824C6 /* SendMemberRegistrViewController.swift */; };
 		84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF3023F78AB300C824C6 /* RegexMessage.swift */; };
 		84FADF3523F7CAB400C824C6 /* UIelementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF3423F7CAB400C824C6 /* UIelementsController.swift */; };
+		84FADF4623FE88CE00C824C6 /* AppOverAllStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4523FE88CE00C824C6 /* AppOverAllStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		84FADF2B23F678B600C824C6 /* SendMemberRegistrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemberRegistrViewController.swift; sourceTree = "<group>"; };
 		84FADF3023F78AB300C824C6 /* RegexMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexMessage.swift; sourceTree = "<group>"; };
 		84FADF3423F7CAB400C824C6 /* UIelementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIelementsController.swift; sourceTree = "<group>"; };
+		84FADF4523FE88CE00C824C6 /* AppOverAllStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppOverAllStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 		84EEC5FB23D412F9005627FF /* HelpController */ = {
 			isa = PBXGroup;
 			children = (
+				84FADF4423FE88B200C824C6 /* AppOverAllStyle */,
 				84FADF3323F7CA6100C824C6 /* UIelementsController */,
 				84FADF2F23F6A2D800C824C6 /* UserInfo */,
 				84FADF2E23F6A2CF00C824C6 /* Regex */,
@@ -511,6 +514,14 @@
 			path = UIelementsController;
 			sourceTree = "<group>";
 		};
+		84FADF4423FE88B200C824C6 /* AppOverAllStyle */ = {
+			isa = PBXGroup;
+			children = (
+				84FADF4523FE88CE00C824C6 /* AppOverAllStyle.swift */,
+			);
+			path = AppOverAllStyle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -588,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F7C88B23EA91A60097EAD0 /* Animate.swift in Sources */,
+				84FADF4623FE88CE00C824C6 /* AppOverAllStyle.swift in Sources */,
 				84EEC5D023D1C314005627FF /* ViewController.swift in Sources */,
 				84F7C89123EAD1C90097EAD0 /* LoginCodable.swift in Sources */,
 				84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */,
