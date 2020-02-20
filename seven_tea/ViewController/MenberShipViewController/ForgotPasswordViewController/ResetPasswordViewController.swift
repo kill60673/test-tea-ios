@@ -8,11 +8,13 @@
 
 import UIKit
 var ResetPassword:UIViewController!
+
 class ResetPasswordViewController: UIViewController , UITextFieldDelegate {
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var tfAgainEnterPassword: UITextField!
     @IBOutlet weak var lbPrompt: UILabel!
     @IBOutlet weak var btSubmit: UIButton!
+    
     var name = String()
     var phonenumber = String()
     var uservalidatorscode = String()
@@ -21,36 +23,24 @@ class ResetPasswordViewController: UIViewController , UITextFieldDelegate {
     override func viewDidLoad(){
         super.viewDidLoad()
         ResetPassword = self
+        //刻畫送出按鈕的樣式
         btSubmit.customized_button(button: btSubmit)
         
         tfPassword.delegate = self
         tfAgainEnterPassword.delegate = self
+        
         keyboad()
     }
     
     // 2/13利用正規表示法來修正判斷式 已修正完成
-    @IBAction func btSubmit(_ sender: Any) {
+    @IBAction func btSubmit(_ sender: Any)
+    {
         let password = tfPassword.text ?? ""
         let againenterpassword = tfAgainEnterPassword.text ?? ""
         
         lbPrompt.text = ""
         
-        //送出資料
-        if ((checkValidPassword(input : password) == true) && (password == againenterpassword))
-        {
-            RestPasswordApi.RestPasswordApiInstance.RestPassword(Username: name, Phone : phonenumber , Validators_code : uservalidatorscode , Password: password, Password_Confirmation : againenterpassword)
-        }
-        //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
-        else if (checkValidPassword(input : password) == false)
-        {
-                lbPrompt.text = regex_message
-                lbPrompt.shake()
-        }
-        //如果密碼輸入兩次不一樣 回傳訊息告知 
-        else
-        {
-                lbPrompt.text = "兩次密碼輸入不同請確認"
-                lbPrompt.shake()
-        }
+        //忘記密碼的重新設定密碼的func
+        predicates_func.RestPassword(password : password , againenterpassword : againenterpassword , lbPrompt : lbPrompt , uservalidatorscode : uservalidatorscode , Password_Confirmation : againenterpassword , name : name , phonenumber : phonenumber)
     }
 }

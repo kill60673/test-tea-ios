@@ -24,37 +24,22 @@ class SendMemberRegisterInfoViewController: UIViewController ,UITextFieldDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         MemberRegiseterView = self
-//        print(sex)
-        btSendPassword.customized_button(button: btSendPassword)
+        //        print(sex)
+        btSendPassword.customized_button(button : btSendPassword)
         
         tfPassword.delegate = self
         tfAgainEnterPassword.delegate = self
         keyboad()
         //使用手勢 用tap把鍵盤收起來
     }
- 
+    
     // 2/13利用正規表示法來修正判斷式 已修正完成
-    @IBAction func btSendPassword(_ sender : Any) {
+    @IBAction func btSendPassword(_ sender : Any)
+    {
         self.password = tfPassword.text ?? ""
         self.againEnterpassword = tfAgainEnterPassword.text ?? ""
         
         lbMessage.text = ""
-        if ((checkValidPassword(input : password) == true) && (password == againEnterpassword ))
-        {
-            SendMemberRegisterInfoAPI.MemberRegisterInstance.SendMemberRegisterInfo(Username : account, Name : name, Sex : sex ,  Phone : phone, Password : password , Password_confirmation : againEnterpassword , Validators_code : uservalidatorscode)
-        }
-        //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
-        else if (checkValidPassword(input : password) == false)
-        {
-            lbMessage.text = regex_message
-            lbMessage.shake()
-        }
-        //如果密碼輸入兩次不一樣 回傳訊息告知
-        else
-        {
-            lbMessage.text = "＊兩次密碼輸入不同"
-            lbMessage.shake()
-        }
+        predicates_func.SendMemberRegisterInfo(password : password , againEnterpassword : againEnterpassword , account : account , name : name, sex : sex , phone : phone , uservalidatorscode : uservalidatorscode , lbMessage : lbMessage)
     }
-    
 }

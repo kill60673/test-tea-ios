@@ -7,6 +7,7 @@
 import Foundation
 import UIKit
 var LoginView:UIViewController!
+var predicates_func = Predicates_func()
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -17,21 +18,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbPassword: UILabel!
     
-    
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         LoginView = self
-        btLogin.customized_button(button: btLogin)
+        btLogin.customized_button(button : btLogin)
         
         tfPhone.delegate = self
         tfPassWord.delegate = self
         //使用手勢 用tap把鍵盤收起來
         keyboad()
     }
-    
-
     
     // 登入按鈕 擷取輸入的帳號密碼傳入API Login 使用MessageAlert裡面的message跳出訊息是否成功登入
     // 2/13利用正規表示法來修正判斷式 已修正完成
@@ -42,22 +39,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         lbName.text = ""
         lbPassword.text = ""
-        if ((checkValidAccount(input: account) == true) && (checkValidPassword(input : userpassword) == true))
-        {
-            LoginAPI.LoginInstance.getLoginMessage(username : account , password : userpassword)
-        }
-        //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
-        else if (checkValidAccount(input : account) == false)
-        {
-                lbName.text = regex_message
-                lbName.shake()
-        }
-        //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
-        else if (checkValidPassword(input : userpassword) == false)
-        {
-                lbPassword.text = regex_message
-                lbPassword.shake()
-        }
         
+        predicates_func.Login(account : account , userpassword : userpassword , lbName : lbName , lbPassword : lbPassword)
     }
 }

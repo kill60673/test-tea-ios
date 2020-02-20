@@ -25,7 +25,7 @@ class SendMemberRegisterInfoAPI : NSObject {
     func SendMemberRegisterInfo(Username : String , Name : String , Sex : String , Phone: String , Password : String ,  Password_confirmation : String , Validators_code : String) {
         let url = URL(string : ApiUrl.ApiUrlInstance.SendMemberRegisterInfoUrl)!
         var request = URLRequest(url : url)
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField : "Accept")
 //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         let postString = "username=\(Username)&name=\(Name)&sex=\(Sex)&phone=\(Phone)&password=\(Password)&password_confirmation=\(Password_confirmation)&validators_code=\(Validators_code)"
@@ -37,7 +37,7 @@ class SendMemberRegisterInfoAPI : NSObject {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let MemberRegisterInfo = try?
-                decoder.decode(MemberRegisterSmsCodable.self, from: data)
+                decoder.decode(MemberRegisterSmsCodable.self , from: data)
             {
                 if (MemberRegisterInfo.success == true )
                 {

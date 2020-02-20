@@ -11,6 +11,7 @@ struct SendRegisterInfoCodable : Codable {
     var success : Bool?
     var message : String
 }
+
 struct MemberRegisterMessage : Codable {
     var phone : String
     var validators_code : String
