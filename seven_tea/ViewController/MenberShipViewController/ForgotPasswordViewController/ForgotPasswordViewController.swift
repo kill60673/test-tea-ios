@@ -28,11 +28,12 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
         super.viewDidLoad()
         ForgotPasswordView = self
         btnNextStep.customized_button(button: btnNextStep)
-        btSendVerifyCode.customized_button(button: btSendVerifyCode)
+        btSendVerifyCode.customized_button(button : btSendVerifyCode)
         
         tfPhone.delegate = self
         tfUserName.delegate = self
         tfValidators_Code.delegate = self
+        
         keyboad()
         //使用手勢 用tap把鍵盤收起來
        
@@ -47,25 +48,9 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
         lbUserName.text = ""
         lbPhone.text = ""
         
-//      let verificationcode = VerificationCodeTimer()
-        if ((checkValidAccount(input : account) == true) && (checkValidPhoneNumber(input : phone) == true))
-        {
-//          ForgotPasswordSmsAPI.ForgotPasswordSmsInstance.ForgotPasswordSms(Username: account , Phone : phone)
-            triggerTimer(button: btSendVerifyCode)
-        }
-        //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
-        else if (checkValidAccount(input: account) == false )
-        {
-                lbUserName.text = regex_message
-                lbUserName.shake()
-        }
-        //如果電話號碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
-        else if (checkValidPhoneNumber(input : phone) == false)
-        {
-                lbPhone.text = regex_message
-                lbPhone.shake()
-        }
+        predicates_func.ForgotPasswordSms(account : account , phone : phone , btSendVerifyCode : btSendVerifyCode , lbUserName : lbUserName , lbPhone : lbPhone)
     }
+    
     // 2/13利用正規表示法來修正判斷式 已修正完成
     @IBAction func btNexStep(_ sender : Any)
     {
@@ -76,45 +61,8 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
         lbUserName.text = ""
         lbValidators_Code.text = ""
         lbPhone.text = ""
-        if
-            (
-                    (checkValidAccount(input: account) == true)
-                    &&
-                    (checkValidPhoneNumber(input: phone) == true)
-                    &&
-                    (checkValidVerificationCode(input: validators_code) == true)
-            )
-        {
-            SendResetForgotPasswordSmsAPI.SendResetForgotPasswordSmsInstance.SendResetForgotPasswordSms(Username : account , Phone : phone , Validators_code : validators_code)
-            {
-                (result) in
-                if result
-                {
-                    DispatchQueue.main.asyncAfter(deadline : .now() + 0.5)
-                    {
-                        self.jump()
-                    }
-                }
-            }
-        }
-        //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
-        else if (checkValidAccount(input : account) == false )
-        {
-                lbUserName.text = regex_message
-                lbUserName.shake()
-        }
-        //如果電話號碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
-        else if (checkValidPhoneNumber(input : phone) == false)
-        {
-                lbPhone.text = regex_message
-                lbPhone.shake()
-        }
-        //如果電話驗證碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
-        else if (checkValidVerificationCode(input : validators_code) == false)
-        {
-                lbValidators_Code.text = regex_message
-                lbValidators_Code.shake()
-        }
+        
+        predicates_func.SendResetForgotPasswordSms(account : account , phone : phone , validators_code : validators_code , lbUserName : lbUserName , lbPhone : lbPhone , lbValidators_Code : lbValidators_Code)
     }
     
     //timer部分
@@ -137,14 +85,4 @@ class ForgotPasswordViewController: UIViewController ,UITextFieldDelegate {
         //做bt裡面時間倒數 倒數完才可以使用
         timer = Timer.scheduledTimer(timeInterval : 1 , target : self , selector : #selector(self.showSmsCountDown) , userInfo : nil , repeats : true)
     }
-    
-    //跳轉頁面以及送資料的部分
-    func jump(){
-        let vc = storyboard?.instantiateViewController(withIdentifier : "RestPassword") as! ResetPasswordViewController
-        vc.name = account
-        vc.phonenumber = phone
-        vc.uservalidatorscode = validators_code
-        show(vc , sender : self)
-    }
 }
-// DispatchQueue.main.asyncAfter(deadline: .now() + 0.5)
