@@ -66,6 +66,7 @@
 		84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF3023F78AB300C824C6 /* RegexMessage.swift */; };
 		84FADF3523F7CAB400C824C6 /* UIelementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF3423F7CAB400C824C6 /* UIelementsController.swift */; };
 		84FADF4623FE88CE00C824C6 /* AppOverAllStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4523FE88CE00C824C6 /* AppOverAllStyle.swift */; };
+		84FADF4923FE8B0100C824C6 /* JumpPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4823FE8B0100C824C6 /* JumpPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		84FADF3023F78AB300C824C6 /* RegexMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexMessage.swift; sourceTree = "<group>"; };
 		84FADF3423F7CAB400C824C6 /* UIelementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIelementsController.swift; sourceTree = "<group>"; };
 		84FADF4523FE88CE00C824C6 /* AppOverAllStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppOverAllStyle.swift; sourceTree = "<group>"; };
+		84FADF4823FE8B0100C824C6 /* JumpPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JumpPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +331,7 @@
 		84EEC5FC23D41302005627FF /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				84FADF4723FE8A8B00C824C6 /* JumpPages */,
 				84EEC62123D42103005627FF /* MemberShip */,
 				84EEC62023D420F4005627FF /* MemberCenter */,
 			);
@@ -522,6 +525,14 @@
 			path = AppOverAllStyle;
 			sourceTree = "<group>";
 		};
+		84FADF4723FE8A8B00C824C6 /* JumpPages */ = {
+			isa = PBXGroup;
+			children = (
+				84FADF4823FE8B0100C824C6 /* JumpPage.swift */,
+			);
+			path = JumpPages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -600,6 +611,7 @@
 			files = (
 				84F7C88B23EA91A60097EAD0 /* Animate.swift in Sources */,
 				84FADF4623FE88CE00C824C6 /* AppOverAllStyle.swift in Sources */,
+				84FADF4923FE8B0100C824C6 /* JumpPage.swift in Sources */,
 				84EEC5D023D1C314005627FF /* ViewController.swift in Sources */,
 				84F7C89123EAD1C90097EAD0 /* LoginCodable.swift in Sources */,
 				84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */,
