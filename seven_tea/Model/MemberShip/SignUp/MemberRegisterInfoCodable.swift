@@ -11,6 +11,7 @@ struct MemberRegisterInfoCodable : Codable {
     var success : Bool?
     var message : String
 }
+
 struct MemberRegisterMessageInfo : Codable {
     var username : String
     var name : String
