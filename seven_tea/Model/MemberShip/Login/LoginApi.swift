@@ -10,17 +10,16 @@ import UIKit
 
 class LoginAPI: NSObject {
     static let LoginInstance = LoginAPI()
-    var datas = Data()
+ 
     
     //將資料放進object的func
-    func getLoginMessage(username: String,password : String)
-    {
+    func getLoginMessage(username: String,password : String){
         let postSTring  = Loginmessage(username : username , password : password)
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(postSTring)
         {
             print(postSTring)
-            self.datas = data
+            datas = data
             print(data)
             Login
                 {
@@ -50,7 +49,7 @@ class LoginAPI: NSObject {
         let task = URLSession.shared.dataTask(with : request)
         {
             data , response , error in
-            let responseString = String(data : data!, encoding : .utf8)
+            let responseString = String(data : data! , encoding : .utf8)
             print(responseString as Any)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
