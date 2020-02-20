@@ -68,6 +68,7 @@
 		84FADF4623FE88CE00C824C6 /* AppOverAllStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4523FE88CE00C824C6 /* AppOverAllStyle.swift */; };
 		84FADF4923FE8B0100C824C6 /* JumpPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4823FE8B0100C824C6 /* JumpPage.swift */; };
 		84FADF4C23FE8B4E00C824C6 /* Predicates_func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4B23FE8B4E00C824C6 /* Predicates_func.swift */; };
+		84FADF4E23FE8B9500C824C6 /* GetMemberRegisterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4D23FE8B9500C824C6 /* GetMemberRegisterMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		84FADF4523FE88CE00C824C6 /* AppOverAllStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppOverAllStyle.swift; sourceTree = "<group>"; };
 		84FADF4823FE8B0100C824C6 /* JumpPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JumpPage.swift; sourceTree = "<group>"; };
 		84FADF4B23FE8B4E00C824C6 /* Predicates_func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predicates_func.swift; sourceTree = "<group>"; };
+		84FADF4D23FE8B9500C824C6 /* GetMemberRegisterMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMemberRegisterMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +400,7 @@
 		84EEC62223D42117005627FF /* SingUp */ = {
 			isa = PBXGroup;
 			children = (
+				84FADF4D23FE8B9500C824C6 /* GetMemberRegisterMessage.swift */,
 				84EEC62723D4216C005627FF /* SingUpModelController.swift */,
 			);
 			path = SingUp;
@@ -661,6 +664,7 @@
 				84EEC61323D4155C005627FF /* FrequentlyAskedQuestionsApi.swift in Sources */,
 				84EEC5F623D412AF005627FF /* AccountCodable.swift in Sources */,
 				84EEC5CE23D1C314005627FF /* SceneDelegate.swift in Sources */,
+				84FADF4E23FE8B9500C824C6 /* GetMemberRegisterMessage.swift in Sources */,
 				84EEC61D23D415CB005627FF /* MyFavorite.swift in Sources */,
 				84FADF2123F6712800C824C6 /* SendMemberRegistrApi.swift in Sources */,
 				84EEC60523D41483005627FF /* MenberCenterViewController.swift in Sources */,
