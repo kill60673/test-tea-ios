@@ -129,7 +129,7 @@ class Predicates_func : UIViewController {
             //如果判斷兩個都不是錯的 那就可以進到下面的判斷
         else if ((checkValidPassword(input : password) == true) && (password == againEnterpassword ))
         {
-            SendMemberRegisterInfoAPI.MemberRegisterInstance.SendMemberRegisterInfo(Username : account, Name : name, Sex : sex , Phone : phone, Password : password , Password_confirmation : againEnterpassword , Validators_code : uservalidatorscode)
+            memberRegisterMessage.getMemberRegisterMessageInfo(username: account, name: name, sex: sex, phone: phone, password: password, password_confirmation: againEnterpassword, validators_code: uservalidatorscode)
         }
     }
     
