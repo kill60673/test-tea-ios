@@ -38,7 +38,7 @@
 		84EEC61923D415A8005627FF /* MyFavoriteApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC61823D415A8005627FF /* MyFavoriteApi.swift */; };
 		84EEC61B23D415B5005627FF /* MyFavoriteCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC61A23D415B5005627FF /* MyFavoriteCodable.swift */; };
 		84EEC61D23D415CB005627FF /* MyFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC61C23D415CB005627FF /* MyFavorite.swift */; };
-		84EEC62623D4215C005627FF /* LoginModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62523D4215C005627FF /* LoginModelController.swift */; };
+		84EEC62623D4215C005627FF /* getLoginMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62523D4215C005627FF /* getLoginMessage.swift */; };
 		84EEC62823D4216C005627FF /* SingUpModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62723D4216C005627FF /* SingUpModelController.swift */; };
 		84EEC62D23D421EE005627FF /* AccountinfomationModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62C23D421EE005627FF /* AccountinfomationModelController.swift */; };
 		84EEC62F23D4220D005627FF /* MyFavoriteModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62E23D4220D005627FF /* MyFavoriteModelController.swift */; };
@@ -106,7 +106,7 @@
 		84EEC61823D415A8005627FF /* MyFavoriteApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteApi.swift; sourceTree = "<group>"; };
 		84EEC61A23D415B5005627FF /* MyFavoriteCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteCodable.swift; sourceTree = "<group>"; };
 		84EEC61C23D415CB005627FF /* MyFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavorite.swift; sourceTree = "<group>"; };
-		84EEC62523D4215C005627FF /* LoginModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelController.swift; sourceTree = "<group>"; };
+		84EEC62523D4215C005627FF /* getLoginMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getLoginMessage.swift; sourceTree = "<group>"; };
 		84EEC62723D4216C005627FF /* SingUpModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpModelController.swift; sourceTree = "<group>"; };
 		84EEC62C23D421EE005627FF /* AccountinfomationModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountinfomationModelController.swift; sourceTree = "<group>"; };
 		84EEC62E23D4220D005627FF /* MyFavoriteModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteModelController.swift; sourceTree = "<group>"; };
@@ -424,7 +424,7 @@
 		84EEC62423D42148005627FF /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
-				84EEC62523D4215C005627FF /* LoginModelController.swift */,
+				84EEC62523D4215C005627FF /* getLoginMessage.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -720,7 +720,7 @@
 				84EEC60D23D41503005627FF /* MyFavoriteViewController.swift in Sources */,
 				84FADF3523F7CAB400C824C6 /* UIelementsController.swift in Sources */,
 				84FADF1923F66A7F00C824C6 /* MemberRegiseterSmsApi.swift in Sources */,
-				84EEC62623D4215C005627FF /* LoginModelController.swift in Sources */,
+				84EEC62623D4215C005627FF /* getLoginMessage.swift in Sources */,
 				84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */,
 				84EEC63A23D493D0005627FF /* ApiUrl.swift in Sources */,
 				84EEC62823D4216C005627FF /* SingUpModelController.swift in Sources */,

@@ -67,6 +67,6 @@ class GetMemberRegisterMessage: UIViewController {
             }
         }
     }
-    
-    
+  
+
 }
