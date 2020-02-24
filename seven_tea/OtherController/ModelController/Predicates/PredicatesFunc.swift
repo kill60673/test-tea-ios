@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-var ver = VerificationCodeTimer()
+//var ver = VerificationCodeTimer()
 class PredicatesFunc: UIViewController {
     // 2/18修正完確定不會爆
     func restPassword(password: String, againenterpassword: String, lbPrompt: UILabel, uservalidatorscode: String, name: String, phonenumber: String) {
@@ -69,9 +69,9 @@ class PredicatesFunc: UIViewController {
             lbUserName.text = regexmessage
             lbUserName.shake()
         } else if (checkValidAccount(input: account) == true) && (checkValidPhoneNumber(input: phone) == true) {
-            //          ForgotPasswordSmsAPI.ForgotPasswordSmsInstance.ForgotPasswordSms(Username: account , Phone : phone)
+                      ForgotPasswordSmsAPI.ForgotPasswordSmsInstance.forgotPasswordSms(username: account, phone: phone)
             // 計時器
-            ver.triggerTimer(button: btSendVerifyCode)
+//            ver.triggerTimer(button: btSendVerifyCode)
         }
     }
 
