@@ -7,17 +7,17 @@
 //
 
 import Foundation
-struct MemberRegisterInfoCodable : Codable {
-    var success : Bool?
-    var message : String
+struct MemberRegisterInfoCodable: Codable {
+    var success: Bool?
+    var message: String
 }
 
-struct MemberRegisterMessageInfo : Codable {
-    var username : String
-    var name : String
-    var sex : String
-    var phone : String
-    var password : String
-    var password_confirmation : String
-    var validators_code : String
+struct MemberRegisterMessageInfo: Codable {
+    var username: String
+    var name: String
+    var sex: String
+    var phone: String
+    var password: String
+    var passwordConfirmation: String
+    var validatorsCode: String
 }

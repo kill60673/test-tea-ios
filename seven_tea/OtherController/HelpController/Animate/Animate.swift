@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /*/延伸UILabel類別的定義，新增一個function,內容為將label的元件都可以帶上搖晃的效果*/
-extension UILabel{
+extension UILabel {
     func shake() {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
@@ -20,7 +20,7 @@ extension UILabel{
     }
 }
 /*/延伸UITextField類別的定義，新增一個function,內容為將textfield的元件都可以帶上搖晃的效果*/
-extension UITextField{
+extension UITextField {
     func shake() {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)

@@ -7,14 +7,14 @@
 //
 
 import Foundation
-struct SendResetForgotPasswordCodable : Codable {
-    var success : Bool?
-    var message : String
-    var data : Data
+struct SendResetForgotPasswordCodable: Codable {
+    var success: Bool?
+    var message: String
+    var data: Data
 }
 
-struct SendResetForgorPasswordMessage : Codable {
-    var username : String
-    var phone : String
-    var validators_code : String
+struct SendResetForgorPasswordMessage: Codable {
+    var username: String
+    var phone: String
+    var validatorsCode: String
 }

@@ -6,28 +6,26 @@
 
 import Foundation
 import UIKit
-class ApiUrl : NSObject {
-    
+class ApiUrl: NSObject {
     static let ApiUrlInstance = ApiUrl()
-    var DoMain: String = "http://seventea.test/"
-    var LoginUrl:String
-    var SendMemberRegisterSmsUrl:String
-    var ForgotPasswordSmsUrl:String
-    var SendResetForgotPasswordUrl:String
-    var RestPasswordUrl:String
-    var SignPhoneSendSmsUrl:String
-    var SendMemberRegistrUrl:String
-    var SendMemberRegisterInfoUrl:String
-    
+    var doMain: String = "http://seventea.test/"
+    var loginUrl: String
+    var sendMemberRegisterSmsUrl: String
+    var forgotPasswordSmsUrl: String
+    var sendResetForgotPasswordUrl: String
+    var restPasswordUrl: String
+    var signPhoneSendSmsUrl: String
+    var sendMemberRegistrUrl: String
+    var sendMemberRegisterInfoUrl: String
+
     override init() {
-        LoginUrl="\(DoMain)/api/new-login"
-        SendMemberRegisterSmsUrl="\(DoMain)/api/register/send-phone-sms"
-        ForgotPasswordSmsUrl="\(DoMain)/api/send-forgot-password"
-        SendResetForgotPasswordUrl="\(DoMain)/api/send-reset-password"
-        RestPasswordUrl="\(DoMain)/api/reset-password"
-        SignPhoneSendSmsUrl="\(DoMain)/api/register/send-phone-sms"
-        SendMemberRegistrUrl="\(DoMain)/api/register/register-button"
-        SendMemberRegisterInfoUrl="\(DoMain)/api/register/send-register-info"
-        
+        loginUrl="\(doMain)/api/new-login"
+        sendMemberRegisterSmsUrl="\(doMain)/api/register/send-phone-sms"
+        forgotPasswordSmsUrl="\(doMain)/api/send-forgot-password"
+        sendResetForgotPasswordUrl="\(doMain)/api/send-reset-password"
+        restPasswordUrl="\(doMain)/api/reset-password"
+        signPhoneSendSmsUrl="\(doMain)/api/register/send-phone-sms"
+        sendMemberRegistrUrl="\(doMain)/api/register/register-button"
+        sendMemberRegisterInfoUrl="\(doMain)/api/register/send-register-info"
     }
 }

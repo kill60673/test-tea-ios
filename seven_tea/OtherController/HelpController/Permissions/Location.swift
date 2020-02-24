@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 import UIKit
-class Location : UIViewController{
+class Location: UIViewController {
     var locationManager: CLLocationManager!
     func getLocation() {
         self.locationManager = CLLocationManager()
