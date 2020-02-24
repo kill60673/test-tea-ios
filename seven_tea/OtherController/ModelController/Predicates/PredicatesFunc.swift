@@ -69,7 +69,7 @@ class PredicatesFunc: UIViewController {
             lbUserName.text = regexmessage
             lbUserName.shake()
         } else if (checkValidAccount(input: account) == true) && (checkValidPhoneNumber(input: phone) == true) {
-                      ForgotPasswordSmsAPI.ForgotPasswordSmsInstance.forgotPasswordSms(username: account, phone: phone)
+            memberRegisterMessage.getForgotPasswordSms(account: account, phone: phone)
             // 計時器
 //            ver.triggerTimer(button: btSendVerifyCode)
         }

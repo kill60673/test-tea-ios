@@ -11,3 +11,7 @@ struct ForgotPasswordSmsCodable: Codable {
     var success: Bool?
     var message: String
 }
+struct ForgotPasswordSms: Codable {
+    var username: String
+    var phone: String
+}
