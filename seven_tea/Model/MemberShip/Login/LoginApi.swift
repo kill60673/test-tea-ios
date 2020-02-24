@@ -11,23 +11,6 @@ class LoginAPI: NSObject {
     static let LoginInstance = LoginAPI()
 
     //將資料放進object的func
-    func getLoginMessage(username: String, password: String) {
-        let postSTring  = Loginmessage(username: username, password: password)
-        let encoder = JSONEncoder()
-        if let data = try? encoder.encode(postSTring) {
-            print(postSTring)
-            datas = data
-            print(data)
-            login {
-                    (result) in
-                    if result {
-                        return
-                    } else {
-
-                    }
-            }
-        }
-    }
     // 登入用API
     func login(handler : @escaping (Bool)->Void) {
 

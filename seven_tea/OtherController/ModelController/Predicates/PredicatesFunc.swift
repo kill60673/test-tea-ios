@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 //var ver = VerificationCodeTimer()
+var loginMessage = GetLoginMessage()
 class PredicatesFunc: UIViewController {
     // 2/18修正完確定不會爆
     func restPassword(password: String, againenterpassword: String, lbPrompt: UILabel, uservalidatorscode: String, name: String, phonenumber: String) {
@@ -89,7 +90,7 @@ class PredicatesFunc: UIViewController {
         }
             //當兩個都為true進入API登入
         else if (checkValidAccount(input: account) == true) && (checkValidPassword(input: userpassword) == true) {
-            LoginAPI.LoginInstance.getLoginMessage(username: account, password: userpassword)
+            loginMessage.getLoginMessage(username: account, password: userpassword)
         }
     }
 
