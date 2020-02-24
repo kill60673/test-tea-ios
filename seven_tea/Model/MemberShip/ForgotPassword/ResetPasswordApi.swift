@@ -14,10 +14,10 @@ class RestPasswordApi: NSObject {
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
 //用data放入尚未修改完
-//      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        let postString = "username=\(userName)&phone=\(phone)&validators_code=\(validatorsCode)&password=\(password)&password_confirmation=\(passwordConfirmation)"
-        request.httpBody = postString.data(using: .utf8)
+        let postString = datas
+        request.httpBody = postString
         let task = URLSession.shared.dataTask(with: request) {
             data, response, error in
             //let responseString = String(data: data!, encoding: .utf8)
