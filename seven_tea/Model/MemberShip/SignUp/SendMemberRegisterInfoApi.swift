@@ -11,7 +11,7 @@ class SendMemberRegisterInfoAPI: NSObject {
         let url = URL(string: ApiUrl.ApiUrlInstance.sendMemberRegisterInfoUrl)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         let postString = datas
         request.httpBody = postString
