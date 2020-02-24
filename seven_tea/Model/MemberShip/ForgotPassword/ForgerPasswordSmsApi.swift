@@ -11,14 +11,14 @@ import UIKit
 class ForgotPasswordSmsAPI: NSObject {
     static let ForgotPasswordSmsInstance = ForgotPasswordSmsAPI()
 
-    func forgotPasswordSms(username: String, phone: String ) {
+    func forgotPasswordSms(handler : @escaping (Bool)->Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.forgotPasswordSmsUrl)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        let postString = "username=\(username)&phone=\(phone)"
-        request.httpBody = postString.data(using: .utf8)
+        let postString = datas
+        request.httpBody = postString
         let task = URLSession.shared.dataTask(with: request) {
             data, response, error in
             //let responseString = String(data: data!, encoding: .utf8)
@@ -30,13 +30,13 @@ class ForgotPasswordSmsAPI: NSObject {
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: "\(sms.message)")
-//                        handler(true)
+                        handler(true)
                     }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: "\(sms.message)")
-//                        handler(false)
+                        handler(false)
                     }
                 }
             } else {
