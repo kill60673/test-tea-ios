@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct ForgotPasswordSmsCodable : Codable {
-    var success : Bool?
-    var message : String
+struct ForgotPasswordSmsCodable: Codable {
+    var success: Bool?
+    var message: String
 }

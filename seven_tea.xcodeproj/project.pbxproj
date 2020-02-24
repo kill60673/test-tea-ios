@@ -63,11 +63,11 @@
 		84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2523F675D200C824C6 /* SendMemberRegisterInfoViewController.swift */; };
 		84FADF2823F6775600C824C6 /* MemberRegiseterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2723F6775600C824C6 /* MemberRegiseterViewController.swift */; };
 		84FADF2C23F678B600C824C6 /* SendMemberRegistrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF2B23F678B600C824C6 /* SendMemberRegistrViewController.swift */; };
-		84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF3023F78AB300C824C6 /* RegexMessage.swift */; };
+		84FADF3123F78AB300C824C6 /* regexMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF3023F78AB300C824C6 /* regexMessage.swift */; };
 		84FADF3523F7CAB400C824C6 /* UIelementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF3423F7CAB400C824C6 /* UIelementsController.swift */; };
 		84FADF4623FE88CE00C824C6 /* AppOverAllStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4523FE88CE00C824C6 /* AppOverAllStyle.swift */; };
 		84FADF4923FE8B0100C824C6 /* JumpPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4823FE8B0100C824C6 /* JumpPage.swift */; };
-		84FADF4C23FE8B4E00C824C6 /* Predicates_func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4B23FE8B4E00C824C6 /* Predicates_func.swift */; };
+		84FADF4C23FE8B4E00C824C6 /* PredicatesFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4B23FE8B4E00C824C6 /* PredicatesFunc.swift */; };
 		84FADF4E23FE8B9500C824C6 /* GetMemberRegisterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FADF4D23FE8B9500C824C6 /* GetMemberRegisterMessage.swift */; };
 		84FADF5023FE8F9600C824C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FADF4F23FE8F9600C824C6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -131,11 +131,11 @@
 		84FADF2523F675D200C824C6 /* SendMemberRegisterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemberRegisterInfoViewController.swift; sourceTree = "<group>"; };
 		84FADF2723F6775600C824C6 /* MemberRegiseterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberRegiseterViewController.swift; sourceTree = "<group>"; };
 		84FADF2B23F678B600C824C6 /* SendMemberRegistrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemberRegistrViewController.swift; sourceTree = "<group>"; };
-		84FADF3023F78AB300C824C6 /* RegexMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexMessage.swift; sourceTree = "<group>"; };
+		84FADF3023F78AB300C824C6 /* regexMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regexMessage.swift; sourceTree = "<group>"; };
 		84FADF3423F7CAB400C824C6 /* UIelementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIelementsController.swift; sourceTree = "<group>"; };
 		84FADF4523FE88CE00C824C6 /* AppOverAllStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppOverAllStyle.swift; sourceTree = "<group>"; };
 		84FADF4823FE8B0100C824C6 /* JumpPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JumpPage.swift; sourceTree = "<group>"; };
-		84FADF4B23FE8B4E00C824C6 /* Predicates_func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predicates_func.swift; sourceTree = "<group>"; };
+		84FADF4B23FE8B4E00C824C6 /* PredicatesFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredicatesFunc.swift; sourceTree = "<group>"; };
 		84FADF4D23FE8B9500C824C6 /* GetMemberRegisterMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMemberRegisterMessage.swift; sourceTree = "<group>"; };
 		84FADF4F23FE8F9600C824C6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CC0F84A34AE3A05ED5B91CDE /* Pods-seven_tea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seven_tea.debug.xcconfig"; path = "Target Support Files/Pods-seven_tea/Pods-seven_tea.debug.xcconfig"; sourceTree = "<group>"; };
@@ -517,7 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				84F7C87F23E5E9D70097EAD0 /* Regex.swift */,
-				84FADF3023F78AB300C824C6 /* RegexMessage.swift */,
+				84FADF3023F78AB300C824C6 /* regexMessage.swift */,
 			);
 			path = Regex;
 			sourceTree = "<group>";
@@ -557,7 +557,7 @@
 		84FADF4A23FE8B3200C824C6 /* Predicates */ = {
 			isa = PBXGroup;
 			children = (
-				84FADF4B23FE8B4E00C824C6 /* Predicates_func.swift */,
+				84FADF4B23FE8B4E00C824C6 /* PredicatesFunc.swift */,
 			);
 			path = Predicates;
 			sourceTree = "<group>";
@@ -568,7 +568,6 @@
 				CC0F84A34AE3A05ED5B91CDE /* Pods-seven_tea.debug.xcconfig */,
 				34C1A446550C46E86D532640 /* Pods-seven_tea.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -583,6 +582,7 @@
 				84EEC5C423D1C314005627FF /* Sources */,
 				84EEC5C523D1C314005627FF /* Frameworks */,
 				84EEC5C623D1C314005627FF /* Resources */,
+				84EEEAD22403A57B005C396E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -645,6 +645,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		84EEEAD22403A57B005C396E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		9933A729319B88E17D03668A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -683,7 +700,7 @@
 				84EEC5CC23D1C314005627FF /* AppDelegate.swift in Sources */,
 				84C2E2BB23ED26A7008AB33F /* ResetPasswordViewController.swift in Sources */,
 				84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */,
-				84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */,
+				84FADF3123F78AB300C824C6 /* regexMessage.swift in Sources */,
 				84EEC61123D41529005627FF /* AccountFomationViewController.swift in Sources */,
 				84FADF2823F6775600C824C6 /* MemberRegiseterViewController.swift in Sources */,
 				84F7C88523E7FE460097EAD0 /* MessageAlert.swift in Sources */,
@@ -723,7 +740,7 @@
 				84FADF1D23F66E9200C824C6 /* MemberRegistrtCodable.swift in Sources */,
 				84C2E2B523EBF0A3008AB33F /* ResetPasswordCodable.swift in Sources */,
 				84F7C88023E5E9D70097EAD0 /* Regex.swift in Sources */,
-				84FADF4C23FE8B4E00C824C6 /* Predicates_func.swift in Sources */,
+				84FADF4C23FE8B4E00C824C6 /* PredicatesFunc.swift in Sources */,
 				84EEC61723D41586005627FF /* FrequentlyAskedQuestions.swift in Sources */,
 				84F7C89023EAD1C90097EAD0 /* LoginApi.swift in Sources */,
 				84EEC60F23D41518005627FF /* FrequentlyAskedQuestionsViewController.swift in Sources */,

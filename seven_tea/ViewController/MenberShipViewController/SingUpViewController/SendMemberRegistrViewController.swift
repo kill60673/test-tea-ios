@@ -7,8 +7,8 @@
 //
 
 import UIKit
-var SendMemberRegistrView = UIViewController()
-class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
+var sendMemberRegistrView = UIViewController()
+class SendMemberRegistrViewController: UIViewController, UITextFieldDelegate {
     var username = ""
     var name = ""
     var sex = "male"
@@ -20,38 +20,36 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var btNextStep: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(sex)
-        SendMemberRegistrView = self
-        btNextStep.customized_button(button : btNextStep)
-        
+        sendMemberRegistrView = self
+        btNextStep.customized_button(button: btNextStep)
+
         tfUserName.delegate = self
         tfName.delegate = self
-        
+
         //使用手勢 用tap把鍵盤收起來
         keyboad()
     }
 
     // 2/13利用正規表示法來修正判斷式 已修正完成
-    @IBAction func btNextStep(_ sender : Any)
-    {
+    @IBAction func btNextStep(_ sender: Any) {
         self.username = tfUserName.text ?? ""
         self.name = tfName.text ?? ""
-        
+
         lbUserName.text = ""
         lbName.text = ""
-        
-        predicates_func.jumpSendMemberRegisterInfo(username : username , name : name , lbUserName : lbUserName , lbName : lbName , phone : phone , sex : sex , uservalidatorscode : uservalidatorscode)
+
+        predicatesFunc.jumpSendMemberRegisterInfo(username: username, name: name, lbUserName: lbUserName, lbName: lbName, phone: phone, sex: sex, uservalidatorscode: uservalidatorscode)
     }
-   
+
     //使用UISegmentedControl來決定男女
-    @IBAction func segmentedControlValueChanged(_ sender : UISegmentedControl)
-    {
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         setSex()
     }
-    
+
     //UISegmentedControl男女裡面的 index設定
     func setSex() {
         // 依照被選取項目的index來決定男女
@@ -65,7 +63,7 @@ class SendMemberRegistrViewController: UIViewController ,UITextFieldDelegate{
             break
         }
         //print(sex)
-        
+
         // 依照被選取項目的index來取得該選項文字，並顯示在lbMessage上
     }
 }
