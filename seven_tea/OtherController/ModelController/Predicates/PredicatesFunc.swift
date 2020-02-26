@@ -38,14 +38,14 @@ class PredicatesFunc: UIViewController {
         }
             //如果電話號碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if checkValidPhoneNumber(input: phone) == false {
-            lbUserName.text = regexmessage
-            lbUserName.shake()
+            lbPhone.text = regexmessage
+            lbPhone.shake()
         }
             //如果電話驗證碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if checkValidVerificationCode(input: validatorsCode) == false {
-            lbPhone.text = regexmessage
-            lbPhone.shake()
-        } else if (checkValidAccount(input: account) == false ) && (checkValidPhoneNumber(input: phone) == false) && (checkValidVerificationCode(input: validatorsCode) == false) {
+            lbValidatorsCode.text = regexmessage
+            lbValidatorsCode.shake()
+        } else if (checkValidAccount(input: account) == true ) && (checkValidPhoneNumber(input: phone) == true) && (checkValidVerificationCode(input: validatorsCode) == true) {
             SendResetForgotPasswordSmsAPI.SendResetForgotPasswordSmsInstance.sendResetForgotPasswordSms(userName: account, phone: phone, validatorsCode: validatorsCode) {
                 (result) in
                 if result {
@@ -93,7 +93,7 @@ class PredicatesFunc: UIViewController {
             loginMessage.getLoginMessage(username: account, password: userpassword)
         }
     }
-
+    
     func sendMemberRegisterInfo(password: String, againEnterpassword: String, account: String, name: String, sex: String, phone: String, uservalidatorscode: String, lbMessage: UILabel) {
         //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         if checkValidPassword(input: password) == false {
@@ -101,7 +101,7 @@ class PredicatesFunc: UIViewController {
             lbMessage.shake()
         }
             //如果密碼輸入兩次不一樣 回傳訊息告知
-        else if password == againEnterpassword {
+        else if password != againEnterpassword {
             lbMessage.text = "＊兩次密碼輸入不同"
             lbMessage.shake()
         }
@@ -110,6 +110,7 @@ class PredicatesFunc: UIViewController {
             memberRegisterMessage.getMemberRegisterMessageInfo(username: account, name: name, sex: sex, phone: phone, password: password, passwordConfirmation: againEnterpassword, validatorsCode: uservalidatorscode)
         }
     }
+    
     func jumpSendMemberRegisterInfo(username: String, name: String, lbUserName: UILabel, lbName: UILabel, phone: String, sex: String, uservalidatorscode: String) {
         //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         if checkValidAccount(input: username) == false {
@@ -124,7 +125,7 @@ class PredicatesFunc: UIViewController {
         }
         //當兩個都為規定以後即可進入
         else if  (checkValidAccount(input: username) == true) && (name != "") {
-            jumpSendMemberRegisterInfo(username: username, name: name, phone: phone, sex: sex, uservalidatorscode: uservalidatorscode)
+            self.jumpSendMemberRegisterInfo(username: username, name: name, phone: phone, sex: sex, uservalidatorscode: uservalidatorscode)
         }
     }
 
