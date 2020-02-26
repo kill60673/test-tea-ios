@@ -10,7 +10,7 @@ import UIKit
 var resetPassword: UIViewController!
 
 class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
-   
+
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var tfAgainEnterPassword: UITextField!
     @IBOutlet weak var lbPrompt: UILabel!

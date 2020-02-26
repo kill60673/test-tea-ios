@@ -25,7 +25,7 @@ class SendResetForgotPasswordSmsAPI: NSObject {
     //        }
     //    }
 
-    func sendResetForgotPasswordSms(userName: String, phone: String, validatorsCode: String, handler : @escaping (Bool)->Void) {
+    func sendResetForgotPasswordSms(userName: String, phone: String, validatorsCode: String, handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.sendResetForgotPasswordUrl)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")

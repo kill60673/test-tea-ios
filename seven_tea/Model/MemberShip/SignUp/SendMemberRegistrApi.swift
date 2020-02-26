@@ -37,7 +37,7 @@ class SendMemberRegistrApi: NSObject {
 //        }
 //    }
 
-    func sendMemberRegister( handler : @escaping (Bool)->Void) {
+    func sendMemberRegister( handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.sendMemberRegistrUrl)!
         var request = URLRequest(url: url)
 //        request.setValue("application/json" , forHTTPHeaderField : "Accept")

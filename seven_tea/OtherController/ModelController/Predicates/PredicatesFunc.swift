@@ -46,8 +46,7 @@ class PredicatesFunc: UIViewController {
             lbValidatorsCode.text = regexmessage
             lbValidatorsCode.shake()
         } else if (checkValidAccount(input: account) == true ) && (checkValidPhoneNumber(input: phone) == true) && (checkValidVerificationCode(input: validatorsCode) == true) {
-            SendResetForgotPasswordSmsAPI.SendResetForgotPasswordSmsInstance.sendResetForgotPasswordSms(userName: account, phone: phone, validatorsCode: validatorsCode) {
-                (result) in
+            SendResetForgotPasswordSmsAPI.SendResetForgotPasswordSmsInstance.sendResetForgotPasswordSms(userName: account, phone: phone, validatorsCode: validatorsCode) {(result) in
                 if result {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         self.jumpRestPassword(account: account, phone: phone, validatorsCode: validatorsCode)
@@ -93,7 +92,7 @@ class PredicatesFunc: UIViewController {
             loginMessage.getLoginMessage(username: account, password: userpassword)
         }
     }
-    
+
     func sendMemberRegisterInfo(password: String, againEnterpassword: String, account: String, name: String, sex: String, phone: String, uservalidatorscode: String, lbMessage: UILabel) {
         //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         if checkValidPassword(input: password) == false {
@@ -110,7 +109,7 @@ class PredicatesFunc: UIViewController {
             memberRegisterMessage.getMemberRegisterMessageInfo(username: account, name: name, sex: sex, phone: phone, password: password, passwordConfirmation: againEnterpassword, validatorsCode: uservalidatorscode)
         }
     }
-    
+
     func jumpSendMemberRegisterInfo(username: String, name: String, lbUserName: UILabel, lbName: UILabel, phone: String, sex: String, uservalidatorscode: String) {
         //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         if checkValidAccount(input: username) == false {
