@@ -9,11 +9,10 @@
 import Foundation
 class RestPasswordApi: NSObject {
     static let RestPasswordApiInstance = RestPasswordApi()
-    func restPassword(userName: String, phone: String, validatorsCode: String, password: String, passwordConfirmation: String ) {
+    func restPassword(handler : @escaping (Bool) -> Void ) {
         let url = URL(string: ApiUrl.ApiUrlInstance.restPasswordUrl)!
         var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-//用data放入尚未修改完
+//        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         let postString = datas
@@ -29,17 +28,20 @@ class RestPasswordApi: NSObject {
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: "\(resetPassword.message)")
+                        handler(true)
                     }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: "\(resetPassword.message)")
+                        handler(false)
                     }
                 }
             } else {
                 //主線程
                 DispatchQueue.main.async {
                     MessageAlert.Instance.message(message: "資料解析錯誤")
+                    handler(false)
                 }
             }
         }

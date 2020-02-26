@@ -24,8 +24,8 @@ class PredicatesFunc: UIViewController {
             lbPrompt.shake()
         }
             //當判斷兩個都不是false的時候進入
-        else if (checkValidPassword(input: password) == false) && ((againenterpassword == password)) {
-            RestPasswordApi.RestPasswordApiInstance.restPassword(userName: name, phone: phonenumber, validatorsCode: uservalidatorscode, password: password, passwordConfirmation: againenterpassword)
+        else if (checkValidPassword(input: password) == true) && ((againenterpassword == password)) {
+            memberRegisterMessage.getResetPassword(userName: name, phone: phonenumber, validatorsCode: uservalidatorscode, password: password, passwordConfirmation: againenterpassword)
         }
     }
 
