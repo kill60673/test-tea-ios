@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class GetMemberRegisterMessage: UIViewController {
-
+    
     //    將資料放進object的func
     func getMemberRegisterMessage(phone: String, validatorsCode: String) {
         let postSTring  = MemberRegisterMessage(phone: phone, validatorsCode: validatorsCode)
@@ -42,11 +42,11 @@ class GetMemberRegisterMessage: UIViewController {
                     return
                     //如有跳轉至某頁面之後再補上 現在註冊流程到這邊會註冊完不需要繼續換頁因此不用呼叫jumpfunc
                 } else {
-
+                    
                 }
             }
         }
-
+        
     }
     func getForgotPasswordSms(account: String, phone: String) {
         let postSTring  = ForgotPasswordSms(username: account, phone: phone)
@@ -57,12 +57,28 @@ class GetMemberRegisterMessage: UIViewController {
             print(data)
             ForgotPasswordSmsAPI.ForgotPasswordSmsInstance.forgotPasswordSms {(result) in
                 if result {
-                return
+                    return
                 } else {
-
+                    
                 }
             }
         }
     }
-
+    func getResetPassword(userName: String , phone: String, validatorsCode: String, password: String, passwordConfirmation: String){
+        let postSTring  = ResetPassword(username: userName, phone: phone, validatorsCode: validatorsCode, password: password, passwordConifmation: passwordConfirmation)
+        let encoder = JSONEncoder()
+        if let data = try? encoder.encode(postSTring) {
+            print(postSTring)
+            datas = data
+            print(data)
+            RestPasswordApi.RestPasswordApiInstance.restPassword { (result) in
+                if result {
+                    result
+                } else {
+                    
+                }
+            }
+            
+        }
+    }
 }

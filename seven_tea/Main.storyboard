@@ -681,6 +681,9 @@
                                         <state key="normal" title="確認">
                                             <color key="titleColor" red="0.1057049115" green="0.14635029820000001" blue="0.36512531729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btSubmit:" destination="zBp-vo-HXX" eventType="touchUpInside" id="mB9-p3-tns"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -12,3 +12,11 @@ struct RestPasswordCodable: Codable {
     var message: String
     var data: Data
 }
+struct ResetPassword : Codable {
+    var username: String
+    var phone: String
+    var validatorsCode: String
+    var password: String
+    var passwordConifmation: String
+}
+//userName: String , phone: String, validatorsCode: String, password: String, passwordConfirmation: String
