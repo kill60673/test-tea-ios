@@ -11,7 +11,7 @@ import UIKit
 class ForgotPasswordSmsAPI: NSObject {
     static let ForgotPasswordSmsInstance = ForgotPasswordSmsAPI()
 
-    func forgotPasswordSms(handler : @escaping (Bool)->Void) {
+    func forgotPasswordSms(handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.forgotPasswordSmsUrl)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")

@@ -12,7 +12,7 @@ class LoginAPI: NSObject {
 
     //將資料放進object的func
     // 登入用API
-    func login(handler : @escaping (Bool)->Void) {
+    func login(handler : @escaping (Bool) -> Void) {
 
         let url = URL(string: ApiUrl.ApiUrlInstance.loginUrl)!
         var request = URLRequest(url: url)
