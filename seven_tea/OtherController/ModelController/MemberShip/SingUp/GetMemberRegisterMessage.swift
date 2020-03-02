@@ -109,7 +109,7 @@ class GetMemberRegisterMessage: UIViewController {
             print(data)
             MemberRegiseterSmsApi.MemberRegisterSmsInstance.sendMemberRegisterSms { (result) in
                 if result {
-                    result
+                    return
                 } else {
                 }
             }
