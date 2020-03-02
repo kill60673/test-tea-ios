@@ -18,7 +18,7 @@ class RestPasswordApi: NSObject {
         let postString = datas
         request.httpBody = postString
         let task = URLSession.shared.dataTask(with: request) {
-            data, response, error in
+            data, _, _ in
             //let responseString = String(data: data!, encoding: .utf8)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601

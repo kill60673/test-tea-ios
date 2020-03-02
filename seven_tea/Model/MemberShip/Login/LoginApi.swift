@@ -23,7 +23,7 @@ class LoginAPI: NSObject {
         request.httpBody = datas
 
         let task = URLSession.shared.dataTask(with: request) {
-            data, response, error in
+            data, _, _ in
             let responseString = String(data: data!, encoding: .utf8)
             print(responseString as Any)
             let decoder = JSONDecoder()

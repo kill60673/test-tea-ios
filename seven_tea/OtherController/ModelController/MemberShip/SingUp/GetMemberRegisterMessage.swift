@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class GetMemberRegisterMessage: UIViewController {
-    
+
     //    將資料放進object的func
     func getMemberRegisterMessage(phone: String, validatorsCode: String) {
         let postSTring  = MemberRegisterMessage(phone: phone, validatorsCode: validatorsCode)
@@ -24,7 +24,7 @@ class GetMemberRegisterMessage: UIViewController {
                     return
                         self.jumpSendMemberRegistr(phone: phone, validatorsCode: validatorsCode)
                 } else {
-                    
+
                 }
             }
         }
@@ -42,11 +42,11 @@ class GetMemberRegisterMessage: UIViewController {
                     return
                     //如有跳轉至某頁面之後再補上 現在註冊流程到這邊會註冊完不需要繼續換頁因此不用呼叫jumpfunc
                 } else {
-                    
+
                 }
             }
         }
-        
+
     }
     func getForgotPasswordSms(account: String, phone: String) {
         let postSTring  = ForgotPasswordSms(username: account, phone: phone)
@@ -59,12 +59,12 @@ class GetMemberRegisterMessage: UIViewController {
                 if result {
                     return
                 } else {
-                    
+
                 }
             }
         }
     }
-    func getResetPassword(userName: String , phone: String, validatorsCode: String, password: String, passwordConfirmation: String){
+    func getResetPassword(userName: String, phone: String, validatorsCode: String, password: String, passwordConfirmation: String) {
         let postSTring  = ResetPassword(username: userName, phone: phone, validatorsCode: validatorsCode, password: password, passwordConifmation: passwordConfirmation)
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(postSTring) {
@@ -75,31 +75,30 @@ class GetMemberRegisterMessage: UIViewController {
                 if result {
                     result
                 } else {
-                    
+
                 }
             }
-            
+
         }
     }
-    func getSendResetForgotPassword(userName: String , phone : String , validatorsCode : String ){
+    func getSendResetForgotPassword(userName: String, phone: String, validatorsCode: String ) {
         let postSTring  = SendResetForgorPasswordMessage(username: userName, phone: phone, validatorsCode: validatorsCode)
         let encoder = JSONEncoder()
-        if let data = try? encoder.encode(postSTring)
-        {
+        if let data = try? encoder.encode(postSTring) {
             print(postSTring)
             datas = data
-            SendResetForgotPasswordSmsAPI.SendResetForgotPasswordSmsInstance.sendResetForgotPasswordSms  { (result) in
-                if result{
+            SendResetForgotPasswordSmsAPI.SendResetForgotPasswordSmsInstance.sendResetForgotPasswordSms { (result) in
+                if result {
 //DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 //                       self.jumpRestPassword(account: account, phone: phone, validatorsCode: validatorsCode)
 //                   }
                     return
                 } else {
-                    
+
                 }
             }
-            
+
         }
     }
-    
+
 }
