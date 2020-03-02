@@ -10,7 +10,7 @@ import Foundation
 
 class MemberRegiseterSmsApi: NSObject {
     static let MemberRegisterSmsInstance = MemberRegiseterSmsApi()
-    var datas = Data()
+
 
     //將資料放進object的func
 //    func getMemberRegisterSmsMessage(phone:String)
@@ -26,16 +26,16 @@ class MemberRegiseterSmsApi: NSObject {
 //        }
 //
 //    }
-    func sendMemberRegisterSms(phone: String) {
+    func sendMemberRegisterSms(handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.sendMemberRegisterSmsUrl)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        let postString = "phone=\(phone)"
-        request.httpBody = postString.data(using: .utf8)
+        let postString = datas
+        request.httpBody = postString
         let task = URLSession.shared.dataTask(with: request) {
-            data, response, error in
+            data, _, _ in
             let responseString = String(data: data!, encoding: .utf8)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
@@ -44,11 +44,13 @@ class MemberRegiseterSmsApi: NSObject {
                 if sms.success == true {
                     //主線程
                     DispatchQueue.main.async {
+                            handler(true)
                             MessageAlert.Instance.message(message: "\(sms.message)")
                     }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
+                        handler(false)
                             MessageAlert.Instance.message(message: "\(sms.message)")
                     }
                 }

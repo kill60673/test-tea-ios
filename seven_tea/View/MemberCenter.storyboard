@@ -10,7 +10,7 @@
         <!--會員中心-->
         <scene sceneID="NwB-L8-h6h">
             <objects>
-                <viewController id="7KX-uC-osR" sceneMemberID="viewController">
+                <viewController id="7KX-uC-osR" customClass="MenberCenterViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4le-Qi-QRH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,6 +68,67 @@
             </objects>
             <point key="canvasLocation" x="956.52173913043487" y="-168.08035714285714"/>
         </scene>
+        <!--通知中心-->
+        <scene sceneID="UNA-yp-3SO">
+            <objects>
+                <tableViewController id="Cyc-Dy-Zjk" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ng0-c2-uc3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ese-QQ-JeM">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ese-QQ-JeM" id="Jwq-6x-VRv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Cyc-Dy-Zjk" id="d1D-4M-Pw8"/>
+                            <outlet property="delegate" destination="Cyc-Dy-Zjk" id="enZ-4M-uVg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="通知中心" id="lxR-t5-Rca"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rH3-IV-h77" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957" y="535"/>
+        </scene>
+        <!--我的累積-->
+        <scene sceneID="57U-AR-VHB">
+            <objects>
+                <viewController id="zkW-3n-hze" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U4i-Ge-cVL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="NW9-aT-FYb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的累積" id="dJA-cC-Bgh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eIb-eX-KCF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1898" y="546"/>
+        </scene>
+        <!--我的最愛-->
+        <scene sceneID="IZY-r5-jR8">
+            <objects>
+                <viewController id="crP-ws-wdv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2NW-tb-Mg3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="foH-rX-AgT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的最愛" id="t6v-Ew-RIK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUc-yM-N2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2743" y="-168"/>
+        </scene>
         <!--帳戶資料-->
         <scene sceneID="0L0-kx-dmD">
             <objects>
@@ -94,7 +155,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGL-Mm-4ao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689.8550724637682" y="-174.10714285714286"/>
+            <point key="canvasLocation" x="1877" y="-168"/>
         </scene>
     </scenes>
     <resources>

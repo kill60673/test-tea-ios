@@ -9,7 +9,7 @@
 import Foundation
 class SendResetForgotPasswordSmsAPI: NSObject {
     static let SendResetForgotPasswordSmsInstance = SendResetForgotPasswordSmsAPI()
-       
+
     func sendResetForgotPasswordSms(handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.sendResetForgotPasswordUrl)!
         var request = URLRequest(url: url)
@@ -20,7 +20,7 @@ class SendResetForgotPasswordSmsAPI: NSObject {
         request.httpBody = postString
 //        print(postString)
         let task = URLSession.shared.dataTask(with: request) {
-            data, response, error in
+            data, _, _ in
             //            let responseString = String(data: data!, encoding: .utf8)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601

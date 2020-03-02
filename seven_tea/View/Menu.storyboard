@@ -7,20 +7,129 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--選擇飲品-->
         <scene sceneID="CTw-Wg-uI3">
             <objects>
                 <viewController id="qpM-rC-FMH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EWL-Gg-Lxk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTk-Zg-3d3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="X8d-4v-D5h">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="420"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoa-cg-hTc">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="60"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="4fi-cr-6rD"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="a4c-MV-FtK"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.16432561530000001" green="0.033231085289999997" blue="0.15136400080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="人氣TOP"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lly-eL-KPf">
+                                                <rect key="frame" x="0.0" y="60" width="124" height="60"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="aLJ-Ko-NQF"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="dMn-lA-Jcc"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.16432561530000001" green="0.033231085289999997" blue="0.15136400080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="七時韻"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PN9-B6-2Ft">
+                                                <rect key="frame" x="0.0" y="120" width="124" height="60"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="S2a-nM-s4h"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="ktj-lE-hN1"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.16432561530000001" green="0.033231085289999997" blue="0.15136400080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="七盞名茶"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9X-Hc-fke">
+                                                <rect key="frame" x="0.0" y="180" width="124" height="60"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="8jB-xo-wI3"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Khm-1j-gLE"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.16432561530000001" green="0.033231085289999997" blue="0.15136400080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="風味多多"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9X6-Pe-fey">
+                                                <rect key="frame" x="0.0" y="240" width="124" height="60"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="EQ4-qR-4QO"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Stx-aX-vgt"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.16432561530000001" green="0.033231085289999997" blue="0.15136400080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="季節限定"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqk-Qr-k73">
+                                                <rect key="frame" x="0.0" y="300" width="124" height="60"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="CUE-39-cIr"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="w3w-IS-nDk"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.16432561530000001" green="0.033231085289999997" blue="0.15136400080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="鮮奶茶風"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQz-5u-cBq">
+                                                <rect key="frame" x="0.0" y="360" width="124" height="60"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="lg0-Y5-JVI"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="tTk-wt-qtm"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.16432561530000001" green="0.033231085289999997" blue="0.15136400080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="香韻回味"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-Sg-r7l">
+                                        <rect key="frame" x="132" y="0.0" width="274" height="818"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="86" id="6RY-2Q-GLZ">
+                                                <rect key="frame" x="0.0" y="28" width="274" height="86"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6RY-2Q-GLZ" id="dCS-og-dtP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="274" height="86"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="X8d-4v-D5h" firstAttribute="top" secondItem="KTk-Zg-3d3" secondAttribute="top" id="Ge0-Jo-jAC"/>
+                                    <constraint firstItem="X8d-4v-D5h" firstAttribute="leading" secondItem="KTk-Zg-3d3" secondAttribute="leading" id="egX-97-Wu0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KTk-Zg-3d3" firstAttribute="leading" secondItem="bYz-M7-m3S" secondAttribute="leading" id="0eF-hw-ar3"/>
+                            <constraint firstItem="KTk-Zg-3d3" firstAttribute="centerX" secondItem="EWL-Gg-Lxk" secondAttribute="centerX" id="WDb-qu-eml"/>
+                            <constraint firstItem="KTk-Zg-3d3" firstAttribute="top" secondItem="bYz-M7-m3S" secondAttribute="top" id="e7W-36-Jjs"/>
+                            <constraint firstItem="KTk-Zg-3d3" firstAttribute="bottom" secondItem="bYz-M7-m3S" secondAttribute="bottom" id="p2V-ll-8HQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bYz-M7-m3S"/>
                     </view>
+                    <navigationItem key="navigationItem" title="選擇飲品" id="qvm-TF-6zq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMM-24-rtL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-370" y="-270"/>
+            <point key="canvasLocation" x="-371.01449275362324" y="-270.53571428571428"/>
         </scene>
     </scenes>
 </document>

@@ -36,16 +36,10 @@ class MemberRegiseterViewController: UIViewController, UITextFieldDelegate {
         let phone = tfPhone.text ?? ""
         //        let verifcationcode = VerificationCodeTimer()
         lbMessage.text = ""
-
+        triggerTimer(button: btValidatorsCode)
+        predicatesFunc.getMemberSmsApi(phone: phone, lbMessage: lbMessage)
         //計時器傳值問題尚未解開
         // 使用正規表示法來去判斷說 是否為正確輸入文字 以及是否為空
-        if checkValidPhoneNumber(input: phone) == true {
-            MemberRegiseterSmsApi.MemberRegisterSmsInstance.sendMemberRegisterSms(phone: phone)
-            triggerTimer(button: btValidatorsCode)
-        } else {
-            lbMessage.text = regexmessage
-            lbMessage.shake()
-        }
     }
 
     // 2/13利用正規表示法來修正判斷式 已修正完成

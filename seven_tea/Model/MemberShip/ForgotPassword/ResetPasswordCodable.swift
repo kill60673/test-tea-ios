@@ -12,7 +12,7 @@ struct RestPasswordCodable: Codable {
     var message: String
     var data: Data
 }
-struct ResetPassword : Codable {
+struct ResetPassword: Codable {
     var username: String
     var phone: String
     var validatorsCode: String
