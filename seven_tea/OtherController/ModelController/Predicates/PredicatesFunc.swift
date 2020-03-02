@@ -133,4 +133,13 @@ class PredicatesFunc: UIViewController {
             memberRegisterMessage.getMemberRegisterMessage(phone: phone, validatorsCode: validatorsCode)
         }
     }
+
+    func getMemberSmsApi(phone: String, lbMessage: UILabel) {
+        if checkValidPhoneNumber(input: phone) == true {
+            memberRegisterMessage.getMemberRegisterSmsMessage(phone: phone)
+              } else {
+                  lbMessage.text = regexmessage
+                  lbMessage.shake()
+              }
+    }
 }

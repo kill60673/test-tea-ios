@@ -293,11 +293,11 @@
 			isa = PBXGroup;
 			children = (
 				84FADF1823F66A7F00C824C6 /* MemberRegiseterSmsApi.swift */,
-				84FADF1A23F66CBE00C824C6 /* MemberRegisterInfoCodable.swift */,
-				84FADF1C23F66E9200C824C6 /* MemberRegistrtCodable.swift */,
-				84FADF1E23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift */,
 				84EEC5EB23D410B8005627FF /* MemberRegisterSmsCodable.swift */,
+				84FADF1E23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift */,
+				84FADF1A23F66CBE00C824C6 /* MemberRegisterInfoCodable.swift */,
 				84FADF2023F6712700C824C6 /* SendMemberRegistrApi.swift */,
+				84FADF1C23F66E9200C824C6 /* MemberRegistrtCodable.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
