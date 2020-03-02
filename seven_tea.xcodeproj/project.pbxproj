@@ -233,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				84EEC63223D42280005627FF /* MenberShipViewController */,
-				84EEC60323D413EA005627FF /* MemberCenterViewController */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -477,6 +476,7 @@
 				84FADF2723F6775600C824C6 /* MemberRegiseterViewController.swift */,
 				84FADF2B23F678B600C824C6 /* SendMemberRegistrViewController.swift */,
 				84FADF2523F675D200C824C6 /* SendMemberRegisterInfoViewController.swift */,
+				84EEC60323D413EA005627FF /* MemberCenterViewController */,
 			);
 			path = SingUpViewController;
 			sourceTree = "<group>";
