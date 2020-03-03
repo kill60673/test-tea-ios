@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		405E73E13BC44114DFD156E5 /* Pods_seven_tea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F156A33D2D853E29BDEB8C00 /* Pods_seven_tea.framework */; };
+		84316BFD240E4EC3002CD226 /* MemberInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */; };
+		84316BFF240E4FB4002CD226 /* MemberInfoCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
@@ -74,6 +76,8 @@
 
 /* Begin PBXFileReference section */
 		34C1A446550C46E86D532640 /* Pods-seven_tea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seven_tea.release.xcconfig"; path = "Target Support Files/Pods-seven_tea/Pods-seven_tea.release.xcconfig"; sourceTree = "<group>"; };
+		84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoApi.swift; sourceTree = "<group>"; };
+		84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoCodable.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
@@ -275,6 +279,7 @@
 				84EEC5E923D30162005627FF /* AccountInformation */,
 				84EEC5E823D3015F005627FF /* FrequentlyAskedQuestions */,
 				84EEC5E723D30147005627FF /* MyFavorite */,
+				84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */,
 			);
 			path = MemberCenter;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				84EEC61823D415A8005627FF /* MyFavoriteApi.swift */,
 				84EEC61A23D415B5005627FF /* MyFavoriteCodable.swift */,
 				84EEC61C23D415CB005627FF /* MyFavorite.swift */,
+				84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */,
 			);
 			path = MyFavorite;
 			sourceTree = "<group>";
@@ -699,9 +705,11 @@
 				84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */,
 				84EEC5CC23D1C314005627FF /* AppDelegate.swift in Sources */,
 				84C2E2BB23ED26A7008AB33F /* ResetPasswordViewController.swift in Sources */,
+				84316BFF240E4FB4002CD226 /* MemberInfoCodable.swift in Sources */,
 				84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */,
 				84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */,
 				84EEC61123D41529005627FF /* AccountFomationViewController.swift in Sources */,
+				84316BFD240E4EC3002CD226 /* MemberInfoApi.swift in Sources */,
 				84FADF2823F6775600C824C6 /* MemberRegiseterViewController.swift in Sources */,
 				84F7C88523E7FE460097EAD0 /* MessageAlert.swift in Sources */,
 				84EEC62D23D421EE005627FF /* AccountinfomationModelController.swift in Sources */,
