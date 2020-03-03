@@ -31,6 +31,9 @@
                                         <state key="normal" title="登出">
                                             <color key="titleColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btLogout:" destination="7KX-uC-osR" eventType="touchUpInside" id="zMb-rL-ATB"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a01-mn-FO1">
                                         <rect key="frame" x="101" y="134" width="212" height="39"/>
@@ -63,6 +66,13 @@
                         <viewLayoutGuide key="safeArea" id="PRB-xw-rxK"/>
                     </view>
                     <navigationItem key="navigationItem" title="會員中心" id="c6G-Tn-GtK"/>
+                    <connections>
+                        <outlet property="MemberTableView" destination="a1O-8I-AYM" id="UE6-eC-cTn"/>
+                        <outlet property="MemberView" destination="GoK-Te-Gfo" id="dQL-4V-UkV"/>
+                        <outlet property="btLogout" destination="pW3-zr-oUK" id="3ue-Wu-Oyx"/>
+                        <outlet property="lbName" destination="a01-mn-FO1" id="r7W-HE-Cj7"/>
+                        <outlet property="memberTableView" destination="a1O-8I-AYM" id="TR4-jV-rhs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zY0-Aw-8BR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
