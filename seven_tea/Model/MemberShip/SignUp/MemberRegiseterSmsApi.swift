@@ -11,7 +11,6 @@ import Foundation
 class MemberRegiseterSmsApi: NSObject {
     static let MemberRegisterSmsInstance = MemberRegiseterSmsApi()
 
-
     //將資料放進object的func
 //    func getMemberRegisterSmsMessage(phone:String)
 //    {

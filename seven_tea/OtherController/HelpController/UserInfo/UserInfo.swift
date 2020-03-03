@@ -13,7 +13,8 @@ class UserInfo: NSObject {
 
     private override init() {
     }
-    func save(token: String, username: String, email: String, phone: String, name: String, point: Int, address: String, loveAddress: [String]) {
+    func save(token: String, username: String, email: String, phone: String, name: String, point: Int, address: String) {
+        print("我有近來這邊")
         preferences.set(token, forKey: "token")
         preferences.set(username, forKey: "username")
         preferences.set(email, forKey: "email")
@@ -21,7 +22,7 @@ class UserInfo: NSObject {
         preferences.set(name, forKey: "name")
         preferences.set(point, forKey: "point")
         preferences.set(address, forKey: "address")
-        preferences.set(loveAddress, forKey: "love_address")
+//        preferences.set(loveAddress, forKey: "love_address")
     }
 
     func delete() {
@@ -33,11 +34,12 @@ class UserInfo: NSObject {
         preferences.removeObject(forKey: "point")
         preferences.removeObject(forKey: "address")
         preferences.removeObject(forKey: "love_address")
-        preferences.removeObject(forKey: "CommonAddress")
+//        preferences.removeObject(forKey: "CommonAddress")
     }
     func update(oldToken: String, newToken: String) {
         print("老\(oldToken)")
         print("新\(newToken)")
+        print("我有進來")
         if newToken != "" && oldToken != newToken {
             preferences.set(newToken, forKey: "token")
             // 建立新的Token

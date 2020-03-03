@@ -6,7 +6,6 @@ import Foundation
 import UIKit
 class SendMemberRegisterInfoAPI: NSObject {
     static let MemberRegisterInstance = SendMemberRegisterInfoAPI()
-    var datas = Data()
     func sendMemberRegisterInfo( handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.sendMemberRegisterInfoUrl)!
         var request = URLRequest(url: url)
