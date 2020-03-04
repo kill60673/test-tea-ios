@@ -12,6 +12,7 @@ class MemberInfoApi: NSObject {
     var newToken: String!
     static let MemberInfoInstance = MemberInfoApi()
     func memberInfo(token: String) {
+        print("我有進來")
         let url = URL(string: ApiUrl.ApiUrlInstance.memberInfoUrl)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -37,6 +38,7 @@ class MemberInfoApi: NSObject {
                 decoder.decode(MemberInfoCodable.self, from: data) {
                 if memberInfo.result == 0 {
                     if self.newToken == "" {
+                        print("我有進來這裡")
                         UserInfo.UserInfoInstance.save(token: token, username: (memberInfo.message?.username)!,
                                                        email: (memberInfo.message?.email)!,
                                                        phone: (memberInfo.message?.phone)!,
