@@ -21,27 +21,27 @@ class LoginAPI: NSObject {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         request.httpBody = datas
-
         let task = URLSession.shared.dataTask(with: request) {
             data, _, _ in
             let responseString = String(data: data!, encoding: .utf8)
-            print(responseString as Any)
+//            print(responseString as Any)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             // 做 do catch 如果任何例外事件 就在catch print出error
             if let data = data {
                 do {
-                    print(data)
                     let login = try decoder.decode(LoginCodable.self, from: data)
                     if login.success == true {
                         DispatchQueue.main.async {
-                                MessageAlert.Instance.message(message: "登入成功")
+                            MemberInfoApi.MemberInfoInstance.memberInfo(token: "Bearer \(login.data.token)")
+                            print(login.data.token)
+                            MessageAlert.Instance.message(message: login.message)
                                 handler(true)
-
                         }
                     } else {
                         DispatchQueue.main.async {
-                                MessageAlert.Instance.message(message: "登入失敗")
+                            print(login.data)
+                            MessageAlert.Instance.message(message: login.message)
                                 handler(false)
                         }
                     }

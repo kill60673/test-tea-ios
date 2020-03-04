@@ -176,6 +176,13 @@
 			path = AllList;
 			sourceTree = "<group>";
 		};
+		84316C05240FA8A0002CD226 /* TableViewFunc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewFunc;
+			sourceTree = "<group>";
+		};
 		84C2E2A923EBDD4C008AB33F /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +297,7 @@
 				84EEC5E823D3015F005627FF /* FrequentlyAskedQuestions */,
 				84EEC5E723D30147005627FF /* MyFavorite */,
 				84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */,
+				84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */,
 			);
 			path = MemberCenter;
 			sourceTree = "<group>";
@@ -322,7 +330,6 @@
 				84EEC61823D415A8005627FF /* MyFavoriteApi.swift */,
 				84EEC61A23D415B5005627FF /* MyFavoriteCodable.swift */,
 				84EEC61C23D415CB005627FF /* MyFavorite.swift */,
-				84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */,
 			);
 			path = MyFavorite;
 			sourceTree = "<group>";
@@ -350,6 +357,7 @@
 		84EEC5FB23D412F9005627FF /* HelpController */ = {
 			isa = PBXGroup;
 			children = (
+				84316C05240FA8A0002CD226 /* TableViewFunc */,
 				84316C00240E5CCC002CD226 /* AllList */,
 				84FADF4423FE88B200C824C6 /* AppOverAllStyle */,
 				84FADF3323F7CA6100C824C6 /* UIelementsController */,

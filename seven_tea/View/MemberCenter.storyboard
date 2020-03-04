@@ -20,7 +20,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="portraitpsn" translatesAutoresizingMaskIntoConstraints="NO" id="e4e-ZW-tjX">
-                                        <rect key="frame" x="167" y="19" width="80" height="80"/>
+                                        <rect key="frame" x="167" y="50" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW3-zr-oUK">
@@ -35,7 +35,7 @@
                                             <action selector="btLogout:" destination="7KX-uC-osR" eventType="touchUpInside" id="zMb-rL-ATB"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a01-mn-FO1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a01-mn-FO1">
                                         <rect key="frame" x="101" y="134" width="212" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -43,7 +43,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.1262966096" green="0.17269882559999999" blue="0.42355251310000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a1O-8I-AYM">
@@ -51,15 +51,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="122" id="qBv-Nn-PZB">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="122"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MemberCenterCell" rowHeight="70" id="qBv-Nn-PZB">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qBv-Nn-PZB" id="sGH-i5-pJ5">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="122"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7KX-uC-osR" id="Ve0-Y4-M0E"/>
+                                    <outlet property="delegate" destination="7KX-uC-osR" id="7cO-Hb-EV0"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -67,11 +71,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="會員中心" id="c6G-Tn-GtK"/>
                     <connections>
-                        <outlet property="MemberTableView" destination="a1O-8I-AYM" id="UE6-eC-cTn"/>
-                        <outlet property="MemberView" destination="GoK-Te-Gfo" id="dQL-4V-UkV"/>
                         <outlet property="btLogout" destination="pW3-zr-oUK" id="3ue-Wu-Oyx"/>
                         <outlet property="lbName" destination="a01-mn-FO1" id="r7W-HE-Cj7"/>
                         <outlet property="memberTableView" destination="a1O-8I-AYM" id="TR4-jV-rhs"/>
+                        <outlet property="memberView" destination="GoK-Te-Gfo" id="HEd-WT-8JK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zY0-Aw-8BR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
