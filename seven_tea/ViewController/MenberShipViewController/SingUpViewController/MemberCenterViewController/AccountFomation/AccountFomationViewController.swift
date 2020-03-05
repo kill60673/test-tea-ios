@@ -10,24 +10,24 @@ import UIKit
 import Foundation
 
 class AccountFomationViewController: UITableViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
+
         return 2
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
            return 25
        }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
+
         if section == 0 {
             return accountInfoList.count
         } else {
@@ -35,18 +35,15 @@ class AccountFomationViewController: UITableViewController {
         }
     }
 
-
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "afccell", for: indexPath)
         if indexPath.section == 0 {
             cell.textLabel?.text = accountInfoList[indexPath.row]
-        }else {
+        } else {
             cell.textLabel?.text = address[indexPath.row]
         }
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
