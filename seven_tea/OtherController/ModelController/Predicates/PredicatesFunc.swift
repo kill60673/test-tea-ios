@@ -55,13 +55,13 @@ class PredicatesFunc: UIViewController {
         //      let verificationcode = VerificationCodeTimer()
         //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         if checkValidAccount(input: account) == false {
-            lbPhone.text = regexmessage
-            lbPhone.shake()
+            lbUserName.text = regexmessage
+            lbUserName.shake()
         }
             //如果電話號碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         else if checkValidPhoneNumber(input: phone) == false {
-            lbUserName.text = regexmessage
-            lbUserName.shake()
+            lbPhone.text = regexmessage
+            lbPhone.shake()
         } else if (checkValidAccount(input: account) == true) && (checkValidPhoneNumber(input: phone) == true) {
             memberRegisterMessage.getForgotPasswordSms(account: account, phone: phone)
             // 計時器

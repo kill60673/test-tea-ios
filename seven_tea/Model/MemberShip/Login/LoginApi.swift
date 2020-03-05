@@ -34,13 +34,13 @@ class LoginAPI: NSObject {
                     if login.success == true {
                         DispatchQueue.main.async {
                             MemberInfoApi.MemberInfoInstance.memberInfo(token: "Bearer \(login.data.token)")
-                            print(login.data.token)
+//                            print(login.data.token)
                             MessageAlert.Instance.message(message: login.message)
                                 handler(true)
                         }
                     } else {
                         DispatchQueue.main.async {
-                            print(login.data)
+//                            print(login.data)
                             MessageAlert.Instance.message(message: login.message)
                                 handler(false)
                         }
