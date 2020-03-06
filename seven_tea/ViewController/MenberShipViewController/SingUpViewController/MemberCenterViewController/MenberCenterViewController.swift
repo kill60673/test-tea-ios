@@ -54,6 +54,10 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
             let vc = storyboard?.instantiateViewController(withIdentifier: "accountTV")
             show(vc!, sender: self)
             break
+        case 2:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "FAQTV")
+            show(vc!, sender: self)
+            break
         case 3:
             let vc = storyboard?.instantiateViewController(withIdentifier: "TreatyVC")
             show(vc!, sender: self)
