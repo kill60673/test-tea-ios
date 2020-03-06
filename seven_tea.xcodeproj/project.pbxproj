@@ -12,6 +12,8 @@
 		84316BFF240E4FB4002CD226 /* MemberInfoCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */; };
 		84316C02240E5CFF002CD226 /* AllList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316C01240E5CFF002CD226 /* AllList.swift */; };
 		84316C092410D0A9002CD226 /* AccountFomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316C082410D0A9002CD226 /* AccountFomationViewController.swift */; };
+		84316C0F2411FB72002CD226 /* MyFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316C0E2411FB72002CD226 /* MyFavoriteTableViewCell.swift */; };
+		84316C1124124600002CD226 /* FrequentlyAskedQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316C1024124600002CD226 /* FrequentlyAskedQuestionsViewController.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
@@ -34,7 +36,6 @@
 		84EEC60223D4134B005627FF /* MemberCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EEC60123D4134B005627FF /* MemberCenter.storyboard */; };
 		84EEC60523D41483005627FF /* MenberCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC60423D41483005627FF /* MenberCenterViewController.swift */; };
 		84EEC60D23D41503005627FF /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC60C23D41503005627FF /* MyFavoriteViewController.swift */; };
-		84EEC60F23D41518005627FF /* FrequentlyAskedQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC60E23D41518005627FF /* FrequentlyAskedQuestionsViewController.swift */; };
 		84EEC61323D4155C005627FF /* FrequentlyAskedQuestionsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC61223D4155C005627FF /* FrequentlyAskedQuestionsApi.swift */; };
 		84EEC61523D4156F005627FF /* FrequentlyAskedQuestionsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC61423D4156F005627FF /* FrequentlyAskedQuestionsCodable.swift */; };
 		84EEC61723D41586005627FF /* FrequentlyAskedQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC61623D41586005627FF /* FrequentlyAskedQuestions.swift */; };
@@ -81,6 +82,8 @@
 		84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoCodable.swift; sourceTree = "<group>"; };
 		84316C01240E5CFF002CD226 /* AllList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllList.swift; sourceTree = "<group>"; };
 		84316C082410D0A9002CD226 /* AccountFomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFomationViewController.swift; sourceTree = "<group>"; };
+		84316C0E2411FB72002CD226 /* MyFavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		84316C1024124600002CD226 /* FrequentlyAskedQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedQuestionsViewController.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
@@ -105,7 +108,6 @@
 		84EEC60123D4134B005627FF /* MemberCenter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MemberCenter.storyboard; sourceTree = "<group>"; };
 		84EEC60423D41483005627FF /* MenberCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenberCenterViewController.swift; sourceTree = "<group>"; };
 		84EEC60C23D41503005627FF /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
-		84EEC60E23D41518005627FF /* FrequentlyAskedQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedQuestionsViewController.swift; sourceTree = "<group>"; };
 		84EEC61223D4155C005627FF /* FrequentlyAskedQuestionsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedQuestionsApi.swift; sourceTree = "<group>"; };
 		84EEC61423D4156F005627FF /* FrequentlyAskedQuestionsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedQuestionsCodable.swift; sourceTree = "<group>"; };
 		84EEC61623D41586005627FF /* FrequentlyAskedQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedQuestions.swift; sourceTree = "<group>"; };
@@ -404,7 +406,7 @@
 		84EEC60923D414BB005627FF /* FrequentlyAskedQuestions */ = {
 			isa = PBXGroup;
 			children = (
-				84EEC60E23D41518005627FF /* FrequentlyAskedQuestionsViewController.swift */,
+				84316C1024124600002CD226 /* FrequentlyAskedQuestionsViewController.swift */,
 			);
 			path = FrequentlyAskedQuestions;
 			sourceTree = "<group>";
@@ -413,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				84EEC60C23D41503005627FF /* MyFavoriteViewController.swift */,
+				84316C0E2411FB72002CD226 /* MyFavoriteTableViewCell.swift */,
 			);
 			path = MyFavorite;
 			sourceTree = "<group>";
@@ -607,7 +610,6 @@
 				84EEC5C423D1C314005627FF /* Sources */,
 				84EEC5C523D1C314005627FF /* Frameworks */,
 				84EEC5C623D1C314005627FF /* Resources */,
-				84316BF4240521EA002CD226 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -670,23 +672,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		84316BF4240521EA002CD226 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
 		9933A729319B88E17D03668A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -746,6 +731,7 @@
 				84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */,
 				84EEC60D23D41503005627FF /* MyFavoriteViewController.swift in Sources */,
 				84FADF3523F7CAB400C824C6 /* UIelementsController.swift in Sources */,
+				84316C1124124600002CD226 /* FrequentlyAskedQuestionsViewController.swift in Sources */,
 				84FADF1923F66A7F00C824C6 /* MemberRegiseterSmsApi.swift in Sources */,
 				84EEC62623D4215C005627FF /* getLoginMessage.swift in Sources */,
 				84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */,
@@ -761,6 +747,7 @@
 				84EEC5CE23D1C314005627FF /* SceneDelegate.swift in Sources */,
 				84FADF4E23FE8B9500C824C6 /* GetMemberRegisterMessage.swift in Sources */,
 				84EEC61D23D415CB005627FF /* MyFavorite.swift in Sources */,
+				84316C0F2411FB72002CD226 /* MyFavoriteTableViewCell.swift in Sources */,
 				84FADF2123F6712800C824C6 /* SendMemberRegistrApi.swift in Sources */,
 				84EEC60523D41483005627FF /* MenberCenterViewController.swift in Sources */,
 				84EEC5FA23D412C9005627FF /* AccountApi.swift in Sources */,
@@ -771,7 +758,6 @@
 				84EEC61723D41586005627FF /* FrequentlyAskedQuestions.swift in Sources */,
 				84F7C89023EAD1C90097EAD0 /* LoginApi.swift in Sources */,
 				84316C02240E5CFF002CD226 /* AllList.swift in Sources */,
-				84EEC60F23D41518005627FF /* FrequentlyAskedQuestionsViewController.swift in Sources */,
 				84EEC61B23D415B5005627FF /* MyFavoriteCodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

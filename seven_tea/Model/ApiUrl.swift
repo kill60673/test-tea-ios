@@ -18,6 +18,7 @@ class ApiUrl: NSObject {
     var sendMemberRegistrUrl: String
     var sendMemberRegisterInfoUrl: String
     var memberInfoUrl: String
+    var myFavoriteDrinkInfoUrl: String
 
     override init() {
         loginUrl="\(doMain)/api/new-login"
@@ -29,5 +30,5 @@ class ApiUrl: NSObject {
         sendMemberRegistrUrl="\(doMain)/api/register/register-button"
         sendMemberRegisterInfoUrl="\(doMain)/api/register/send-register-info"
         memberInfoUrl="\(doMain)/api/get/user/info"
-    }
+        myFavoriteDrinkInfoUrl="\(doMain)/api/get/my-favorite"    }
 }

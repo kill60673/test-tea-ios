@@ -2,26 +2,36 @@
 //  FrequentlyAskedQuestionsViewController.swift
 //  seven_tea
 //
+//  Created by harrison on 2020/3/6.
+//  Copyright © 2020 harrison公司機. All rights reserved.
 //
 
 import UIKit
+import Foundation
 
-class FrequentlyAskedQuestionsViewController: UIViewController {
-
+class FrequentlyAskedQuestionsViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FAQCell")
+        
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return faqList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FAQCell", for: indexPath)
+        cell.textLabel?.text = faqList[indexPath.row]
+        return cell
+    }
 }
