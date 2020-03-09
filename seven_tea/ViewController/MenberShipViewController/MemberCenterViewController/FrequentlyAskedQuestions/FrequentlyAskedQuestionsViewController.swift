@@ -15,7 +15,7 @@ class FrequentlyAskedQuestionsViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FAQCell")
+ //       self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FAQcell")
 
     }
 
@@ -30,7 +30,7 @@ class FrequentlyAskedQuestionsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FAQCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FAQcell", for: indexPath)
         cell.textLabel?.text = faqList[indexPath.row]
         return cell
     }
