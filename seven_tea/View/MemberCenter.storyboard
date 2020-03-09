@@ -109,7 +109,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rH3-IV-h77" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="535"/>
+            <point key="canvasLocation" x="1019" y="534"/>
         </scene>
         <!--我的累積-->
         <scene sceneID="57U-AR-VHB">
@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIb-eX-KCF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1898" y="546"/>
+            <point key="canvasLocation" x="1858" y="534"/>
         </scene>
         <!--隱私及服務條款-->
         <scene sceneID="IeH-Qf-LQu">
@@ -150,9 +150,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6c-Pp-KPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2760.8695652173915" y="548.4375"/>
+            <point key="canvasLocation" x="2758" y="534"/>
         </scene>
-        <!--Frequently Asked Questions View Controller-->
+        <!--常見問題-->
         <scene sceneID="Vc7-du-M4P">
             <objects>
                 <tableViewController storyboardIdentifier="FAQTV" id="nwR-bh-XzT" customClass="FrequentlyAskedQuestionsViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,10 +184,11 @@
                             <outlet property="delegate" destination="nwR-bh-XzT" id="YHO-I6-GEh"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="常見問題" id="KaR-tD-5MJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nue-dO-YQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="1237"/>
+            <point key="canvasLocation" x="1019" y="1269"/>
         </scene>
         <!--帳戶資料-->
         <scene sceneID="sb0-GD-RTg">
@@ -254,7 +255,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y4G-CK-hqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2758" y="1285"/>
+            <point key="canvasLocation" x="2758" y="1269"/>
         </scene>
         <!--我的最愛-->
         <scene sceneID="IZY-r5-jR8">
@@ -335,7 +336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUc-yM-N2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2930.434782608696" y="-233.03571428571428"/>
+            <point key="canvasLocation" x="135" y="534"/>
         </scene>
     </scenes>
     <resources>
