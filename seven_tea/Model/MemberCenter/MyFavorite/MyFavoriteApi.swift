@@ -8,9 +8,9 @@ import UIKit
 
 class MyFavoriteDrinkInfoAPI: NSObject {
     static let MyFavoriteDrinkInfoInstance = MyFavoriteDrinkInfoAPI()
-
+    var myfavirutelist = [MyFavorite]()
     func MyFavoriteDrinkInfo(Token: String) {
-
+        
         let url = URL(string: ApiUrl.ApiUrlInstance.myFavoriteDrinkInfoUrl )!
 
         var request = URLRequest(url: url)
@@ -35,36 +35,15 @@ class MyFavoriteDrinkInfoAPI: NSObject {
             if let data = data, let Info = try?
                 decoder.decode(MyFavoriteInfoCodable.self, from: data) {
                 if Info.result == 0 {
-                    myFavoriteId.removeAll()
-                    myFavoriteProductName.removeAll()
-                    myFavoriteProductType.removeAll()
-                    myFavoriteSize.removeAll()
-                    myFavoriteSugar.removeAll()
-                    myFavoriteTemperature.removeAll()
-                    myFavoriteQuantity.removeAll()
-                    myFavoriteTotalPrice.removeAll()
-                    myFavoriteSinglePrice.removeAll()
-                    myFavoriteStore.removeAll()
-                    myFavoriteStoreId.removeAll()
-                    myFavoriteName.removeAll()
-                    myFavoriteAdd.removeAll()
-
+                    self.myfavirutelist.removeAll()
                     for result in Info.message! {
-                        myFavoriteId.append(result.id)
-                        myFavoriteProductName.append(result.product_name)
-                        myFavoriteProductType.append(result.product_type)
-                        myFavoriteSize.append(result.size)
-                        myFavoriteSugar.append(result.sugar)
-                        myFavoriteTemperature.append(result.temperature)
-                        myFavoriteQuantity.append(result.quantity)
-                        myFavoriteSinglePrice.append(result.single_price)
-                        myFavoriteTotalPrice.append(result.total_price)
-                        myFavoriteStore.append(result.store)
-                        myFavoriteStoreId.append(result.store_id)
-                        myFavoriteName.append(result.name)
-                        myFavoriteAdd.append(result.add)
+                        var myFavorite = MyFavorite(myFavoriteId: result.id, myFavoriteProductName: result.product_name, myFavoriteProductType: result.product_type, myFavoriteSize: result.size, myFavoriteSugar: result.sugar, myFavoriteTemperature: result.temperature, myFavoriteQuantity: result.quantity, myFavoriteTotalPrice: result.total_price, myFavoriteSinglePrice: result.single_price, myFavoriteStore: result.store, myFavoriteStoreId: result.store_id, myFavoriteName: result.name, myFavoriteAdd: result.add)
+                        self.myfavirutelist.append(myFavorite)
                     }
-
+//                    DispatchQueue.main.async {
+//                       let test = MyFavoriteViewController()
+//                        test.updateTableViewList()
+//                    }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
@@ -85,6 +64,14 @@ class MyFavoriteDrinkInfoAPI: NSObject {
         }
         task.resume()
 
+    }
+    
+    func getCount()->Int{
+        
+        return myfavirutelist.count
+    }
+    func getList()->[MyFavorite]{
+        return myfavirutelist
     }
 
 }

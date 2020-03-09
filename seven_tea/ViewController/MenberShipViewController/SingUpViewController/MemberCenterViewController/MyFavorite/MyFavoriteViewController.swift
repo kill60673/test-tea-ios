@@ -6,19 +6,7 @@
 
 import UIKit
 
-var myFavoriteId = [Int]()
-var myFavoriteProductName = [String]()
-var myFavoriteProductType = [String]()
-var myFavoriteSize = [String]()
-var myFavoriteSugar = [String]()
-var myFavoriteTemperature = [String]()
-var myFavoriteQuantity = [Int]()
-var myFavoriteTotalPrice = [Int]()
-var myFavoriteSinglePrice = [Int]()
-var myFavoriteStore = [String]()
-var myFavoriteStoreId = [String]()
-var myFavoriteName = [String]()
-var myFavoriteAdd = [String]()
+
 var MyFavoriteDrinkTableVIew: UITableView!
 class MyFavoriteViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     @IBOutlet weak var MyFovortierDrinkTable: UITableView!
@@ -28,18 +16,22 @@ class MyFavoriteViewController: UIViewController , UITableViewDelegate , UITable
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myFavoriteProductName.count
+        return MyFavoriteDrinkInfoAPI.MyFavoriteDrinkInfoInstance.getCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        var myfavoriteList = MyFavoriteDrinkInfoAPI.MyFavoriteDrinkInfoInstance.getList()
         let cell = tableView.dequeueReusableCell(withIdentifier: "fovoriterCell") as! MyFavoriteTableViewCell
-        cell.lbTeaName.text = myFavoriteProductName[indexPath.row]
-        cell.lbTeaDetail.text = "\(myFavoriteSize[indexPath.row])/\(myFavoriteTemperature[indexPath.row])/\(myFavoriteSugar[indexPath.row])"
-        print("single: \(myFavoriteSinglePrice)")
-        print("total: \(myFavoriteTotalPrice)")
-        cell.lbTeaPrice.text = "$\(myFavoriteTotalPrice[indexPath.row])"
+        
+        cell.lbTeaName.text = myfavoriteList[indexPath.row].myFavoriteProductName
+        cell.lbTeaDetail.text = "\(myfavoriteList[indexPath.row].myFavoriteSize)/\(myfavoriteList[indexPath.row].myFavoriteTemperature)/\(myfavoriteList[indexPath.row].myFavoriteSugar)"
+        cell.lbTeaPrice.text = "$\(myfavoriteList[indexPath.row].myFavoriteTotalPrice)"
         return cell
+    }
+    func updateTableViewList(){
+       
+        MyFovortierDrinkTable.reloadData()
+        
     }
     
     
