@@ -12,7 +12,7 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var memberTableView: UITableView!
     @IBOutlet weak var btLogout: UIButton!
     @IBOutlet weak var lbName: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print(memberCenterList)
@@ -29,7 +29,7 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
         self.tabBarController?.selectedIndex = 0
         MessageAlert.Instance.message(message: "已登出")
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") != nil {
             memberView.isHidden = false
@@ -85,5 +85,5 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.width/4.3 * 0.8
     }
-    
+
 }

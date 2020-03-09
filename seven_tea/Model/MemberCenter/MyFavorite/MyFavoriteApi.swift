@@ -4,18 +4,16 @@
 import Foundation
 import UIKit
 
-
-
 class MyFavoriteDrinkInfoAPI: NSObject {
     static let MyFavoriteDrinkInfoInstance = MyFavoriteDrinkInfoAPI()
     var myfavirutelist = [MyFavorite]()
-    func MyFavoriteDrinkInfo(Token: String) {
-        
+    func myFavoriteDrinkInfo(token: String) {
+
         let url = URL(string: ApiUrl.ApiUrlInstance.myFavoriteDrinkInfoUrl )!
 
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue(Token, forHTTPHeaderField: "Authorization")
+        request.setValue(token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
 
         let task = URLSession.shared.dataTask(with: request) { data, response, _ in
@@ -23,11 +21,11 @@ class MyFavoriteDrinkInfoAPI: NSObject {
             let responseString = String(data: data!, encoding: .utf8)
             let httpStatus = response as? HTTPURLResponse
 
-            print(responseString)
+//            print(responseString)
 
             //檢查Token是否要刷新
             if httpStatus!.allHeaderFields["Authorization"] as? String ?? "" != "" {
-                UserInfo.UserInfoInstance.update(oldToken: Token, newToken: httpStatus!.allHeaderFields["Authorization"] as? String ?? "")
+                UserInfo.UserInfoInstance.update(oldToken: token, newToken: httpStatus!.allHeaderFields["Authorization"] as? String ?? "")
             }
 
             let decoder = JSONDecoder()
@@ -37,7 +35,7 @@ class MyFavoriteDrinkInfoAPI: NSObject {
                 if Info.result == 0 {
                     self.myfavirutelist.removeAll()
                     for result in Info.message! {
-                        var myFavorite = MyFavorite(myFavoriteId: result.id, myFavoriteProductName: result.product_name, myFavoriteProductType: result.product_type, myFavoriteSize: result.size, myFavoriteSugar: result.sugar, myFavoriteTemperature: result.temperature, myFavoriteQuantity: result.quantity, myFavoriteTotalPrice: result.total_price, myFavoriteSinglePrice: result.single_price, myFavoriteStore: result.store, myFavoriteStoreId: result.store_id, myFavoriteName: result.name, myFavoriteAdd: result.add)
+                        let myFavorite = MyFavorite(myFavoriteId: result.id, myFavoriteProductName: result.product_name, myFavoriteProductType: result.product_type, myFavoriteSize: result.size, myFavoriteSugar: result.sugar, myFavoriteTemperature: result.temperature, myFavoriteQuantity: result.quantity, myFavoriteTotalPrice: result.total_price, myFavoriteSinglePrice: result.single_price, myFavoriteStore: result.store, myFavoriteStoreId: result.store_id, myFavoriteName: result.name, myFavoriteAdd: result.add)
                         self.myfavirutelist.append(myFavorite)
                     }
 //                    DispatchQueue.main.async {
@@ -59,18 +57,18 @@ class MyFavoriteDrinkInfoAPI: NSObject {
             //主線程
             DispatchQueue.main.async {
 //                UIViewController.removeSpinner(spinner: sv as! UIView)
-                MyFavoriteDrinkTableVIew.reloadData()
+                myFavoriteDrinkTableVIew.reloadData()
             }
         }
         task.resume()
 
     }
-    
-    func getCount()->Int{
-        
+
+    func getCount() -> Int {
+
         return myfavirutelist.count
     }
-    func getList()->[MyFavorite]{
+    func getList() -> [MyFavorite] {
         return myfavirutelist
     }
 
