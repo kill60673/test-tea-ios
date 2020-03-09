@@ -27,7 +27,6 @@ class MyFavoriteDrinkInfoAPI: NSObject {
             if httpStatus!.allHeaderFields["Authorization"] as? String ?? "" != "" {
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: httpStatus!.allHeaderFields["Authorization"] as? String ?? "")
             }
-
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
@@ -61,11 +60,9 @@ class MyFavoriteDrinkInfoAPI: NSObject {
             }
         }
         task.resume()
-
     }
 
     func getCount() -> Int {
-
         return myfavirutelist.count
     }
     func getList() -> [MyFavorite] {
