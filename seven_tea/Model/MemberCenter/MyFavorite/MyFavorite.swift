@@ -21,8 +21,8 @@ class MyFavorite: NSObject {
     var myFavoriteStoreId = String()
     var myFavoriteName = String()
     var myFavoriteAdd = String()
-    
-    init(myFavoriteId :Int, myFavoriteProductName : String , myFavoriteProductType : String ,myFavoriteSize : String ,myFavoriteSugar : String ,myFavoriteTemperature : String ,myFavoriteQuantity : Int , myFavoriteTotalPrice : Int , myFavoriteSinglePrice :Int ,myFavoriteStore : String , myFavoriteStoreId :String , myFavoriteName : String , myFavoriteAdd :String) {
+
+    init(myFavoriteId: Int, myFavoriteProductName: String, myFavoriteProductType: String, myFavoriteSize: String, myFavoriteSugar: String, myFavoriteTemperature: String, myFavoriteQuantity: Int, myFavoriteTotalPrice: Int, myFavoriteSinglePrice: Int, myFavoriteStore: String, myFavoriteStoreId: String, myFavoriteName: String, myFavoriteAdd: String) {
         self.myFavoriteId = myFavoriteId
         self.myFavoriteProductType = myFavoriteProductType
         self.myFavoriteProductName = myFavoriteProductName
@@ -36,7 +36,7 @@ class MyFavorite: NSObject {
         self.myFavoriteName = myFavoriteName
         self.myFavoriteAdd = myFavoriteAdd
     }
-    func getMyFavirite(){
-        
+    func getMyFavirite() {
+
     }
 }
