@@ -75,7 +75,7 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
         let memberlist = memberCenterList[indexPath.row]
         /*  UITableViewCell本身有textLabel, detailTextLabel, imageView屬性可以設定主標、副標文字與圖片 */
         cell.textLabel?.text = memberlist
-        cell.imageView?.image = UIImage(named: memberCenterImage[indexPath.row])
+        cell.imageView?.image = UIImage(named: memberCenterImageList[indexPath.row])
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {

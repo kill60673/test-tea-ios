@@ -152,6 +152,64 @@
             </objects>
             <point key="canvasLocation" x="2758" y="534"/>
         </scene>
+        <!--修改密碼-->
+        <scene sceneID="KwU-g3-Hk0">
+            <objects>
+                <tableViewController id="gnS-Yf-rC3" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VXd-bX-3hF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rh4-uM-ERG">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rh4-uM-ERG" id="Vrv-S1-naS">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gnS-Yf-rC3" id="Gbi-nL-IMu"/>
+                            <outlet property="delegate" destination="gnS-Yf-rC3" id="Pt3-ej-Bzf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="修改密碼" id="0G5-9N-5ez"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KbZ-xJ-uJy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="1269"/>
+        </scene>
+        <!--通知設定-->
+        <scene sceneID="TD3-Gf-SDj">
+            <objects>
+                <tableViewController storyboardIdentifier="SetNotifyTV" id="1ER-hU-FrX" customClass="SetNotifyTableViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="spR-Ur-nsc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="notifycell" id="YTf-ky-kKJ">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YTf-ky-kKJ" id="c5P-hw-97R">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1ER-hU-FrX" id="1aw-qF-9Ec"/>
+                            <outlet property="delegate" destination="1ER-hU-FrX" id="DfL-Bm-HMW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="通知設定" id="MLq-k2-W5B"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlB-PH-xxY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134" y="2028"/>
+        </scene>
         <!--常見問題-->
         <scene sceneID="Vc7-du-M4P">
             <objects>
@@ -222,7 +280,7 @@
         <!--性別-->
         <scene sceneID="9Hl-id-ijW">
             <objects>
-                <tableViewController id="lGW-p1-ikN" customClass="GenderTableViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GenderTV" id="lGW-p1-ikN" customClass="GenderTableViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QTK-cZ-NSZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

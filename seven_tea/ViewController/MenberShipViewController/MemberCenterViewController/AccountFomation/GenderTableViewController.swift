@@ -13,7 +13,7 @@ class GenderTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        isFinished = Array(repeating: false, count: gender.count)
+        isFinished = Array(repeating: false, count: genderList.count)
         self.tableView.dataSource = self
         self.tableView.delegate = self
         tableView.tableFooterView = UIView() 
@@ -26,14 +26,14 @@ class GenderTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gender.count
+        return genderList.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gendercell", for: indexPath)
         let row = indexPath.row
-        cell.textLabel?.text = gender[row]
+        cell.textLabel?.text = genderList[row]
         
         if isFinished[row]{
             cell.accessoryType = .checkmark
