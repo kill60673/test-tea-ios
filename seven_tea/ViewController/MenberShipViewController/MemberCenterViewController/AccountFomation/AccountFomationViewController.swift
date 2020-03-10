@@ -10,31 +10,31 @@ import UIKit
 import Foundation
 
 class AccountFomationViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "afcell")
-
+        
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-
+        
         return 2
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-           return 25
-       }
+        return 25
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         if section == 0 {
             return accountInfoList.count
         } else {
             return addressList.count
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "afccell", for: indexPath)
         if indexPath.section == 0 {
@@ -63,14 +63,22 @@ class AccountFomationViewController: UITableViewController {
             let vc = storyboard?.instantiateViewController(withIdentifier: "GenderTV")
             show(vc!, sender: self)
             break
+        case 5:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "EmailVC")
+            show(vc!, sender: self)
+            break
+        case 6:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "ChangePasswordVC")
+            show(vc!, sender: self)
+            break
         case 7:
-        let vc = storyboard?.instantiateViewController(withIdentifier: "SetNotifyTV")
-        show(vc!, sender: self)
-        break
+            let vc = storyboard?.instantiateViewController(withIdentifier: "SetNotifyTV")
+            show(vc!, sender: self)
+            break
         default:
             break
         }
     }
-
-
+    
+    
 }
