@@ -31,7 +31,7 @@ class AccountFomationViewController: UITableViewController {
         if section == 0 {
             return accountInfoList.count
         } else {
-            return address.count
+            return addressList.count
         }
     }
 
@@ -40,9 +40,37 @@ class AccountFomationViewController: UITableViewController {
         if indexPath.section == 0 {
             cell.textLabel?.text = accountInfoList[indexPath.row]
         } else {
-            cell.textLabel?.text = address[indexPath.row]
+            cell.textLabel?.text = addressList[indexPath.row]
         }
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "myFavoriteTV")
+            show(vc!, sender: self)
+            break
+        case 1:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "accountTV")
+            show(vc!, sender: self)
+            break
+        case 2:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "FAQTV")
+            show(vc!, sender: self)
+            break
+        case 3:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "GenderTV")
+            show(vc!, sender: self)
+            break
+        case 7:
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SetNotifyTV")
+        show(vc!, sender: self)
+        break
+        default:
+            break
+        }
+    }
+
 
 }

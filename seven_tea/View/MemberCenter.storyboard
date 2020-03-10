@@ -109,7 +109,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rH3-IV-h77" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="535"/>
+            <point key="canvasLocation" x="1019" y="534"/>
         </scene>
         <!--我的累積-->
         <scene sceneID="57U-AR-VHB">
@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIb-eX-KCF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1898" y="546"/>
+            <point key="canvasLocation" x="1858" y="534"/>
         </scene>
         <!--隱私及服務條款-->
         <scene sceneID="IeH-Qf-LQu">
@@ -150,9 +150,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6c-Pp-KPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2760.8695652173915" y="548.4375"/>
+            <point key="canvasLocation" x="2758" y="534"/>
         </scene>
-        <!--Frequently Asked Questions View Controller-->
+        <!--修改密碼-->
+        <scene sceneID="KwU-g3-Hk0">
+            <objects>
+                <tableViewController id="gnS-Yf-rC3" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VXd-bX-3hF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rh4-uM-ERG">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rh4-uM-ERG" id="Vrv-S1-naS">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gnS-Yf-rC3" id="Gbi-nL-IMu"/>
+                            <outlet property="delegate" destination="gnS-Yf-rC3" id="Pt3-ej-Bzf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="修改密碼" id="0G5-9N-5ez"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KbZ-xJ-uJy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="1269"/>
+        </scene>
+        <!--通知設定-->
+        <scene sceneID="TD3-Gf-SDj">
+            <objects>
+                <tableViewController storyboardIdentifier="SetNotifyTV" id="1ER-hU-FrX" customClass="SetNotifyTableViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="spR-Ur-nsc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="notifycell" id="YTf-ky-kKJ">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YTf-ky-kKJ" id="c5P-hw-97R">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1ER-hU-FrX" id="1aw-qF-9Ec"/>
+                            <outlet property="delegate" destination="1ER-hU-FrX" id="DfL-Bm-HMW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="通知設定" id="MLq-k2-W5B"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlB-PH-xxY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134" y="2028"/>
+        </scene>
+        <!--常見問題-->
         <scene sceneID="Vc7-du-M4P">
             <objects>
                 <tableViewController storyboardIdentifier="FAQTV" id="nwR-bh-XzT" customClass="FrequentlyAskedQuestionsViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,10 +242,11 @@
                             <outlet property="delegate" destination="nwR-bh-XzT" id="YHO-I6-GEh"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="常見問題" id="KaR-tD-5MJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nue-dO-YQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="1237"/>
+            <point key="canvasLocation" x="1019" y="1269"/>
         </scene>
         <!--帳戶資料-->
         <scene sceneID="sb0-GD-RTg">
@@ -221,7 +280,7 @@
         <!--性別-->
         <scene sceneID="9Hl-id-ijW">
             <objects>
-                <tableViewController id="lGW-p1-ikN" customClass="GenderTableViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GenderTV" id="lGW-p1-ikN" customClass="GenderTableViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QTK-cZ-NSZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,7 +313,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y4G-CK-hqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2758" y="1285"/>
+            <point key="canvasLocation" x="2758" y="1269"/>
         </scene>
         <!--我的最愛-->
         <scene sceneID="IZY-r5-jR8">
@@ -335,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUc-yM-N2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2930.434782608696" y="-233.03571428571428"/>
+            <point key="canvasLocation" x="135" y="534"/>
         </scene>
     </scenes>
     <resources>

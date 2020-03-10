@@ -30,5 +30,6 @@ class ApiUrl: NSObject {
         sendMemberRegistrUrl="\(doMain)/api/register/register-button"
         sendMemberRegisterInfoUrl="\(doMain)/api/register/send-register-info"
         memberInfoUrl="\(doMain)/api/get/user/info"
-        myFavoriteDrinkInfoUrl="\(doMain)/api/get/my-favorite"    }
+        myFavoriteDrinkInfoUrl="\(doMain)/api/get/my-favorite"
+    }
 }
