@@ -399,7 +399,7 @@
         <!--設定密碼-->
         <scene sceneID="tlf-TM-UPs">
             <objects>
-                <viewController storyboardIdentifier="ChangePasswordVC" title="設定密碼" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VFZ-Eh-euD" customClass="SetPasswordViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VFZ-Eh-euD" customClass="SetPasswordViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rL5-z4-SmC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -432,6 +432,9 @@
                                 <state key="normal" title="確認">
                                     <color key="titleColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btSend:" destination="VFZ-Eh-euD" eventType="touchUpInside" id="zSd-Bu-W97"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VBZ-uH-eVH">
                                 <rect key="frame" x="36" y="109" width="343" height="34"/>
@@ -492,6 +495,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZDa-Dn-Ftb"/>
                     </view>
+                    <navigationItem key="navigationItem" title="設定密碼" id="BCS-eq-NRi"/>
+                    <connections>
+                        <outlet property="btSend" destination="SPZ-zq-edX" id="0p0-hE-jwu"/>
+                        <outlet property="lbWarning" destination="Be4-A2-vx9" id="SNb-9D-4j7"/>
+                        <outlet property="tfCheckPassword" destination="N3T-4s-Mid" id="uBP-wf-Phz"/>
+                        <outlet property="tfNewPassword" destination="US1-JO-vDq" id="TqQ-16-imM"/>
+                        <outlet property="tfOldPassword" destination="VBZ-uH-eVH" id="XUA-Fm-0uu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5V-rx-7MG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -604,7 +615,7 @@
                     <connections>
                         <outlet property="btSend" destination="Ckx-Tl-7Mq" id="ti4-UB-ERz"/>
                         <outlet property="btSendVerfication_code" destination="SRY-CK-7tb" id="dEN-Ed-oHb"/>
-                        <outlet property="lbWarring" destination="Mme-Gp-yqH" id="PxT-0S-YGM"/>
+                        <outlet property="lbWarning" destination="Mme-Gp-yqH" id="PxT-0S-YGM"/>
                         <outlet property="tfEmail" destination="TE2-VT-RGo" id="82A-Oi-Zc7"/>
                         <outlet property="tfVerification_Code" destination="5cQ-OU-vh5" id="Jb3-vZ-959"/>
                     </connections>

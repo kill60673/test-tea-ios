@@ -13,7 +13,7 @@ class SetEmailViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var tfVerification_Code: UITextField!
     @IBOutlet weak var btSend: UIButton!
     @IBOutlet weak var btSendVerfication_code: UIButton!
-    @IBOutlet weak var lbWarring: UILabel!
+    @IBOutlet weak var lbWarning: UILabel!
     var email = ""
     var varfication_code = ""
     
@@ -27,15 +27,15 @@ class SetEmailViewController: UIViewController , UITextFieldDelegate{
     }
     @IBAction func btSendVerfication_code(_ sender: Any) {
         self.email = tfEmail.text ?? ""
-        lbWarring.text = ""
-        predicatesFunc.getEmailSmsApi(email: email, lbMessage: lbWarring)
+        lbWarning.text = ""
+        predicatesFunc.getEmailSmsApi(email: email, lbMessage: lbWarning)
         triggerTimer(button: btSendVerfication_code)
     }
     
     @IBAction func btSend(_ sender: Any) {
         self.email = tfEmail.text ?? ""
         self.varfication_code = tfVerification_Code.text ?? ""
-        predicatesFunc.setEmail(email: email, emailVerfiCode: varfication_code, lbMessage: lbWarring)
+        predicatesFunc.setEmail(email: email, emailVerfiCode: varfication_code, lbMessage: lbWarning)
     }
     //timer部分
      @objc func showSmsCountDown() {

@@ -8,23 +8,26 @@
 
 import UIKit
 
-class detPasswordViewController: UIViewController {
+class SetPasswordViewController: UIViewController , UITextFieldDelegate {
 
+    @IBOutlet weak var tfOldPassword: UITextField!
+    @IBOutlet weak var tfNewPassword: UITextField!
+    @IBOutlet weak var tfCheckPassword: UITextField!
+    @IBOutlet weak var lbWarning: UILabel!
+    @IBOutlet weak var btSend: UIButton!
+    var oldpassword = ""
+    var newpassword = ""
+    var checkpassword = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        btSend.customized_button(button: btSend)
+        tfNewPassword.delegate = self
+        tfOldPassword.delegate = self
+        tfCheckPassword.delegate = self
+        keyboad()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btSend(_ sender: Any) {
+        
     }
-    */
-
 }
