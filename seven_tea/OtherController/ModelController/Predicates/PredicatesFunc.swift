@@ -65,7 +65,7 @@ class PredicatesFunc  {
         } else if (checkValidAccount(input: account) == true) && (checkValidPhoneNumber(input: phone) == true) {
             memberRegisterMessage.getForgotPasswordSms(account: account, phone: phone)
             // 計時器
-                        ver.triggerTimer(button: btSendVerifyCode)
+            ver.triggerTimer(button: btSendVerifyCode)
         }
     }
     
@@ -104,12 +104,11 @@ class PredicatesFunc  {
         }
     }
     
-    func jumpSendMemberRegisterInfo(username: String, name: String, lbUserName: UILabel, lbName: UILabel, phone: String, sex: String, uservalidatorscode: String) {
+    func jumpSendMemberRegisterInfo(username: String, name: String, lbUserName: UILabel, lbName: UILabel, phone: String, sex: String, uservalidatorscode: String,controller : UIViewController) {
         //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         if checkValidAccount(input: username) == false {
             lbUserName.text = regexmessage
             lbUserName.shake()
-            
         }
             //如果使用著名稱為空值提醒請輸入使用者名稱
         else if name == "" {
@@ -118,25 +117,26 @@ class PredicatesFunc  {
         }
             //當兩個都為規定以後即可進入
         else if  (checkValidAccount(input: username) == true) && (name != "") {
-            self.jumpSendMemberRegisterInfo(username: username, name: name, lbUserName: lbUserName, lbName: lbName, phone: phone, sex: sex, uservalidatorscode: uservalidatorscode)
+            controller.jumpSendMemberRegisterDetail(username: username, name: name, phone: phone, sex: sex, uservalidatorscode: uservalidatorscode)
         }
     }
     
-    func sendMemberRegistr(validatorsCode: String, phone: String, lbMessage: UILabel) {
+    func sendMemberRegistr(validator_code: String, phone: String, lbMessage: UILabel,controller: UIViewController) {
         if checkValidPhoneNumber(input: phone) == false {
             lbMessage.text = regexmessage
             lbMessage.shake()
-        } else if  checkValidVerificationCode(input: validatorsCode) == false {
+        } else if  checkValidVerificationCode(input: validator_code) == false {
             lbMessage.text = regexmessage
             lbMessage.shake()
-        } else if (checkValidVerificationCode(input: validatorsCode) == true) && (checkValidPhoneNumber(input: phone) == true) {
-            memberRegisterMessage.getMemberRegisterMessage(phone: phone, validatorsCode: validatorsCode)
+        } else if (checkValidVerificationCode(input: validator_code) == true) && (checkValidPhoneNumber(input: phone) == true) {
+            memberRegisterMessage.getMemberRegisterMessage(phone: phone, validator_code: validator_code,controller: controller)
         }
     }
     
-    func getMemberSmsApi(phone: String, lbMessage: UILabel) {
+    func getMemberSmsApi(phone: String, lbMessage: UILabel,btSendVerifyCode: UIButton) {
         if checkValidPhoneNumber(input: phone) == true {
             memberRegisterMessage.getMemberRegisterSmsMessage(phone: phone)
+            ver.triggerTimer(button: btSendVerifyCode)
         } else {
             lbMessage.text = regexmessage
             lbMessage.shake()

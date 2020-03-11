@@ -55,10 +55,9 @@ class SendMemberRegistrApi: NSObject {
                 if memberRegister.success == true {
                     //主線程
                     DispatchQueue.main.async {
-                            MessageAlert.Instance.message(message: "\(memberRegister.message)")
+//                      MessageAlert.Instance.message(message: "\(memberRegister.message)")
                         handler(true)
                             print("資料成功")
-
                     }
                 } else {
                     //主線程

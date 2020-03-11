@@ -14,5 +14,5 @@ struct SendRegisterInfoCodable: Codable {
 
 struct MemberRegisterMessage: Codable {
     var phone: String
-    var validatorsCode: String
+    var validators_code: String
 }

@@ -38,7 +38,7 @@ func checkValidPhoneNumber(input: String) -> Bool {
 // 這條是用來判斷帳號的正規表示式
 func checkValidAccount(input: String) -> Bool {
     // self matches是特定寫法而且不區別大小寫，代表input值必須符合參數pattern要求的格式
-    let pattern = "^[a-z0-9_-]{3,16}$"
+    let pattern = "^[a-z0-9_-]{8,16}$"
     let predicate = NSPredicate(format: "self matches %@", pattern)
     let isValid = predicate.evaluate(with: input)
     if input == "" {
