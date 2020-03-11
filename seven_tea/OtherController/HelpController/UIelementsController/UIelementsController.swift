@@ -20,3 +20,10 @@ extension UIButton {
         button.layer.cornerRadius = 20//圓角
     }
 }
+extension UITextView{
+    func setframe(textview : UITextView){
+        textview.layer.borderWidth = 1.0;
+        textview.layer.cornerRadius = 5.0;
+        
+    }
+}
