@@ -29,7 +29,7 @@ class GenderTableViewController: UITableViewController {
         return genderList.count
     }
     
-
+    //設立checkmark在tableview裡做打勾動作
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gendercell", for: indexPath)
         cell.textLabel?.text = genderList[indexPath.row]

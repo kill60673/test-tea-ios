@@ -152,6 +152,69 @@
             </objects>
             <point key="canvasLocation" x="2758" y="534"/>
         </scene>
+        <!--用戶名-->
+        <scene sceneID="8dg-xR-kbD">
+            <objects>
+                <viewController storyboardIdentifier="NameVC" id="0IX-86-Vic" customClass="SetNameViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="08K-0R-otl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用戶名:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDN-4Q-58f">
+                                <rect key="frame" x="47" y="168" width="126.5" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="BBB-fT-6Gj"/>
+                                    <constraint firstAttribute="width" constant="126.5" id="CHW-bs-uPA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUP-BF-Xr9">
+                                <rect key="frame" x="47" y="205" width="321" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="321" id="5Wv-CG-doH"/>
+                                    <constraint firstAttribute="height" constant="34" id="S5f-Y3-J1t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIZ-co-SIp">
+                                <rect key="frame" x="47" y="291" width="343" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="31f-pI-2pQ"/>
+                                    <constraint firstAttribute="height" constant="41" id="mCT-If-7cO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="修改">
+                                    <color key="titleColor" red="0.1057049115" green="0.14635029820000001" blue="0.36512531729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="btSubmit:" destination="0IX-86-Vic" eventType="touchUpInside" id="EXV-cq-zxp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vDN-4Q-58f" firstAttribute="leading" secondItem="aaT-iG-ysr" secondAttribute="leading" constant="47" id="1Kx-Dt-eUw"/>
+                            <constraint firstItem="dUP-BF-Xr9" firstAttribute="leading" secondItem="aaT-iG-ysr" secondAttribute="leading" constant="47" id="5hx-9M-sMN"/>
+                            <constraint firstItem="dUP-BF-Xr9" firstAttribute="top" secondItem="aaT-iG-ysr" secondAttribute="top" constant="161" id="eIi-01-pF8"/>
+                            <constraint firstItem="vDN-4Q-58f" firstAttribute="top" secondItem="aaT-iG-ysr" secondAttribute="top" constant="124" id="fis-Ub-OiT"/>
+                            <constraint firstItem="tIZ-co-SIp" firstAttribute="leading" secondItem="aaT-iG-ysr" secondAttribute="leading" constant="47" id="lGq-JR-gKL"/>
+                            <constraint firstItem="tIZ-co-SIp" firstAttribute="top" secondItem="aaT-iG-ysr" secondAttribute="top" constant="247" id="zAU-Pc-4Jd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aaT-iG-ysr"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="用戶名" id="0eV-yf-hm1"/>
+                    <connections>
+                        <outlet property="btSubmit" destination="tIZ-co-SIp" id="ZJd-QN-mVR"/>
+                        <outlet property="tfName" destination="dUP-BF-Xr9" id="YtH-qK-pMR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dho-au-Dnn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2757.971014492754" y="2019.6428571428571"/>
+        </scene>
         <!--修改密碼-->
         <scene sceneID="KwU-g3-Hk0">
             <objects>
