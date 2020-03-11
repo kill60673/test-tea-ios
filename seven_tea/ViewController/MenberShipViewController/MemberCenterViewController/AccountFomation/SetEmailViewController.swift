@@ -28,8 +28,7 @@ class SetEmailViewController: UIViewController , UITextFieldDelegate{
     @IBAction func btSendVerfication_code(_ sender: Any) {
         self.email = tfEmail.text ?? ""
         lbWarning.text = ""
-        predicatesFunc.getEmailSmsApi(email: email, lbMessage: lbWarning)
-        triggerTimer(button: btSendVerfication_code)
+        predicatesFunc.getEmailSmsApi(email: email, lbMessage: lbWarning , btSendVerifyCode: btSend)
     }
     
     @IBAction func btSend(_ sender: Any) {

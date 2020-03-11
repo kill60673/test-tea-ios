@@ -11,7 +11,12 @@ import UIKit
 
 extension UIButton {
     func customized_button(button: UIButton) {
-            button.layer.borderWidth = 1.0//外框粗度
-            button.layer.cornerRadius = 5//圓角
-        }
+        button.layer.borderWidth = 1.0//外框粗度
+        button.layer.cornerRadius = 5//圓角
     }
+    
+    func round_button(button: UIButton){
+        button.layer.borderWidth = 1.0//外框粗度
+        button.layer.cornerRadius = 20//圓角
+    }
+}
