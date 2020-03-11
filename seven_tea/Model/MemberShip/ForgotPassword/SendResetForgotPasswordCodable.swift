@@ -16,5 +16,5 @@ struct SendResetForgotPasswordCodable: Codable {
 struct SendResetForgorPasswordMessage: Codable {
     var username: String
     var phone: String
-    var validatorsCode: String
+    var validators_code: String
 }

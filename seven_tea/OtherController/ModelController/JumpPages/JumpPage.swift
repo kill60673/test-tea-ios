@@ -12,13 +12,16 @@ import UIKit
 extension UIViewController {
     //從忘記密碼頁面送帳號及電話跟電話驗證碼送到重設密碼頁面去
     //2/25目前確認在這個func裡的跳轉方式需要做更改
-    func jumpRestPassword(account: String, phone: String, validatorsCode: String) {
+    func jumpRestPassword(account: String, phone: String, validators_Code: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil) //if bundle is nil the main bundle will be used
         let vc = storyboard.instantiateViewController(withIdentifier: "RestPassword") as? ResetPasswordViewController
+        print("aaaaa", storyboard, storyboard.instantiateViewController(withIdentifier: "RestPassword"))
         vc?.name = account
         vc?.phonenumber = phone
-        vc?.uservalidatorscode = validatorsCode
-        show((vc!).self, sender: self)
+        vc?.uservalidatorscode = validators_Code
+        show(vc!, sender: nil)
+        
+       // self.navigationController?.pushViewController(UIViewController(), animated: true)
     }
     //從註冊頁面第二頁送詳細資訊到送出詳細註冊資訊頁面
     func jumpSendMemberRegisterInfo(username: String, name: String, phone: String, sex: String, uservalidatorscode: String) {

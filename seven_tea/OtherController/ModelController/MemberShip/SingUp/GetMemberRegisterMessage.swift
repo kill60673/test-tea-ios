@@ -81,17 +81,21 @@ class GetMemberRegisterMessage: UIViewController {
 
         }
     }
-    func getSendResetForgotPassword(userName: String, phone: String, validatorsCode: String ) {
-        let postSTring  = SendResetForgorPasswordMessage(username: userName, phone: phone, validatorsCode: validatorsCode)
+    func getSendResetForgotPassword(userName: String, phone: String, validatorsCode: String,controller: UIViewController ) {
+        let postSTring  = SendResetForgorPasswordMessage(username: userName, phone: phone, validators_code: validatorsCode)
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(postSTring) {
             print(postSTring)
             datas = data
             SendResetForgotPasswordSmsAPI.SendResetForgotPasswordSmsInstance.sendResetForgotPasswordSms { (result) in
+                
+                print("result ", result)
+                
+                
                 if result {
-                    //DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    //                       self.jumpRestPassword(account: account, phone: phone, validatorsCode: validatorsCode)
-                    //                   }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                           controller.jumpRestPassword(account: userName, phone: phone, validators_Code: validatorsCode)
+                                       }
                     return
                 } else {
 

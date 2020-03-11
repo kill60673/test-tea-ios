@@ -8,9 +8,9 @@
 
 import Foundation
 import UIKit
-//var ver = VerificationCodeTimer()
+var ver = VerificationCodeTimer()
 var loginMessage = GetLoginMessage()
-class PredicatesFunc: UIViewController {
+class PredicatesFunc  {
     // 2/18修正完確定不會爆
     func restPassword(password: String, againenterpassword: String, lbPrompt: UILabel, uservalidatorscode: String, name: String, phonenumber: String) {
         //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
@@ -29,7 +29,7 @@ class PredicatesFunc: UIViewController {
         }
     }
     
-    func sendResetForgotPasswordSms(account: String, phone: String, validatorsCode: String, lbUserName: UILabel, lbPhone: UILabel, lbValidatorsCode: UILabel) {
+    func sendResetForgotPasswordSms(account: String, phone: String, validatorsCode: String, lbUserName: UILabel, lbPhone: UILabel, lbValidatorsCode: UILabel,controller: UIViewController) {
         // 2/18修正完成
         //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         if checkValidAccount(input: account) == false {
@@ -46,7 +46,7 @@ class PredicatesFunc: UIViewController {
             lbValidatorsCode.text = regexmessage
             lbValidatorsCode.shake()
         } else if (checkValidAccount(input: account) == true ) && (checkValidPhoneNumber(input: phone) == true) && (checkValidVerificationCode(input: validatorsCode) == true) {
-            memberRegisterMessage.getSendResetForgotPassword(userName: account, phone: phone, validatorsCode: validatorsCode)
+            memberRegisterMessage.getSendResetForgotPassword(userName: account, phone: phone, validatorsCode: validatorsCode, controller: controller)
         }
         
     }
@@ -65,7 +65,7 @@ class PredicatesFunc: UIViewController {
         } else if (checkValidAccount(input: account) == true) && (checkValidPhoneNumber(input: phone) == true) {
             memberRegisterMessage.getForgotPasswordSms(account: account, phone: phone)
             // 計時器
-            //            ver.triggerTimer(button: btSendVerifyCode)
+                        ver.triggerTimer(button: btSendVerifyCode)
         }
     }
     
@@ -118,7 +118,7 @@ class PredicatesFunc: UIViewController {
         }
             //當兩個都為規定以後即可進入
         else if  (checkValidAccount(input: username) == true) && (name != "") {
-            self.jumpSendMemberRegisterInfo(username: username, name: name, phone: phone, sex: sex, uservalidatorscode: uservalidatorscode)
+            self.jumpSendMemberRegisterInfo(username: username, name: name, lbUserName: lbUserName, lbName: lbName, phone: phone, sex: sex, uservalidatorscode: uservalidatorscode)
         }
     }
     
