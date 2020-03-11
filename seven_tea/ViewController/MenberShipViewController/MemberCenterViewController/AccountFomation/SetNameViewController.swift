@@ -16,7 +16,7 @@ class SetNameViewController: UIViewController ,UITextFieldDelegate {
         super.viewDidLoad()
         tfName.delegate = self
         btSubmit.customized_button(button: btSubmit)
-        tfName.text = "\(MemberInfoApi.MemberInfoInstance.memberInfo(token: "name"))"
+        tfName.text = UserInfo.UserInfoInstance.preferences.object(forKey: "name") as? String
     }
     @IBAction func btSubmit(_ sender: Any) {
         self.name = tfName.text ?? ""
