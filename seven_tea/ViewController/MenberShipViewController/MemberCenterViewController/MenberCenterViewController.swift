@@ -19,7 +19,7 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
         memberInfoView = self
         memberView.isHidden = true
         memberTableView.isHidden = true
-        btLogout.customized_button(button: btLogout)
+        btLogout.round_button(button: btLogout)
         memberTableView.tableFooterView = UIView()
     }
     @IBAction func btLogout(_ sender: Any) {

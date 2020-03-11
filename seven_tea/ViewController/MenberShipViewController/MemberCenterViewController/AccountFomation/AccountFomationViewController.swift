@@ -47,22 +47,26 @@ class AccountFomationViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 0:
-            let vc = storyboard?.instantiateViewController(withIdentifier: "myFavoriteTV")
-            show(vc!, sender: self)
-            break
-        case 1:
-            let vc = storyboard?.instantiateViewController(withIdentifier: "accountTV")
-            show(vc!, sender: self)
-            break
+        //        case 0:
+        //            let vc = storyboard?.instantiateViewController(withIdentifier: "myFavoriteTV")
+        //            show(vc!, sender: self)
+        //            break
+        //        case 1:
+        //            let vc = storyboard?.instantiateViewController(withIdentifier: "accountTV"
+        //            show(vc!, sender: self)
+        //            break
         case 2:
-            let vc = storyboard?.instantiateViewController(withIdentifier: "FAQTV")
+            let vc = storyboard?.instantiateViewController(withIdentifier: "NameVC")
             show(vc!, sender: self)
             break
         case 3:
             let vc = storyboard?.instantiateViewController(withIdentifier: "GenderTV")
             show(vc!, sender: self)
             break
+//        case 4:
+//            let vc = storyboard?.instantiateViewController(withIdentifier: "GenderTV")
+//            show(vc!, sender: self)
+//            break
         case 5:
             let vc = storyboard?.instantiateViewController(withIdentifier: "EmailVC")
             show(vc!, sender: self)

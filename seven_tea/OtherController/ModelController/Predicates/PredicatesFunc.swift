@@ -142,9 +142,12 @@ class PredicatesFunc  {
             lbMessage.shake()
         }
     }
-    func getEmailSmsApi(email: String, lbMessage: UILabel) {
+    func getEmailSmsApi(email: String, lbMessage: UILabel , btSendVerifyCode : UIButton) {
         if checkValidEmail(input: email) == true {
 //           要放EmailSmsApi
+            // 計時器
+            ver.triggerTimer(button: btSendVerifyCode)
+
         } else {
             lbMessage.text = regexmessage
             lbMessage.shake()
@@ -163,8 +166,6 @@ class PredicatesFunc  {
              lbMessage.shake()
          } else if (checkValidAccount(input: email) == true) && (checkValidPhoneNumber(input: emailVerfiCode) == true) {
              memberRegisterMessage.getForgotPasswordSms(account: email, phone: emailVerfiCode)
-             // 計時器
-             //            ver.triggerTimer(button: btSendVerifyCode)
             //這邊要放設定EmailApi
          }
      }

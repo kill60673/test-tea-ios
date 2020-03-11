@@ -29,23 +29,23 @@ class GenderTableViewController: UITableViewController {
         return genderList.count
     }
     
-    
+    //設立checkmark在tableview裡做打勾動作
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gendercell", for: indexPath)
-        let row = indexPath.row
-        cell.textLabel?.text = genderList[row]
-        
-        if isFinished[row]{
-            cell.accessoryType = .checkmark
-        } else {
+        cell.textLabel?.text = genderList[indexPath.row]
+        if isFinished[indexPath.row] == false{
             cell.accessoryType = .none
+        } else if isFinished[indexPath.row] {
+            cell.accessoryType = .checkmark
         }
         return cell
     }
+    //設立只能點選一個勾 選了另一個會跳掉
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        isFinished[indexPath.row] = true
-        tableView.reloadData()
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
     }
-    
+
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+    }
 }
