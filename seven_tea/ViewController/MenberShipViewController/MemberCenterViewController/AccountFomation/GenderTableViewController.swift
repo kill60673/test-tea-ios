@@ -43,7 +43,8 @@ class GenderTableViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        isFinished[indexPath.row] = !isFinished[indexPath.row]
+        
+        isFinished[indexPath.row] = true
         tableView.reloadData()
     }
     

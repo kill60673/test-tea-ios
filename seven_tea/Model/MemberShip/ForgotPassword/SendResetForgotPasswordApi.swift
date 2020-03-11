@@ -31,7 +31,7 @@ class SendResetForgotPasswordSmsAPI: NSObject {
                 if sendResetPassword.success == true {
                     //主線程
                     DispatchQueue.main.async {
-                            MessageAlert.Instance.message(message: "\(sendResetPassword.message)")
+//                            MessageAlert.Instance.message(message: "\(sendResetPassword.message)")
                             handler(true)
                     }
                 } else {

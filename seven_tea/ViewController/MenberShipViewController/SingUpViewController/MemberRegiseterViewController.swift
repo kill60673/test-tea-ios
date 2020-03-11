@@ -36,10 +36,7 @@ class MemberRegiseterViewController: UIViewController, UITextFieldDelegate {
         let phone = tfPhone.text ?? ""
         //        let verifcationcode = VerificationCodeTimer()
         lbMessage.text = ""
-        triggerTimer(button: btValidatorsCode)
-        predicatesFunc.getMemberSmsApi(phone: phone, lbMessage: lbMessage)
-        //計時器傳值問題尚未解開
-        // 使用正規表示法來去判斷說 是否為正確輸入文字 以及是否為空
+        predicatesFunc.getMemberSmsApi(phone: phone, lbMessage: lbMessage, btSendVerifyCode: btValidatorsCode)
     }
 
     // 2/13利用正規表示法來修正判斷式 已修正完成
@@ -50,25 +47,6 @@ class MemberRegiseterViewController: UIViewController, UITextFieldDelegate {
         lbMessage.text = ""
         lbValidatorsCode.text = ""
 
-        predicatesFunc.sendMemberRegistr(validatorsCode: validatorsCode, phone: phone, lbMessage: lbMessage)
-    }
-
-    //timer計時器部分
-    @objc func showSmsCountDown() {
-        btValidatorsCode.setTitle("\(count)", for: .normal)
-        count -= 1
-        if count<=0 {
-            btValidatorsCode.setTitle("發送驗證碼", for: .normal)
-            timer?.invalidate()
-            timer = nil
-            btValidatorsCode.isEnabled = true
-        }
-    }
-    //timer計時器部分
-    @objc func triggerTimer(button: UIButton) {
-        button.isEnabled = false
-        count = 60
-        //做bt裡面時間倒數 倒數完才可以使用
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.showSmsCountDown), userInfo: nil, repeats: true)
+        predicatesFunc.sendMemberRegistr(validator_code: validatorsCode, phone: phone, lbMessage: lbMessage,controller: self)
     }
 }

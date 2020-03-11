@@ -45,7 +45,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
 
         lbUserName.text = ""
         lbPhone.text = ""
-        triggerTimer(button: btSendVerifyCode)
+//        triggerTimer(button: btSendVerifyCode)
         predicatesFunc.forgotPasswordSms(account: account, phone: phone, btSendVerifyCode: btSendVerifyCode, lbUserName: lbUserName, lbPhone: lbPhone)
     }
 
@@ -59,26 +59,26 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         lbValidatorsCode.text = ""
         lbPhone.text = ""
 
-        predicatesFunc.sendResetForgotPasswordSms(account: account, phone: phone, validatorsCode: validatorsCode, lbUserName: lbUserName, lbPhone: lbPhone, lbValidatorsCode: lbValidatorsCode)
+        predicatesFunc.sendResetForgotPasswordSms(account: account, phone: phone, validatorsCode: validatorsCode, lbUserName: lbUserName, lbPhone: lbPhone, lbValidatorsCode: lbValidatorsCode,controller: self)
     }
 
     //timer部分
-    @objc func showSmsCountDown() {
-        btSendVerifyCode.setTitle("\(count)", for: .normal)
-        count -=  1
-        if count<=0 {
-            btSendVerifyCode.setTitle("發送驗證碼", for: .normal)
-            timer?.invalidate()
-            timer = nil
-            btSendVerifyCode.isEnabled = true
-        }
-    }
-
-    //timer部分
-    @objc func triggerTimer(button: UIButton ) {
-        button.isEnabled = false
-        count = 60
-        //做bt裡面時間倒數 倒數完才可以使用
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.showSmsCountDown), userInfo: nil, repeats: true)
-    }
+//    @objc func showSmsCountDown() {
+//        btSendVerifyCode.setTitle("\(count)", for: .normal)
+//        count -=  1
+//        if count<=0 {
+//            btSendVerifyCode.setTitle("發送驗證碼", for: .normal)
+//            timer?.invalidate()
+//            timer = nil
+//            btSendVerifyCode.isEnabled = true
+//        }
+//    }
+//
+//    //timer部分
+//    @objc func triggerTimer(button: UIButton ) {
+//        button.isEnabled = false
+//        count = 60
+//        //做bt裡面時間倒數 倒數完才可以使用
+//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.showSmsCountDown), userInfo: nil, repeats: true)
+//    }
 }

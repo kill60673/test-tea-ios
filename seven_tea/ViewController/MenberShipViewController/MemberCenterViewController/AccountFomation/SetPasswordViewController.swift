@@ -28,6 +28,8 @@ class SetPasswordViewController: UIViewController , UITextFieldDelegate {
     }
     
     @IBAction func btSend(_ sender: Any) {
-        
+        self.oldpassword = tfOldPassword.text ?? ""
+        self.newpassword = tfNewPassword.text ?? ""
+        self.checkpassword = tfCheckPassword.text ?? ""
     }
 }

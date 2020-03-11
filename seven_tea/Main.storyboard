@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qzn-vg-vGR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,7 +12,7 @@
             <objects>
                 <viewController title="註冊_手機驗證" modalPresentationStyle="fullScreen" id="c5P-0Z-ERW" customClass="MemberRegiseterViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rsK-ni-P7y">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機號碼:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp1-aH-Euo">
@@ -27,17 +28,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1dx-WN-VYt">
-                                <rect key="frame" x="54" y="345" width="508" height="34"/>
+                                <rect key="frame" x="54" y="345" width="322" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttP-8W-gaE">
-                                <rect key="frame" x="54" y="416" width="508" height="34"/>
+                                <rect key="frame" x="54" y="416" width="322" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIh-Pi-w2S">
-                                <rect key="frame" x="494" y="419" width="67" height="28"/>
+                                <rect key="frame" x="308" y="419" width="67" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="發送驗證碼">
                                     <color key="titleColor" red="0.1262966096" green="0.17269882559999999" blue="0.42355251310000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -47,13 +48,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwi-Az-aJe">
-                                <rect key="frame" x="64" y="534" width="428" height="0.0"/>
+                                <rect key="frame" x="64" y="534" width="242" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85c-xh-Mdp">
-                                <rect key="frame" x="62" y="560" width="428" height="0.0"/>
+                                <rect key="frame" x="62" y="560" width="242" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -73,7 +74,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="iRz-qb-L7A">
-                                <rect key="frame" x="190" y="108" width="220" height="194"/>
+                                <rect key="frame" x="97" y="108" width="220" height="194"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="194" id="0ch-2Y-YiE"/>
                                     <constraint firstAttribute="width" constant="220" id="rK9-dM-dQ4"/>
@@ -127,7 +128,7 @@
             <objects>
                 <viewController storyboardIdentifier="SendMemberRegistr" title="註冊_設定個人資料" modalPresentationStyle="fullScreen" id="Rr2-i2-yMj" customClass="SendMemberRegistrViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1bF-XA-Las">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帳號:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fd6-fM-KTM">
@@ -137,12 +138,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mql-bS-u8d">
-                                <rect key="frame" x="46" y="160" width="508" height="34"/>
+                                <rect key="frame" x="46" y="160" width="322" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EmR-4i-Rle">
-                                <rect key="frame" x="46" y="236" width="391" height="34"/>
+                                <rect key="frame" x="46" y="236" width="205" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -153,13 +154,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性別:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU1-UI-blG">
-                                <rect key="frame" x="472" y="207" width="40" height="21"/>
+                                <rect key="frame" x="286" y="207" width="40" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gu3-JA-Gw5">
-                                <rect key="frame" x="467" y="236" width="65" height="32"/>
+                                <rect key="frame" x="281" y="236" width="65" height="32"/>
                                 <segments>
                                     <segment title="男"/>
                                     <segment title="女"/>
@@ -169,19 +170,19 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f87-CZ-rzY">
-                                <rect key="frame" x="46" y="283" width="449" height="0.0"/>
+                                <rect key="frame" x="46" y="283" width="263" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9A-Cg-wLT">
-                                <rect key="frame" x="46" y="313" width="449" height="0.0"/>
+                                <rect key="frame" x="46" y="313" width="263" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FBi-h7-aRL">
-                                <rect key="frame" x="0.0" y="31" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="31" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="設定帳戶資料" id="yRt-pb-JGP">
@@ -190,7 +191,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4e-dY-O11">
-                                <rect key="frame" x="46" y="333" width="508" height="40"/>
+                                <rect key="frame" x="46" y="333" width="322" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Fbe-9Y-yf7"/>
                                 </constraints>
@@ -250,7 +251,7 @@
             <objects>
                 <viewController storyboardIdentifier="SendMemberRegisterInfo" title="註冊_設定密碼" modalPresentationStyle="fullScreen" id="Pab-g9-aOo" customClass="SendMemberRegisterInfoViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ORO-6H-YI2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="輸入設定密碼:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cO-Y4-CXs">
@@ -266,12 +267,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bwq-nW-hES">
-                                <rect key="frame" x="46" y="160" width="32" height="34"/>
+                                <rect key="frame" x="46" y="160" width="322" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k1z-c6-wdy">
-                                <rect key="frame" x="46" y="236" width="32" height="34"/>
+                                <rect key="frame" x="46" y="236" width="322" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
@@ -289,7 +290,7 @@
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INz-Ps-pNf">
-                                <rect key="frame" x="0.0" y="32" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="32" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="設定密碼" id="HTD-3W-uw7">
@@ -344,14 +345,14 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVc" title="登入" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uxD-lS-plJ" customClass="LoginViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rvs-Id-445">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN3-KF-KLY">
-                                <rect key="frame" x="0.0" y="219" width="600" height="162"/>
+                                <rect key="frame" x="0.0" y="253" width="414" height="390"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入帳號" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T8V-9V-4D3">
-                                        <rect key="frame" x="44" y="38" width="508" height="34"/>
+                                        <rect key="frame" x="44" y="38" width="322" height="34"/>
                                         <color key="tintColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" textContentType="tel"/>
@@ -369,7 +370,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRP-rb-nr3">
-                                        <rect key="frame" x="483" y="204" width="69" height="30"/>
+                                        <rect key="frame" x="297" y="204" width="69" height="30"/>
                                         <state key="normal" title="忘記密碼?">
                                             <color key="titleColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -387,7 +388,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRS-Zf-e5Q">
-                                        <rect key="frame" x="52" y="252" width="496" height="41"/>
+                                        <rect key="frame" x="52" y="252" width="310" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="登入">
                                             <color key="titleColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -411,7 +412,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入密碼" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cvQ-un-MPK">
-                                        <rect key="frame" x="44" y="136" width="508" height="34"/>
+                                        <rect key="frame" x="44" y="136" width="322" height="34"/>
                                         <color key="tintColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -439,7 +440,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="wP5-nP-q5Z">
-                                <rect key="frame" x="86" y="92" width="428" height="119"/>
+                                <rect key="frame" x="86" y="136" width="242" height="109"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -475,10 +476,10 @@
             <objects>
                 <viewController title="忘記密碼" modalPresentationStyle="fullScreen" id="4c5-BA-amm" customClass="ForgotPasswordViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I84-xW-sMm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVX-D1-0ld">
-                                <rect key="frame" x="0.0" y="55" width="414" height="503"/>
+                                <rect key="frame" x="0.0" y="99" width="414" height="503"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帳號:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eE5-Ss-naW">
                                         <rect key="frame" x="74" y="58" width="40" height="21"/>
@@ -614,13 +615,13 @@
         <!--重設密碼-->
         <scene sceneID="2mm-bD-fvQ">
             <objects>
-                <viewController storyboardIdentifier="RestPassword" title="重設密碼" id="zBp-vo-HXX" customClass="SetPasswordViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RestPassword" title="重設密碼" id="zBp-vo-HXX" customClass="ResetPasswordViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Nc-Kt-D68">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ao0-62-oy9">
-                                <rect key="frame" x="2" y="92" width="596" height="416"/>
+                                <rect key="frame" x="2" y="136" width="410" height="624"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定密碼:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8en-Yb-G4B">
                                         <rect key="frame" x="72" y="48" width="74" height="20.5"/>
@@ -635,7 +636,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uv6-pX-kWY">
-                                        <rect key="frame" x="61" y="167" width="474" height="34"/>
+                                        <rect key="frame" x="61" y="167" width="288" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
@@ -650,12 +651,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tji-dm-fLQ">
-                                        <rect key="frame" x="62" y="87" width="473" height="34"/>
+                                        <rect key="frame" x="62" y="87" width="287" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9e-RV-zvP">
-                                        <rect key="frame" x="61" y="258" width="474" height="35"/>
+                                        <rect key="frame" x="61" y="258" width="288" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="s68-xI-Iue"/>
                                         </constraints>
