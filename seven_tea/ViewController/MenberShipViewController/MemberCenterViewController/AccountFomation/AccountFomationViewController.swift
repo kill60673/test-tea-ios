@@ -53,7 +53,7 @@ class AccountFomationViewController: UITableViewController {
         //            break
         //        case 1:
         //            let vc = storyboard?.instantiateViewController(withIdentifier: "accountTV"
-        //            show(vc!, sender: self)
+            //            show(vc!, sender: self)
         //            break
         case 2:
             let vc = storyboard?.instantiateViewController(withIdentifier: "NameVC")
