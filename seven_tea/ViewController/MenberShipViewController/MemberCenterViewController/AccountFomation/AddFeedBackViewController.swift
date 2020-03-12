@@ -13,10 +13,8 @@ class AddFeedBackViewController: UIViewController {
     @IBOutlet weak var tvContent: UITextView!
     @IBOutlet weak var pvType: UIPickerView!
     @IBOutlet weak var btSumbit: UIBarButtonItem!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
 }

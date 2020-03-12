@@ -20,7 +20,7 @@ extension UIViewController {
         vc?.phonenumber = phone
         vc?.uservalidatorscode = validators_Code
         show(vc!, sender: nil)
-        
+
        // self.navigationController?.pushViewController(UIViewController(), animated: true)
     }
     //從註冊頁面第二頁送詳細資訊到送出詳細註冊資訊頁面

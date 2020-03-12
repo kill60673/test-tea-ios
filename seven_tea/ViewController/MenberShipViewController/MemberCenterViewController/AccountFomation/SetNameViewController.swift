@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetNameViewController: UIViewController ,UITextFieldDelegate {
+class SetNameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var btSubmit: UIButton!
     var name = ""
@@ -24,5 +24,4 @@ class SetNameViewController: UIViewController ,UITextFieldDelegate {
             //修改名子的api
         }
     }
-
 }

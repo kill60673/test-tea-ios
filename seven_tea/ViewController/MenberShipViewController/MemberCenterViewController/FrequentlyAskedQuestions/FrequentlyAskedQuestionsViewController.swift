@@ -15,8 +15,6 @@ class FrequentlyAskedQuestionsViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
- //       self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FAQcell")
-
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

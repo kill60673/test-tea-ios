@@ -9,14 +9,14 @@ import UIKit
 
 class LoginAPI: NSObject {
     static let LoginInstance = LoginAPI()
-    
+
     //將資料放進object的func
     // 登入用API
     func login(handler : @escaping (Bool) -> Void) {
-        
+
         let url = URL(string: ApiUrl.ApiUrlInstance.loginUrl)!
         var request = URLRequest(url: url)
-        
+
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
@@ -38,7 +38,7 @@ class LoginAPI: NSObject {
                             loginView.navigationController?.popViewController(animated: true)
                             //tab 切換的第0個
                             loginView.tabBarController?.selectedIndex = 0
-                            
+
                             //                            print(login.data.token)
                             MessageAlert.Instance.message(message: login.message)
                             handler(true)
@@ -51,7 +51,7 @@ class LoginAPI: NSObject {
                         }
                     }
                 } catch {
-                    
+
                 }
             }
         }

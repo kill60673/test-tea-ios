@@ -8,22 +8,21 @@
 
 import UIKit
 
-class FeedBackViewController: UIViewController, UITableViewDelegate , UITableViewDataSource {
-  
+class FeedBackViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     @IBOutlet weak var FeedBackTableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
           return 0
       }
-      
+
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedBackCell", for: indexPath)
         return cell
       }
-
 }

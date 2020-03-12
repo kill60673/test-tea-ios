@@ -14,7 +14,7 @@ class FeedBackTableViewCell: UITableViewCell {
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var ibType: UILabel!
     @IBOutlet weak var ibContent: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +25,4 @@ class FeedBackTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

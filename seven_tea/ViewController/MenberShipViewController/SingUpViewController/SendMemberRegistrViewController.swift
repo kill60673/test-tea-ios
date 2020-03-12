@@ -30,7 +30,7 @@ class SendMemberRegistrViewController: UIViewController, UITextFieldDelegate {
         tfUserName.delegate = self
         tfName.delegate = self
         print("aaa"+phone+",bbb"+uservalidatorscode)
-        
+
         //使用手勢 用tap把鍵盤收起來
         keyboad()
     }
@@ -43,7 +43,7 @@ class SendMemberRegistrViewController: UIViewController, UITextFieldDelegate {
         lbUserName.text = ""
         lbName.text = ""
 
-        predicatesFunc.jumpSendMemberRegisterInfo(username: username, name: name, lbUserName: lbUserName, lbName: lbName, phone: phone, sex: sex, uservalidatorscode: uservalidatorscode,controller: self)
+        predicatesFunc.jumpSendMemberRegisterInfo(username: username, name: name, lbUserName: lbUserName, lbName: lbName, phone: phone, sex: sex, uservalidatorscode: uservalidatorscode, controller: self)
     }
 
     //使用UISegmentedControl來決定男女
@@ -63,8 +63,6 @@ class SendMemberRegistrViewController: UIViewController, UITextFieldDelegate {
         default:
             break
         }
-        //print(sex)
-
         // 依照被選取項目的index來取得該選項文字，並顯示在lbMessage上
     }
 }

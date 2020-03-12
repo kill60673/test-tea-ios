@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 var ver = VerificationCodeTimer()
 var loginMessage = GetLoginMessage()
-class PredicatesFunc  {
+class PredicatesFunc {
     // 2/18修正完確定不會爆
     func restPassword(password: String, againenterpassword: String, lbPrompt: UILabel, uservalidatorscode: String, name: String, phonenumber: String) {
         //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
@@ -28,8 +28,8 @@ class PredicatesFunc  {
             memberRegisterMessage.getResetPassword(userName: name, phone: phonenumber, validatorsCode: uservalidatorscode, password: password, passwordConfirmation: againenterpassword)
         }
     }
-    
-    func sendResetForgotPasswordSms(account: String, phone: String, validatorsCode: String, lbUserName: UILabel, lbPhone: UILabel, lbValidatorsCode: UILabel,controller: UIViewController) {
+
+    func sendResetForgotPasswordSms(account: String, phone: String, validatorsCode: String, lbUserName: UILabel, lbPhone: UILabel, lbValidatorsCode: UILabel, controller: UIViewController) {
         // 2/18修正完成
         //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         if checkValidAccount(input: account) == false {
@@ -48,9 +48,9 @@ class PredicatesFunc  {
         } else if (checkValidAccount(input: account) == true ) && (checkValidPhoneNumber(input: phone) == true) && (checkValidVerificationCode(input: validatorsCode) == true) {
             memberRegisterMessage.getSendResetForgotPassword(userName: account, phone: phone, validatorsCode: validatorsCode, controller: controller)
         }
-        
+
     }
-    
+
     func forgotPasswordSms(account: String, phone: String, btSendVerifyCode: UIButton, lbUserName: UILabel, lbPhone: UILabel) {
         //      let verificationcode = VerificationCodeTimer()
         //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
@@ -68,9 +68,9 @@ class PredicatesFunc  {
             ver.triggerTimer(button: btSendVerifyCode)
         }
     }
-    
+
     func login(account: String, userpassword: String, lbName: UILabel, lbPassword: UILabel ) {
-        
+
         //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         if checkValidAccount(input: account) == false {
             lbName.text = regexmessage
@@ -86,7 +86,7 @@ class PredicatesFunc  {
             loginMessage.getLoginMessage(username: account, password: userpassword)
         }
     }
-    
+
     func sendMemberRegisterInfo(password: String, againEnterpassword: String, account: String, name: String, sex: String, phone: String, uservalidatorscode: String, lbMessage: UILabel) {
         //如果密碼輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         if checkValidPassword(input: password) == false {
@@ -103,8 +103,8 @@ class PredicatesFunc  {
             memberRegisterMessage.getMemberRegisterMessageInfo(username: account, name: name, sex: sex, phone: phone, password: password, passwordConfirmation: againEnterpassword, validatorsCode: uservalidatorscode)
         }
     }
-    
-    func jumpSendMemberRegisterInfo(username: String, name: String, lbUserName: UILabel, lbName: UILabel, phone: String, sex: String, uservalidatorscode: String,controller : UIViewController) {
+
+    func jumpSendMemberRegisterInfo(username: String, name: String, lbUserName: UILabel, lbName: UILabel, phone: String, sex: String, uservalidatorscode: String, controller: UIViewController) {
         //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
         if checkValidAccount(input: username) == false {
             lbUserName.text = regexmessage
@@ -120,8 +120,8 @@ class PredicatesFunc  {
             controller.jumpSendMemberRegisterDetail(username: username, name: name, phone: phone, sex: sex, uservalidatorscode: uservalidatorscode)
         }
     }
-    
-    func sendMemberRegistr(validator_code: String, phone: String, lbMessage: UILabel,controller: UIViewController) {
+
+    func sendMemberRegistr(validator_code: String, phone: String, lbMessage: UILabel, controller: UIViewController) {
         if checkValidPhoneNumber(input: phone) == false {
             lbMessage.text = regexmessage
             lbMessage.shake()
@@ -129,11 +129,11 @@ class PredicatesFunc  {
             lbMessage.text = regexmessage
             lbMessage.shake()
         } else if (checkValidVerificationCode(input: validator_code) == true) && (checkValidPhoneNumber(input: phone) == true) {
-            memberRegisterMessage.getMemberRegisterMessage(phone: phone, validator_code: validator_code,controller: controller)
+            memberRegisterMessage.getMemberRegisterMessage(phone: phone, validator_code: validator_code, controller: controller)
         }
     }
-    
-    func getMemberSmsApi(phone: String, lbMessage: UILabel,btSendVerifyCode: UIButton) {
+
+    func getMemberSmsApi(phone: String, lbMessage: UILabel, btSendVerifyCode: UIButton) {
         if checkValidPhoneNumber(input: phone) == true {
             memberRegisterMessage.getMemberRegisterSmsMessage(phone: phone)
             ver.triggerTimer(button: btSendVerifyCode)
@@ -142,7 +142,7 @@ class PredicatesFunc  {
             lbMessage.shake()
         }
     }
-    func getEmailSmsApi(email: String, lbMessage: UILabel , btSendVerifyCode : UIButton) {
+    func getEmailSmsApi(email: String, lbMessage: UILabel, btSendVerifyCode: UIButton) {
         if checkValidEmail(input: email) == true {
 //           要放EmailSmsApi
             // 計時器
@@ -153,7 +153,7 @@ class PredicatesFunc  {
             lbMessage.shake()
         }
     }
-    func setEmail(email: String, emailVerfiCode: String,lbMessage: UILabel) {
+    func setEmail(email: String, emailVerfiCode: String, lbMessage: UILabel) {
          //      let verificationcode = VerificationCodeTimer()
          //如果帳號輸入是錯誤的不管是空值還是格式錯誤regex_message都會回傳回來正確的錯誤訊息
          if checkValidEmail(input: email) == false {

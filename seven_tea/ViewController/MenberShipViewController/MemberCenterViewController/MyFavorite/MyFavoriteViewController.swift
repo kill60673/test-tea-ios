@@ -63,13 +63,4 @@ class MyFavoriteViewController: UIViewController, UITableViewDelegate, UITableVi
         actionArr.append(actionAdd)
         return actionArr
     }
-    //軟鍵盤按return自動消除
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    //按軟鍵盤以外的地方收起鍵盤
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
 }

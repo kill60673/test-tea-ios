@@ -10,30 +10,30 @@ import UIKit
 
 class GenderTableViewController: UITableViewController {
     var isFinished = [Bool]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         isFinished = Array(repeating: false, count: genderList.count)
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        tableView.tableFooterView = UIView() 
+        tableView.tableFooterView = UIView()
     }
-    
+
     // MARK: - Table view data source
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return genderList.count
     }
-    
+
     //設立checkmark在tableview裡做打勾動作
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gendercell", for: indexPath)
         cell.textLabel?.text = genderList[indexPath.row]
-        if isFinished[indexPath.row] == false{
+        if isFinished[indexPath.row] == false {
             cell.accessoryType = .none
         } else if isFinished[indexPath.row] {
             cell.accessoryType = .checkmark
