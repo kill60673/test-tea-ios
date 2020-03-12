@@ -29,7 +29,6 @@ class SetNotifyTableViewController: UITableViewController {
         return setnotifyList.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "notifycell", for: indexPath)
                 let row = indexPath.row
@@ -41,7 +40,7 @@ class SetNotifyTableViewController: UITableViewController {
                 cell.accessoryView = switchView
                 return cell
     }
-    @objc func switchChanged(_ sender : UISwitch!){
+    @objc func switchChanged(_ sender: UISwitch!) {
 
              print("table row switch Changed \(sender.tag)")
              print("The switch is \(sender.isOn ? "ON" : "OFF")")

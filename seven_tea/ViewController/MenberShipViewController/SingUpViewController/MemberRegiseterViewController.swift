@@ -47,6 +47,6 @@ class MemberRegiseterViewController: UIViewController, UITextFieldDelegate {
         lbMessage.text = ""
         lbValidatorsCode.text = ""
 
-        predicatesFunc.sendMemberRegistr(validator_code: validatorsCode, phone: phone, lbMessage: lbMessage,controller: self)
+        predicatesFunc.sendMemberRegistr(validator_code: validatorsCode, phone: phone, lbMessage: lbMessage, controller: self)
     }
 }

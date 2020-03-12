@@ -15,7 +15,7 @@ var timer: Timer?
 // 2/13發現class傳值問題在 triggerTimer可以過 但是在selector:#selector會產生傳值問題而不能在show這個頁面ㄓ
 class VerificationCodeTimer {
     var button: UIButton?
-    
+
     @objc func showSmsCountDown() {
         button?.setTitle("\(count)", for: .normal)
         count -= 1

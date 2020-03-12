@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetPasswordViewController: UIViewController , UITextFieldDelegate {
+class SetPasswordViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var tfOldPassword: UITextField!
     @IBOutlet weak var tfNewPassword: UITextField!
@@ -26,7 +26,7 @@ class SetPasswordViewController: UIViewController , UITextFieldDelegate {
         tfCheckPassword.delegate = self
         keyboad()
     }
-    
+
     @IBAction func btSend(_ sender: Any) {
         self.oldpassword = tfOldPassword.text ?? ""
         self.newpassword = tfNewPassword.text ?? ""
