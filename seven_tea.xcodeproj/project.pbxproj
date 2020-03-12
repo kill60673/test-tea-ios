@@ -30,6 +30,8 @@
 		84D09B402418E5070019A0B4 /* FeedBackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D09B3F2418E5070019A0B4 /* FeedBackTableViewCell.swift */; };
 		84D09B422418E5220019A0B4 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D09B412418E5220019A0B4 /* FeedBackViewController.swift */; };
 		84D09B442418E6190019A0B4 /* AddFeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D09B432418E6190019A0B4 /* AddFeedBackViewController.swift */; };
+		84D09B47241A2B7C0019A0B4 /* MessageNotifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D09B46241A2B7C0019A0B4 /* MessageNotifyAPI.swift */; };
+		84D09B49241A2C130019A0B4 /* MessageNotifyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D09B48241A2C130019A0B4 /* MessageNotifyCodable.swift */; };
 		84EEC5CC23D1C314005627FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5CB23D1C314005627FF /* AppDelegate.swift */; };
 		84EEC5CE23D1C314005627FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5CD23D1C314005627FF /* SceneDelegate.swift */; };
 		84EEC5D023D1C314005627FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC5CF23D1C314005627FF /* ViewController.swift */; };
@@ -108,6 +110,8 @@
 		84D09B3F2418E5070019A0B4 /* FeedBackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackTableViewCell.swift; sourceTree = "<group>"; };
 		84D09B412418E5220019A0B4 /* FeedBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
 		84D09B432418E6190019A0B4 /* AddFeedBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedBackViewController.swift; sourceTree = "<group>"; };
+		84D09B46241A2B7C0019A0B4 /* MessageNotifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotifyAPI.swift; sourceTree = "<group>"; };
+		84D09B48241A2C130019A0B4 /* MessageNotifyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotifyCodable.swift; sourceTree = "<group>"; };
 		84EEC5C823D1C314005627FF /* seven_tea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seven_tea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EEC5CB23D1C314005627FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EEC5CD23D1C314005627FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -358,6 +362,8 @@
 				84EEC61223D4155C005627FF /* FrequentlyAskedQuestionsApi.swift */,
 				84EEC61423D4156F005627FF /* FrequentlyAskedQuestionsCodable.swift */,
 				84EEC61623D41586005627FF /* FrequentlyAskedQuestions.swift */,
+				84D09B46241A2B7C0019A0B4 /* MessageNotifyAPI.swift */,
+				84D09B48241A2C130019A0B4 /* MessageNotifyCodable.swift */,
 			);
 			path = FrequentlyAskedQuestions;
 			sourceTree = "<group>";
@@ -420,9 +426,6 @@
 				84D09B3B241783D10019A0B4 /* SetEmailViewController.swift */,
 				84D09B3924177FA10019A0B4 /* SetPasswordViewController.swift */,
 				84D09B3D2418B4250019A0B4 /* SetNameViewController.swift */,
-				84D09B3F2418E5070019A0B4 /* FeedBackTableViewCell.swift */,
-				84D09B412418E5220019A0B4 /* FeedBackViewController.swift */,
-				84D09B432418E6190019A0B4 /* AddFeedBackViewController.swift */,
 			);
 			path = AccountFomation;
 			sourceTree = "<group>";
@@ -431,6 +434,9 @@
 			isa = PBXGroup;
 			children = (
 				84316C1024124600002CD226 /* FrequentlyAskedQuestionsViewController.swift */,
+				84D09B432418E6190019A0B4 /* AddFeedBackViewController.swift */,
+				84D09B3F2418E5070019A0B4 /* FeedBackTableViewCell.swift */,
+				84D09B412418E5220019A0B4 /* FeedBackViewController.swift */,
 			);
 			path = FrequentlyAskedQuestions;
 			sourceTree = "<group>";
@@ -731,6 +737,7 @@
 				84EEC5D023D1C314005627FF /* ViewController.swift in Sources */,
 				84F7C89123EAD1C90097EAD0 /* LoginCodable.swift in Sources */,
 				84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */,
+				84D09B47241A2B7C0019A0B4 /* MessageNotifyAPI.swift in Sources */,
 				84EEC5CC23D1C314005627FF /* AppDelegate.swift in Sources */,
 				84C2E2BB23ED26A7008AB33F /* ResetPasswordViewController.swift in Sources */,
 				84316BFF240E4FB4002CD226 /* MemberInfoCodable.swift in Sources */,
@@ -790,6 +797,7 @@
 				84EEC61723D41586005627FF /* FrequentlyAskedQuestions.swift in Sources */,
 				84F7C89023EAD1C90097EAD0 /* LoginApi.swift in Sources */,
 				84316C02240E5CFF002CD226 /* AllList.swift in Sources */,
+				84D09B49241A2C130019A0B4 /* MessageNotifyCodable.swift in Sources */,
 				84EEC61B23D415B5005627FF /* MyFavoriteCodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
