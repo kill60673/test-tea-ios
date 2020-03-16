@@ -12,7 +12,10 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var memberTableView: UITableView!
     @IBOutlet weak var btLogout: UIButton!
     @IBOutlet weak var lbName: UILabel!
-
+    @IBOutlet weak var btVoucher: UIButton!
+    @IBOutlet weak var lbVoucher: UILabel!
+    @IBOutlet weak var btPoint: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(memberCenterList)
@@ -21,6 +24,8 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
         memberTableView.isHidden = true
         btLogout.round_button(button: btLogout)
         memberTableView.tableFooterView = UIView()
+        btVoucher.customized_button(button: btVoucher)
+        btPoint.customized_button(button: btPoint)
     }
     @IBAction func btLogout(_ sender: Any) {
         UserInfo.UserInfoInstance.delete()
@@ -85,5 +90,9 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.width/4.3 * 0.8
     }
-
+    @IBAction func btVoucher(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "VoucherTV")
+        show(vc!, sender: self)
+    }
+    
 }
