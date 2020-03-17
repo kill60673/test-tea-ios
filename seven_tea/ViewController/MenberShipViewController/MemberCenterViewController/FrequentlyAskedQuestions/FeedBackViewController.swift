@@ -20,24 +20,24 @@ var DetailContent: String!
 var DetailTime: String!
 
 class FeedBackViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
     @IBOutlet weak var FeedBackTableView: UITableView!
     static let FeedbackInstance = FeedBackViewController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         PersonalMessageTableView = FeedBackTableView
         FeedBackTableView.tableFooterView = UIView()
         MessageNotifyAPI.MessageNotifyInstance.MessageNotify(Token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String ?? "")
-               
+
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         return Id.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,19 +45,19 @@ class FeedBackViewController: UIViewController, UITableViewDelegate, UITableView
         cell.lbTitle.text = Topic[indexPath.row]
         cell.ibContent.text = Content[indexPath.row]
         cell.lbTime.text = Time[indexPath.row]
-        
+
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         DetailTitle = Topic[indexPath.row]
         DetailName = SendName[indexPath.row]
         DetailContent = Content[indexPath.row]
         DetailTime = Time[indexPath.row]
-        
+
         let vc = storyboard?.instantiateViewController(withIdentifier: "Detail")
         show(vc!, sender: self)
-        
+
     }
 }

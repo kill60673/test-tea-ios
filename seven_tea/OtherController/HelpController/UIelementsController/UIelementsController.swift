@@ -27,8 +27,8 @@ extension UITextView {
 
     }
 }
-extension UIView{
-    func setframe(view : UIView){
+extension UIView {
+    func setframe(view: UIView) {
         view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 5.0
     }
