@@ -7,17 +7,17 @@
 //
 
 import Foundation
-struct  MessageNotifyCodable:Codable{
-    var result:Int
-    var message:[message]?
-    
-    struct message:Codable {
+struct  MessageNotifyCodable: Codable {
+    var result: Int
+    var message: [message]?
+
+    struct message: Codable {
         var id: Int
-        var username:String
-        var title:String
+        var username: String
+        var title: String
         var content: String
-        var sender_name:String
-        var send_time:String
+        var sender_name: String
+        var send_time: String
     }
-    
+
 }

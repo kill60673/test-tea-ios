@@ -31,6 +31,12 @@
 	<string>七盞茶需要使用您的位置</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>七盞茶需要使用您的位置</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>七盞茶需要使用您的相機</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>七盞茶需要取用您的照片</string>
+	<key>NSCameraUsageDescription</key>
+	<string>七盞茶需要使用您的相機</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -50,12 +56,10 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>七盞茶需要取用您的照片</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>MemberCenter</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

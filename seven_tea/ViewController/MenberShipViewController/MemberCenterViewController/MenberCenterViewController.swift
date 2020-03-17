@@ -15,7 +15,7 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var btVoucher: UIButton!
     @IBOutlet weak var lbVoucher: UILabel!
     @IBOutlet weak var btPoint: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print(memberCenterList)
@@ -94,5 +94,5 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
         let vc = storyboard?.instantiateViewController(withIdentifier: "VoucherTV")
         show(vc!, sender: self)
     }
-    
+
 }
