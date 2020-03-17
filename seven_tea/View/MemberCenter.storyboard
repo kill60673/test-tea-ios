@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Qy-Ya-PsS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7KX-uC-osR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -46,6 +46,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfB-Zt-O2g">
+                                                <rect key="frame" x="257" y="93" width="62" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="更換頭像"/>
+                                                <connections>
+                                                    <action selector="btChangAvater:" destination="7KX-uC-osR" eventType="touchUpInside" id="rWK-Is-tlf"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.81176470588235294" green="0.76470588235294112" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -126,6 +134,7 @@
                         <outlet property="btLogout" destination="pW3-zr-oUK" id="3ue-Wu-Oyx"/>
                         <outlet property="btPoint" destination="FWr-ni-Dss" id="OeR-SR-Z1p"/>
                         <outlet property="btVoucher" destination="k4m-0G-PnV" id="Sca-Z9-yEE"/>
+                        <outlet property="imageAvatar" destination="e4e-ZW-tjX" id="98s-Gf-HhH"/>
                         <outlet property="lbName" destination="a01-mn-FO1" id="r7W-HE-Cj7"/>
                         <outlet property="lbVoucher" destination="tEn-cf-BzH" id="vZ1-nO-4D9"/>
                         <outlet property="memberTableView" destination="a1O-8I-AYM" id="TR4-jV-rhs"/>
