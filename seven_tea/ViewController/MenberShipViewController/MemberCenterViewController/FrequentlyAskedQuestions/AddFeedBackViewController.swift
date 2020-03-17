@@ -13,7 +13,7 @@ class AddFeedBackViewController: UIViewController ,UIPickerViewDelegate,UIPicker
     @IBOutlet weak var tfTitle: UITextField!
     @IBOutlet weak var tvContent: UITextView!
     @IBOutlet weak var pvType: UIPickerView!
-    @IBOutlet weak var btSumbit: UIBarButtonItem!
+    @IBOutlet weak var btSubmit: UIBarButtonItem!
     @IBOutlet weak var imageView: UIView!
     var type = "未選擇意見類型"
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class AddFeedBackViewController: UIViewController ,UIPickerViewDelegate,UIPicker
         tvContent.setframe(textview: tvContent)
         imageView.setframe(view: imageView)
     }
-    @IBAction func btSumbit(_ sender: Any) {
+    @IBAction func btSubmit(_ sender: Any) {
         //送出判斷式連結API
     }
     @IBAction func btPickImage(_ sender: Any) {
