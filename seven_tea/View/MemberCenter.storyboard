@@ -486,8 +486,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="UIImageView" destination="lMM-DV-LB5" id="BK2-3H-hkL"/>
                         <outlet property="btSubmit" destination="7TV-nC-wrd" id="QcD-Bo-o30"/>
-                        <outlet property="imageView" destination="lMM-DV-LB5" id="BK2-3H-hkL"/>
+                        <outlet property="imageView" destination="9B7-f5-DJG" id="an4-eI-4Es"/>
                         <outlet property="pvType" destination="EoI-nF-dOI" id="wmO-hl-BdG"/>
                         <outlet property="tfTitle" destination="qjO-5f-Wyn" id="FFf-gX-APX"/>
                         <outlet property="tvContent" destination="s5i-MO-ma8" id="XrQ-5C-00h"/>
