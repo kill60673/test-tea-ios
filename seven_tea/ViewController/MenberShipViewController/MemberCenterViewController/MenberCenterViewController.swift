@@ -7,7 +7,8 @@
 import UIKit
 var memberInfoView: UIViewController!
 
-class MenberCenterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate,UITableViewDataSource {
+    
     @IBOutlet weak var memberView: UIView!
     @IBOutlet weak var memberTableView: UITableView!
     @IBOutlet weak var btLogout: UIButton!
@@ -15,7 +16,8 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var btVoucher: UIButton!
     @IBOutlet weak var lbVoucher: UILabel!
     @IBOutlet weak var btPoint: UIButton!
-
+    @IBOutlet weak var imageAvatar: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(memberCenterList)
@@ -34,7 +36,7 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
         self.tabBarController?.selectedIndex = 0
         MessageAlert.Instance.message(message: "已登出")
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") != nil {
             memberView.isHidden = false
@@ -94,5 +96,27 @@ class MenberCenterViewController: UIViewController, UITableViewDataSource, UITab
         let vc = storyboard?.instantiateViewController(withIdentifier: "VoucherTV")
         show(vc!, sender: self)
     }
-
+    //更換大頭照功能
+    @IBAction func btChangAvater(_ sender: Any) {
+        alert()
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        /* 利用指定的key從info dictionary取出照片 */
+        if let pickedImage = info[.originalImage] as? UIImage {
+            imageAvatar.image = pickedImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    /* 挑選照片過程中如果按了Cancel，關閉挑選畫面 */
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return feedbacktype.count
+    }
 }
