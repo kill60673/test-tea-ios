@@ -168,7 +168,6 @@
         <!--我的累積-->
         <scene sceneID="57U-AR-VHB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eIb-eX-KCF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="zkW-3n-hze" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U4i-Ge-cVL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -178,6 +177,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="我的累積" id="dJA-cC-Bgh"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eIb-eX-KCF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1858" y="534"/>
         </scene>
@@ -481,14 +481,14 @@
                     <navigationItem key="navigationItem" title="意見回饋" id="r2K-hT-goA">
                         <barButtonItem key="rightBarButtonItem" title="完成" id="7TV-nC-wrd">
                             <connections>
-                                <action selector="btSumbit:" destination="0Qy-Ya-PsS" id="Mjo-a3-rvb"/>
+                                <action selector="btSubmit:" destination="0Qy-Ya-PsS" id="Mjo-a3-rvb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="ImageView" destination="lMM-DV-LB5" id="ClS-jA-Fd1"/>
-                        <outlet property="btSumbit" destination="7TV-nC-wrd" id="QcD-Bo-o30"/>
-                        <outlet property="imageView" destination="lMM-DV-LB5" id="BK2-3H-hkL"/>
+                        <outlet property="UIImageView" destination="lMM-DV-LB5" id="BK2-3H-hkL"/>
+                        <outlet property="btSubmit" destination="7TV-nC-wrd" id="QcD-Bo-o30"/>
+                        <outlet property="imageView" destination="9B7-f5-DJG" id="an4-eI-4Es"/>
                         <outlet property="pvType" destination="EoI-nF-dOI" id="wmO-hl-BdG"/>
                         <outlet property="tfTitle" destination="qjO-5f-Wyn" id="FFf-gX-APX"/>
                         <outlet property="tvContent" destination="s5i-MO-ma8" id="XrQ-5C-00h"/>
