@@ -8,7 +8,7 @@ import UIKit
 var memberInfoView: UIViewController!
 
 class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate,UITableViewDataSource {
-   
+    
     @IBOutlet weak var memberView: UIView!
     @IBOutlet weak var memberTableView: UITableView!
     @IBOutlet weak var btLogout: UIButton!
@@ -36,7 +36,7 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.tabBarController?.selectedIndex = 0
         MessageAlert.Instance.message(message: "已登出")
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") != nil {
             memberView.isHidden = false
@@ -98,32 +98,7 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     //更換大頭照功能
     @IBAction func btChangAvater(_ sender: Any) {
-    let myAlert =  UIAlertController(title: "上傳照片", message: "請選擇上傳方式", preferredStyle: .actionSheet)
-        //拍照
-        let takePictureAction = UIAlertAction(title: "拍照", style: .default) { (_: UIAlertAction) in
-        let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        //相簿
-        let picPictureAction = UIAlertAction(title: "從相簿中選取", style: .default) { (_: UIAlertAction) in
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
-            //照片編輯器
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        //alert取消
-        let cancelAction = UIAlertAction(title: "取消", style: .destructive) { (_: UIAlertAction) in
-        }
-        //把按鈕放在警告控制器中
-        myAlert.addAction(takePictureAction)
-        myAlert.addAction(picPictureAction)
-        myAlert.addAction(cancelAction)
-        present(myAlert, animated: true, completion: nil)
+        alert()
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         /* 利用指定的key從info dictionary取出照片 */
@@ -132,7 +107,7 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
         dismiss(animated: true, completion: nil)
     }
-
+    
     /* 挑選照片過程中如果按了Cancel，關閉挑選畫面 */
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
@@ -140,7 +115,7 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return feedbacktype.count
     }
