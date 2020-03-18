@@ -28,7 +28,7 @@ class AddFeedBackViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //送出判斷式連結API
     }
     @IBAction func btPickImage(_ sender: Any) {
-        alert()
+        getphotoalert()
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         /* 利用指定的key從info dictionary取出照片 */

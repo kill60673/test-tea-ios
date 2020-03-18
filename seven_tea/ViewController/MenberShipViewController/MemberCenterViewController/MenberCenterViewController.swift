@@ -98,7 +98,7 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     //更換大頭照功能
     @IBAction func btChangAvater(_ sender: Any) {
-        alert()
+        getphotoalert()
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         /* 利用指定的key從info dictionary取出照片 */

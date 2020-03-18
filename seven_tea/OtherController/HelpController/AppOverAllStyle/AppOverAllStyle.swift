@@ -24,7 +24,7 @@ extension UIViewController {
     @objc func dismissKeyBoard() {
         self.view.endEditing(true)
     }
-    func alert(){
+    func getphotoalert(){
         let myAlert =  UIAlertController(title: "上傳照片", message: "請選擇上傳方式", preferredStyle: .actionSheet)
         //拍照
         let takePictureAction = UIAlertAction(title: "拍照", style: .default) { (_: UIAlertAction) in
