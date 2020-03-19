@@ -8,13 +8,12 @@
 
 import UIKit
 
-class HomeViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate , UICollectionViewDelegateFlowLayout, UITableViewDelegate,UITableViewDataSource {
-    
-    
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
+
     var imageIndex = 0
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.dataSource = self
@@ -23,20 +22,20 @@ class HomeViewController: UIViewController,UICollectionViewDataSource,UICollecti
         Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(changBanner), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
-    @objc func changBanner(){
-        var indexPath:IndexPath
+    @objc func changBanner() {
+        var indexPath: IndexPath
         imageIndex += 1
         if imageIndex < testimage.count {
             indexPath = IndexPath(item: imageIndex, section: 0 )
             homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-        }else{
+        } else {
             imageIndex = 0
             indexPath = IndexPath(item: imageIndex, section: 0 )
             homeCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .centeredHorizontally)
             changBanner()
         }
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -48,7 +47,7 @@ class HomeViewController: UIViewController,UICollectionViewDataSource,UICollecti
         HomeCollectionViewCell
         cell.homeImageView.image = UIImage(named: testimage[indexPath.item])
         return cell
-        
+
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.bounds.size
@@ -62,7 +61,7 @@ class HomeViewController: UIViewController,UICollectionViewDataSource,UICollecti
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homelist.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "HomeCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
