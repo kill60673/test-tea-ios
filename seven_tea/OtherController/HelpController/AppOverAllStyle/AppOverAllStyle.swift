@@ -16,7 +16,7 @@ extension UITextField {
     }
 }
 extension UIViewController {
-    
+
     func keyboad() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
         self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
@@ -24,7 +24,7 @@ extension UIViewController {
     @objc func dismissKeyBoard() {
         self.view.endEditing(true)
     }
-    func getphotoalert(){
+    func getphotoalert() {
         let myAlert =  UIAlertController(title: "上傳照片", message: "請選擇上傳方式", preferredStyle: .actionSheet)
         //拍照
         let takePictureAction = UIAlertAction(title: "拍照", style: .default) { (_: UIAlertAction) in
@@ -53,4 +53,3 @@ extension UIViewController {
         present(myAlert, animated: true, completion: nil)
     }
 }
-

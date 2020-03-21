@@ -7,8 +7,8 @@
 import UIKit
 var memberInfoView: UIViewController!
 
-class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate,UITableViewDataSource {
-    
+class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+
     @IBOutlet weak var memberView: UIView!
     @IBOutlet weak var memberTableView: UITableView!
     @IBOutlet weak var btLogout: UIButton!
@@ -17,7 +17,7 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var lbVoucher: UILabel!
     @IBOutlet weak var btPoint: UIButton!
     @IBOutlet weak var imageAvatar: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print(memberCenterList)
@@ -36,7 +36,7 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.tabBarController?.selectedIndex = 0
         MessageAlert.Instance.message(message: "已登出")
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") != nil {
             memberView.isHidden = false
@@ -107,7 +107,7 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
         dismiss(animated: true, completion: nil)
     }
-    
+
     /* 挑選照片過程中如果按了Cancel，關閉挑選畫面 */
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
@@ -115,7 +115,7 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return feedbacktype.count
     }
