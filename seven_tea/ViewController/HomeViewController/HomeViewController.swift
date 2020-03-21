@@ -47,7 +47,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         HomeCollectionViewCell
         cell.homeImageView.image = UIImage(named: testimage[indexPath.item])
         return cell
-
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.bounds.size
