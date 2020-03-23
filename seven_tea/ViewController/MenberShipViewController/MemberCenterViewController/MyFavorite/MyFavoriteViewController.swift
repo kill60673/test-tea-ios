@@ -19,7 +19,7 @@ class MyFavoriteViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var myfavoriteList = MyFavoriteDrinkInfoAPI.MyFavoriteDrinkInfoInstance.getList()
+        let myfavoriteList = MyFavoriteDrinkInfoAPI.MyFavoriteDrinkInfoInstance.getList()
         let cell = tableView.dequeueReusableCell(withIdentifier: "fovoriterCell") as! MyFavoriteTableViewCell
 
         cell.lbTeaName.text = myfavoriteList[indexPath.row].myFavoriteProductName

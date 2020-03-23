@@ -43,7 +43,6 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
             memberTableView.isHidden = false
             lbName.text = UserInfo.UserInfoInstance.preferences.object(forKey: "name") as? String
         } else {
-            print("null")
             memberView.isHidden = true
             memberTableView.isHidden = true
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

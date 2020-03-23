@@ -16,34 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Si3-Go-m1n">
-                                <rect key="frame" x="0.0" y="563" width="433" height="299"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QwU-IC-8Oa">
-                                        <rect key="frame" x="0.0" y="64" width="425" height="290"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IT5-m3-MbG">
-                                            <size key="itemSize" width="50" height="50"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="v1b-8h-AX6">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="V3E-ih-mS7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zs0-0r-P9x">
                                 <rect key="frame" x="0.0" y="44" width="414" height="210"/>
                                 <color key="backgroundColor" red="0.1057049115" green="0.14635029820000001" blue="0.36512531729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -102,10 +74,52 @@
                                     <outlet property="delegate" destination="Hk3-XU-uSR" id="g3j-rI-22P"/>
                                 </connections>
                             </tableView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KzC-1f-QYV">
+                                <rect key="frame" x="0.0" y="579" width="414" height="210"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5C0-hH-TDP">
+                                        <rect key="frame" x="0.0" y="0.0" width="720" height="210"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="people" translatesAutoresizingMaskIntoConstraints="NO" id="YsE-Zd-Hed">
+                                                <rect key="frame" x="395" y="52" width="100" height="93"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="CsS-ZC-kQl">
+                                                <rect key="frame" x="106" y="52" width="94" height="81"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <viewLayoutGuide key="safeArea" id="OlU-KL-Xww"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="2Yt-hF-mgG"/>
+                                    <constraint firstAttribute="width" constant="414" id="Xk1-LT-GpO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="720" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-E2-bW8">
+                                <rect key="frame" x="159" y="255" width="96" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="myPage:" destination="Hk3-XU-uSR" eventType="valueChanged" id="bra-T1-8yh"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="KzC-1f-QYV" firstAttribute="leading" secondItem="8Ds-rW-e3u" secondAttribute="leading" id="2so-VF-WrN"/>
                             <constraint firstItem="QQe-OF-vEP" firstAttribute="top" secondItem="8Ds-rW-e3u" secondAttribute="top" constant="300" id="7RG-nU-MKp"/>
+                            <constraint firstItem="KzC-1f-QYV" firstAttribute="top" secondItem="8Ds-rW-e3u" secondAttribute="top" constant="579" id="9dj-UR-6eg"/>
                             <constraint firstItem="zs0-0r-P9x" firstAttribute="width" secondItem="8Ds-rW-e3u" secondAttribute="width" id="Do1-5j-iBZ"/>
                             <constraint firstItem="zs0-0r-P9x" firstAttribute="centerX" secondItem="8Ds-rW-e3u" secondAttribute="centerX" id="FRE-UY-yVe"/>
                             <constraint firstItem="zs0-0r-P9x" firstAttribute="top" secondItem="Anj-gV-zX8" secondAttribute="top" id="GGR-v7-Rgh"/>
@@ -117,6 +131,7 @@
                     <connections>
                         <outlet property="homeCollectionView" destination="zs0-0r-P9x" id="IXE-Cp-516"/>
                         <outlet property="homeTableView" destination="QQe-OF-vEP" id="NZp-tF-c9O"/>
+                        <outlet property="pageControl" destination="Ge7-E2-bW8" id="Pet-HB-mSw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lm7-Ws-5cU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -150,4 +165,8 @@
             <point key="canvasLocation" x="1353.6231884057972" y="106.47321428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" width="43" height="37"/>
+        <image name="people" width="43" height="37"/>
+    </resources>
 </document>
