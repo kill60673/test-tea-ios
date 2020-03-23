@@ -13,7 +13,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var imageIndex = 0
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
-
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.dataSource = self
@@ -31,11 +32,36 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         } else {
             imageIndex = 0
             indexPath = IndexPath(item: imageIndex, section: 0 )
-            homeCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .centeredHorizontally)
-            changBanner()
+            homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+//            changBanner()
         }
+        pageControl.currentPage = indexPath.row
     }
+    @IBAction func myPage(_ sender: UIPageControl) {
+        var indexPath: IndexPath
+        if sender.currentPage == 0 {    // 判斷使用者選到哪個Page
+            imageIndex = 0
+            indexPath = IndexPath(item: imageIndex, section: 0 )
+                       homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        }else if sender.currentPage == 1 {
+            imageIndex = 1
+            imageIndex = 1
+            indexPath = IndexPath(item: imageIndex, section: 0 )
+                       homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        }else if sender.currentPage == 2{
+            imageIndex = 2
+            imageIndex = 2
+            indexPath = IndexPath(item: imageIndex, section: 0 )
+                       homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        }else{
+            imageIndex = 3
+            imageIndex = 3
+            indexPath = IndexPath(item: imageIndex, section: 0 )
+                       homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        }
 
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
