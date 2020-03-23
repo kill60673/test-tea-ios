@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.dataSource = self
@@ -43,17 +43,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             imageIndex = 0
             indexPath = IndexPath(item: imageIndex, section: 0 )
                        homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-        }else if sender.currentPage == 1 {
+        } else if sender.currentPage == 1 {
             imageIndex = 1
             imageIndex = 1
             indexPath = IndexPath(item: imageIndex, section: 0 )
                        homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-        }else if sender.currentPage == 2{
+        } else if sender.currentPage == 2 {
             imageIndex = 2
             imageIndex = 2
             indexPath = IndexPath(item: imageIndex, section: 0 )
                        homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-        }else{
+        } else {
             imageIndex = 3
             imageIndex = 3
             indexPath = IndexPath(item: imageIndex, section: 0 )
@@ -61,7 +61,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
 
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
