@@ -33,13 +33,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             imageIndex = 0
             indexPath = IndexPath(item: imageIndex, section: 0 )
             homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-//            changBanner()
         }
         pageControl.currentPage = indexPath.row
     }
     @IBAction func myPage(_ sender: UIPageControl) {
         var indexPath: IndexPath
-        if sender.currentPage == 0 {    // 判斷使用者選到哪個Page
+         // 判斷使用者選到哪個Page
+        if sender.currentPage == 0 {
             imageIndex = 0
             indexPath = IndexPath(item: imageIndex, section: 0 )
                        homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
@@ -83,6 +83,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homelist.count
     }
@@ -91,7 +92,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cellId = "HomeCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         let Homelist = homelist[indexPath.row]
-        /*  UITableViewCell本身有textLabel, detailTextLabel, imageView屬性可以設定主標、副標文字與圖片 */
+//          UITableViewCell本身有textLabel, detailTextLabel, imageView屬性可以設定主標、副標文字與圖片 
         cell.textLabel?.text = Homelist
         cell.imageView?.image = UIImage(named: memberCenterImageList[indexPath.row])
         return cell
