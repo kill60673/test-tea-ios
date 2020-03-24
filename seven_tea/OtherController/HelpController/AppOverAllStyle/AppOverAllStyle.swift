@@ -35,7 +35,7 @@ extension UIViewController {
             self.present(imagePicker, animated: true, completion: nil)
         }
         //相簿
-        let picPictureAction = UIAlertAction(title: "從相簿中選取", style: .default) { (_: UIAlertAction) in
+        let pickPictureAction = UIAlertAction(title: "從相簿中選取", style: .default) { (_: UIAlertAction) in
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
             imagePicker.sourceType = .photoLibrary
@@ -48,7 +48,7 @@ extension UIViewController {
         }
         //把按鈕放在警告控制器中
         myAlert.addAction(takePictureAction)
-        myAlert.addAction(picPictureAction)
+        myAlert.addAction(pickPictureAction)
         myAlert.addAction(cancelAction)
         present(myAlert, animated: true, completion: nil)
     }
