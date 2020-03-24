@@ -97,4 +97,29 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.imageView?.image = UIImage(named: memberCenterImageList[indexPath.row])
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "NearbyStoresVC")
+            show(vc!, sender: self)
+            break
+        case 1:
+            let Menustoryboard = UIStoryboard(name: "Menu", bundle: nil)
+            let vc = Menustoryboard.instantiateViewController(withIdentifier: "MenuTV")
+            show(vc, sender: self)
+            break
+        case 2:
+            let MemberCenterstoryboard = UIStoryboard(name: "MemberCenter", bundle: nil)
+            let vc = MemberCenterstoryboard.instantiateViewController(withIdentifier: "accountTV")
+            show(vc, sender: self)
+            break
+        case 3:
+            let MemberCenterstoryboard = UIStoryboard(name: "MemberCenter", bundle: nil)
+            let vc = MemberCenterstoryboard.instantiateViewController(withIdentifier: "FAQTV")
+            show(vc, sender: self)
+            break
+        default:
+            break
+        }
+    }
 }
