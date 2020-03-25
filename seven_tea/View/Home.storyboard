@@ -230,13 +230,16 @@
                                         <state key="normal" title="縣市">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btCounty:" destination="HAw-7T-vWg" eventType="touchUpInside" id="gKT-8X-pEk"/>
+                                        </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="127" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7xK-V1-rGt">
-                                        <rect key="frame" x="0.0" y="75" width="414" height="734"/>
+                                        <rect key="frame" x="0.0" y="75" width="414" height="753"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="414" id="kSu-0X-ome"/>
-                                            <constraint firstAttribute="height" constant="734" id="yor-ee-ipz"/>
+                                            <constraint firstAttribute="height" constant="753" id="yor-ee-ipz"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NearbyStoresCell" rowHeight="127" id="dky-Vg-1hc" customClass="NearbyStoresTableViewCell" customModule="seven_tea" customModuleProvider="target">
@@ -334,12 +337,39 @@
                     </view>
                     <navigationItem key="navigationItem" title="附近店家" id="HEz-4a-eZq"/>
                     <connections>
+                        <outlet property="CountyView" destination="9S6-oV-yeo" id="UX1-7x-wmx"/>
                         <outlet property="NearbystoresTableView" destination="7xK-V1-rGt" id="O9M-ia-DF8"/>
                         <outlet property="btCounty" destination="j6Z-Hb-6jL" id="Cah-oQ-mQw"/>
                         <outlet property="btRegion" destination="8Q9-i3-k2z" id="BzB-Q8-1NA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzq-Rs-ky1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="9S6-oV-yeo">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7g0-sZ-AI5">
+                            <rect key="frame" x="0.0" y="33" width="240" height="80"/>
+                        </pickerView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xm-SI-ZCa">
+                            <rect key="frame" x="193" y="6" width="31" height="30"/>
+                            <state key="normal" title="完成"/>
+                            <connections>
+                                <action selector="doneClick:" destination="HAw-7T-vWg" eventType="touchUpInside" id="Huz-Zc-57W"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="7g0-sZ-AI5" firstAttribute="leading" secondItem="9S6-oV-yeo" secondAttribute="leading" id="MUS-Mr-gmU"/>
+                        <constraint firstAttribute="trailing" secondItem="8Xm-SI-ZCa" secondAttribute="trailing" constant="16" id="Obc-9o-C2y"/>
+                        <constraint firstItem="8Xm-SI-ZCa" firstAttribute="top" secondItem="9S6-oV-yeo" secondAttribute="top" constant="6" id="gDd-yV-5if"/>
+                        <constraint firstItem="7g0-sZ-AI5" firstAttribute="top" secondItem="9S6-oV-yeo" secondAttribute="top" constant="33" id="or7-NB-Ogp"/>
+                        <constraint firstAttribute="bottom" secondItem="7g0-sZ-AI5" secondAttribute="bottom" constant="15" id="pEV-wm-4vn"/>
+                        <constraint firstAttribute="trailing" secondItem="7g0-sZ-AI5" secondAttribute="trailing" id="wTf-zo-OUv"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="SIJ-Hs-dhG"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="1353.6231884057972" y="106.47321428571428"/>
         </scene>
