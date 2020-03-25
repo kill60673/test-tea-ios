@@ -78,17 +78,56 @@
                                 <rect key="frame" x="0.0" y="579" width="414" height="210"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5C0-hH-TDP">
-                                        <rect key="frame" x="0.0" y="0.0" width="720" height="210"/>
+                                        <rect key="frame" x="0.0" y="8" width="504" height="202"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="CsS-ZC-kQl">
-                                                <rect key="frame" x="107" y="65" width="94" height="81"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="people" translatesAutoresizingMaskIntoConstraints="NO" id="YsE-Zd-Hed">
-                                                <rect key="frame" x="345" y="53" width="100" height="93"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="U5T-CX-vNY">
+                                                <rect key="frame" x="70" y="16" width="774" height="186"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="tea02" translatesAutoresizingMaskIntoConstraints="NO" id="7Yb-ZB-IlR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="98" height="186"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="186" id="hAp-3d-JHt"/>
+                                                            <constraint firstAttribute="width" constant="98" id="vQA-w3-4z6"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="tea02" translatesAutoresizingMaskIntoConstraints="NO" id="EHH-RI-86h">
+                                                        <rect key="frame" x="134" y="0.0" width="98" height="186"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="98" id="VXa-gx-j3J"/>
+                                                            <constraint firstAttribute="height" constant="186" id="dqF-nn-PVa"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="tea01" translatesAutoresizingMaskIntoConstraints="NO" id="BNo-L8-zYw">
+                                                        <rect key="frame" x="268" y="0.0" width="100" height="186"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="Pgm-EX-KbL"/>
+                                                            <constraint firstAttribute="height" constant="186" id="SKM-bH-qVe"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="tea01" translatesAutoresizingMaskIntoConstraints="NO" id="hlg-dC-6rC">
+                                                        <rect key="frame" x="404" y="0.0" width="100" height="186"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="9Fx-Cd-MXw"/>
+                                                            <constraint firstAttribute="height" constant="186" id="Jn2-3K-iOO"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="tea02" translatesAutoresizingMaskIntoConstraints="NO" id="vhh-T1-S6H">
+                                                        <rect key="frame" x="540" y="0.0" width="98" height="186"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="186" id="k3G-MQ-MUS"/>
+                                                            <constraint firstAttribute="width" constant="98" id="ruf-Bn-5TV"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="tea01" translatesAutoresizingMaskIntoConstraints="NO" id="KD3-LZ-96B">
+                                                        <rect key="frame" x="674" y="0.0" width="100" height="186"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="186" id="4qg-En-YdL"/>
+                                                            <constraint firstAttribute="width" constant="100" id="WiA-m8-uie"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <viewLayoutGuide key="safeArea" id="OlU-KL-Xww"/>
@@ -139,6 +178,13 @@
                                     <action selector="btPage1:" destination="Hk3-XU-uSR" eventType="touchUpInside" id="Obg-eE-DQJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月推薦:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cEn-2J-ajf">
+                                <rect key="frame" x="20" y="568" width="414" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -299,7 +345,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" width="43" height="37"/>
-        <image name="people" width="43" height="37"/>
+        <image name="tea01" width="502" height="764"/>
+        <image name="tea02" width="502" height="764"/>
     </resources>
 </document>

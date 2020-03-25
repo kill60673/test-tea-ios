@@ -23,9 +23,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changBanner), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
+    //輪播廣告的控制
     @objc func changBanner() {
         var indexPath: IndexPath
-        imageIndex += 1
+        self.imageIndex += 1
         if imageIndex < testimage.count {
             indexPath = IndexPath(item: imageIndex, section: 0 )
             homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
@@ -36,6 +37,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         pageControl.currentPage = indexPath.row
     }
+    //ColletcionView的控制部分
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -54,10 +56,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.imageIndex = indexPath.row
+        pageControl.currentPage = self.imageIndex
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
+    //TableView的控制部分
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homelist.count
     }
@@ -99,28 +105,28 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func btPage1(_ sender: Any) {
         var indexPath: IndexPath
-        imageIndex = 0
+        self.imageIndex = 0
         pageControl.currentPage = imageIndex
         indexPath = IndexPath(item: imageIndex, section: 0 )
         homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
     @IBAction func btPage2(_ sender: Any) {
         var indexPath: IndexPath
-        imageIndex = 1
+        self.imageIndex = 1
         pageControl.currentPage = imageIndex
         indexPath = IndexPath(item: imageIndex, section: 0 )
         homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
     @IBAction func btPage3(_ sender: Any) {
         var indexPath: IndexPath
-        imageIndex = 2
+        self.imageIndex = 2
         pageControl.currentPage = imageIndex
         indexPath = IndexPath(item: imageIndex, section: 0 )
         homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
     @IBAction func btPage4(_ sender: Any) {
         var indexPath: IndexPath
-        imageIndex = 3
+        self.imageIndex = 3
         pageControl.currentPage = imageIndex
         indexPath = IndexPath(item: imageIndex, section: 0 )
         homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
