@@ -20,7 +20,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         homeCollectionView.dataSource = self
         homeCollectionView.delegate = self
         homeTableView.tableFooterView = UIView()
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(changBanner), userInfo: nil, repeats: true)
+//        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(changBanner), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
     @objc func changBanner() {
@@ -37,29 +37,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         pageControl.currentPage = indexPath.row
     }
     @IBAction func myPage(_ sender: UIPageControl) {
+        // 判斷使用者選到哪個Page
         var indexPath: IndexPath
-         // 判斷使用者選到哪個Page
-        if sender.currentPage == 0 {
-            imageIndex = 0
-            indexPath = IndexPath(item: imageIndex, section: 0 )
-                       homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-        } else if sender.currentPage == 1 {
-            imageIndex = 1
-            imageIndex = 1
-            indexPath = IndexPath(item: imageIndex, section: 0 )
-                       homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-        } else if sender.currentPage == 2 {
-            imageIndex = 2
-            imageIndex = 2
-            indexPath = IndexPath(item: imageIndex, section: 0 )
-                       homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-        } else {
-            imageIndex = 3
-            imageIndex = 3
-            indexPath = IndexPath(item: imageIndex, section: 0 )
-                       homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-        }
-
+        imageIndex = sender.currentPage
+        indexPath = IndexPath(item: imageIndex, section: 0 )
+        homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -121,5 +103,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         default:
             break
         }
+    }
+    @IBAction func btPage1(_ sender: Any) {
+        var indexPath: IndexPath
+        imageIndex = 0
+        pageControl.currentPage = imageIndex
+        indexPath = IndexPath(item: imageIndex, section: 0 )
+        homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+    }
+    @IBAction func btPage2(_ sender: Any) {
+    }
+    @IBAction func btPage3(_ sender: Any) {
+    }
+    @IBAction func btPage4(_ sender: Any) {
     }
 }
