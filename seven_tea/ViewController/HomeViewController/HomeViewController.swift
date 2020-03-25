@@ -9,18 +9,18 @@
 import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
-
+    
     var imageIndex = 0
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.dataSource = self
         homeCollectionView.delegate = self
         homeTableView.tableFooterView = UIView()
-//        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(changBanner), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changBanner), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
     @objc func changBanner() {
@@ -36,14 +36,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         pageControl.currentPage = indexPath.row
     }
-    @IBAction func myPage(_ sender: UIPageControl) {
-        // 判斷使用者選到哪個Page
-        var indexPath: IndexPath
-        imageIndex = sender.currentPage
-        indexPath = IndexPath(item: imageIndex, section: 0 )
-        homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-    }
-
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -69,12 +61,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homelist.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "HomeCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         let Homelist = homelist[indexPath.row]
-//          UITableViewCell本身有textLabel, detailTextLabel, imageView屬性可以設定主標、副標文字與圖片 
+        //          UITableViewCell本身有textLabel, detailTextLabel, imageView屬性可以設定主標、副標文字與圖片
         cell.textLabel?.text = Homelist
         cell.imageView?.image = UIImage(named: memberCenterImageList[indexPath.row])
         return cell
@@ -104,6 +96,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             break
         }
     }
+    
     @IBAction func btPage1(_ sender: Any) {
         var indexPath: IndexPath
         imageIndex = 0
@@ -112,9 +105,24 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
     @IBAction func btPage2(_ sender: Any) {
+        var indexPath: IndexPath
+        imageIndex = 1
+        pageControl.currentPage = imageIndex
+        indexPath = IndexPath(item: imageIndex, section: 0 )
+        homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
     @IBAction func btPage3(_ sender: Any) {
+        var indexPath: IndexPath
+        imageIndex = 2
+        pageControl.currentPage = imageIndex
+        indexPath = IndexPath(item: imageIndex, section: 0 )
+        homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
     @IBAction func btPage4(_ sender: Any) {
+        var indexPath: IndexPath
+        imageIndex = 3
+        pageControl.currentPage = imageIndex
+        indexPath = IndexPath(item: imageIndex, section: 0 )
+        homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
 }
