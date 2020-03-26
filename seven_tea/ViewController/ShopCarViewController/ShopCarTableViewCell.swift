@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderTableViewCell: UITableViewCell {
+class ShopCarTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderViewController: UIViewController {
+class ShopCarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
