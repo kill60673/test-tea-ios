@@ -20,6 +20,8 @@
 		8490F24E2429F59800A59020 /* NearbyStoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */; };
 		8490F253242CA34C00A59020 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F252242CA34C00A59020 /* MenuTableViewCell.swift */; };
 		8490F255242CA35B00A59020 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F254242CA35B00A59020 /* MenuViewController.swift */; };
+		8490F258242CB50700A59020 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F257242CB50700A59020 /* OrderViewController.swift */; };
+		8490F25A242CB51500A59020 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F259242CB51500A59020 /* OrderTableViewCell.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
@@ -108,6 +110,8 @@
 		8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresTableViewCell.swift; sourceTree = "<group>"; };
 		8490F252242CA34C00A59020 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		8490F254242CA35B00A59020 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8490F257242CB50700A59020 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		8490F259242CB51500A59020 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
@@ -241,6 +245,15 @@
 			path = MenuViewController;
 			sourceTree = "<group>";
 		};
+		8490F256242CB4D400A59020 /* OrderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8490F257242CB50700A59020 /* OrderViewController.swift */,
+				8490F259242CB51500A59020 /* OrderTableViewCell.swift */,
+			);
+			path = OrderViewController;
+			sourceTree = "<group>";
+		};
 		84C2E2A923EBDD4C008AB33F /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +336,7 @@
 				84572B17242207EF00E11696 /* HomeViewController */,
 				84EEC63223D42280005627FF /* MenberShipViewController */,
 				8490F251242CA33200A59020 /* MenuViewController */,
+				8490F256242CB4D400A59020 /* OrderViewController */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -791,6 +805,7 @@
 				84572B192422082200E11696 /* HomeCollectionViewCell.swift in Sources */,
 				84C2E2BB23ED26A7008AB33F /* ResetPasswordViewController.swift in Sources */,
 				84316BFF240E4FB4002CD226 /* MemberInfoCodable.swift in Sources */,
+				8490F25A242CB51500A59020 /* OrderTableViewCell.swift in Sources */,
 				84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */,
 				84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */,
 				84D09B442418E6190019A0B4 /* AddFeedBackViewController.swift in Sources */,
@@ -810,6 +825,7 @@
 				84FADF2C23F678B600C824C6 /* SendMemberRegistrViewController.swift in Sources */,
 				84FADF1F23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift in Sources */,
 				84D09B3324163FA50019A0B4 /* GenderTableViewController.swift in Sources */,
+				8490F258242CB50700A59020 /* OrderViewController.swift in Sources */,
 				84EEC61923D415A8005627FF /* MyFavoriteApi.swift in Sources */,
 				84C2E2B823EBF921008AB33F /* ForgotPasswordViewController.swift in Sources */,
 				84D09B3E2418B4250019A0B4 /* SetNameViewController.swift in Sources */,
