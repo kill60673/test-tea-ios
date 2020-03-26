@@ -313,6 +313,9 @@
                                         <state key="normal" title="地區">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btRegion:" destination="HAw-7T-vWg" eventType="touchUpInside" id="Gl9-rc-aOW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -341,6 +344,8 @@
                         <outlet property="NearbystoresTableView" destination="7xK-V1-rGt" id="O9M-ia-DF8"/>
                         <outlet property="btCounty" destination="j6Z-Hb-6jL" id="Cah-oQ-mQw"/>
                         <outlet property="btRegion" destination="8Q9-i3-k2z" id="BzB-Q8-1NA"/>
+                        <outlet property="countpickview" destination="7g0-sZ-AI5" id="7gb-fU-ZHp"/>
+                        <outlet property="regionpickview" destination="9eQ-fQ-8NB" id="jye-Xm-Huv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzq-Rs-ky1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -349,7 +354,19 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7g0-sZ-AI5">
-                            <rect key="frame" x="0.0" y="33" width="240" height="80"/>
+                            <rect key="frame" x="0.0" y="15" width="240" height="98"/>
+                            <connections>
+                                <outlet property="dataSource" destination="HAw-7T-vWg" id="JrC-Ah-KYJ"/>
+                                <outlet property="delegate" destination="HAw-7T-vWg" id="eod-DS-tqN"/>
+                            </connections>
+                        </pickerView>
+                        <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-fQ-8NB">
+                            <rect key="frame" x="0.0" y="6" width="240" height="122"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <outlet property="dataSource" destination="HAw-7T-vWg" id="EGk-JJ-1Qr"/>
+                                <outlet property="delegate" destination="HAw-7T-vWg" id="SWn-55-loo"/>
+                            </connections>
                         </pickerView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xm-SI-ZCa">
                             <rect key="frame" x="193" y="6" width="31" height="30"/>
@@ -359,12 +376,12 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="7g0-sZ-AI5" firstAttribute="leading" secondItem="9S6-oV-yeo" secondAttribute="leading" id="MUS-Mr-gmU"/>
                         <constraint firstAttribute="trailing" secondItem="8Xm-SI-ZCa" secondAttribute="trailing" constant="16" id="Obc-9o-C2y"/>
                         <constraint firstItem="8Xm-SI-ZCa" firstAttribute="top" secondItem="9S6-oV-yeo" secondAttribute="top" constant="6" id="gDd-yV-5if"/>
-                        <constraint firstItem="7g0-sZ-AI5" firstAttribute="top" secondItem="9S6-oV-yeo" secondAttribute="top" constant="33" id="or7-NB-Ogp"/>
+                        <constraint firstItem="7g0-sZ-AI5" firstAttribute="top" secondItem="9S6-oV-yeo" secondAttribute="top" constant="15" id="or7-NB-Ogp"/>
                         <constraint firstAttribute="bottom" secondItem="7g0-sZ-AI5" secondAttribute="bottom" constant="15" id="pEV-wm-4vn"/>
                         <constraint firstAttribute="trailing" secondItem="7g0-sZ-AI5" secondAttribute="trailing" id="wTf-zo-OUv"/>
                     </constraints>
