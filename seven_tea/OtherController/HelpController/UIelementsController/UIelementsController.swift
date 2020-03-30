@@ -44,3 +44,14 @@ extension UIView {
         View.layer.cornerRadius = 10
     }
 }
+extension UITableView{
+    func setframe(view:UITableView){
+        view.layer.cornerRadius = 3.0
+        view.layer.masksToBounds = false
+        view.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        view.layer.shadowOpacity = 0.8
+        view.layer.cornerRadius = view.frame.width / 2
+        view.layer.masksToBounds = true;
+    }
+}
