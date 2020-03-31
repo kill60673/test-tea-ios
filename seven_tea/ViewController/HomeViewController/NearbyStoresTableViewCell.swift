@@ -13,7 +13,7 @@ class NearbyStoresTableViewCell: UITableViewCell {
     @IBOutlet weak var lbBusinessHours: UILabel!
     @IBOutlet weak var lbPhone: UILabel!
     @IBOutlet weak var lbAddress: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

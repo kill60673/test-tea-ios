@@ -9,12 +9,12 @@
 import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
-    
+
     var imageIndex = 0
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.dataSource = self
@@ -67,7 +67,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homelist.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "HomeCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
@@ -102,7 +102,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             break
         }
     }
-    
+
     @IBAction func btPage1(_ sender: Any) {
         var indexPath: IndexPath
         self.imageIndex = 0

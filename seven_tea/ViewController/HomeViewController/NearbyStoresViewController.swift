@@ -8,18 +8,18 @@
 
 import UIKit
 
-class NearbyStoresViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate , UIPickerViewDataSource{
-    let list = ["台北","台中","高雄"]
-    let alist = ["地區","你家","我家","他家"]
-    
-    var nearbystores = [0,1,2,3,4]
+class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+    let list = ["台北", "台中", "高雄"]
+    let alist = ["地區", "你家", "我家", "他家"]
+
+    var nearbystores = [0, 1, 2, 3, 4]
     @IBOutlet weak var btCounty: UIButton!
     @IBOutlet weak var btRegion: UIButton!
     @IBOutlet weak var NearbystoresTableView: UITableView!
     @IBOutlet weak var countpickview: UIPickerView!
     @IBOutlet var CountyView: UIView!
     @IBOutlet weak var regionpickview: UIPickerView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         btCounty.customized_button(button: btCounty)
@@ -80,26 +80,26 @@ class NearbyStoresViewController: UIViewController , UITableViewDelegate, UITabl
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView.tag == 0 {
             return list.count
-        }else{
+        } else {
             return alist.count
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 0 {
             return list[row]
-        }else{
+        } else {
             return alist[row]
         }
     }
     //選擇客製化alert的View跳出事件及收回事件
-    func displayPlayView(_ show: Bool){
-        for c in view.constraints{
+    func displayPlayView(_ show: Bool) {
+        for c in view.constraints {
             if c.identifier == "bottom"{
                 c.constant = (show) ? -100 : 128
                 break
             }
         }
-        UIView.animate(withDuration: 0.5){
+        UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
 //        print("我有案下去")
