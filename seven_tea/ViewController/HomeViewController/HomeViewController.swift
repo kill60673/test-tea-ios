@@ -20,11 +20,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         homeCollectionView.dataSource = self
         homeCollectionView.delegate = self
         homeTableView.tableFooterView = UIView()
-        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changBanner), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
     //輪播廣告的控制
-    @objc func changBanner() {
+    @objc func changeBanner() {
         var indexPath: IndexPath
         self.imageIndex += 1
         if imageIndex < testimage.count {
