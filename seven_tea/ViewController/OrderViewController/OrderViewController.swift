@@ -8,26 +8,23 @@
 
 import UIKit
 
-class OrderViewController: UIViewController ,UITableViewDataSource , UITableViewDelegate{
+class OrderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1   
+        return 1
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath)as! OrderTableViewCell
-        
+
         return cell
     }
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
-    
-    
+
     /*
      // MARK: - Navigation
      
@@ -37,5 +34,5 @@ class OrderViewController: UIViewController ,UITableViewDataSource , UITableView
      // Pass the selected object to the new view controller.
      }
      */
-    
+
 }

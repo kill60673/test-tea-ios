@@ -14,7 +14,7 @@ extension UIButton {
         button.layer.borderWidth = 1.0//外框粗度
         button.layer.cornerRadius = 5//圓角
     }
-    
+
     func round_button(button: UIButton) {
         button.layer.borderWidth = 1.0//外框粗度
         button.layer.cornerRadius = 20//圓角
@@ -24,7 +24,7 @@ extension UITextView {
     func setframe(textview: UITextView) {
         textview.layer.borderWidth = 1.0
         textview.layer.cornerRadius = 5.0
-        
+
     }
 }
 extension UIView {
@@ -32,7 +32,7 @@ extension UIView {
         view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 5.0
     }
-    func setView(View:UIView){
+    func setView(View: UIView) {
         View.translatesAutoresizingMaskIntoConstraints = false
         View.heightAnchor.constraint(equalToConstant: 128).isActive = true
         View.leadingAnchor.constraint(equalToSystemSpacingAfter: View.leadingAnchor, multiplier: 0).isActive = true
@@ -44,14 +44,14 @@ extension UIView {
         View.layer.cornerRadius = 10
     }
 }
-extension UITableView{
-    func setframe(view:UITableView){
+extension UITableView {
+    func setframe(view: UITableView) {
         view.layer.cornerRadius = 3.0
         view.layer.masksToBounds = false
         view.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
         view.layer.shadowOpacity = 0.8
         view.layer.cornerRadius = view.frame.width / 2
-        view.layer.masksToBounds = true;
+        view.layer.masksToBounds = true
     }
 }

@@ -52,9 +52,9 @@ extension UIViewController {
         myAlert.addAction(cancelAction)
         present(myAlert, animated: true, completion: nil)
     }
-    func openlise(){
+    func openlise() {
         let vc = UIViewController()
-               vc.preferredContentSize = CGSize(width: 250,height: 300)
+               vc.preferredContentSize = CGSize(width: 250, height: 300)
                let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
                pickerView.delegate = self as? UIPickerViewDelegate
                pickerView.dataSource = self as? UIPickerViewDataSource
