@@ -9,6 +9,7 @@
 import UIKit
 
 class OrderTableViewCell: UITableViewCell {
+    @IBOutlet weak var orderStatusColor: UILabel!
 
     @IBOutlet weak var orderView: UIView!
     @IBOutlet weak var orderTime: UILabel!
