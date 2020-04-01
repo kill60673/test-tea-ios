@@ -37,10 +37,6 @@ class MyFavoriteDrinkInfoAPI: NSObject {
                         let myFavorite = MyFavorite(myFavoriteId: result.id, myFavoriteProductName: result.product_name, myFavoriteProductType: result.product_type, myFavoriteSize: result.size, myFavoriteSugar: result.sugar, myFavoriteTemperature: result.temperature, myFavoriteQuantity: result.quantity, myFavoriteTotalPrice: result.total_price, myFavoriteSinglePrice: result.single_price, myFavoriteStore: result.store, myFavoriteStoreId: result.store_id, myFavoriteName: result.name, myFavoriteAdd: result.add)
                         self.myfavirutelist.append(myFavorite)
                     }
-//                    DispatchQueue.main.async {
-//                       let test = MyFavoriteViewController()
-//                        test.updateTableViewList()
-//                    }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
