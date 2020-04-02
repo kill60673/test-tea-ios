@@ -43,7 +43,4 @@ class Order: NSObject {
         self.quantity = quantity
         self.price = price
     }
-    func getMyFavirite() {
-
-    }
 }
