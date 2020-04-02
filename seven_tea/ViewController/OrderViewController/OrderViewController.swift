@@ -8,22 +8,6 @@
 
 import UIKit
 var OrderTableView: UITableView!
-var OrderId = [String]()
-var OrderNo = [String]()
-var Name = [String]()
-var Phone = [String]()
-var OrdererPhone = [String]()
-var ArrivalTime = [String]()
-var OrderAddress = [String]()
-var OrderStore = [String]()
-var OrderTime = [String]()
-var Company = [String]()
-var TaxId = [String]()
-var OrderStatus = [String]()
-var PayMethod = [String]()
-var GetMethod = [String]()
-var Quantity = [Int]()
-var Price = [Int]()
 var AllCount = 0
 var AllPrince = 0
 var SelectOrderNo: String!
@@ -36,7 +20,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var OrderViewController: UIView!
 
     var  selectStatus = 0
-
+    let OrderList = OrderApi.OrderRecordInstance.getList()
     override func viewDidLoad() {
         super.viewDidLoad()
         OrderController = self
@@ -52,7 +36,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
             let dateFormat: DateFormatter = DateFormatter()
             dateFormat.dateFormat = "yyyy-MM-dd"
             let dateString: String = dateFormat.string(from: now)
-            OrderRecordAPI.OrderRecordInstance.OrderRecord(Token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, StartDate: dateString, EndDate: dateString, Status: selectStatus)
+            OrderApi.OrderRecordInstance.OrderRecord(Token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, StartDate: dateString, EndDate: dateString, Status: selectStatus)
         }
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -73,30 +57,31 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if OrderId.count == 0 {
+        if OrderApi.OrderRecordInstance.getCount() == 0 {
             OrderTableView.isHidden = true
             LbNoData.isHidden = false
         } else {
             OrderTableView.isHidden = false
             LbNoData.isHidden = true
         }
-        return OrderId.count
+        return OrderApi.OrderRecordInstance.getCount()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        AllCount = Quantity[indexPath.row]
-        AllPrince = Price[indexPath.row]
-        SelectOrderNo = OrderNo[indexPath.row]
+        
+        AllCount = OrderList[indexPath.row].quantity
+        AllPrince = OrderList[indexPath.row].price
+        SelectOrderNo = OrderList[indexPath.row].orderNumber
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath)as! OrderTableViewCell
-        cell.orderTime.text = OrderTime[indexPath.row]
-        cell.orderName.text = Name[indexPath.row]
-        cell.orderGetTime.text = ArrivalTime[indexPath.row]
-        cell.orderStore.text = OrderStore[indexPath.row]
-        cell.orderGetMethod.text = GetMethod[indexPath.row]
-        cell.orderPhone.text = Phone[indexPath.row]
-        cell.orderAddress.text = OrderAddress[indexPath.row]
-        cell.orderSerialNumber.text = "(\(OrderId[indexPath.row]))"
+        cell.orderTime.text = OrderList[indexPath.row].orderTime
+        cell.orderName.text = OrderList[indexPath.row].name
+        cell.orderGetTime.text = OrderList[indexPath.row].arrivalTime
+        cell.orderStore.text = OrderList[indexPath.row].store
+        cell.orderGetMethod.text = OrderList[indexPath.row].getMethod
+        cell.orderPhone.text = OrderList[indexPath.row].phone
+        cell.orderAddress.text = OrderList[indexPath.row].address
+        cell.orderSerialNumber.text = "(\(OrderList[indexPath.row].orderId))"
         return cell
     }
     @IBAction func statusSelect(_ sender: Any) {
@@ -134,5 +119,5 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         // 將當下時間轉換成設定的時間格式
 
         let dateString: String = dateFormat.string(from: now)
-        OrderRecordAPI.OrderRecordInstance.OrderRecord(Token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, StartDate: dateString, EndDate: dateString, Status: selectStatus)    }
+        OrderApi.OrderRecordInstance.OrderRecord(Token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, StartDate: dateString, EndDate: dateString, Status: selectStatus)    }
 }

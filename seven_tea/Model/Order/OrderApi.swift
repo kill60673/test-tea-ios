@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-class OrderRecordAPI: NSObject {
-    static let OrderRecordInstance = OrderRecordAPI()
+class OrderApi: NSObject {
+    static let OrderRecordInstance = OrderApi()
      var orderlist = [Order]()
     func OrderRecord(Token: String, StartDate: String, EndDate: String, Status: Int) {
 
@@ -51,15 +51,13 @@ class OrderRecordAPI: NSObject {
                     DispatchQueue.main.async {
 
                         MessageAlert.Instance.message(message: "\(Info.message)")
-
+                        print("我在這裡裡")
                     }
-
                 }
-
             } else {
                 //主線程
                 DispatchQueue.main.async {
-
+                    print("我在這裡啦")
                     MessageAlert.Instance.message(message: "資料解析錯誤")
                 }
             }
@@ -88,6 +86,12 @@ class OrderRecordAPI: NSObject {
         }
         task.resume()
 
+    }
+    func getCount() -> Int {
+        return orderlist.count
+    }
+    func getList() -> [Order] {
+        return orderlist
     }
 
 }
