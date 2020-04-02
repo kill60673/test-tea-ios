@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class OrderRecordAPI: NSObject {
     static let OrderRecordInstance = OrderRecordAPI()
-
+     var orderlist = [Order]()
     func OrderRecord(Token: String, StartDate: String, EndDate: String, Status: Int) {
 
         let url = URL(string: ApiUrl.ApiUrlInstance.OrderRecordUrl + "\(StartDate)/\(EndDate)/\(Status)")!
@@ -41,45 +41,11 @@ class OrderRecordAPI: NSObject {
 
                 //如果是result＝＝0先清掉頁面上的資料 然後再把裡面資料用for迴圈丟進去
                 if Info.result == 0 {
-                    print("哈囉你好嗎 嘿嘿")
-                    OrderId.removeAll()
-                    OrderNo.removeAll()
-                    Name.removeAll()
-                    Phone.removeAll()
-                    OrdererPhone.removeAll()
-                    ArrivalTime.removeAll()
-                    OrderAddress.removeAll()
-                    OrderStore.removeAll()
-                    OrderTime.removeAll()
-                    Company.removeAll()
-                    TaxId.removeAll()
-                    OrderStatus.removeAll()
-                    PayMethod.removeAll()
-                    GetMethod.removeAll()
-                    Quantity.removeAll()
-                    Price.removeAll()
-
+                    self.orderlist.removeAll()
                     for result in Info.message! {
-
-                        OrderId.append(result.id)
-                        OrderNo.append(result.order_no)
-                        Name.append(result.name)
-                        Phone.append(result.orderer_phone)
-                        OrdererPhone.append(result.orderer_phone)
-                        ArrivalTime.append(result.arrival_time)
-                        OrderAddress.append(result.address)
-                        OrderStore.append(result.store)
-                        OrderTime.append(result.order_time)
-                        Company.append(result.company)
-                        TaxId.append(result.tax_id)
-                        OrderStatus.append(result.status)
-                        PayMethod.append(result.pay_method)
-                        GetMethod.append(result.get_method)
-                        Quantity.append(result.quantity)
-                        Price.append(result.price)
-
+                        let order = Order(orderId: result.id, order_Number: result.order_no, name: result.name, phone: result.phone, orderPhone: result.orderer_phone, arrivalTime: result.arrival_time, address: result.address, store: result.store, company: result.company, taxId: result.tax_id, status: result.status, payMethod: result.pay_method, orderTime: result.order_time, getMethod: result.get_method, quantity: result.quantity, price: result.price)
+                        self.orderlist.append(order)
                     }
-
                 } else {
                     //主線程
                     DispatchQueue.main.async {
