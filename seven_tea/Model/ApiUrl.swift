@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 class ApiUrl: NSObject {
     static let ApiUrlInstance = ApiUrl()
-    var doMain: String = "http://127.0.0.1:8000/"
+    var doMain: String = "http://seventea.test/"
     var loginUrl: String
     var sendMemberRegisterSmsUrl: String
     var forgotPasswordSmsUrl: String
@@ -21,6 +21,7 @@ class ApiUrl: NSObject {
     var myFavoriteDrinkInfoUrl: String
     var MessageNotifyUrl: String
     var OrderRecordUrl: String
+    var ADUrl:String
 
     override init() {
         loginUrl="\(doMain)/api/login"
@@ -35,6 +36,6 @@ class ApiUrl: NSObject {
         myFavoriteDrinkInfoUrl="\(doMain)/api/get/my-favorite"
         MessageNotifyUrl="\(doMain)/api/member/message-notify"
         OrderRecordUrl="\(doMain)/api/get/orders/record/"
-
+        ADUrl="\(doMain)/api/get/index/message"
     }
 }
