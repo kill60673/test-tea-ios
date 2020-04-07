@@ -10,33 +10,6 @@ import Foundation
 var datas = Data()
 class SendMemberRegistrApi: NSObject {
     static let MemberRegisterInstance = SendMemberRegistrApi()
-//    var datas = Data()
-
-    //    將資料放進object的func
-//    func getMemberRegisterMessage(phone : String , validators_code : String)
-//    {
-//        let postSTring  = MemberRegisterMessage(phone: phone, validators_code: validators_code)
-//        let encoder = JSONEncoder()
-//        if let data = try? encoder.encode(postSTring)
-//        {
-//            print(postSTring)
-//            self.datas = data
-//            print(data)
-//            SendMemberRegister {
-//                (result) in
-//                if result
-//                {
-//                    return
-//                }
-//                else
-//                {
-//
-//                }
-//            }
-//
-//        }
-//    }
-
     func sendMemberRegister( handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.sendMemberRegistrUrl)!
         var request = URLRequest(url: url)

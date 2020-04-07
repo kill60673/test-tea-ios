@@ -15,8 +15,8 @@ struct RestPasswordCodable: Codable {
 struct ResetPassword: Codable {
     var username: String
     var phone: String
-    var validatorsCode: String
+    var validators_code: String
     var password: String
-    var passwordConifmation: String
+    var password_confirmation: String
 }
 //userName: String , phone: String, validatorsCode: String, password: String, passwordConfirmation: String

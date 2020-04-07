@@ -18,6 +18,6 @@ struct MemberRegisterMessageInfo: Codable {
     var sex: String
     var phone: String
     var password: String
-    var passwordConfirmation: String
-    var validatorsCode: String
+    var password_confirmation: String
+    var validator_code: String
 }
