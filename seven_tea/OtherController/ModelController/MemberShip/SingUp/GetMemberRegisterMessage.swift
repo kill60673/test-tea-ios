@@ -13,7 +13,7 @@ class GetMemberRegisterMessage: UIViewController {
 
     //    將資料放進object的func
     func getMemberRegisterMessage(phone: String, validator_code: String, controller: UIViewController) {
-        let postSTring  = MemberRegisterMessage(phone: phone, validators_code: validator_code)
+        let postSTring  = MemberRegisterMessage(phone: phone, validator_code: validator_code)
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(postSTring) {
             print(postSTring)
@@ -31,7 +31,7 @@ class GetMemberRegisterMessage: UIViewController {
     }
     //       將資料放進object的func
     func getMemberRegisterMessageInfo(username: String, name: String, sex: String, phone: String, password: String, passwordConfirmation: String, validatorsCode: String) {
-        let postSTring  = MemberRegisterMessageInfo(username: username, name: name, sex: sex, phone: phone, password: password, passwordConfirmation: passwordConfirmation, validatorsCode: validatorsCode)
+        let postSTring  = MemberRegisterMessageInfo(username: username, name: name, sex: sex, phone: phone, password: password, password_confirmation: passwordConfirmation, validator_code: validatorsCode)
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(postSTring) {
             print(postSTring)
@@ -65,7 +65,7 @@ class GetMemberRegisterMessage: UIViewController {
         }
     }
     func getResetPassword(userName: String, phone: String, validatorsCode: String, password: String, passwordConfirmation: String) {
-        let postSTring  = ResetPassword(username: userName, phone: phone, validatorsCode: validatorsCode, password: password, passwordConifmation: passwordConfirmation)
+        let postSTring  = ResetPassword(username: userName, phone: phone, validators_code: validatorsCode, password: password, password_confirmation: passwordConfirmation)
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(postSTring) {
             print(postSTring)
@@ -82,7 +82,7 @@ class GetMemberRegisterMessage: UIViewController {
         }
     }
     func getSendResetForgotPassword(userName: String, phone: String, validatorsCode: String, controller: UIViewController ) {
-        let postSTring  = SendResetForgorPasswordMessage(username: userName, phone: phone, validators_code: validatorsCode)
+        let postSTring  = SendResetForgorPasswordMessage(username: userName, phone: phone, validator_code: validatorsCode)
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(postSTring) {
             print(postSTring)

@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 class ApiUrl: NSObject {
     static let ApiUrlInstance = ApiUrl()
-    var doMain: String = "http://seventea.test/"
+    var doMain: String = "http://127.0.0.1:8000/"
     var loginUrl: String
     var sendMemberRegisterSmsUrl: String
     var forgotPasswordSmsUrl: String
@@ -23,10 +23,10 @@ class ApiUrl: NSObject {
     var OrderRecordUrl: String
 
     override init() {
-        loginUrl="\(doMain)/api/new-login"
+        loginUrl="\(doMain)/api/login"
         sendMemberRegisterSmsUrl="\(doMain)/api/register/send-phone-sms"
-        forgotPasswordSmsUrl="\(doMain)/api/send-forgot-password"
-        sendResetForgotPasswordUrl="\(doMain)/api/send-reset-password"
+        forgotPasswordSmsUrl="\(doMain)/api/send-forgot-password-sms"
+        sendResetForgotPasswordUrl="\(doMain)/api/check-forgot-password-code"
         restPasswordUrl="\(doMain)/api/reset-password"
         signPhoneSendSmsUrl="\(doMain)/api/register/send-phone-sms"
         sendMemberRegistrUrl="\(doMain)/api/register/register-button"
