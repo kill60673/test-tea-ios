@@ -7,7 +7,13 @@
 //
 
 import UIKit
-
+import SDWebImage
+var  ADContent = [String]()
+var  ADTitle = [String]()
+var  ADSendName = [String]()
+var  ADPicture = [String]()
+var  ADSendTime = [String]()
+var ADTable:UICollectionView!
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
 
     var imageIndex = 0
@@ -17,8 +23,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ADAPI.ADInstance.AD()
         homeCollectionView.dataSource = self
         homeCollectionView.delegate = self
+        ADTable = homeCollectionView
         homeTableView.tableFooterView = UIView()
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
@@ -27,7 +35,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @objc func changeBanner() {
         var indexPath: IndexPath
         self.imageIndex += 1
-        if imageIndex < testimage.count {
+        if imageIndex < ADPicture.count {
             indexPath = IndexPath(item: imageIndex, section: 0 )
             homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
         } else {
@@ -42,12 +50,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testimage.count
+        return ADPicture.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homecell", for: indexPath) as!
         HomeCollectionViewCell
-        cell.homeImageView.image = UIImage(named: testimage[indexPath.item])
+        print("12312321321321",ADPicture.count)
+        cell.homeImageView.sd_setImage(with: URL(string: ADPicture[indexPath.row]), placeholderImage: UIImage(named: "test1"))
+//        cell.homeImageView.image = UIImage(named: testimage[indexPath.item])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

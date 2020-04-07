@@ -7,4 +7,5 @@ target 'seven_tea' do
 
   # Pods for seven_tea
         pod 'SwiftLint'
+	pod 'SDWebImage'
 end
