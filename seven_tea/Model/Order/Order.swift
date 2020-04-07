@@ -24,7 +24,7 @@ class Order: NSObject {
     var getMethod = String()
     var quantity = Int()
     var price = Int()
-    
+
     init(orderId: String, order_Number: String, name: String, phone: String, orderPhone: String, arrivalTime: String, address: String, store: String, company: String, taxId: String, status: String, payMethod: String, orderTime: String, getMethod: String, quantity: Int, price: Int) {
         self.orderId = orderId
         self.name = name

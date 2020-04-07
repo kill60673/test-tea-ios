@@ -67,7 +67,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         return OrderApi.OrderRecordInstance.getCount()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         AllCount = OrderList[indexPath.row].quantity
         AllPrince = OrderList[indexPath.row].price
         SelectOrderNo = OrderList[indexPath.row].orderNumber
