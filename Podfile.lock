@@ -1,22 +1,26 @@
 PODS:
+  - FSPagerView (0.8.3)
   - SDWebImage (5.7.0):
     - SDWebImage/Core (= 5.7.0)
   - SDWebImage/Core (5.7.0)
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
+  - FSPagerView
   - SDWebImage
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - FSPagerView
     - SDWebImage
     - SwiftLint
 
 SPEC CHECKSUMS:
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   SDWebImage: a99471f452bdfa0ca52ddf5b1adf2b61cab1d1eb
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 03764779e689c76ea014897b04cde19e71bbdf4c
+PODFILE CHECKSUM: 240999af64353567896e3b915bafcebe3ff5173a
 
 COCOAPODS: 1.8.4
