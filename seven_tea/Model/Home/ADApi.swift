@@ -63,7 +63,7 @@ class ADAPI: NSObject {
             // let responseString = String(data: data, encoding: .utf8)
             DispatchQueue.main.async{
                 ADTable.reloadData()
-//                BCTable.reloadData()
+                BCTable.reloadData()
             }
           
         }

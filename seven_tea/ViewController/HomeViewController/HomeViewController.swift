@@ -20,10 +20,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var imageIndex = 0
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var bannerCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ADAPI.ADInstance.AD()
         ADTable = homeCollectionView
+        BCTable = bannerCollectionView
         homeTableView.tableFooterView = UIView()
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
         
@@ -44,16 +47,31 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     //ColletcionView的控制部分
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if collectionView.tag == 0 {
             return 1
+        }else{
+            return 1
+        }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView.tag == 0 {
             return ADPicture.count
+        }else{
+            return ADPicture.count
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cella = collectionView.dequeueReusableCell(withReuseIdentifier: "homecell", for: indexPath) as!
+        if collectionView.tag == 0 {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homecell", for: indexPath) as!
             HomeCollectionViewCell
-            cella.homeImageView.sd_setImage(with: URL(string: ADPicture[indexPath.row]), placeholderImage: UIImage(named: "test1"))
-            return cella
+            cell.homeImageView.sd_setImage(with: URL(string: ADPicture[indexPath.row]), placeholderImage: UIImage(named: "test1"))
+            return cell
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as!
+            BannerCollectionViewCell
+            cell.image.sd_setImage(with: URL(string: ADPicture[indexPath.row]), placeholderImage: UIImage(named: "test1"))
+            return cell
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.bounds.size
@@ -63,6 +81,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.imageIndex = indexPath.row
+        if collectionView.tag == 0 {
+        print("我按了上面",indexPath.row)
+        }else{
+            print("我按了下面",indexPath.row)
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
