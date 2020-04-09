@@ -131,6 +131,25 @@
                                     <outlet property="delegate" destination="Hk3-XU-uSR" id="BZJ-mY-KHK"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="89b-cD-WmH">
+                                <rect key="frame" x="0.0" y="147" width="414" height="558"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="q3Q-BY-b5A">
+                                        <rect key="frame" x="0.0" y="23" width="374" height="515"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORI-U6-XZA">
+                                        <rect key="frame" x="350" y="23" width="37" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="close"/>
+                                        <connections>
+                                            <action selector="btBannerClose:" destination="Hk3-XU-uSR" eventType="touchUpInside" id="nxq-os-XnS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -149,8 +168,11 @@
                     <navigationItem key="navigationItem" title="首頁" id="YSO-BJ-hg1"/>
                     <connections>
                         <outlet property="bannerCollectionView" destination="mMM-RA-O3A" id="gqT-XE-1a3"/>
+                        <outlet property="bannerImage" destination="q3Q-BY-b5A" id="U3X-Pe-N7T"/>
+                        <outlet property="btBannerClose" destination="ORI-U6-XZA" id="N7W-hV-wco"/>
                         <outlet property="homeCollectionView" destination="zs0-0r-P9x" id="IXE-Cp-516"/>
                         <outlet property="homeTableView" destination="QQe-OF-vEP" id="NZp-tF-c9O"/>
+                        <outlet property="imageView" destination="89b-cD-WmH" id="lxA-w6-XzO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lm7-Ws-5cU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -339,4 +361,7 @@
             <point key="canvasLocation" x="1353.6231884057972" y="106.47321428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="242" height="238"/>
+    </resources>
 </document>
