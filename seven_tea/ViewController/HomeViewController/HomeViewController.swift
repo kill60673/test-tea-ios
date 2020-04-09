@@ -21,6 +21,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var bannerCollectionView: UICollectionView!
+    @IBOutlet weak var bannerImage: UIImageView!
+    @IBOutlet weak var btBannerClose: UIButton!
+    @IBOutlet weak var imageView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,5 +133,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         default:
             break
         }
+    }
+    @IBAction func btBannerClose(_ sender: Any) {
+        bannerImage.isHidden = true
+        btBannerClose.isHidden = true
+        imageView.isHidden = true
     }
 }
