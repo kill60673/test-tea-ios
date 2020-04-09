@@ -85,31 +85,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mMM-RA-O3A">
-                                <rect key="frame" x="0.0" y="653" width="414" height="153"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mMM-RA-O3A">
+                                <rect key="frame" x="0.0" y="599" width="414" height="263"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ybp-J8-iah">
-                                    <size key="itemSize" width="109" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="263" id="hRd-lN-0Uv"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ybp-J8-iah">
+                                    <size key="itemSize" width="116" height="165"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCell" id="10j-1g-T8d" customClass="BannerCollectionViewCell" customModule="seven_tea" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="109" height="151"/>
+                                        <rect key="frame" x="0.0" y="49" width="116" height="165"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QNm-yu-xaE">
-                                            <rect key="frame" x="0.0" y="0.0" width="109" height="151"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="165"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vbc-b4-B46">
-                                                    <rect key="frame" x="8" y="8" width="93" height="143"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vbc-b4-B46">
+                                                    <rect key="frame" x="8" y="8" width="100" height="157"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="O7h-lU-Qi5"/>
+                                                        <constraint firstAttribute="height" constant="153" id="rak-KO-Z03"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vbc-b4-B46" firstAttribute="top" secondItem="QNm-yu-xaE" secondAttribute="top" constant="8" id="QLB-La-ZMn"/>
+                                                <constraint firstAttribute="trailing" secondItem="vbc-b4-B46" secondAttribute="trailing" constant="8" id="lRn-pp-LRd"/>
+                                                <constraint firstItem="vbc-b4-B46" firstAttribute="leading" secondItem="QNm-yu-xaE" secondAttribute="leading" constant="8" id="tr4-HY-w9v"/>
+                                                <constraint firstAttribute="bottom" secondItem="vbc-b4-B46" secondAttribute="bottom" id="w9u-Hr-0O6"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="109" height="151"/>
+                                        <size key="customSize" width="116" height="165"/>
                                         <connections>
                                             <outlet property="image" destination="vbc-b4-B46" id="rJ3-BT-PtS"/>
                                         </connections>
@@ -123,16 +134,21 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="mMM-RA-O3A" firstAttribute="top" secondItem="cEn-2J-ajf" secondAttribute="bottom" constant="10" id="2Ct-uM-sCh"/>
                             <constraint firstItem="QQe-OF-vEP" firstAttribute="top" secondItem="8Ds-rW-e3u" secondAttribute="top" constant="300" id="7RG-nU-MKp"/>
                             <constraint firstItem="zs0-0r-P9x" firstAttribute="width" secondItem="8Ds-rW-e3u" secondAttribute="width" id="Do1-5j-iBZ"/>
                             <constraint firstItem="zs0-0r-P9x" firstAttribute="centerX" secondItem="8Ds-rW-e3u" secondAttribute="centerX" id="FRE-UY-yVe"/>
+                            <constraint firstItem="mMM-RA-O3A" firstAttribute="trailing" secondItem="Anj-gV-zX8" secondAttribute="trailing" id="Fvq-gx-hhW"/>
                             <constraint firstItem="zs0-0r-P9x" firstAttribute="top" secondItem="Anj-gV-zX8" secondAttribute="top" id="GGR-v7-Rgh"/>
+                            <constraint firstItem="mMM-RA-O3A" firstAttribute="bottom" secondItem="Anj-gV-zX8" secondAttribute="bottom" id="HXK-Kq-Yf8"/>
+                            <constraint firstItem="mMM-RA-O3A" firstAttribute="leading" secondItem="Anj-gV-zX8" secondAttribute="leading" id="Wp3-Rh-vtE"/>
                             <constraint firstItem="QQe-OF-vEP" firstAttribute="leading" secondItem="8Ds-rW-e3u" secondAttribute="leading" id="naq-aE-unO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Anj-gV-zX8"/>
                     </view>
                     <navigationItem key="navigationItem" title="首頁" id="YSO-BJ-hg1"/>
                     <connections>
+                        <outlet property="bannerCollectionView" destination="mMM-RA-O3A" id="gqT-XE-1a3"/>
                         <outlet property="homeCollectionView" destination="zs0-0r-P9x" id="IXE-Cp-516"/>
                         <outlet property="homeTableView" destination="QQe-OF-vEP" id="NZp-tF-c9O"/>
                     </connections>
