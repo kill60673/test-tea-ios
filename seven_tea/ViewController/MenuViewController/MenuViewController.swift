@@ -23,7 +23,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(indexPath.row)
         let menuDetailVc = menuDetailService.alert()
                present(menuDetailVc, animated: true)
-        
     }
 
     override func viewDidLoad() {
