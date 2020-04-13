@@ -12,6 +12,7 @@
 		84255382243F27B5004C9B23 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425537F243F27B4004C9B23 /* MenuDetailViewController.swift */; };
 		84255383243F27B5004C9B23 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255380243F27B4004C9B23 /* MenuViewController.swift */; };
 		84255384243F27B5004C9B23 /* MenuDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255381243F27B4004C9B23 /* MenuDetailService.swift */; };
+		8425538624407540004C9B23 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425538524407540004C9B23 /* FeedCollectionViewCell.swift */; };
 		84316BFD240E4EC3002CD226 /* MemberInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */; };
 		84316BFF240E4FB4002CD226 /* MemberInfoCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */; };
 		84316C02240E5CFF002CD226 /* AllList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316C01240E5CFF002CD226 /* AllList.swift */; };
@@ -112,6 +113,7 @@
 		8425537F243F27B4004C9B23 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		84255380243F27B4004C9B23 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		84255381243F27B4004C9B23 /* MenuDetailService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailService.swift; sourceTree = "<group>"; };
+		8425538524407540004C9B23 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoApi.swift; sourceTree = "<group>"; };
 		84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoCodable.swift; sourceTree = "<group>"; };
 		84316C01240E5CFF002CD226 /* AllList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllList.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				84255381243F27B4004C9B23 /* MenuDetailService.swift */,
 				8425537F243F27B4004C9B23 /* MenuDetailViewController.swift */,
 				84255380243F27B4004C9B23 /* MenuViewController.swift */,
+				8425538524407540004C9B23 /* FeedCollectionViewCell.swift */,
 			);
 			path = MenuViewController;
 			sourceTree = "<group>";
@@ -883,6 +886,7 @@
 				8490F25A242CB51500A59020 /* ShopCarTableViewCell.swift in Sources */,
 				84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */,
 				84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */,
+				8425538624407540004C9B23 /* FeedCollectionViewCell.swift in Sources */,
 				84D09B442418E6190019A0B4 /* AddFeedBackViewController.swift in Sources */,
 				84255384243F27B5004C9B23 /* MenuDetailService.swift in Sources */,
 				8490F26B243C7BC000A59020 /* ADCodable.swift in Sources */,
