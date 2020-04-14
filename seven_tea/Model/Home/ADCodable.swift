@@ -11,7 +11,7 @@ import Foundation
 struct ADCodable: Codable {
     var result: Int
     var message: [message]?
-    
+
     struct message: Codable {
         var title: String
         var content: String

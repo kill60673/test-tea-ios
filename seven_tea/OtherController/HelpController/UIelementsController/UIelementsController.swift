@@ -19,7 +19,7 @@ extension UIButton {
         button.layer.borderWidth = 1.0//外框粗度
         button.layer.cornerRadius = 20//圓角
     }
-    func oval_button(button: UIButton){
+    func oval_button(button: UIButton) {
         button.layer.borderWidth = 1.0//外框粗度
         button.layer.cornerRadius = 15//圓角
     }
@@ -64,4 +64,3 @@ extension UITableView {
         view.layer.masksToBounds = true
     }
 }
-

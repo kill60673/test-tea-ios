@@ -14,8 +14,8 @@ var  ADTitle = [String]()
 var  ADSendName = [String]()
 var  ADPicture = [String]()
 var  ADSendTime = [String]()
-var ADTable:UICollectionView!
-var BCTable:UICollectionView!
+var ADTable: UICollectionView!
+var BCTable: UICollectionView!
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
     var imageIndex = 0
     @IBOutlet weak var homeTableView: UITableView!
@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var bannerImage: UIImageView!
     @IBOutlet weak var btBannerClose: UIButton!
     @IBOutlet weak var imageView: UIView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         ADAPI.ADInstance.AD()
@@ -32,7 +32,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         BCTable = bannerCollectionView
         homeTableView.tableFooterView = UIView()
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
-        
+
         // Do any additional setup after loading the view.
     }
     //輪播廣告的控制
@@ -52,14 +52,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if collectionView.tag == 0 {
             return 1
-        }else{
+        } else {
             return 1
         }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 0 {
             return ADPicture.count
-        }else{
+        } else {
             return ADPicture.count
         }
     }
@@ -69,7 +69,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             HomeCollectionViewCell
             cell.homeImageView.sd_setImage(with: URL(string: ADPicture[indexPath.row]), placeholderImage: UIImage(named: "test1"))
             return cell
-        }else{
+        } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as!
             BannerCollectionViewCell
             cell.image.sd_setImage(with: URL(string: ADPicture[indexPath.row]), placeholderImage: UIImage(named: "test1"))
@@ -85,21 +85,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.imageIndex = indexPath.row
         if collectionView.tag == 0 {
-        print("我按了上面",indexPath.row)
-        }else{
-            print("我按了下面",indexPath.row)
+        print("我按了上面", indexPath.row)
+        } else {
+            print("我按了下面", indexPath.row)
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
-    
+
     //TableView的控制部分
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homelist.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "HomeCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)

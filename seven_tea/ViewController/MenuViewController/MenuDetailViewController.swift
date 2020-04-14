@@ -8,9 +8,8 @@
 
 import UIKit
 
-class MenuDetailViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    
+class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
     @IBOutlet weak var feedCollectionView: UICollectionView!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var btClose: UIButton!
@@ -36,7 +35,7 @@ class MenuDetailViewController: UIViewController,UICollectionViewDataSource, UIC
     @IBOutlet weak var btLessIce: UIButton!
     @IBOutlet weak var btMicroIce: UIButton!
     @IBOutlet weak var btNoIce: UIButton!
-    
+
     var Size = ""
     var TemperatureHot = ""
     var Sugar = ""
@@ -78,13 +77,13 @@ class MenuDetailViewController: UIViewController,UICollectionViewDataSource, UIC
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+
     }
-    
+
     @IBAction func brClose(_ sender: Any) {
         dismiss(animated: true)
     }
-    
+
     @IBAction func btSizeM(_ sender: Any) {
         btSizeM.backgroundColor = UIColor.yellow
         btSizeL.backgroundColor = UIColor.white
@@ -113,7 +112,7 @@ class MenuDetailViewController: UIViewController,UICollectionViewDataSource, UIC
         btHalfSugar.backgroundColor = UIColor.white
         self.Sugar = "WholeSugar"
     }
- 
+
     @IBAction func btLessSugar(_ sender: Any) {
         btWholeSugar.backgroundColor = UIColor.white
                btLessSugar.backgroundColor = UIColor.yellow

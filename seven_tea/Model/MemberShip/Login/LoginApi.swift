@@ -9,14 +9,14 @@ import UIKit
 
 class LoginAPI: NSObject {
     static let LoginInstance = LoginAPI()
-    
+
     //將資料放進object的func
     // 登入用API
     func login(handler : @escaping (Bool) -> Void) {
-        
+
         let url = URL(string: ApiUrl.ApiUrlInstance.loginUrl)!
         var request = URLRequest(url: url)
-        
+
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"

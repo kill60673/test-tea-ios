@@ -13,6 +13,7 @@
 		84255383243F27B5004C9B23 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255380243F27B4004C9B23 /* MenuViewController.swift */; };
 		84255384243F27B5004C9B23 /* MenuDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255381243F27B4004C9B23 /* MenuDetailService.swift */; };
 		8425538624407540004C9B23 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425538524407540004C9B23 /* FeedCollectionViewCell.swift */; };
+		842553882445953F004C9B23 /* PromotionBannerCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553872445953F004C9B23 /* PromotionBannerCodable.swift */; };
 		84316BFD240E4EC3002CD226 /* MemberInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */; };
 		84316BFF240E4FB4002CD226 /* MemberInfoCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */; };
 		84316C02240E5CFF002CD226 /* AllList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316C01240E5CFF002CD226 /* AllList.swift */; };
@@ -114,6 +115,7 @@
 		84255380243F27B4004C9B23 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		84255381243F27B4004C9B23 /* MenuDetailService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailService.swift; sourceTree = "<group>"; };
 		8425538524407540004C9B23 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		842553872445953F004C9B23 /* PromotionBannerCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionBannerCodable.swift; sourceTree = "<group>"; };
 		84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoApi.swift; sourceTree = "<group>"; };
 		84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoCodable.swift; sourceTree = "<group>"; };
 		84316C01240E5CFF002CD226 /* AllList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllList.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				8490F268243C7ADC00A59020 /* ADApi.swift */,
 				8490F26A243C7BC000A59020 /* ADCodable.swift */,
+				842553872445953F004C9B23 /* PromotionBannerCodable.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -948,6 +951,7 @@
 				84FADF1D23F66E9200C824C6 /* MemberRegistrtCodable.swift in Sources */,
 				8490F24C2429B30300A59020 /* NearbyStoresViewController.swift in Sources */,
 				84C2E2B523EBF0A3008AB33F /* ResetPasswordCodable.swift in Sources */,
+				842553882445953F004C9B23 /* PromotionBannerCodable.swift in Sources */,
 				84F7C88023E5E9D70097EAD0 /* Regex.swift in Sources */,
 				84FADF4C23FE8B4E00C824C6 /* PredicatesFunc.swift in Sources */,
 				84EEC61723D41586005627FF /* FrequentlyAskedQuestions.swift in Sources */,

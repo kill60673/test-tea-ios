@@ -14,7 +14,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     @IBAction func btfeed(_ sender: Any) {
         if btFeed.backgroundColor == UIColor.yellow {
             btFeed.backgroundColor = UIColor.white
-        }else if btFeed.backgroundColor == UIColor.white{
+        } else if btFeed.backgroundColor == UIColor.white {
             btFeed.backgroundColor = UIColor.yellow
             feed += [btFeed.titleLabel!.text!]
         }

@@ -21,7 +21,11 @@ class ApiUrl: NSObject {
     var myFavoriteDrinkInfoUrl: String
     var MessageNotifyUrl: String
     var OrderRecordUrl: String
-    var ADUrl:String
+    var ADUrl: String
+    var loadingBanner: String
+    var marketingBanner: String
+    var slideBanner: String
+    var promotionBanner: String
 
     override init() {
         loginUrl="\(doMain)/api/login"
@@ -37,5 +41,9 @@ class ApiUrl: NSObject {
         MessageNotifyUrl="\(doMain)/api/member/message-notify"
         OrderRecordUrl="\(doMain)/api/get/orders/record/"
         ADUrl="\(doMain)/api/get/index/message"
+        loadingBanner="\(doMain)/get-index-loading-banner//get-index-loading-banner/ios"
+        marketingBanner="\(doMain)/get-index-marketing-banner//get-index-marketing-banner/ios"
+        slideBanner="\(doMain)/get-index-slide-banner//get-index-slide-banner/ios"
+        promotionBanner="\(doMain)/get-index-promotion-banner"
     }
 }
