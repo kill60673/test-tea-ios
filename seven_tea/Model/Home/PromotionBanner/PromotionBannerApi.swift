@@ -1,5 +1,5 @@
 //
-//  SlideBannerApi.swift
+//  PromotionBannerApi.swift
 //  seven_tea
 //
 //  Created by harrison on 2020/4/14.
@@ -7,12 +7,12 @@
 //
 
 import Foundation
-class SlideBannerAPI: NSObject {
-    static let SlideBannerInstance = SlideBannerAPI()
-    var slidebannerlist = [SlideBanner]()
-    func slidebanner() {
+class PromotionBannerAPI: NSObject {
+    static let SlideBannerInstance = PromotionBannerAPI()
+    var promotionbannerlist = [PromotionBanner]()
+    func promotionbanner() {
 
-        let url = URL(string: ApiUrl.ApiUrlInstance.slideBanner )!
+        let url = URL(string: ApiUrl.ApiUrlInstance.promotionBanner )!
 
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -28,12 +28,12 @@ class SlideBannerAPI: NSObject {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
-                decoder.decode(SlideBannerCodable.self, from: data) {
+                decoder.decode(PromotionBannerCodable.self, from: data) {
                 if Info.success == true {
-                    self.slidebannerlist.removeAll()
+                    self.promotionbannerlist.removeAll()
                     for result in Info.data {
-                        let slideBanner = SlideBanner(imageType: result.img_type, pictureURL: result.picture_url, linkURL: result.link_url)
-                        self.slidebannerlist.append(slideBanner)
+                        let promotionBanner = PromotionBanner(pictureURL: result.picture_url)
+                        self.promotionbannerlist.append(promotionBanner)
                     }
                 } else {
                     //主線程
@@ -56,10 +56,10 @@ class SlideBannerAPI: NSObject {
     }
 
     func getCount() -> Int {
-        return slidebannerlist.count
+        return promotionbannerlist.count
     }
-    func getList() -> [SlideBanner] {
-        return slidebannerlist
+    func getList() -> [PromotionBanner] {
+        return promotionbannerlist
     }
 
 }
