@@ -1,5 +1,5 @@
 //
-//  PromotionBannerCodable.swift
+//  SlideBannerCodable.swift
 //  seven_tea
 //
 //  Created by harrison on 2020/4/14.
@@ -7,12 +7,14 @@
 //
 
 import Foundation
-struct PromotionBanner: Codable {
+struct SlideBanner: Codable {
     var success: Bool
     var message: String
     var data: [data]
-
+    
     struct data: Codable {
+        var img_type: String
         var picture_url: String
+        var link_url: String
     }
 }
