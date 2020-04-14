@@ -182,22 +182,42 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkw-CB-c98">
                                         <rect key="frame" x="41" y="73" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="M"/>
+                                        <state key="normal" title="M">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btSizeM:" destination="atl-DB-EgL" eventType="touchUpInside" id="fYO-dg-8Ij"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xn-hW-dUd">
                                         <rect key="frame" x="41" y="149" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="熱"/>
+                                        <state key="normal" title="熱">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btTemperatureHot:" destination="atl-DB-EgL" eventType="touchUpInside" id="xMo-Ao-N6N"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IO-Ah-4Lt">
                                         <rect key="frame" x="222" y="149" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="冷"/>
+                                        <state key="normal" title="冷">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btTemperatureCold:" destination="atl-DB-EgL" eventType="touchUpInside" id="OkN-J0-wz0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEi-3G-pTz">
                                         <rect key="frame" x="238" y="291" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="微糖"/>
+                                        <state key="normal" title="微糖">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btMicroSugar:" destination="atl-DB-EgL" eventType="touchUpInside" id="SrS-Y3-84J"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-bw-lSo">
                                         <rect key="frame" x="41" y="535" width="53" height="30"/>
@@ -212,22 +232,42 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvP-Fa-aW4">
                                         <rect key="frame" x="304" y="291" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="無糖"/>
+                                        <state key="normal" title="無糖">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btNoSugar:" destination="atl-DB-EgL" eventType="touchUpInside" id="94h-18-2VD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bx1-6V-BWH">
                                         <rect key="frame" x="84" y="291" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="少糖"/>
+                                        <state key="normal" title="少糖">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btLessSugar:" destination="atl-DB-EgL" eventType="touchUpInside" id="T4u-yX-P0W"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fy-ux-PE6">
                                         <rect key="frame" x="14" y="291" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="全糖"/>
+                                        <state key="normal" title="全糖">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btWholeSugar:" destination="atl-DB-EgL" eventType="touchUpInside" id="4Bw-Yv-Agz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvX-PV-SAe">
                                         <rect key="frame" x="222" y="73" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="L"/>
+                                        <state key="normal" title="L">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btSizeL:" destination="atl-DB-EgL" eventType="touchUpInside" id="0Hq-OO-Evw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9N-Gw-MQx">
                                         <rect key="frame" x="276" y="9" width="98" height="30"/>
@@ -309,7 +349,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mke-yb-eTU">
                                         <rect key="frame" x="92" y="570" width="259" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="加入購物車"/>
+                                        <color key="backgroundColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="加入購物車">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIY-F7-BlM">
                                         <rect key="frame" x="281" y="535" width="70" height="30"/>
@@ -321,7 +364,12 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLU-HI-RyH">
                                         <rect key="frame" x="161" y="291" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="半糖"/>
+                                        <state key="normal" title="半糖">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btHalfSugar:" destination="atl-DB-EgL" eventType="touchUpInside" id="isc-cK-B2Z"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="冰度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c38-p5-j0U">
                                         <rect key="frame" x="8" y="187" width="35" height="21"/>
@@ -391,9 +439,15 @@
                                                                 <constraint firstAttribute="height" constant="30" id="F2T-O9-vbc"/>
                                                                 <constraint firstAttribute="width" constant="100" id="eU4-D6-XKG"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button"/>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="btfeed:" destination="irU-fR-rBH" eventType="touchUpInside" id="w8S-zD-Nza"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
+                                                    <color key="backgroundColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="HNU-gR-oNi" secondAttribute="bottom" constant="11" id="G9G-N3-Euv"/>
                                                         <constraint firstAttribute="trailing" secondItem="HNU-gR-oNi" secondAttribute="trailing" constant="8" id="R7q-lg-hPa"/>
@@ -431,11 +485,11 @@
                     <connections>
                         <outlet property="btAddShopingcar" destination="mke-yb-eTU" id="t7G-zR-6gv"/>
                         <outlet property="btClose" destination="V9N-Gw-MQx" id="osx-RI-g9r"/>
-                        <outlet property="btHalfSuger" destination="nLU-HI-RyH" id="HnH-Bx-Z31"/>
+                        <outlet property="btHalfSugar" destination="nLU-HI-RyH" id="HnH-Bx-Z31"/>
                         <outlet property="btHot" destination="eZs-o2-3p3" id="xQ2-BR-99Y"/>
                         <outlet property="btLess" destination="55m-kg-hbB" id="f5J-CL-xuX"/>
                         <outlet property="btLessIce" destination="gIV-DM-Gdp" id="GoR-xX-xOp"/>
-                        <outlet property="btLessSuger" destination="bx1-6V-BWH" id="l9r-WI-tl5"/>
+                        <outlet property="btLessSugar" destination="bx1-6V-BWH" id="l9r-WI-tl5"/>
                         <outlet property="btMicroIce" destination="lU8-G7-3Li" id="1AT-2n-ery"/>
                         <outlet property="btMicroSugar" destination="pEi-3G-pTz" id="jia-MT-tSP"/>
                         <outlet property="btMyFavourite" destination="Ewz-Ws-FdC" id="eCG-Tz-Azi"/>
@@ -449,6 +503,7 @@
                         <outlet property="btTemperatureCold" destination="1IO-Ah-4Lt" id="4Yk-uw-cgf"/>
                         <outlet property="btTemperatureHot" destination="5xn-hW-dUd" id="uRd-B7-bGM"/>
                         <outlet property="btWholeSugar" destination="2Fy-ux-PE6" id="iYP-dV-qxw"/>
+                        <outlet property="feedCollectionView" destination="ik4-3Q-Z0p" id="upe-I6-tFH"/>
                         <outlet property="lbFixedTemperature" destination="xHg-Cm-5mh" id="H8L-C1-efy"/>
                         <outlet property="lbQuantity" destination="Mgw-yo-4zw" id="Ymy-3U-gVh"/>
                         <outlet property="lbTitle" destination="X47-qd-Vwb" id="FR4-dl-dxg"/>
