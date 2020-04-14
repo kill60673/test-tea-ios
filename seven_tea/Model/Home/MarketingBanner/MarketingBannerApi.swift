@@ -50,7 +50,6 @@ class MarketingBannerAPI: NSObject {
             //主線程
             DispatchQueue.main.async {
 //                UIViewController.removeSpinner(spinner: sv as! UIView)
-                myFavoriteDrinkTableVIew.reloadData()
             }
         }
         task.resume()
