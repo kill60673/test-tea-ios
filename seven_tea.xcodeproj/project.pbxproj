@@ -20,6 +20,7 @@
 		8425539624459B64004C9B23 /* LoadingBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425539524459B64004C9B23 /* LoadingBanner.swift */; };
 		8425539824459C07004C9B23 /* MarkeringBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425539724459C07004C9B23 /* MarkeringBanner.swift */; };
 		8425539A24459C8F004C9B23 /* SlideBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425539924459C8F004C9B23 /* SlideBanner.swift */; };
+		8425539C24459D0D004C9B23 /* PromotionBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425539B24459D0D004C9B23 /* PromotionBanner.swift */; };
 		84316BFD240E4EC3002CD226 /* MemberInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */; };
 		84316BFF240E4FB4002CD226 /* MemberInfoCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */; };
 		84316C02240E5CFF002CD226 /* AllList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316C01240E5CFF002CD226 /* AllList.swift */; };
@@ -128,6 +129,7 @@
 		8425539524459B64004C9B23 /* LoadingBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBanner.swift; sourceTree = "<group>"; };
 		8425539724459C07004C9B23 /* MarkeringBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkeringBanner.swift; sourceTree = "<group>"; };
 		8425539924459C8F004C9B23 /* SlideBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideBanner.swift; sourceTree = "<group>"; };
+		8425539B24459D0D004C9B23 /* PromotionBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionBanner.swift; sourceTree = "<group>"; };
 		84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoApi.swift; sourceTree = "<group>"; };
 		84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoCodable.swift; sourceTree = "<group>"; };
 		84316C01240E5CFF002CD226 /* AllList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllList.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				842553872445953F004C9B23 /* PromotionBannerCodable.swift */,
+				8425539B24459D0D004C9B23 /* PromotionBanner.swift */,
 			);
 			path = PromotionBanner;
 			sourceTree = "<group>";
@@ -940,6 +943,7 @@
 				8425539624459B64004C9B23 /* LoadingBanner.swift in Sources */,
 				84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */,
 				84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */,
+				8425539C24459D0D004C9B23 /* PromotionBanner.swift in Sources */,
 				8425538624407540004C9B23 /* FeedCollectionViewCell.swift in Sources */,
 				84D09B442418E6190019A0B4 /* AddFeedBackViewController.swift in Sources */,
 				84255384243F27B5004C9B23 /* MenuDetailService.swift in Sources */,
