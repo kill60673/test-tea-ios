@@ -11,7 +11,7 @@ class SlideBanner: NSObject {
     var imageType = String()
     var pictureURL = String()
     var linkURL = String()
-    
+
     init(imageType: String, pictureURL: String, linkURL: String) {
         self.imageType = imageType
         self.pictureURL = pictureURL
