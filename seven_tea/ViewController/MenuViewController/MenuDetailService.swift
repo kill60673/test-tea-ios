@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class MenuDetailService{
+class MenuDetailService {
     func alert() -> MenuDetailViewController {
         let storyboard = UIStoryboard(name: "Menu", bundle: .main)
         let menuDetailVC = storyboard.instantiateViewController(withIdentifier: "MenuDetailVC") as! MenuDetailViewController
