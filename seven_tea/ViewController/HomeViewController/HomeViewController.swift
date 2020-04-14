@@ -111,12 +111,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let vc = storyboard?.instantiateViewController(withIdentifier: "NearbyStoresVC")
-            show(vc!, sender: self)
+            let Menustoryboard = UIStoryboard(name: "Menu", bundle: nil)
+            let vc = Menustoryboard.instantiateViewController(withIdentifier: "NearbyStoresVC")
+            show(vc, sender: self)
             break
         case 1:
             let Menustoryboard = UIStoryboard(name: "Menu", bundle: nil)
-            let vc = Menustoryboard.instantiateViewController(withIdentifier: "MenuTV")
+            let vc = Menustoryboard.instantiateViewController(withIdentifier: "NearbyStoresVC")
             show(vc, sender: self)
             break
         case 2:
