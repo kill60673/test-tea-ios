@@ -1,5 +1,5 @@
 //
-//  LoadingBannerApi.swift
+//  SlideBannerApi.swift
 //  seven_tea
 //
 //  Created by harrison on 2020/4/14.
@@ -7,12 +7,12 @@
 //
 
 import Foundation
-class LoadingBannerAPI: NSObject {
-    static let LoadingBannerInstance = LoadingBannerAPI()
-    var loadingbannerlist = [LoadingBanner]()
+class SlideBannerAPI: NSObject {
+    static let SlideBannerInstance = SlideBannerAPI()
+    var slidebannerlist = [SlideBanner]()
     func loadingbanner() {
 
-        let url = URL(string: ApiUrl.ApiUrlInstance.loadingBanner )!
+        let url = URL(string: ApiUrl.ApiUrlInstance.slideBanner )!
 
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -28,12 +28,12 @@ class LoadingBannerAPI: NSObject {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
-                decoder.decode(LoadingBannerCodable.self, from: data) {
+                decoder.decode(SlideBannerCodable.self, from: data) {
                 if Info.success == true {
-                    self.loadingbannerlist.removeAll()
+                    self.slidebannerlist.removeAll()
                     for result in Info.data {
-                        let loadingBanner = LoadingBanner(imageType: result.img_type, pictureURL: result.picture_url, linkURL: result.link_url)
-                        self.loadingbannerlist.append(loadingBanner)
+                        let slideBanner = SlideBanner(imageType: result.img_type, pictureURL: result.picture_url, linkURL: result.link_url)
+                        self.slidebannerlist.append(slideBanner)
                     }
                 } else {
                     //主線程
@@ -56,10 +56,10 @@ class LoadingBannerAPI: NSObject {
     }
 
     func getCount() -> Int {
-        return loadingbannerlist.count
+        return slidebannerlist.count
     }
-    func getList() -> [LoadingBanner] {
-        return loadingbannerlist
+    func getList() -> [SlideBanner] {
+        return slidebannerlist
     }
 
 }
