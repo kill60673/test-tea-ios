@@ -17,6 +17,7 @@
 		8425538A244596B5004C9B23 /* SlideBannerCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255389244596B5004C9B23 /* SlideBannerCodable.swift */; };
 		8425538C24459826004C9B23 /* MarketingBannerCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425538B24459826004C9B23 /* MarketingBannerCodable.swift */; };
 		8425538E24459902004C9B23 /* LoadingBannerCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425538D24459902004C9B23 /* LoadingBannerCodable.swift */; };
+		8425539624459B64004C9B23 /* LoadingBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425539524459B64004C9B23 /* LoadingBanner.swift */; };
 		84316BFD240E4EC3002CD226 /* MemberInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */; };
 		84316BFF240E4FB4002CD226 /* MemberInfoCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */; };
 		84316C02240E5CFF002CD226 /* AllList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84316C01240E5CFF002CD226 /* AllList.swift */; };
@@ -122,6 +123,7 @@
 		84255389244596B5004C9B23 /* SlideBannerCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideBannerCodable.swift; sourceTree = "<group>"; };
 		8425538B24459826004C9B23 /* MarketingBannerCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingBannerCodable.swift; sourceTree = "<group>"; };
 		8425538D24459902004C9B23 /* LoadingBannerCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBannerCodable.swift; sourceTree = "<group>"; };
+		8425539524459B64004C9B23 /* LoadingBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBanner.swift; sourceTree = "<group>"; };
 		84316BFC240E4EC3002CD226 /* MemberInfoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoApi.swift; sourceTree = "<group>"; };
 		84316BFE240E4FB4002CD226 /* MemberInfoCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoCodable.swift; sourceTree = "<group>"; };
 		84316C01240E5CFF002CD226 /* AllList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllList.swift; sourceTree = "<group>"; };
@@ -240,6 +242,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8425538F244599FE004C9B23 /* PromotionBanner */ = {
+			isa = PBXGroup;
+			children = (
+				842553872445953F004C9B23 /* PromotionBannerCodable.swift */,
+			);
+			path = PromotionBanner;
+			sourceTree = "<group>";
+		};
+		8425539024459A01004C9B23 /* SlideBanner */ = {
+			isa = PBXGroup;
+			children = (
+				84255389244596B5004C9B23 /* SlideBannerCodable.swift */,
+			);
+			path = SlideBanner;
+			sourceTree = "<group>";
+		};
+		8425539124459A04004C9B23 /* MarketingBanner */ = {
+			isa = PBXGroup;
+			children = (
+				8425538B24459826004C9B23 /* MarketingBannerCodable.swift */,
+			);
+			path = MarketingBanner;
+			sourceTree = "<group>";
+		};
+		8425539224459A07004C9B23 /* LoadingBanner */ = {
+			isa = PBXGroup;
+			children = (
+				8425538D24459902004C9B23 /* LoadingBannerCodable.swift */,
+				8425539524459B64004C9B23 /* LoadingBanner.swift */,
+			);
+			path = LoadingBanner;
+			sourceTree = "<group>";
+		};
 		84316C00240E5CCC002CD226 /* AllList */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,12 +345,12 @@
 		8490F267243C7AC600A59020 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8425539224459A07004C9B23 /* LoadingBanner */,
+				8425539124459A04004C9B23 /* MarketingBanner */,
+				8425539024459A01004C9B23 /* SlideBanner */,
+				8425538F244599FE004C9B23 /* PromotionBanner */,
 				8490F268243C7ADC00A59020 /* ADApi.swift */,
 				8490F26A243C7BC000A59020 /* ADCodable.swift */,
-				842553872445953F004C9B23 /* PromotionBannerCodable.swift */,
-				84255389244596B5004C9B23 /* SlideBannerCodable.swift */,
-				8425538B24459826004C9B23 /* MarketingBannerCodable.swift */,
-				8425538D24459902004C9B23 /* LoadingBannerCodable.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -896,6 +931,7 @@
 				84C2E2BB23ED26A7008AB33F /* ResetPasswordViewController.swift in Sources */,
 				84316BFF240E4FB4002CD226 /* MemberInfoCodable.swift in Sources */,
 				8490F25A242CB51500A59020 /* ShopCarTableViewCell.swift in Sources */,
+				8425539624459B64004C9B23 /* LoadingBanner.swift in Sources */,
 				84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */,
 				84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */,
 				8425538624407540004C9B23 /* FeedCollectionViewCell.swift in Sources */,
