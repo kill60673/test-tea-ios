@@ -1,18 +1,18 @@
 //
-//  SlideBannerApi.swift
+//  CityTagApi.swift
 //  seven_tea
 //
-//  Created by harrison on 2020/4/14.
+//  Created by harrison on 2020/4/15.
 //  Copyright © 2020 harrison公司機. All rights reserved.
 //
 
 import Foundation
-class SlideBannerAPI: NSObject {
-    static let SlideBannerInstance = SlideBannerAPI()
-    lazy var slidebannerlist = [SlideBanner]()
-    func slidebanner() {
+class CityTagAPI: NSObject {
+    static let CityTagInstance = CityTagAPI()
+    lazy var citytaglist = [CityTag]()
+    func citytag() {
 
-        let url = URL(string: ApiUrl.ApiUrlInstance.slideBanner )!
+        let url = URL(string: ApiUrl.ApiUrlInstance.cityTag)!
 
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -23,24 +23,24 @@ class SlideBannerAPI: NSObject {
             let responseString = String(data: data!, encoding: .utf8)
             let httpStatus = response as? HTTPURLResponse
 
-//            print(responseString)
+            //            print(responseString)
 
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
-                decoder.decode(SlideBannerCodable.self, from: data) {
+                decoder.decode(CityTagCodable.self, from: data) {
                 if Info.success == true {
-                    self.slidebannerlist.removeAll()
+                    self.citytaglist.removeAll()
                     for result in Info.data {
-                        let slideBanner = SlideBanner(imageType: result.img_type, pictureURL: result.picture_url, linkURL: result.link_url)
-                        self.slidebannerlist.append(slideBanner)
-                        print("我有近這裡")
-                        print("這裡有這幾個", result.picture_url)
+                        let cityTag = CityTag(cityTag: [result])
+                        self.citytaglist.append(cityTag)
+                        print("asdasdasd")
                     }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: "\(Info.message)")
+                        print("沒來")
                     }
                 }
             } else {
@@ -51,20 +51,21 @@ class SlideBannerAPI: NSObject {
             }
             //主線程
             DispatchQueue.main.async {
-//              UIViewController.removeSpinner(spinner: sv as! UIView)
-                SlideBannerTable.reloadData()
-                    PromotionBannerTable.reloadData()
+                //                UIViewController.removeSpinner(spinner: sv as! UIView)
+
             }
         }
         task.resume()
     }
 
     func getCount() -> Int {
-        print("我有幾個slideList", slidebannerlist.count)
-        return slidebannerlist.count
+        print("我有幾個", citytaglist.count)
+        return citytaglist.count
     }
-    func getList() -> [SlideBanner] {
-        return slidebannerlist
+    func getList() -> [CityTag] {
+        return citytaglist
     }
+    //    func getImageURL() -> String{
+    //    }
 
 }

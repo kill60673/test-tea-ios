@@ -26,6 +26,8 @@ class ApiUrl: NSObject {
     var marketingBanner: String
     var slideBanner: String
     var promotionBanner: String
+    var districtTag: String
+    var cityTag: String
 
     override init() {
         loginUrl="\(doMain)/api/login"
@@ -45,5 +47,7 @@ class ApiUrl: NSObject {
         marketingBanner="\(doMain)/api/get-index-marketing-banner/ios"
         slideBanner="\(doMain)/api/get-index-slide-banner/ios"
         promotionBanner="\(doMain)/api/get-index-promotion-banner"
+        districtTag="\(doMain)/api/get-store-district-tag/"
+        cityTag="\(doMain)/api/get-store-city-tag"
     }
 }
