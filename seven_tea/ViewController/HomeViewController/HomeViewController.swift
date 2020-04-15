@@ -14,8 +14,8 @@ var  ADTitle = [String]()
 var  ADSendName = [String]()
 var  ADPicture = [String]()
 var  ADSendTime = [String]()
-var ADTable: UICollectionView!
-var BCTable: UICollectionView!
+var SlideBannerTable: UICollectionView!
+var PromotionBannerTable: UICollectionView!
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
     var imageIndex = 0
     @IBOutlet weak var homeTableView: UITableView!
@@ -24,13 +24,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var bannerImage: UIImageView!
     @IBOutlet weak var btBannerClose: UIButton!
     @IBOutlet weak var imageView: UIView!
-
+    let marketingBannerList = MarketingBannerAPI.MarketingBannerInstance.getList()
+    let slidebannerList = SlideBannerAPI.SlideBannerInstance.getList()
+    let promotionbannerList = PromotionBannerAPI.PromotionBannerInstance.getList()
     override func viewDidLoad() {
         super.viewDidLoad()
         ADAPI.ADInstance.AD()
-        ADTable = homeCollectionView
-        BCTable = bannerCollectionView
+        LoadingBannerAPI.LoadingBannerInstance.loadingbanner()
+        MarketingBannerAPI.MarketingBannerInstance.marketingbanner()
+        SlideBannerAPI.SlideBannerInstance.slidebanner()
+        PromotionBannerAPI.PromotionBannerInstance.promotionbanner()
+        SlideBannerTable = homeCollectionView
+        PromotionBannerTable = bannerCollectionView
         homeTableView.tableFooterView = UIView()
+//        bannerImage.sd_setImage(with: marketingBannerList[], placeholderImage:UIImage(named: "test1"))
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
 
         // Do any additional setup after loading the view.
@@ -39,7 +46,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @objc func changeBanner() {
         var indexPath: IndexPath
         self.imageIndex += 1
-        if imageIndex < ADPicture.count {
+        if imageIndex < SlideBannerAPI.SlideBannerInstance.getCount() {
             indexPath = IndexPath(item: imageIndex, section: 0 )
             homeCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
         } else {
@@ -58,21 +65,23 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 0 {
-            return ADPicture.count
+            return SlideBannerAPI.SlideBannerInstance.getCount()
         } else {
-            return ADPicture.count
+            return PromotionBannerAPI.PromotionBannerInstance.getCount()
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let myfavoriteList = MyFavoriteDrinkInfoAPI.MyFavoriteDrinkInfoInstance.getList()
+//        cell.lbTeaName.text = myfavoriteList[indexPath.row].myFavoriteProductName
         if collectionView.tag == 0 {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homecell", for: indexPath) as!
             HomeCollectionViewCell
-            cell.homeImageView.sd_setImage(with: URL(string: ADPicture[indexPath.row]), placeholderImage: UIImage(named: "test1"))
+            cell.homeImageView.sd_setImage(with: URL(string: slidebannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "test1"))
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as!
             BannerCollectionViewCell
-            cell.image.sd_setImage(with: URL(string: ADPicture[indexPath.row]), placeholderImage: UIImage(named: "test1"))
+            cell.image.sd_setImage(with: URL(string: promotionbannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "test1"))
             return cell
         }
     }
