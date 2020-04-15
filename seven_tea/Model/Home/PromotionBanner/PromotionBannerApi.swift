@@ -8,7 +8,7 @@
 
 import Foundation
 class PromotionBannerAPI: NSObject {
-    static let SlideBannerInstance = PromotionBannerAPI()
+    static let PromotionBannerInstance = PromotionBannerAPI()
     var promotionbannerlist = [PromotionBanner]()
     func promotionbanner() {
 
@@ -50,6 +50,7 @@ class PromotionBannerAPI: NSObject {
             //主線程
             DispatchQueue.main.async {
 //                UIViewController.removeSpinner(spinner: sv as! UIView)
+                    PromotionBannerTable.reloadData()
             }
         }
         task.resume()
@@ -61,5 +62,7 @@ class PromotionBannerAPI: NSObject {
     func getList() -> [PromotionBanner] {
         return promotionbannerlist
     }
+//    func getImageURL() -> String{
+//    }
 
 }

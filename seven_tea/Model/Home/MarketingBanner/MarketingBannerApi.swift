@@ -10,7 +10,7 @@ import Foundation
 class MarketingBannerAPI: NSObject {
     static let MarketingBannerInstance = MarketingBannerAPI()
     var marketingbannerlist = [MarkeringBanner]()
-    func loadingbanner() {
+    func marketingbanner() {
 
         let url = URL(string: ApiUrl.ApiUrlInstance.marketingBanner )!
 

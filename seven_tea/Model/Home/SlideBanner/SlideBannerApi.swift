@@ -49,7 +49,8 @@ class SlideBannerAPI: NSObject {
             }
             //主線程
             DispatchQueue.main.async {
-//                UIViewController.removeSpinner(spinner: sv as! UIView)
+//              UIViewController.removeSpinner(spinner: sv as! UIView)
+                SlideBannerTable.reloadData()
             }
         }
         task.resume()
