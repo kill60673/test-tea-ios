@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 class ApiUrl: NSObject {
     static let ApiUrlInstance = ApiUrl()
-    var doMain: String = "http://seventea.test/"
+    var doMain: String = "http://127.0.0.1:8000/"
     var loginUrl: String
     var sendMemberRegisterSmsUrl: String
     var forgotPasswordSmsUrl: String
@@ -41,9 +41,9 @@ class ApiUrl: NSObject {
         MessageNotifyUrl="\(doMain)/api/member/message-notify"
         OrderRecordUrl="\(doMain)/api/get/orders/record/"
         ADUrl="\(doMain)/api/get/index/message"
-        loadingBanner="\(doMain)/get-index-loading-banner//get-index-loading-banner/ios"
-        marketingBanner="\(doMain)/get-index-marketing-banner//get-index-marketing-banner/ios"
-        slideBanner="\(doMain)/get-index-slide-banner//get-index-slide-banner/ios"
-        promotionBanner="\(doMain)/get-index-promotion-banner"
+        loadingBanner="\(doMain)/api/get-index-loading-banner/ios"
+        marketingBanner="\(doMain)/api/get-index-marketing-banner/ios"
+        slideBanner="\(doMain)/api/get-index-slide-banner/ios"
+        promotionBanner="\(doMain)/api/get-index-promotion-banner"
     }
 }
