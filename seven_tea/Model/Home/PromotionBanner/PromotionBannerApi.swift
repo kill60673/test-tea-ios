@@ -52,7 +52,7 @@ class PromotionBannerAPI: NSObject {
             //主線程
             DispatchQueue.main.async {
 //                UIViewController.removeSpinner(spinner: sv as! UIView)
-                   
+
                     SlideBannerTable.reloadData()
             }
         }
@@ -60,7 +60,7 @@ class PromotionBannerAPI: NSObject {
     }
 
     func getCount() -> Int {
-         print("我有幾個promotionbannerList",promotionbannerlist.count)
+         print("我有幾個promotionbannerList", promotionbannerlist.count)
         return promotionbannerlist.count
     }
     func getList() -> [PromotionBanner] {

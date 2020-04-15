@@ -37,7 +37,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         homeTableView.tableFooterView = UIView()
         //        bannerImage.sd_setImage(with: marketingBannerList[], placeholderImage:UIImage(named: "test1"))
 //        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
-        
+
         // Do any additional setup after loading the view.
     }
     //輪播廣告的控制
@@ -72,8 +72,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         if collectionView.tag == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homecell", for: indexPath) as!
             HomeCollectionViewCell
-            print("這邊是index",indexPath.count)
-            print("這邊是",indexPath.row)
+            print("這邊是index", indexPath.count)
+            print("這邊是", indexPath.row)
 //            cell.homeImageView.sd_setImage(with: URL(string: slidebannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "test1"))
             return cell
         } else {
@@ -100,12 +100,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
+
     //TableView的控制部分
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homelist.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "HomeCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
