@@ -9,7 +9,7 @@
 import Foundation
 class PromotionBannerAPI: NSObject {
     static let PromotionBannerInstance = PromotionBannerAPI()
-    var promotionbannerlist = [PromotionBanner]()
+    lazy var promotionbannerlist = [PromotionBanner]()
     func promotionbanner() {
 
         let url = URL(string: ApiUrl.ApiUrlInstance.promotionBanner )!
@@ -32,13 +32,15 @@ class PromotionBannerAPI: NSObject {
                 if Info.success == true {
                     self.promotionbannerlist.removeAll()
                     for result in Info.data {
-                        let promotionBanner = PromotionBanner(pictureURL: result.picture_url)
+                        let promotionBanner = PromotionBanner(pictureURL: (result.picture_url)!)
                         self.promotionbannerlist.append(promotionBanner)
+                        print("asdasdasd")
                     }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: "\(Info.message)")
+                        print("沒來")
                     }
                 }
             } else {
@@ -50,13 +52,15 @@ class PromotionBannerAPI: NSObject {
             //主線程
             DispatchQueue.main.async {
 //                UIViewController.removeSpinner(spinner: sv as! UIView)
-                    PromotionBannerTable.reloadData()
+                   
+                    SlideBannerTable.reloadData()
             }
         }
         task.resume()
     }
 
     func getCount() -> Int {
+         print("我有幾個promotionbannerList",promotionbannerlist.count)
         return promotionbannerlist.count
     }
     func getList() -> [PromotionBanner] {

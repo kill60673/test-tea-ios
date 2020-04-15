@@ -9,7 +9,7 @@
 import Foundation
 class SlideBannerAPI: NSObject {
     static let SlideBannerInstance = SlideBannerAPI()
-    var slidebannerlist = [SlideBanner]()
+    lazy var slidebannerlist = [SlideBanner]()
     func slidebanner() {
 
         let url = URL(string: ApiUrl.ApiUrlInstance.slideBanner )!
@@ -34,6 +34,8 @@ class SlideBannerAPI: NSObject {
                     for result in Info.data {
                         let slideBanner = SlideBanner(imageType: result.img_type, pictureURL: result.picture_url, linkURL: result.link_url)
                         self.slidebannerlist.append(slideBanner)
+                        print("我有近這裡")
+                        print("這裡有這幾個",result.picture_url)
                     }
                 } else {
                     //主線程
@@ -51,12 +53,14 @@ class SlideBannerAPI: NSObject {
             DispatchQueue.main.async {
 //              UIViewController.removeSpinner(spinner: sv as! UIView)
                 SlideBannerTable.reloadData()
+                    PromotionBannerTable.reloadData()
             }
         }
         task.resume()
     }
 
     func getCount() -> Int {
+        print("我有幾個slideList",slidebannerlist.count)
         return slidebannerlist.count
     }
     func getList() -> [SlideBanner] {

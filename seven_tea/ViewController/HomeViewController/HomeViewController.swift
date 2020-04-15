@@ -29,17 +29,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     let promotionbannerList = PromotionBannerAPI.PromotionBannerInstance.getList()
     override func viewDidLoad() {
         super.viewDidLoad()
-        ADAPI.ADInstance.AD()
-        LoadingBannerAPI.LoadingBannerInstance.loadingbanner()
-        MarketingBannerAPI.MarketingBannerInstance.marketingbanner()
+        //        LoadingBannerAPI.LoadingBannerInstance.loadingbanner()
         SlideBannerAPI.SlideBannerInstance.slidebanner()
         PromotionBannerAPI.PromotionBannerInstance.promotionbanner()
         SlideBannerTable = homeCollectionView
         PromotionBannerTable = bannerCollectionView
         homeTableView.tableFooterView = UIView()
-//        bannerImage.sd_setImage(with: marketingBannerList[], placeholderImage:UIImage(named: "test1"))
-        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
-
+        //        bannerImage.sd_setImage(with: marketingBannerList[], placeholderImage:UIImage(named: "test1"))
+//        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
+        
         // Do any additional setup after loading the view.
     }
     //輪播廣告的控制
@@ -71,17 +69,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let myfavoriteList = MyFavoriteDrinkInfoAPI.MyFavoriteDrinkInfoInstance.getList()
-//        cell.lbTeaName.text = myfavoriteList[indexPath.row].myFavoriteProductName
         if collectionView.tag == 0 {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homecell", for: indexPath) as!
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homecell", for: indexPath) as!
             HomeCollectionViewCell
-            cell.homeImageView.sd_setImage(with: URL(string: slidebannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "test1"))
+            print("這邊是index",indexPath.count)
+            print("這邊是",indexPath.row)
+//            cell.homeImageView.sd_setImage(with: URL(string: slidebannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "test1"))
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as!
             BannerCollectionViewCell
-            cell.image.sd_setImage(with: URL(string: promotionbannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "test1"))
+//            cell.image.sd_setImage(with: URL(string: promotionbannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "test1"))
             return cell
         }
     }
@@ -94,7 +92,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.imageIndex = indexPath.row
         if collectionView.tag == 0 {
-        print("我按了上面", indexPath.row)
+            print("我按了上面", indexPath.row)
         } else {
             print("我按了下面", indexPath.row)
         }
@@ -102,12 +100,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
+    
     //TableView的控制部分
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homelist.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "HomeCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
