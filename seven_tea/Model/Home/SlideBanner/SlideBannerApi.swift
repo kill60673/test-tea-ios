@@ -7,24 +7,26 @@
 //
 
 import Foundation
+ var  SDPicture = [String]()
 class SlideBannerAPI: NSObject {
     static let SlideBannerInstance = SlideBannerAPI()
-    lazy var slidebannerlist = [SlideBanner]()
+    var slidebannerlist = [SlideBanner]()
+   
     func slidebanner() {
-
+        
         let url = URL(string: ApiUrl.ApiUrlInstance.slideBanner )!
-
+        
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
-
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, _ in
-
+            
             let responseString = String(data: data!, encoding: .utf8)
             let httpStatus = response as? HTTPURLResponse
-
-//            print(responseString)
-
+            
+            //            print(responseString)
+            
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
@@ -34,6 +36,7 @@ class SlideBannerAPI: NSObject {
                     for result in Info.data {
                         let slideBanner = SlideBanner(imageType: result.img_type, pictureURL: result.picture_url, linkURL: result.link_url)
                         self.slidebannerlist.append(slideBanner)
+                        SDPicture.append(result.picture_url)
                         print("我有近這裡")
                         print("這裡有這幾個", result.picture_url)
                     }
@@ -51,14 +54,13 @@ class SlideBannerAPI: NSObject {
             }
             //主線程
             DispatchQueue.main.async {
-//              UIViewController.removeSpinner(spinner: sv as! UIView)
+                //              UIViewController.removeSpinner(spinner: sv as! UIView)
                 SlideBannerTable.reloadData()
-                    PromotionBannerTable.reloadData()
             }
         }
         task.resume()
     }
-
+    
     func getCount() -> Int {
         print("我有幾個slideList", slidebannerlist.count)
         return slidebannerlist.count
@@ -66,5 +68,5 @@ class SlideBannerAPI: NSObject {
     func getList() -> [SlideBanner] {
         return slidebannerlist
     }
-
+    
 }
