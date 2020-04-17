@@ -7,17 +7,15 @@
 //
 
 import Foundation
+var districTag = [String]()
 class DistricTagAPI: NSObject {
     static let DistricTagInstance = DistricTagAPI()
-    lazy var districtaglist = [DistrictTag]()
+    var districtaglist = [DistrictTag]()
     func districtag(city: String) {
-
-        let url = URL(string: ApiUrl.ApiUrlInstance.districtTag + "\(city)")!
-
-        var request = URLRequest(url: url)
+        let url = URL(string: ApiUrl.ApiUrlInstance.districtTag + "\(city.urlEncoded())")
+        var request = URLRequest(url: url!)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
-
         let task = URLSession.shared.dataTask(with: request) { data, response, _ in
 
             let responseString = String(data: data!, encoding: .utf8)
@@ -32,9 +30,8 @@ class DistricTagAPI: NSObject {
                 if Info.success == true {
                     self.districtaglist.removeAll()
                     for result in Info.data {
-                        let districTag = DistrictTag(districtag: [result])
-                        self.districtaglist.append(districTag)
-                        print("asdasdasd")
+                        districTag.append(result)
+                        print("asdasdasd123",districTag)
                     }
                 } else {
                     //主線程
@@ -52,7 +49,7 @@ class DistricTagAPI: NSObject {
             //主線程
             DispatchQueue.main.async {
                 //                UIViewController.removeSpinner(spinner: sv as! UIView)
-
+                
             }
         }
         task.resume()
@@ -67,5 +64,6 @@ class DistricTagAPI: NSObject {
     }
     //    func getImageURL() -> String{
     //    }
+    
 
 }

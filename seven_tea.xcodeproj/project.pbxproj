@@ -50,8 +50,6 @@
 		8490F2622433182F00A59020 /* OrderApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F2612433182F00A59020 /* OrderApi.swift */; };
 		8490F264243318E100A59020 /* OrderColadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F263243318E100A59020 /* OrderColadable.swift */; };
 		8490F2662435E94B00A59020 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F2652435E94B00A59020 /* Order.swift */; };
-		8490F269243C7ADC00A59020 /* ADApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F268243C7ADC00A59020 /* ADApi.swift */; };
-		8490F26B243C7BC000A59020 /* ADCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F26A243C7BC000A59020 /* ADCodable.swift */; };
 		8490F26F243DC44200A59020 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F26E243DC44200A59020 /* BannerCollectionViewCell.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
@@ -169,8 +167,6 @@
 		8490F2612433182F00A59020 /* OrderApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderApi.swift; sourceTree = "<group>"; };
 		8490F263243318E100A59020 /* OrderColadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderColadable.swift; sourceTree = "<group>"; };
 		8490F2652435E94B00A59020 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		8490F268243C7ADC00A59020 /* ADApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADApi.swift; sourceTree = "<group>"; };
-		8490F26A243C7BC000A59020 /* ADCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADCodable.swift; sourceTree = "<group>"; };
 		8490F26E243DC44200A59020 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
@@ -395,8 +391,6 @@
 				8425539124459A04004C9B23 /* MarketingBanner */,
 				8425539024459A01004C9B23 /* SlideBanner */,
 				8425538F244599FE004C9B23 /* PromotionBanner */,
-				8490F268243C7ADC00A59020 /* ADApi.swift */,
-				8490F26A243C7BC000A59020 /* ADCodable.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -969,7 +963,6 @@
 				842553A02445A314004C9B23 /* MarketingBannerApi.swift in Sources */,
 				84255382243F27B5004C9B23 /* MenuDetailViewController.swift in Sources */,
 				84FADF4923FE8B0100C824C6 /* JumpPage.swift in Sources */,
-				8490F269243C7ADC00A59020 /* ADApi.swift in Sources */,
 				84EEC5D023D1C314005627FF /* ViewController.swift in Sources */,
 				84F7C89123EAD1C90097EAD0 /* LoginCodable.swift in Sources */,
 				84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */,
@@ -988,7 +981,6 @@
 				84479E952446FF0600D10DBA /* DistrictTag.swift in Sources */,
 				84D09B442418E6190019A0B4 /* AddFeedBackViewController.swift in Sources */,
 				84255384243F27B5004C9B23 /* MenuDetailService.swift in Sources */,
-				8490F26B243C7BC000A59020 /* ADCodable.swift in Sources */,
 				84316BFD240E4EC3002CD226 /* MemberInfoApi.swift in Sources */,
 				8425539E2445A0CD004C9B23 /* LoadingBannerApi.swift in Sources */,
 				84FADF2823F6775600C824C6 /* MemberRegiseterViewController.swift in Sources */,

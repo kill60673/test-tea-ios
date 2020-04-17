@@ -655,8 +655,10 @@
                     <connections>
                         <outlet property="CountyView" destination="cyQ-yG-B7p" id="jv6-VF-aYq"/>
                         <outlet property="NearbystoresTableView" destination="0Hi-Ds-2Wi" id="SJF-1B-UzY"/>
+                        <outlet property="btCityDoneClick" destination="GOK-nW-dXT" id="Ad0-gf-k1S"/>
                         <outlet property="btCounty" destination="NZE-uZ-SFP" id="vrw-5D-OEj"/>
                         <outlet property="btRegion" destination="dfO-hg-9Z2" id="REX-yA-IdY"/>
+                        <outlet property="btRegionDoneClick" destination="ooe-f3-BVc" id="oq1-pQ-Vs4"/>
                         <outlet property="countpickview" destination="xmr-so-flA" id="4lV-5V-hbW"/>
                         <outlet property="regionpickview" destination="sva-Dk-dqg" id="3RQ-iE-ES8"/>
                     </connections>
@@ -688,12 +690,21 @@
                                 <action selector="doneClick:" destination="Yfd-7s-rdK" eventType="touchUpInside" id="PGD-wa-l1H"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooe-f3-BVc">
+                            <rect key="frame" x="193" y="6" width="31" height="30"/>
+                            <state key="normal" title="完成"/>
+                            <connections>
+                                <action selector="btRegionDone:" destination="Yfd-7s-rdK" eventType="touchUpInside" id="tu1-NP-KJ8"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="xmr-so-flA" secondAttribute="trailing" id="6gn-xd-ihR"/>
+                        <constraint firstItem="ooe-f3-BVc" firstAttribute="top" secondItem="cyQ-yG-B7p" secondAttribute="top" constant="6" id="9tw-qd-Ed6"/>
                         <constraint firstItem="xmr-so-flA" firstAttribute="leading" secondItem="cyQ-yG-B7p" secondAttribute="leading" id="FAg-Ke-Nnh"/>
                         <constraint firstItem="xmr-so-flA" firstAttribute="top" secondItem="cyQ-yG-B7p" secondAttribute="top" constant="15" id="FD3-hg-qbD"/>
+                        <constraint firstAttribute="trailing" secondItem="ooe-f3-BVc" secondAttribute="trailing" constant="16" id="ftk-Az-6St"/>
                         <constraint firstAttribute="trailing" secondItem="GOK-nW-dXT" secondAttribute="trailing" constant="16" id="h3X-Yd-Aao"/>
                         <constraint firstAttribute="bottom" secondItem="xmr-so-flA" secondAttribute="bottom" constant="15" id="jus-Yc-VBt"/>
                         <constraint firstItem="GOK-nW-dXT" firstAttribute="top" secondItem="cyQ-yG-B7p" secondAttribute="top" constant="6" id="oQg-f6-wQy"/>
