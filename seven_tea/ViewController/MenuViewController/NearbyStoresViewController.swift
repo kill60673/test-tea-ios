@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+var pickview : UIPickerView!
 class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
-    let list = ["台北", "台中", "高雄"]
+    var list = ["台北", "台中", "高雄"]
     let alist = ["地區", "你家", "我家", "他家"]
-
+    var citytitle = ""
+    
     var nearbystores = [0, 1, 2, 3, 4]
     @IBOutlet weak var btCounty: UIButton!
     @IBOutlet weak var btRegion: UIButton!
@@ -19,11 +20,15 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var countpickview: UIPickerView!
     @IBOutlet var CountyView: UIView!
     @IBOutlet weak var regionpickview: UIPickerView!
-
+    @IBOutlet weak var btCityDoneClick: UIButton!
+    @IBOutlet weak var btRegionDoneClick: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         btCounty.customized_button(button: btCounty)
         btRegion.customized_button(button: btRegion)
+        CityTagAPI.CityTagInstance.citytag()
+        pickview = regionpickview
         // Do any additional setup after loading the view.
     }
     //克制pickerview跳出事件的客製化view必且設立位置
@@ -56,22 +61,35 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
         displayPlayView(true)
         countpickview.isHidden = false
         regionpickview.isHidden = true
+        btCityDoneClick.isHidden = false
+        btRegionDoneClick.isHidden = true
     }
     //選擇下去 完成的bt會修改button上面的值
     @IBAction func doneClick(_ sender: Any) {
-        let title = list[countpickview.selectedRow(inComponent: 0)]
-        let listtitle = alist[regionpickview.selectedRow(inComponent: 0)]
+        let title = cityTag[countpickview.selectedRow(inComponent: 0)]
+        self.citytitle = title
         btCounty.setTitle(title, for: .normal)
-        btRegion.setTitle(listtitle, for: .normal)
         displayPlayView(false)
         regionpickview.isHidden = false
         countpickview.isHidden = false
+        DistricTagAPI.DistricTagInstance.districtag(city: citytitle)
+        pickview.reloadAllComponents()
+        btCityDoneClick.isHidden = true
+    }
+    @IBAction func btRegionDone(_ sender: Any) {
+        let listtitle = districTag[regionpickview.selectedRow(inComponent: 0)]
+        btRegion.setTitle(listtitle, for: .normal)
+        regionpickview.isHidden = false
+        countpickview.isHidden = false
+        displayPlayView(false)
+        btRegionDoneClick.isHidden = true
     }
     //地區的BT按下去出跳出地區的pick選項
     @IBAction func btRegion(_ sender: Any) {
         displayPlayView(true)
         regionpickview.isHidden = false
         countpickview.isHidden = true
+        btRegionDoneClick.isHidden = false
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -79,16 +97,16 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
     //控制同頁不同的pickview
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView.tag == 0 {
-            return list.count
+            return cityTag.count
         } else {
-            return alist.count
+            return districTag.count
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 0 {
-            return list[row]
+            return cityTag[row]
         } else {
-            return alist[row]
+            return districTag[row]
         }
     }
     //選擇客製化alert的View跳出事件及收回事件
@@ -99,9 +117,9 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
                 break
             }
         }
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
-//        print("我有案下去")
+        //        print("我有案下去")
     }
 }

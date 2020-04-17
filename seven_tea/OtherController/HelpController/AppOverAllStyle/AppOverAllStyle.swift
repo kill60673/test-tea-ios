@@ -15,6 +15,13 @@ extension UITextField {
         return true
     }
 }
+extension String{
+    func urlEncoded() -> String {
+        let encodeUrlString = self.addingPercentEncoding(withAllowedCharacters:
+            .urlQueryAllowed)
+        return encodeUrlString ?? ""
+    }
+}
 extension UIViewController {
 
     func keyboad() {

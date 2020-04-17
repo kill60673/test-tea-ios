@@ -9,11 +9,6 @@
 import UIKit
 import SDWebImage
 import FSPagerView
-var  ADContent = [String]()
-var  ADTitle = [String]()
-var  ADSendName = [String]()
-var  ADPicture = [String]()
-var  ADSendTime = [String]()
 var SlideBannerTable: UICollectionView!
 var PromotionBannerTable: UICollectionView!
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
@@ -33,8 +28,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         SlideBannerTable = homeCollectionView
         PromotionBannerTable = bannerCollectionView
         homeTableView.tableFooterView = UIView()
-        //        bannerImage.sd_setImage(with: marketingBannerList[], placeholderImage:UIImage(named: "test1"))
-                Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
+        bannerImage.sd_setImage(with: URL(string: marketingImageUrl), placeholderImage: UIImage(named: "test1"))
+//                Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
         
         // Do any additional setup after loading the view.
     }

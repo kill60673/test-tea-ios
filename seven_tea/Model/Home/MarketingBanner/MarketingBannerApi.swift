@@ -7,6 +7,7 @@
 //
 
 import Foundation
+var marketingImageUrl = String()
 class MarketingBannerAPI: NSObject {
     static let MarketingBannerInstance = MarketingBannerAPI()
     var marketingbannerlist = [MarkeringBanner]()
@@ -34,6 +35,7 @@ class MarketingBannerAPI: NSObject {
                     for result in Info.data {
                         let marketingBanner = MarkeringBanner(imageType: result.img_type, pictureURL: result.picture_url, linkURL: result.link_url)
                         self.marketingbannerlist.append(marketingBanner)
+                        marketingImageUrl.append(result.picture_url)
                     }
                 } else {
                     //主線程

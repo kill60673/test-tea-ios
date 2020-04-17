@@ -7,6 +7,7 @@
 //
 
 import Foundation
+var cityTag = [String]()
 class CityTagAPI: NSObject {
     static let CityTagInstance = CityTagAPI()
     lazy var citytaglist = [CityTag]()
@@ -32,9 +33,7 @@ class CityTagAPI: NSObject {
                 if Info.success == true {
                     self.citytaglist.removeAll()
                     for result in Info.data {
-                        let cityTag = CityTag(cityTag: [result])
-                        self.citytaglist.append(cityTag)
-                        print("asdasdasd")
+                        cityTag.append(result)
                     }
                 } else {
                     //主線程
