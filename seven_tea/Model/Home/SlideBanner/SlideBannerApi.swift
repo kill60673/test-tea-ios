@@ -11,22 +11,22 @@ import Foundation
 class SlideBannerAPI: NSObject {
     static let SlideBannerInstance = SlideBannerAPI()
     var slidebannerlist = [SlideBanner]()
-   
+
     func slidebanner() {
-        
+
         let url = URL(string: ApiUrl.ApiUrlInstance.slideBanner )!
-        
+
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
-        
+
         let task = URLSession.shared.dataTask(with: request) { data, response, _ in
-            
+
             let responseString = String(data: data!, encoding: .utf8)
             let httpStatus = response as? HTTPURLResponse
-            
+
             //            print(responseString)
-            
+
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
@@ -60,7 +60,7 @@ class SlideBannerAPI: NSObject {
         }
         task.resume()
     }
-    
+
     func getCount() -> Int {
         print("我有幾個slideList", slidebannerlist.count)
         return slidebannerlist.count
@@ -68,5 +68,5 @@ class SlideBannerAPI: NSObject {
     func getList() -> [SlideBanner] {
         return slidebannerlist
     }
-    
+
 }

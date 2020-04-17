@@ -322,6 +322,14 @@
 		84479E8D2446FCF100D10DBA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				84479E9C2449530D00D10DBA /* NerabyStoresTag */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		84479E9C2449530D00D10DBA /* NerabyStoresTag */ = {
+			isa = PBXGroup;
+			children = (
 				84479E8E2446FD2300D10DBA /* CityTagCodable.swift */,
 				84479E902446FE5500D10DBA /* DistrictTagCodable.swift */,
 				84479E922446FEF900D10DBA /* CityTag.swift */,
@@ -329,7 +337,7 @@
 				84479E962447001D00D10DBA /* CityTagApi.swift */,
 				84479E9A2447027100D10DBA /* DistricTagApi.swift */,
 			);
-			path = Menu;
+			path = NerabyStoresTag;
 			sourceTree = "<group>";
 		};
 		84572B17242207EF00E11696 /* HomeViewController */ = {
