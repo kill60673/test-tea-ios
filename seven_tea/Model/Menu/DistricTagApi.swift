@@ -28,10 +28,10 @@ class DistricTagAPI: NSObject {
             if let data = data, let Info = try?
                 decoder.decode(DistrictTagCodable.self, from: data) {
                 if Info.success == true {
-                    self.districtaglist.removeAll()
+                    districTag.removeAll()
                     for result in Info.data {
                         districTag.append(result)
-                        print("asdasdasd123",districTag)
+                        print("asdasdasd123", districTag)
                     }
                 } else {
                     //主線程
@@ -49,7 +49,7 @@ class DistricTagAPI: NSObject {
             //主線程
             DispatchQueue.main.async {
                 //                UIViewController.removeSpinner(spinner: sv as! UIView)
-                
+
             }
         }
         task.resume()
@@ -62,8 +62,4 @@ class DistricTagAPI: NSObject {
     func getList() -> [DistrictTag] {
         return districtaglist
     }
-    //    func getImageURL() -> String{
-    //    }
-    
-
 }

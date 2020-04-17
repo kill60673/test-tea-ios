@@ -7,12 +7,12 @@
 //
 
 import UIKit
-var pickview : UIPickerView!
+var pickview: UIPickerView!
 class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
     var list = ["台北", "台中", "高雄"]
     let alist = ["地區", "你家", "我家", "他家"]
     var citytitle = ""
-    
+
     var nearbystores = [0, 1, 2, 3, 4]
     @IBOutlet weak var btCounty: UIButton!
     @IBOutlet weak var btRegion: UIButton!
@@ -22,7 +22,7 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var regionpickview: UIPickerView!
     @IBOutlet weak var btCityDoneClick: UIButton!
     @IBOutlet weak var btRegionDoneClick: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         btCounty.customized_button(button: btCounty)
@@ -59,6 +59,7 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
     //縣市的BT按下去跳出縣市的pick選項
     @IBAction func btCounty(_ sender: Any) {
         displayPlayView(true)
+        btRegion.setTitle("地區", for: .normal)
         countpickview.isHidden = false
         regionpickview.isHidden = true
         btCityDoneClick.isHidden = false
@@ -120,6 +121,5 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
-        //        print("我有案下去")
     }
 }

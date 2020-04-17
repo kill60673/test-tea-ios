@@ -11,20 +11,20 @@ class PromotionBannerAPI: NSObject {
     static let PromotionBannerInstance = PromotionBannerAPI()
     lazy var promotionbannerlist = [PromotionBanner]()
     func promotionbanner() {
-        
+
         let url = URL(string: ApiUrl.ApiUrlInstance.promotionBanner )!
-        
+
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
-        
+
         let task = URLSession.shared.dataTask(with: request) { data, response, _ in
-            
+
             let responseString = String(data: data!, encoding: .utf8)
             let httpStatus = response as? HTTPURLResponse
-            
+
             //            print(responseString)
-            
+
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
@@ -58,7 +58,7 @@ class PromotionBannerAPI: NSObject {
         }
         task.resume()
     }
-    
+
     func getCount() -> Int {
         print("我有幾個promotionbannerList", promotionbannerlist.count)
         return promotionbannerlist.count
@@ -68,5 +68,5 @@ class PromotionBannerAPI: NSObject {
     }
     //    func getImageURL() -> String{
     //    }
-    
+
 }
