@@ -9,4 +9,5 @@ target 'seven_tea' do
         pod 'SwiftLint'
 	pod 'SDWebImage'
 	pod 'FSPagerView'
+	pod 'SwiftyJSON'
 end

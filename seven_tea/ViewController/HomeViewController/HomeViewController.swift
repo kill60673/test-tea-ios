@@ -28,6 +28,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         SlideBannerTable = homeCollectionView
         PromotionBannerTable = bannerCollectionView
         homeTableView.tableFooterView = UIView()
+        GetStoreAPI.GetStoreInstance.getstore()
         bannerImage.sd_setImage(with: URL(string: marketingImageUrl), placeholderImage: UIImage(named: "test1"))
 //                Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
 

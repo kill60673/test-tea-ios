@@ -9,10 +9,8 @@
 import UIKit
 var pickview: UIPickerView!
 class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
-    var list = ["台北", "台中", "高雄"]
-    let alist = ["地區", "你家", "我家", "他家"]
     var citytitle = ""
-
+    var regiotitle  = ""
     var nearbystores = [0, 1, 2, 3, 4]
     @IBOutlet weak var btCounty: UIButton!
     @IBOutlet weak var btRegion: UIButton!
@@ -79,6 +77,7 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
     }
     @IBAction func btRegionDone(_ sender: Any) {
         let listtitle = districTag[regionpickview.selectedRow(inComponent: 0)]
+        self.regiotitle = listtitle
         btRegion.setTitle(listtitle, for: .normal)
         regionpickview.isHidden = false
         countpickview.isHidden = false
