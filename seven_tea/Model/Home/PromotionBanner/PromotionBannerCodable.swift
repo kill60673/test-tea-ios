@@ -10,7 +10,7 @@ import Foundation
 struct PromotionBannerCodable: Codable {
     var success: Bool
     var message: String
-    var data: [picture]
+    var data: [picture]?
 
     struct picture: Codable {
         var picture_url: String?
