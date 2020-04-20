@@ -8,17 +8,17 @@
 
 import Foundation
 class GetStore: NSObject {
-    var getstore_id = String()
+    var getstore_id = Int()
     var storename = String()
     var address = String()
     var id_open = Bool()
-    var opening_timer = [OpeningTime]()
+    var opening_timer = [Any]()
 
-    init(getstore_id : String , storename : String, address : String ,id_open : Bool , opening_timer: [OpeningTime]) {
+    init(getstore_id: Int, storename: String, address: String, id_open: Bool, opening_time: Any) {
         self.getstore_id = getstore_id
         self.storename = storename
         self.address = address
         self.id_open = id_open
-        self.opening_timer = opening_timer
+        self.opening_timer = [opening_time]
     }
 }

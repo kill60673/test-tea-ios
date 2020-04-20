@@ -50,6 +50,6 @@ class ApiUrl: NSObject {
         promotionBanner="\(doMain)/api/get-index-promotion-banner"
         districtTag="\(doMain)/api/get-store-district-tag/"
         cityTag="\(doMain)/api/get-store-city-tag"
-        getstore="\(doMain)/api/get-store-by-country-district/%E6%96%B0%E5%8C%97%E5%B8%82/%E4%BA%94%E8%82%A1%E5%8D%80"
+        getstore="\(doMain)/api/get-store-by-country-district/"
     }
 }

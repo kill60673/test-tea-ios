@@ -31,7 +31,7 @@ class PromotionBannerAPI: NSObject {
                 decoder.decode(PromotionBannerCodable.self, from: data) {
                 if Info.success == true {
                     self.promotionbannerlist.removeAll()
-                    for result in Info.data {
+                    for result in Info.data! {
                         let promotionBanner = PromotionBanner(pictureURL: (result.picture_url)!)
                         self.promotionbannerlist.append(promotionBanner)
                         print("我有近這裡promotion")
