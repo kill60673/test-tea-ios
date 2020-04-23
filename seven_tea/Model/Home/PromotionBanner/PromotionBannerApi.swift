@@ -23,8 +23,6 @@ class PromotionBannerAPI: NSObject {
             let responseString = String(data: data!, encoding: .utf8)
             let httpStatus = response as? HTTPURLResponse
 
-            //            print(responseString)
-
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
@@ -34,14 +32,11 @@ class PromotionBannerAPI: NSObject {
                     for result in Info.data! {
                         let promotionBanner = PromotionBanner(pictureURL: (result.picture_url)!)
                         self.promotionbannerlist.append(promotionBanner)
-                        print("我有近這裡promotion")
-                        print("這裡有這幾個promotion", result.picture_url)
                     }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: "\(Info.message)")
-                        print("沒來")
                     }
                 }
             } else {
@@ -60,7 +55,6 @@ class PromotionBannerAPI: NSObject {
     }
 
     func getCount() -> Int {
-        print("我有幾個promotionbannerList", promotionbannerlist.count)
         return promotionbannerlist.count
     }
     func getList() -> [PromotionBanner] {

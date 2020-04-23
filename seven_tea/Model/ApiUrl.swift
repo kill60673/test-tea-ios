@@ -29,7 +29,7 @@ class ApiUrl: NSObject {
     var districtTag: String
     var cityTag: String
     var getstore: String
-
+    var verifyemail: String
     override init() {
         loginUrl="\(doMain)/api/login"
         sendMemberRegisterSmsUrl="\(doMain)/api/register/send-phone-sms"
@@ -51,5 +51,6 @@ class ApiUrl: NSObject {
         districtTag="\(doMain)/api/get-store-district-tag/"
         cityTag="\(doMain)/api/get-store-city-tag"
         getstore="\(doMain)/api/get-store-by-country-district/"
+        verifyemail="\(doMain)/api/set-verify-email"
     }
 }

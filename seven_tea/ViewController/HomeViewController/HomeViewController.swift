@@ -22,17 +22,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     let marketingBannerList = MarketingBannerAPI.MarketingBannerInstance.getList()
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        LoadingBannerAPI.LoadingBannerInstance.loadingbanner()
-//        SlideBannerAPI.SlideBannerInstance.slidebanner()
-//        PromotionBannerAPI.PromotionBannerInstance.promotionbanner()
+        LoadingBannerAPI.LoadingBannerInstance.loadingbanner()
+        SlideBannerAPI.SlideBannerInstance.slidebanner()
+        PromotionBannerAPI.PromotionBannerInstance.promotionbanner()
         SlideBannerTable = homeCollectionView
         PromotionBannerTable = bannerCollectionView
         homeTableView.tableFooterView = UIView()
-        GetStoresApi.GetStoresApiInstance.getstores(city: "新北市", district: "蘆洲區")
-//        bannerImage.sd_setImage(with: URL(string: marketingImageUrl), placeholderImage: UIImage(named: "test1"))
-//                Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
-
-        // Do any additional setup after loading the view.
+        GetStoresApi.GetStoresApiInstance.getstores(city:"",district:"")
+        bannerImage.sd_setImage(with: URL(string: marketingImageUrl), placeholderImage: UIImage(named: "test1"))
+                Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
     }
     //輪播廣告的控制
     @objc func changeBanner() {

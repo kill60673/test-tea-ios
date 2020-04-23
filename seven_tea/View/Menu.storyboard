@@ -654,12 +654,12 @@
                     <navigationItem key="navigationItem" title="附近店家" id="S6w-fe-Xho"/>
                     <connections>
                         <outlet property="CountyView" destination="cyQ-yG-B7p" id="jv6-VF-aYq"/>
-                        <outlet property="NearbystoresTableView" destination="0Hi-Ds-2Wi" id="SJF-1B-UzY"/>
                         <outlet property="btCityDoneClick" destination="GOK-nW-dXT" id="Ad0-gf-k1S"/>
                         <outlet property="btCounty" destination="NZE-uZ-SFP" id="vrw-5D-OEj"/>
                         <outlet property="btRegion" destination="dfO-hg-9Z2" id="REX-yA-IdY"/>
                         <outlet property="btRegionDoneClick" destination="ooe-f3-BVc" id="oq1-pQ-Vs4"/>
                         <outlet property="countpickview" destination="xmr-so-flA" id="4lV-5V-hbW"/>
+                        <outlet property="nearbystoresTableView" destination="0Hi-Ds-2Wi" id="SJF-1B-UzY"/>
                         <outlet property="regionpickview" destination="sva-Dk-dqg" id="3RQ-iE-ES8"/>
                     </connections>
                 </viewController>

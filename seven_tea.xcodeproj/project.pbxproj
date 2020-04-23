@@ -42,6 +42,9 @@
 		8454AA1B244EC174008FB05E /* GetStoresApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454AA1A244EC174008FB05E /* GetStoresApi.swift */; };
 		84572B192422082200E11696 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84572B182422082200E11696 /* HomeCollectionViewCell.swift */; };
 		84572B1B2422088A00E11696 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84572B1A2422088A00E11696 /* HomeViewController.swift */; };
+		84874E08244F048900232FB9 /* VerifyEmailCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E07244F048900232FB9 /* VerifyEmailCodable.swift */; };
+		84874E0A244F04A300232FB9 /* VerifyEmailApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E09244F04A300232FB9 /* VerifyEmailApi.swift */; };
+		84874E0C244F2DAE00232FB9 /* OpeningTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E0B244F2DAE00232FB9 /* OpeningTime.swift */; };
 		8490F24C2429B30300A59020 /* NearbyStoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */; };
 		8490F24E2429F59800A59020 /* NearbyStoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */; };
 		8490F253242CA34C00A59020 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F252242CA34C00A59020 /* MenuTableViewCell.swift */; };
@@ -161,6 +164,9 @@
 		8454AA1A244EC174008FB05E /* GetStoresApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStoresApi.swift; sourceTree = "<group>"; };
 		84572B182422082200E11696 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		84572B1A2422088A00E11696 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		84874E07244F048900232FB9 /* VerifyEmailCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailCodable.swift; sourceTree = "<group>"; };
+		84874E09244F04A300232FB9 /* VerifyEmailApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailApi.swift; sourceTree = "<group>"; };
+		84874E0B244F2DAE00232FB9 /* OpeningTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningTime.swift; sourceTree = "<group>"; };
 		8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresViewController.swift; sourceTree = "<group>"; };
 		8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresTableViewCell.swift; sourceTree = "<group>"; };
 		8490F252242CA34C00A59020 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -350,6 +356,7 @@
 			children = (
 				84479EA02449812900D10DBA /* GetStore.swift */,
 				8454AA1A244EC174008FB05E /* GetStoresApi.swift */,
+				84874E0B244F2DAE00232FB9 /* OpeningTime.swift */,
 			);
 			path = NerabyStores;
 			sourceTree = "<group>";
@@ -362,6 +369,15 @@
 				8490F26E243DC44200A59020 /* BannerCollectionViewCell.swift */,
 			);
 			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		84874E06244F043C00232FB9 /* VerifyEmail */ = {
+			isa = PBXGroup;
+			children = (
+				84874E07244F048900232FB9 /* VerifyEmailCodable.swift */,
+				84874E09244F04A300232FB9 /* VerifyEmailApi.swift */,
+			);
+			path = VerifyEmail;
 			sourceTree = "<group>";
 		};
 		8490F251242CA33200A59020 /* MenuViewController */ = {
@@ -599,6 +615,7 @@
 		84EEC5E923D30162005627FF /* AccountInformation */ = {
 			isa = PBXGroup;
 			children = (
+				84874E06244F043C00232FB9 /* VerifyEmail */,
 				84EEC5F523D412AF005627FF /* AccountCodable.swift */,
 				84EEC5F723D412BB005627FF /* Account.swift */,
 				84EEC5F923D412C9005627FF /* AccountApi.swift */,
@@ -1008,6 +1025,7 @@
 				84FADF2823F6775600C824C6 /* MemberRegiseterViewController.swift in Sources */,
 				8490F25D242F8A8300A59020 /* OrderViewController.swift in Sources */,
 				84F7C88523E7FE460097EAD0 /* MessageAlert.swift in Sources */,
+				84874E0A244F04A300232FB9 /* VerifyEmailApi.swift in Sources */,
 				84EEC62D23D421EE005627FF /* AccountinfomationModelController.swift in Sources */,
 				84EEC62F23D4220D005627FF /* MyFavoriteModelController.swift in Sources */,
 				84EEC61523D4156F005627FF /* FrequentlyAskedQuestionsCodable.swift in Sources */,
@@ -1044,6 +1062,7 @@
 				84D09B3A24177FA10019A0B4 /* SetPasswordViewController.swift in Sources */,
 				84EEC62823D4216C005627FF /* SingUpModelController.swift in Sources */,
 				84FADF1B23F66CBE00C824C6 /* MemberRegisterInfoCodable.swift in Sources */,
+				84874E08244F048900232FB9 /* VerifyEmailCodable.swift in Sources */,
 				8425538E24459902004C9B23 /* LoadingBannerCodable.swift in Sources */,
 				84C2E2B123EBE8B1008AB33F /* SendResetForgotPasswordCodable.swift in Sources */,
 				84479E9B2447027100D10DBA /* DistricTagApi.swift in Sources */,
@@ -1077,6 +1096,7 @@
 				84F7C88023E5E9D70097EAD0 /* Regex.swift in Sources */,
 				84FADF4C23FE8B4E00C824C6 /* PredicatesFunc.swift in Sources */,
 				84EEC61723D41586005627FF /* FrequentlyAskedQuestions.swift in Sources */,
+				84874E0C244F2DAE00232FB9 /* OpeningTime.swift in Sources */,
 				84F7C89023EAD1C90097EAD0 /* LoginApi.swift in Sources */,
 				84D09B4F241F21A20019A0B4 /* VoucherTableViewCell.swift in Sources */,
 				8425539824459C07004C9B23 /* MarkeringBanner.swift in Sources */,

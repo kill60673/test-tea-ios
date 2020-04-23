@@ -8,25 +8,28 @@
 
 import UIKit
 var pickview: UIPickerView!
+var NearByStoresTableView: UITableView!
 class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
     var citytitle = ""
     var regiotitle  = ""
-    var nearbystores = [0, 1, 2, 3, 4]
+    var is_open = ""
     @IBOutlet weak var btCounty: UIButton!
     @IBOutlet weak var btRegion: UIButton!
-    @IBOutlet weak var NearbystoresTableView: UITableView!
+    @IBOutlet weak var nearbystoresTableView: UITableView!
     @IBOutlet weak var countpickview: UIPickerView!
     @IBOutlet var CountyView: UIView!
     @IBOutlet weak var regionpickview: UIPickerView!
     @IBOutlet weak var btCityDoneClick: UIButton!
     @IBOutlet weak var btRegionDoneClick: UIButton!
 
+ 
     override func viewDidLoad() {
-        super.viewDidLoad()
         btCounty.customized_button(button: btCounty)
         btRegion.customized_button(button: btRegion)
         CityTagAPI.CityTagInstance.citytag()
+        NearByStoresTableView = nearbystoresTableView
         pickview = regionpickview
+          super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     //克制pickerview跳出事件的客製化view必且設立位置
@@ -47,12 +50,22 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nearbystores.count
+        return GetStoresApi.GetStoresApiInstance.getCount()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let getStoreDetails = GetStoresApi.GetStoresApiInstance.getstorelist
         let cell = tableView.dequeueReusableCell(withIdentifier: "NearbyStoresCell", for: indexPath) as! NearbyStoresTableViewCell
-        cell.lbAddress.text = "hello"
+        cell.lbAddress.text = getStoreDetails[indexPath.row].address
+        cell.lbStoreName.text = getStoreDetails[indexPath.row].storename
+        cell.lbPhone.text = getStoreDetails[indexPath.row].tel
+        if getStoreDetails[indexPath.row].is_open == true {
+            self.is_open = "今日營業時間\(getStoreDetails[indexPath.row].opening_timer!.start_time)-\(getStoreDetails[indexPath.row].opening_timer!.end_time)"
+        }else{
+            self.is_open = "今日公休"
+        }
+        cell.lbBusinessHours.text = is_open
         return cell
+
     }
     //縣市的BT按下去跳出縣市的pick選項
     @IBAction func btCounty(_ sender: Any) {
@@ -83,6 +96,7 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
         countpickview.isHidden = false
         displayPlayView(false)
         btRegionDoneClick.isHidden = true
+        GetStoresApi.GetStoresApiInstance.getstores(city: citytitle, district: regiotitle)
     }
     //地區的BT按下去出跳出地區的pick選項
     @IBAction func btRegion(_ sender: Any) {

@@ -62,7 +62,7 @@ class SlideBannerAPI: NSObject {
     }
 
     func getCount() -> Int {
-        print("我有幾個slideList", slidebannerlist.count)
+
         return slidebannerlist.count
     }
     func getList() -> [SlideBanner] {
