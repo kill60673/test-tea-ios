@@ -155,7 +155,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 // 開始定位自身位置
                 myLocationManager.startUpdatingLocation()
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
-//                    GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
+                    GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
                     print("有取得位置")
                 })
                 
@@ -178,17 +178,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                     animated: true, completion: nil)
                 SelfLatitude = 0.0
                 SelfLongitude = 0.0
-                 GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
                 print("定位權限已關閉")
             }
                 // 使用者已經同意定位自身位置權限
             else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
                 // 開始定位自身位置
                 myLocationManager.startUpdatingLocation()
-                
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
                     print("有取得後續位置")
-//                    GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
+                    GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
                 })
                 
             }

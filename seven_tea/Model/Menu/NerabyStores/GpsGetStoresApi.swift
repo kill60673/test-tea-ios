@@ -40,8 +40,6 @@ class GpsGetStoresApi: NSObject {
                     for i in 0..<json["data"].count {
                         //把openingTime的東西 拉出來額外存 直接使用
                         //getstoreslist裡面直接存原本那些東西
-                        print(json["message"].string)
-                        print(json["data"][])
                         let getgpsstores = GetStore(getstore_id: json["data"][0]["id"].int!, tel: json["data"][0]["tel"].string!, storename: json["data"][0]["storename"].string!, address: json["data"][0]["address"].string!, is_open: json["data"][0]["is_open"].bool!, open_time_date: json["data"][0]["opening_time"][0]["date"].string!, end_time: json["data"][0]["opening_time"][0]["end_time"].string!, start_time: json["data"][0]["opening_time"][0]["start_time"].string!)
                         self.start_time.append(json["data"][i]["opening_time"][0]["start_time"].string!)
                         self.date.append(json["data"][i]["opening_time"][0]["date"].string!)
