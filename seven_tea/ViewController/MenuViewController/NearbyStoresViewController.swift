@@ -50,10 +50,20 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return GetStoresApi.GetStoresApiInstance.getCount()
+        if GpsGetStoresApi.GpsGetStoresApiInstance.getgpscount() == 0 {
+            return GetStoresApi.GetStoresApiInstance.getCount()
+        }else{
+            return GpsGetStoresApi.GpsGetStoresApiInstance.getgpscount()
+        }
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let getStoreDetails = GetStoresApi.GetStoresApiInstance.getstorelist
+        var getStoreDetails = GetStoresApi.GetStoresApiInstance.getstorelist
+        if GpsGetStoresApi.GpsGetStoresApiInstance.getgpslist() == [] {
+             getStoreDetails = GetStoresApi.GetStoresApiInstance.getstorelist
+        }else{
+            getStoreDetails = GpsGetStoresApi.GpsGetStoresApiInstance.getgpslist()
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "NearbyStoresCell", for: indexPath) as! NearbyStoresTableViewCell
         cell.lbAddress.text = getStoreDetails[indexPath.row].address
         cell.lbStoreName.text = getStoreDetails[indexPath.row].storename
