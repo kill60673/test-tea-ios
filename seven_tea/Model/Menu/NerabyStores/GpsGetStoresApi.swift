@@ -1,29 +1,29 @@
 //
-//  GetStoresApi.swift
+//  GpsGetStoresApi.swift
 //  seven_tea
 //
-//  Created by harrison on 2020/4/21.
+//  Created by harrison on 2020/4/24.
 //  Copyright © 2020 harrison公司機. All rights reserved.
 //
+
 
 import Foundation
 import UIKit
 import SwiftyJSON
 
-class GetStoresApi: NSObject {
-    var getstorelist = [GetStore]()
-    var asdd = "啊"
+class GpsGetStoresApi: NSObject {
+    var getgpsstorelist = [GetStore]()
     var start_time = [String]()
     var end_time = [String]()
     var date = [String]()
     var urlString = ""
-    static let GetStoresApiInstance = GetStoresApi()
-    func getstores(city:String,district:String) {
+    static let GpsGetStoresApiInstance = GpsGetStoresApi()
+    func gpsgetstores(latitude:Double,longitude:Double) {
         
-        if city == "" {
-            urlString = ApiUrl.ApiUrlInstance.getstore
+        if latitude == 0.0 {
+            urlString = ApiUrl.ApiUrlInstance.gpsgetstore
         }else{
-            urlString = ApiUrl.ApiUrlInstance.getstore+"\(city.urlEncoded())/\(district.urlEncoded())"
+            urlString = ApiUrl.ApiUrlInstance.gpsgetstore+"\(latitude)/\(longitude)"
         }
         let url = URL(string: urlString)!
         print(url)
@@ -36,18 +36,20 @@ class GetStoresApi: NSObject {
             do {
                 let json = try JSON(data: data!)
                 if json["success"].bool! == true {
-                    self.getstorelist.removeAll()
+                    self.getgpsstorelist.removeAll()
                     for i in 0..<json["data"].count {
                         //把openingTime的東西 拉出來額外存 直接使用
                         //getstoreslist裡面直接存原本那些東西
-                        let getstores = GetStore(getstore_id: json["data"][i]["id"].int!, tel: json["data"][i]["tel"].string!, storename: json["data"][i]["storename"].string!, address: json["data"][i]["address"].string!, is_open: json["data"][i]["is_open"].bool!, open_time_date: json["data"][i]["opening_time"][0]["date"].string!, end_time: json["data"][i]["opening_time"][0]["end_time"].string!, start_time: json["data"][i]["opening_time"][0]["start_time"].string!)
+                        print(json["message"].string)
+                        print(json["data"][])
+                        let getgpsstores = GetStore(getstore_id: json["data"][0]["id"].int!, tel: json["data"][0]["tel"].string!, storename: json["data"][0]["storename"].string!, address: json["data"][0]["address"].string!, is_open: json["data"][0]["is_open"].bool!, open_time_date: json["data"][0]["opening_time"][0]["date"].string!, end_time: json["data"][0]["opening_time"][0]["end_time"].string!, start_time: json["data"][0]["opening_time"][0]["start_time"].string!)
                         self.start_time.append(json["data"][i]["opening_time"][0]["start_time"].string!)
                         self.date.append(json["data"][i]["opening_time"][0]["date"].string!)
                         self.end_time.append(json["data"][i]["opening_time"][0]["end_time"].string!)
-                        self.getstorelist.append(getstores)
-//                        print(getstores.storename)
+                        self.getgpsstorelist.append(getgpsstores)
+                        print(getgpsstores.storename)
                     }
-                    print(self.getstorelist.count)
+                    print(self.getgpsstorelist.count)
                     
                 } else {
                     //主線程
@@ -75,15 +77,12 @@ class GetStoresApi: NSObject {
         }
         task.resume()
     }
-    func getasdd()->String{
-        return asdd
+    func getgpslist()->[GetStore]{
+        return getgpsstorelist
     }
-    func getlist()->[GetStore]{
-        return getstorelist
-    }
-    func getCount() -> Int {
+    func getgpscount() -> Int {
         
-        return getstorelist.count
+        return getgpsstorelist.count
     }
     
 }
