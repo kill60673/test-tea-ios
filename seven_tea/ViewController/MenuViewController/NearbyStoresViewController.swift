@@ -67,6 +67,10 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
         return cell
 
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MenuTV")
+        show(vc!, sender: self)
+    }
     //縣市的BT按下去跳出縣市的pick選項
     @IBAction func btCounty(_ sender: Any) {
         displayPlayView(true)
