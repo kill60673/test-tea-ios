@@ -21,8 +21,8 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var regionpickview: UIPickerView!
     @IBOutlet weak var btCityDoneClick: UIButton!
     @IBOutlet weak var btRegionDoneClick: UIButton!
+    var getStoreDetails = [GetStore]()
 
- 
     override func viewDidLoad() {
         btCounty.customized_button(button: btCounty)
         btRegion.customized_button(button: btRegion)
@@ -52,16 +52,16 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if GpsGetStoresApi.GpsGetStoresApiInstance.getgpscount() == 0 {
             return GetStoresApi.GetStoresApiInstance.getCount()
-        }else{
+        } else {
             return GpsGetStoresApi.GpsGetStoresApiInstance.getgpscount()
         }
-        
+
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var getStoreDetails = GetStoresApi.GetStoresApiInstance.getstorelist
+        self.getStoreDetails = GetStoresApi.GetStoresApiInstance.getstorelist
         if GpsGetStoresApi.GpsGetStoresApiInstance.getgpslist() == [] {
              getStoreDetails = GetStoresApi.GetStoresApiInstance.getstorelist
-        }else{
+        } else {
             getStoreDetails = GpsGetStoresApi.GpsGetStoresApiInstance.getgpslist()
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "NearbyStoresCell", for: indexPath) as! NearbyStoresTableViewCell
@@ -70,7 +70,7 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
         cell.lbPhone.text = getStoreDetails[indexPath.row].tel
         if getStoreDetails[indexPath.row].is_open == true {
             self.is_open = "今日營業時間\(getStoreDetails[indexPath.row].opening_timer!.start_time)-\(getStoreDetails[indexPath.row].opening_timer!.end_time)"
-        }else{
+        } else {
             self.is_open = "今日公休"
         }
         cell.lbBusinessHours.text = is_open

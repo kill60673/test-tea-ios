@@ -6,23 +6,19 @@
 //  Copyright © 2020 harrison公司機. All rights reserved.
 //
 
-
 import Foundation
 import UIKit
 import SwiftyJSON
 
 class GpsGetStoresApi: NSObject {
     var getgpsstorelist = [GetStore]()
-    var start_time = [String]()
-    var end_time = [String]()
-    var date = [String]()
     var urlString = ""
     static let GpsGetStoresApiInstance = GpsGetStoresApi()
-    func gpsgetstores(latitude:Double,longitude:Double) {
-        
+    func gpsgetstores(latitude: Double, longitude: Double) {
+
         if latitude == 0.0 {
             urlString = ApiUrl.ApiUrlInstance.gpsgetstore
-        }else{
+        } else {
             urlString = ApiUrl.ApiUrlInstance.gpsgetstore+"\(latitude)/\(longitude)"
         }
         let url = URL(string: urlString)!
@@ -41,21 +37,17 @@ class GpsGetStoresApi: NSObject {
                         //把openingTime的東西 拉出來額外存 直接使用
                         //getstoreslist裡面直接存原本那些東西
                         let getgpsstores = GetStore(getstore_id: json["data"][0]["id"].int!, tel: json["data"][0]["tel"].string!, storename: json["data"][0]["storename"].string!, address: json["data"][0]["address"].string!, is_open: json["data"][0]["is_open"].bool!, open_time_date: json["data"][0]["opening_time"][0]["date"].string!, end_time: json["data"][0]["opening_time"][0]["end_time"].string!, start_time: json["data"][0]["opening_time"][0]["start_time"].string!)
-                        self.start_time.append(json["data"][i]["opening_time"][0]["start_time"].string!)
-                        self.date.append(json["data"][i]["opening_time"][0]["date"].string!)
-                        self.end_time.append(json["data"][i]["opening_time"][0]["end_time"].string!)
                         self.getgpsstorelist.append(getgpsstores)
-                        print(getgpsstores.storename)
                     }
                     print(self.getgpsstorelist.count)
-                    
+
                 } else {
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-                
+
             } catch {
                 //主線程
                 DispatchQueue.main.async {
@@ -66,8 +58,8 @@ class GpsGetStoresApi: NSObject {
             //主線程
             DispatchQueue.main.async {
                 if NearByStoresTableView == nil {
-                    
-                }else{
+
+                } else {
                     print("我有進來這裡")
                     NearByStoresTableView.reloadData()
                 }
@@ -75,12 +67,11 @@ class GpsGetStoresApi: NSObject {
         }
         task.resume()
     }
-    func getgpslist()->[GetStore]{
+    func getgpslist() -> [GetStore] {
         return getgpsstorelist
     }
     func getgpscount() -> Int {
-        
         return getgpsstorelist.count
     }
-    
+
 }

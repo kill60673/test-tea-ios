@@ -11,11 +11,11 @@ import SDWebImage
 import CoreLocation
 var SlideBannerTable: UICollectionView!
 var PromotionBannerTable: UICollectionView!
-var SelfLatitude : Double = 0.0
-var SelfLongitude : Double = 0.0
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource,CLLocationManagerDelegate {
+var SelfLatitude: Double = 0.0
+var SelfLongitude: Double = 0.0
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     var imageIndex = 0
-    var myLocationManager :CLLocationManager!
+    var myLocationManager: CLLocationManager!
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var bannerCollectionView: UICollectionView!
@@ -36,7 +36,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         myLocationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
         myLocationManager.desiredAccuracy = kCLLocationAccuracyBest
         myLocationManager.requestWhenInUseAuthorization()
-        GetStoresApi.GetStoresApiInstance.getstores(city:"",district:"")
+        GetStoresApi.GetStoresApiInstance.getstores(city: "", district: "")
+        GetMenuCategoryApi.GetStoresApiInstance.getstores(storeId: 2)
         bannerImage.sd_setImage(with: URL(string: marketingImageUrl), placeholderImage: UIImage(named: "test1"))
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
     }
@@ -69,7 +70,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+
         if collectionView.tag == 0 {
             let slidebannerList = SlideBannerAPI.SlideBannerInstance.getList()
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homecell", for: indexPath) as!
@@ -103,12 +104,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
+
     //TableView的控制部分
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homelist.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "HomeCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
@@ -158,7 +159,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                     GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
                     print("有取得位置")
                 })
-                
+
             }
                 // 使用者已經拒絕定位自身位置權限
             else if CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .restricted {
@@ -171,7 +172,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                     "如要變更權限，請至 設定 > 隱私權 > 定位服務 開啟",
                     preferredStyle: .alert)
                 let okAction = UIAlertAction(
-                    title: "確認", style: .default, handler:nil)
+                    title: "確認", style: .default, handler: nil)
                 alertController.addAction(okAction)
                 self.present(
                     alertController,
@@ -188,19 +189,19 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                     print("有取得後續位置")
                     GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
                 })
-                
+
             }
         }
-        
+
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             // 印出目前所在位置座標
     //        print("aaaaaaaaaa")
-            let currentLocation :CLLocation = locations[0] as CLLocation
+            let currentLocation: CLLocation = locations[0] as CLLocation
             SelfLatitude =  currentLocation.coordinate.latitude
             SelfLongitude =  currentLocation.coordinate.longitude
-            
+
         }
-        
+
         override func viewDidDisappear(_ animated: Bool) {
             super.viewDidDisappear(animated)
             // 停止定位自身位置
