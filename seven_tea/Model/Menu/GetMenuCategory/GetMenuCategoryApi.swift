@@ -1,0 +1,66 @@
+//
+//  File.swift
+//  seven_tea
+//
+//  Created by harrison on 2020/4/24.
+//  Copyright © 2020 harrison公司機. All rights reserved.
+//
+
+import Foundation
+import UIKit
+import SwiftyJSON
+
+class GetMenuCategoryApi: NSObject {
+    var getmenucatrgorylist = [GetMenuCategory]()
+    var urlString = ""
+    static let GetStoresApiInstance = GetMenuCategoryApi()
+    func getstores(storeId:Int) {
+            urlString = ApiUrl.ApiUrlInstance.getmenucategory+"\(storeId)"
+        let url = URL(string: urlString)!
+        print(url)
+        var request = URLRequest(url: url )
+        print("url...", url)
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) {
+            data, _, error in
+            do {
+                let json = try JSON(data: data!)
+                if json["success"].bool! == true {
+                    self.getmenucatrgorylist.removeAll()
+                    for i in 0..<json["data"].count {
+                        print("欸要講一下",json["data"][])
+                        let getmenucatrgory = GetMenuCategory(id: json["data"][i]["id"].string!, category_name: json["data"][i]["category_name"].string!)
+                        self.getmenucatrgorylist.append(getmenucatrgory)
+                    }
+                    print(self.getmenucatrgorylist.count)
+
+                } else {
+                    //主線程
+                    DispatchQueue.main.async {
+                        MessageAlert.Instance.message(message: json["message"].string!)
+                    }
+                }
+
+            } catch {
+                //主線程
+                DispatchQueue.main.async {
+                    MessageAlert.Instance.message(message: "資料解析錯誤")
+                    print("這邊是錯誤", error)
+                }
+            }
+            //主線程
+            DispatchQueue.main.async {
+               
+            }
+        }
+        task.resume()
+    }
+    func getlist() -> [GetMenuCategory] {
+        return getmenucatrgorylist
+    }
+    func getCount() -> Int {
+        return getmenucatrgorylist.count
+    }
+
+}
