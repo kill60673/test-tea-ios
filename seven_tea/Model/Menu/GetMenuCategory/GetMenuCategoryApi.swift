@@ -14,7 +14,7 @@ class GetMenuCategoryApi: NSObject {
     var getmenucatrgorylist = [GetMenuCategory]()
     var urlString = ""
     static let GetStoresApiInstance = GetMenuCategoryApi()
-    func getstores(storeId:Int) {
+    func getstores(storeId: Int) {
             urlString = ApiUrl.ApiUrlInstance.getmenucategory+"\(storeId)"
         let url = URL(string: urlString)!
         print(url)
@@ -29,7 +29,7 @@ class GetMenuCategoryApi: NSObject {
                 if json["success"].bool! == true {
                     self.getmenucatrgorylist.removeAll()
                     for i in 0..<json["data"].count {
-                        print("欸要講一下",json["data"][])
+                        print("欸要講一下", json["data"][])
                         let getmenucatrgory = GetMenuCategory(id: json["data"][i]["id"].string!, category_name: json["data"][i]["category_name"].string!)
                         self.getmenucatrgorylist.append(getmenucatrgory)
                     }
@@ -51,7 +51,7 @@ class GetMenuCategoryApi: NSObject {
             }
             //主線程
             DispatchQueue.main.async {
-               
+
             }
         }
         task.resume()
