@@ -48,6 +48,13 @@
 		84874E0E2452B37400232FB9 /* GpsGetStoresApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E0D2452B37400232FB9 /* GpsGetStoresApi.swift */; };
 		84874E112452D6E800232FB9 /* GetMenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E102452D6E800232FB9 /* GetMenuCategory.swift */; };
 		84874E132452D86200232FB9 /* GetMenuCategoryApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E122452D86200232FB9 /* GetMenuCategoryApi.swift */; };
+		84874E162454305500232FB9 /* GetMenuProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E152454305500232FB9 /* GetMenuProduct.swift */; };
+		84874E182454306700232FB9 /* GetMenuProductApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E172454306700232FB9 /* GetMenuProductApi.swift */; };
+		84874E1A245436C900232FB9 /* ProductSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E19245436C900232FB9 /* ProductSize.swift */; };
+		84874E1C2455BF1A00232FB9 /* ProductPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E1B2455BF1A00232FB9 /* ProductPrice.swift */; };
+		84874E1E2455BFF800232FB9 /* ProductTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E1D2455BFF800232FB9 /* ProductTemp.swift */; };
+		84874E202455C04700232FB9 /* ProductSugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E1F2455C04700232FB9 /* ProductSugar.swift */; };
+		84874E222455C09200232FB9 /* ProductAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E212455C09200232FB9 /* ProductAdd.swift */; };
 		8490F24C2429B30300A59020 /* NearbyStoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */; };
 		8490F24E2429F59800A59020 /* NearbyStoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */; };
 		8490F253242CA34C00A59020 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F252242CA34C00A59020 /* MenuTableViewCell.swift */; };
@@ -173,6 +180,13 @@
 		84874E0D2452B37400232FB9 /* GpsGetStoresApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpsGetStoresApi.swift; sourceTree = "<group>"; };
 		84874E102452D6E800232FB9 /* GetMenuCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMenuCategory.swift; sourceTree = "<group>"; };
 		84874E122452D86200232FB9 /* GetMenuCategoryApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMenuCategoryApi.swift; sourceTree = "<group>"; };
+		84874E152454305500232FB9 /* GetMenuProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMenuProduct.swift; sourceTree = "<group>"; };
+		84874E172454306700232FB9 /* GetMenuProductApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMenuProductApi.swift; sourceTree = "<group>"; };
+		84874E19245436C900232FB9 /* ProductSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSize.swift; sourceTree = "<group>"; };
+		84874E1B2455BF1A00232FB9 /* ProductPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPrice.swift; sourceTree = "<group>"; };
+		84874E1D2455BFF800232FB9 /* ProductTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTemp.swift; sourceTree = "<group>"; };
+		84874E1F2455C04700232FB9 /* ProductSugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSugar.swift; sourceTree = "<group>"; };
+		84874E212455C09200232FB9 /* ProductAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAdd.swift; sourceTree = "<group>"; };
 		8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresViewController.swift; sourceTree = "<group>"; };
 		8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresTableViewCell.swift; sourceTree = "<group>"; };
 		8490F252242CA34C00A59020 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -338,6 +352,7 @@
 		84479E8D2446FCF100D10DBA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				84874E142454303D00232FB9 /* GetMenuProduct */,
 				84874E0F2452D6BE00232FB9 /* GetMenuCategory */,
 				84479E9D24495CE500D10DBA /* NerabyStores */,
 				84479E9C2449530D00D10DBA /* NerabyStoresTag */,
@@ -395,6 +410,20 @@
 				84874E122452D86200232FB9 /* GetMenuCategoryApi.swift */,
 			);
 			path = GetMenuCategory;
+			sourceTree = "<group>";
+		};
+		84874E142454303D00232FB9 /* GetMenuProduct */ = {
+			isa = PBXGroup;
+			children = (
+				84874E152454305500232FB9 /* GetMenuProduct.swift */,
+				84874E172454306700232FB9 /* GetMenuProductApi.swift */,
+				84874E1D2455BFF800232FB9 /* ProductTemp.swift */,
+				84874E19245436C900232FB9 /* ProductSize.swift */,
+				84874E1B2455BF1A00232FB9 /* ProductPrice.swift */,
+				84874E1F2455C04700232FB9 /* ProductSugar.swift */,
+				84874E212455C09200232FB9 /* ProductAdd.swift */,
+			);
+			path = GetMenuProduct;
 			sourceTree = "<group>";
 		};
 		8490F251242CA33200A59020 /* MenuViewController */ = {
@@ -1039,6 +1068,7 @@
 				84255384243F27B5004C9B23 /* MenuDetailService.swift in Sources */,
 				84316BFD240E4EC3002CD226 /* MemberInfoApi.swift in Sources */,
 				8425539E2445A0CD004C9B23 /* LoadingBannerApi.swift in Sources */,
+				84874E202455C04700232FB9 /* ProductSugar.swift in Sources */,
 				84FADF2823F6775600C824C6 /* MemberRegiseterViewController.swift in Sources */,
 				8490F25D242F8A8300A59020 /* OrderViewController.swift in Sources */,
 				84F7C88523E7FE460097EAD0 /* MessageAlert.swift in Sources */,
@@ -1048,6 +1078,7 @@
 				84EEC61523D4156F005627FF /* FrequentlyAskedQuestionsCodable.swift in Sources */,
 				84D09B422418E5220019A0B4 /* FeedBackViewController.swift in Sources */,
 				84D09B362417437B0019A0B4 /* SetNotifyTableViewController.swift in Sources */,
+				84874E222455C09200232FB9 /* ProductAdd.swift in Sources */,
 				84EEC5EC23D410B8005627FF /* MemberRegisterSmsCodable.swift in Sources */,
 				84F7C88D23EAD19F0097EAD0 /* LogInViewController.swift in Sources */,
 				84479E8C2446F9A800D10DBA /* ApiUrl.swift in Sources */,
@@ -1061,6 +1092,7 @@
 				84D09B3324163FA50019A0B4 /* GenderTableViewController.swift in Sources */,
 				8490F258242CB50700A59020 /* ShopcCarViewController.swift in Sources */,
 				84479E8F2446FD2300D10DBA /* CityTagCodable.swift in Sources */,
+				84874E1E2455BFF800232FB9 /* ProductTemp.swift in Sources */,
 				84EEC61923D415A8005627FF /* MyFavoriteApi.swift in Sources */,
 				84479E972447001D00D10DBA /* CityTagApi.swift in Sources */,
 				84874E112452D6E800232FB9 /* GetMenuCategory.swift in Sources */,
@@ -1094,6 +1126,7 @@
 				84EEC5CE23D1C314005627FF /* SceneDelegate.swift in Sources */,
 				8425538C24459826004C9B23 /* MarketingBannerCodable.swift in Sources */,
 				8490F264243318E100A59020 /* OrderColadable.swift in Sources */,
+				84874E182454306700232FB9 /* GetMenuProductApi.swift in Sources */,
 				84FADF4E23FE8B9500C824C6 /* GetMemberRegisterMessage.swift in Sources */,
 				84479E932446FEF900D10DBA /* CityTag.swift in Sources */,
 				84874E132452D86200232FB9 /* GetMenuCategoryApi.swift in Sources */,
@@ -1106,17 +1139,20 @@
 				84EEC60523D41483005627FF /* MenberCenterViewController.swift in Sources */,
 				84EEC5FA23D412C9005627FF /* AccountApi.swift in Sources */,
 				8490F2622433182F00A59020 /* OrderApi.swift in Sources */,
+				84874E1C2455BF1A00232FB9 /* ProductPrice.swift in Sources */,
 				8490F25F2431C1D500A59020 /* OrderTableViewCell.swift in Sources */,
 				84479EA12449812900D10DBA /* GetStore.swift in Sources */,
 				84FADF1D23F66E9200C824C6 /* MemberRegistrtCodable.swift in Sources */,
 				842553A42445ADC3004C9B23 /* PromotionBannerApi.swift in Sources */,
 				8490F24C2429B30300A59020 /* NearbyStoresViewController.swift in Sources */,
+				84874E1A245436C900232FB9 /* ProductSize.swift in Sources */,
 				84C2E2B523EBF0A3008AB33F /* ResetPasswordCodable.swift in Sources */,
 				842553882445953F004C9B23 /* PromotionBannerCodable.swift in Sources */,
 				84F7C88023E5E9D70097EAD0 /* Regex.swift in Sources */,
 				84FADF4C23FE8B4E00C824C6 /* PredicatesFunc.swift in Sources */,
 				84EEC61723D41586005627FF /* FrequentlyAskedQuestions.swift in Sources */,
 				84874E0C244F2DAE00232FB9 /* OpeningTime.swift in Sources */,
+				84874E162454305500232FB9 /* GetMenuProduct.swift in Sources */,
 				84F7C89023EAD1C90097EAD0 /* LoginApi.swift in Sources */,
 				84D09B4F241F21A20019A0B4 /* VoucherTableViewCell.swift in Sources */,
 				8425539824459C07004C9B23 /* MarkeringBanner.swift in Sources */,
