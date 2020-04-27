@@ -13,11 +13,13 @@ import SwiftyJSON
 class GetMenuCategoryApi: NSObject {
     var getmenucatrgorylist = [GetMenuCategory]()
     var urlString = ""
+    var storeID = 0
     static let GetStoresApiInstance = GetMenuCategoryApi()
     func getstores(storeId: Int) {
-            urlString = ApiUrl.ApiUrlInstance.getmenucategory+"\(storeId)"
+        urlString = ApiUrl.ApiUrlInstance.getmenucategory+"\(storeId)"
         let url = URL(string: urlString)!
         print(url)
+        self.storeID = storeId
         var request = URLRequest(url: url )
         print("url...", url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -51,7 +53,7 @@ class GetMenuCategoryApi: NSObject {
             }
             //主線程
             DispatchQueue.main.async {
-
+                CategoryTableView.reloadData()
             }
         }
         task.resume()
@@ -62,5 +64,7 @@ class GetMenuCategoryApi: NSObject {
     func getCount() -> Int {
         return getmenucatrgorylist.count
     }
-
+    func getstoreId() -> Int {
+      return storeID
+    }
 }

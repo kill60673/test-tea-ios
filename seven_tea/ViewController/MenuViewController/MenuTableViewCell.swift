@@ -9,7 +9,14 @@
 import UIKit
 
 class MenuTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var lbItemName: UILabel!
+    @IBOutlet weak var lbSizeLPrice: UILabel!
+    @IBOutlet weak var lbSizeMPrice: UILabel!
+    @IBOutlet weak var imageIce: UIImageView!
+    @IBOutlet weak var imageHot: UIImageView!
+    @IBOutlet weak var imageSizeM: UIImageView!
+    @IBOutlet weak var imageSizeL: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

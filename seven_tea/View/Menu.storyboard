@@ -56,13 +56,33 @@
                                                             <rect key="frame" x="174" y="23" width="26" height="25"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hoticon" translatesAutoresizingMaskIntoConstraints="NO" id="egI-ej-ro5">
+                                                            <rect key="frame" x="173" y="86" width="26" height="25"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="iceicon" translatesAutoresizingMaskIntoConstraints="NO" id="w65-2x-Vdr">
                                                             <rect key="frame" x="208" y="23" width="26" height="25"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMG-FR-jK1">
+                                                            <rect key="frame" x="205" y="88" width="53" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="imageHot" destination="cN0-Sp-cre" id="Xbr-xM-f60"/>
+                                                    <outlet property="imageIce" destination="w65-2x-Vdr" id="dr3-mo-5CV"/>
+                                                    <outlet property="imageSizeL" destination="egI-ej-ro5" id="KKn-2R-JoK"/>
+                                                    <outlet property="imageSizeM" destination="S4K-kP-vp5" id="8RL-r3-yn7"/>
+                                                    <outlet property="lbItemName" destination="IL9-7f-BAf" id="l3y-JY-CKp"/>
+                                                    <outlet property="lbSizeLPrice" destination="iMG-FR-jK1" id="GjM-hZ-H83"/>
+                                                    <outlet property="lbSizeMPrice" destination="Xfm-f1-pvY" id="txK-zu-beH"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -75,15 +95,31 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="U2q-rO-M0S">
+                                            <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Categorycell" rowHeight="60" id="U2q-rO-M0S" customClass="CategoryTableViewCell" customModule="seven_tea" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="124" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U2q-rO-M0S" id="bdr-nT-rVN">
                                                     <rect key="frame" x="0.0" y="0.0" width="124" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUf-Uy-Noi">
+                                                            <rect key="frame" x="16" y="11" width="92" height="38"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="lbCategoryName" destination="qUf-Uy-Noi" id="m4Z-BF-PPd"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="qpM-rC-FMH" id="Kmv-iE-iSk"/>
+                                            <outlet property="delegate" destination="qpM-rC-FMH" id="RFi-lF-cSr"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -99,6 +135,11 @@
                         <viewLayoutGuide key="safeArea" id="bYz-M7-m3S"/>
                     </view>
                     <navigationItem key="navigationItem" title="選擇飲品" id="qvm-TF-6zq"/>
+                    <connections>
+                        <outlet property="ItemTableview" destination="7b9-Sg-r7l" id="bfE-HM-qCE"/>
+                        <outlet property="categoryTableview" destination="V77-uN-9CB" id="ecT-zq-zmI"/>
+                        <outlet property="itemTableview" destination="7b9-Sg-r7l" id="F19-hC-i8b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMM-24-rtL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

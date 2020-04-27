@@ -13,6 +13,7 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
     var citytitle = ""
     var regiotitle  = ""
     var is_open = ""
+    var storeId = 0
     @IBOutlet weak var btCounty: UIButton!
     @IBOutlet weak var btRegion: UIButton!
     @IBOutlet weak var nearbystoresTableView: UITableView!
@@ -78,8 +79,12 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.storeId = getStoreDetails[indexPath.row].getstore_id
+        print("哈哈哈哈哈我是",self.storeId)
+        GetMenuCategoryApi.GetStoresApiInstance.getstores(storeId: self.storeId)
         let vc = storyboard?.instantiateViewController(withIdentifier: "MenuTV")
         show(vc!, sender: self)
+        
     }
     //縣市的BT按下去跳出縣市的pick選項
     @IBAction func btCounty(_ sender: Any) {
