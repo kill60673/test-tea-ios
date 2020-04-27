@@ -10,9 +10,14 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class GetMenuProductApi: NSObject {
-    var getmenuproduct = [GetMenuProduct]()
+class GetMenuProductApi {
+    var productlist = [GetMenuProduct]()
     var urlString = ""
+    var productsize = [ProductSize]()
+    var productprice = [ProductPrice]()
+    var productsugar = [ProductSugar]()
+    var producttemp = [ProductTemp]()
+    var productadd = [ProductAdd]()
     static let GetStoresApiInstance = GetMenuProductApi()
     func getstores(storeId: Int, catrgoryId: Int) {
         urlString = ApiUrl.ApiUrlInstance.getmenuproduct+"\(storeId)/\(catrgoryId)"
@@ -27,25 +32,71 @@ class GetMenuProductApi: NSObject {
             do {
                 let json = try JSON(data: data!)
                 if json["success"].bool! == true {
-                    self.getmenuproduct.removeAll()
+                    self.productlist.removeAll()
+                    self.productprice.removeAll()
+                    self.productsize.removeAll()
+                    self.productadd.removeAll()
+                    self.productsugar.removeAll()
+                    self.producttemp.removeAll()
                     for i in 0..<json["data"].count {
-                        //把openingTime的東西 拉出來額外存 直接使用
-                        //getstoreslist裡面直接存原本那些東西
-                        print(json["data"][i][])
-                        print("haha",json["data"][i]["size"][i]["id"].int!)
-                        let getmenuproduct = GetMenuProduct(id: json["data"][i]["id"].string!, item_name: json["data"][i]["item_name"].string!, size_id: json["data"][i]["size"][i]["id"].int!, size_name: json["data"][i]["size"][i]["name"].string!, price_size: json["data"][i]["price"][i]["size"].string!, price_temp: json["data"][i]["price"][i]["temp"].string!, product_price: json["data"][i]["price"][i]["price"].string!, temp_name: json["data"][i]["temp"][i]["name"].string!, temp_is_active: json["data"][i]["temp"][i]["is_active"].bool!, sugar_name: json["data"][i]["sugar"][i]["name"].string!, sugar_is_active: json["data"][i]["sugar"][i]["is_active"].bool!, add_id: json["data"][i]["add"][i]["id"].int!, add_name: json["data"][i]["add"][i]["name"].string!)
-                        print("yoyoyoyo",getmenuproduct.size)
-                        self.getmenuproduct.append(getmenuproduct)
+                        let data = json["data"][i]
+                        for size in 0..<data["size"].count{
+                            let size = ProductSize(id: data["size"][size]["id"].int!, name: data["size"][size]["name"].string!)
+                            self.productsize.append(size)
+                        }
+                        switch data["status"] {
+                        case 0:
+                            for price in 0..<data["price"].count{
+                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: data["price"][price]["price"].string!, area: nil)
+                                self.productprice.append(price)
+                            }
+                            break
+                        case 1:
+                            for price in 0..<data["price"].count{
+                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: data["price"][price]["price"].string!, area: data["price"][price]["area"].string!)
+                                self.productprice.append(price)
+                            }
+                            break
+                        case 2:
+                            for price in 0..<data["price"].count{
+                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: data["price"][price]["price"].string!, area: nil)
+                                self.productprice.append(price)
+                            }
+                            break
+                        default:
+                            for price in 0..<data["price"].count{
+                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: data["price"][price]["price"].string!, area: data["price"][price]["area"].string!)
+                                self.productprice.append(price)
+                            }
+                            print("近3")
+                            break
+                        }
+                        for sugar in 0..<data["sugar"].count{
+                            let sugar = ProductSugar(name: data["sugar"][sugar]["name"].string!, is_active: data["sugar"][sugar]["is_active"].bool!)
+                            self.productsugar.append(sugar)
+                            print(sugar.name)
+                        }
+                        for temp in 0..<data["temp"].count{
+                            let temp = ProductTemp(name: data["temp"][temp]["name"].string!, is_active: data["temp"][temp]["is_active"].bool!)
+                            self.producttemp.append(temp)
+                            print(temp.name)
+                        }
+                        for add in 0..<data["add"].count{
+                            let add = ProductAdd(id: data["add"][add]["id"].int!, name: data["add"][add]["name"].string!)
+                            self.productadd.append(add)
+                            print(add.name)
+                        }
+                        let getmenuproduct = GetMenuProduct(id: data["id"].string!, item_name: data["item_name"].string!)
+                        self.productlist.append(getmenuproduct)
+                        print(self.productlist.count)
                     }
-                    print(self.getmenuproduct.count)
-
                 } else {
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-
+                
             } catch {
                 //主線程
                 DispatchQueue.main.async {
@@ -56,7 +107,7 @@ class GetMenuProductApi: NSObject {
             //主線程
             DispatchQueue.main.async {
                 if NearByStoresTableView == nil {
-
+                    
                 } else {
                     print("我有進來這裡")
                     NearByStoresTableView.reloadData()
@@ -65,11 +116,26 @@ class GetMenuProductApi: NSObject {
         }
         task.resume()
     }
-    func getlist() -> [GetMenuProduct] {
-        return getmenuproduct
+    func getmenuproductlist() -> [GetMenuProduct] {
+        return productlist
+    }
+    func getproductsize() -> [ProductSize]{
+        return productsize
+    }
+    func getproductsugar() -> [ProductSugar]{
+        return productsugar
+    }
+    func getproducttemp() -> [ProductTemp]{
+        return producttemp
+    }
+    func getproductprice() -> [ProductPrice]{
+        return productprice
+    }
+    func getproductadd() -> [ProductAdd]{
+        return productadd
     }
     func getCount() -> Int {
-        return getmenuproduct.count
+        return productlist.count
     }
-
+    
 }
