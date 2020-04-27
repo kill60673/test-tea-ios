@@ -19,7 +19,7 @@ class GetMenuProductApi {
     var producttemp = [ProductTemp]()
     var productadd = [ProductAdd]()
     static let GetStoresApiInstance = GetMenuProductApi()
-    func getstores(storeId: Int, catrgoryId: Int) {
+    func getstores(storeId: Int, catrgoryId: String) {
         urlString = ApiUrl.ApiUrlInstance.getmenuproduct+"\(storeId)/\(catrgoryId)"
         let url = URL(string: urlString)!
         print(url)
@@ -44,28 +44,29 @@ class GetMenuProductApi {
                             let size = ProductSize(id: data["size"][size]["id"].int!, name: data["size"][size]["name"].string!)
                             self.productsize.append(size)
                         }
-                        switch data["status"] {
-                        case 0:
+                        print("這裡是status",data["status"].string)
+                        switch data["status"].string {
+                        case "0":
                             for price in 0..<data["price"].count{
-                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: data["price"][price]["price"].string!, area: nil)
+                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: "\(data["price"][price]["price"])", area: nil)
                                 self.productprice.append(price)
                             }
                             break
-                        case 1:
+                        case "1":
                             for price in 0..<data["price"].count{
-                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: data["price"][price]["price"].string!, area: data["price"][price]["area"].string!)
+                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: "\(data["price"][price]["price"])", area: data["price"][price]["area"].string!)
                                 self.productprice.append(price)
                             }
                             break
-                        case 2:
+                        case "2":
                             for price in 0..<data["price"].count{
-                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: data["price"][price]["price"].string!, area: nil)
+                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: "\(data["price"][price]["price"])", area: "")
                                 self.productprice.append(price)
                             }
                             break
                         default:
                             for price in 0..<data["price"].count{
-                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: data["price"][price]["price"].string!, area: data["price"][price]["area"].string!)
+                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: "\(data["price"][price]["price"])", area: data["price"][price]["area"].string!)
                                 self.productprice.append(price)
                             }
                             print("近3")
@@ -110,7 +111,7 @@ class GetMenuProductApi {
                     
                 } else {
                     print("我有進來這裡")
-                    NearByStoresTableView.reloadData()
+                    ItemTableView.reloadData()
                 }
             }
         }
