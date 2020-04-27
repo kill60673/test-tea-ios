@@ -58,6 +58,6 @@ class ApiUrl: NSObject {
         verifyemail="\(doMain)/api/set-verify-email"
         gpsgetstore="\(doMain)/api/get-store-distance/"
         getmenucategory="\(doMain)/api/get-menu-category/"
-        getmenuproduct="\(doMain)/api/get-menu-product/"
+        getmenuproduct="\(doMain)/api/get-menu-item/"
     }
 }

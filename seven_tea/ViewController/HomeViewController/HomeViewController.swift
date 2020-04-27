@@ -31,14 +31,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         SlideBannerTable = homeCollectionView
         PromotionBannerTable = bannerCollectionView
         homeTableView.tableFooterView = UIView()
-//        myLocationManager = CLLocationManager()
-//        myLocationManager.delegate = self
-//        myLocationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
-//        myLocationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        myLocationManager.requestWhenInUseAuthorization()
-//        GetStoresApi.GetStoresApiInstance.getstores(city: "", district: "")
-        //GetMenuCategoryApi.GetStoresApiInstance.getstores(storeId: 2)
-        GetMenuProductApi.GetStoresApiInstance.getstores(storeId: 2, catrgoryId: 2)
+        myLocationManager = CLLocationManager()
+        myLocationManager.delegate = self
+        myLocationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
+        myLocationManager.desiredAccuracy = kCLLocationAccuracyBest
+        myLocationManager.requestWhenInUseAuthorization()
+        GetStoresApi.GetStoresApiInstance.getstores(city: "", district: "")
+        GetMenuCategoryApi.GetStoresApiInstance.getstores(storeId: 2)
+        GetMenuProductApi.GetStoresApiInstance.getstores(storeId: 1, catrgoryId: 2)
         bannerImage.sd_setImage(with: URL(string: marketingImageUrl), placeholderImage: UIImage(named: "test1"))
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
     }
@@ -151,61 +151,61 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         btBannerClose.isHidden = true
         imageView.isHidden = true
     }
-//     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//            // 首次使用 向使用者詢問定位自身位置權限
-//            if CLLocationManager.authorizationStatus() == .notDetermined {
-//                // 開始定位自身位置
-//                myLocationManager.startUpdatingLocation()
-//                DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
-//                    GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
-//                    print("有取得位置")
-//                })
-//
-//            }
-//                // 使用者已經拒絕定位自身位置權限
-//            else if CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .restricted {
-//                SelfLatitude = 0.0
-//                SelfLongitude = 0.0
-//                // 提示可至[設定]中開啟權限
-//                let alertController = UIAlertController(
-//                    title: "定位權限已關閉",
-//                    message:
-//                    "如要變更權限，請至 設定 > 隱私權 > 定位服務 開啟",
-//                    preferredStyle: .alert)
-//                let okAction = UIAlertAction(
-//                    title: "確認", style: .default, handler: nil)
-//                alertController.addAction(okAction)
-//                self.present(
-//                    alertController,
-//                    animated: true, completion: nil)
-//                SelfLatitude = 0.0
-//                SelfLongitude = 0.0
-//                print("定位權限已關閉")
-//            }
-//                // 使用者已經同意定位自身位置權限
-//            else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-//                // 開始定位自身位置
-//                myLocationManager.startUpdatingLocation()
-//                DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
-//                    print("有取得後續位置")
-////                    GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
-//                })
-//
-//            }
-//        }
+     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+            // 首次使用 向使用者詢問定位自身位置權限
+            if CLLocationManager.authorizationStatus() == .notDetermined {
+                // 開始定位自身位置
+                myLocationManager.startUpdatingLocation()
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
+                    GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
+                    print("有取得位置")
+                })
 
-//        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//            // 印出目前所在位置座標
-//    //        print("aaaaaaaaaa")
-//            let currentLocation: CLLocation = locations[0] as CLLocation
-//            SelfLatitude =  currentLocation.coordinate.latitude
-//            SelfLongitude =  currentLocation.coordinate.longitude
-//
-////        }
-//
-//        override func viewDidDisappear(_ animated: Bool) {
-//            super.viewDidDisappear(animated)
-//            // 停止定位自身位置
-//            myLocationManager.stopUpdatingLocation()
-//        }
+            }
+                // 使用者已經拒絕定位自身位置權限
+            else if CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .restricted {
+                SelfLatitude = 0.0
+                SelfLongitude = 0.0
+                // 提示可至[設定]中開啟權限
+                let alertController = UIAlertController(
+                    title: "定位權限已關閉",
+                    message:
+                    "如要變更權限，請至 設定 > 隱私權 > 定位服務 開啟",
+                    preferredStyle: .alert)
+                let okAction = UIAlertAction(
+                    title: "確認", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(
+                    alertController,
+                    animated: true, completion: nil)
+                SelfLatitude = 0.0
+                SelfLongitude = 0.0
+                print("定位權限已關閉")
+            }
+                // 使用者已經同意定位自身位置權限
+            else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+                // 開始定位自身位置
+                myLocationManager.startUpdatingLocation()
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
+                    print("有取得後續位置")
+//                    GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
+                })
+
+            }
+        }
+
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            // 印出目前所在位置座標
+    //        print("aaaaaaaaaa")
+            let currentLocation: CLLocation = locations[0] as CLLocation
+            SelfLatitude =  currentLocation.coordinate.latitude
+            SelfLongitude =  currentLocation.coordinate.longitude
+
+        }
+
+        override func viewDidDisappear(_ animated: Bool) {
+            super.viewDidDisappear(animated)
+            // 停止定位自身位置
+            myLocationManager.stopUpdatingLocation()
+        }
 }
