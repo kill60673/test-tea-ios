@@ -22,6 +22,8 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-Sg-r7l">
                                         <rect key="frame" x="132" y="0.0" width="274" height="818"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="125" id="6RY-2Q-GLZ" customClass="MenuTableViewCell" customModule="seven_tea" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="274" height="125"/>
@@ -85,6 +87,11 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="dataSource" destination="qpM-rC-FMH" id="sX9-Wh-XGi"/>
                                             <outlet property="delegate" destination="qpM-rC-FMH" id="A4Z-8Y-UtP"/>
@@ -93,9 +100,9 @@
                                     <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V77-uN-9CB">
                                         <rect key="frame" x="0.0" y="8" width="124" height="601"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Categorycell" rowHeight="60" id="U2q-rO-M0S" customClass="CategoryTableViewCell" customModule="seven_tea" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Categorycell" rowHeight="60" id="U2q-rO-M0S" customClass="CategoryTableViewCell" customModule="seven_tea" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="124" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U2q-rO-M0S" id="bdr-nT-rVN">
@@ -105,17 +112,25 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUf-Uy-Noi">
                                                             <rect key="frame" x="16" y="11" width="92" height="38"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="lbCategoryName" destination="qUf-Uy-Noi" id="m4Z-BF-PPd"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="dataSource" destination="qpM-rC-FMH" id="Kmv-iE-iSk"/>
                                             <outlet property="delegate" destination="qpM-rC-FMH" id="RFi-lF-cSr"/>
@@ -136,9 +151,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="選擇飲品" id="qvm-TF-6zq"/>
                     <connections>
-                        <outlet property="ItemTableview" destination="7b9-Sg-r7l" id="bfE-HM-qCE"/>
                         <outlet property="categoryTableview" destination="V77-uN-9CB" id="ecT-zq-zmI"/>
-                        <outlet property="itemTableview" destination="7b9-Sg-r7l" id="F19-hC-i8b"/>
+                        <outlet property="itemTableview" destination="7b9-Sg-r7l" id="bOJ-ij-2QS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMM-24-rtL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

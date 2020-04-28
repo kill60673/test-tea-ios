@@ -11,7 +11,7 @@ var pickview: UIPickerView!
 var NearByStoresTableView: UITableView!
 class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
     var citytitle = ""
-    var regiotitle  = ""
+    var regiotitle  = "請選擇縣市"
     var is_open = ""
     var storeId = 0
     @IBOutlet weak var btCounty: UIButton!
@@ -122,6 +122,7 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
         displayPlayView(true)
         regionpickview.isHidden = false
         countpickview.isHidden = true
+        btCityDoneClick.isHidden = true
         btRegionDoneClick.isHidden = false
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -132,14 +133,24 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
         if pickerView.tag == 0 {
             return cityTag.count
         } else {
-            return districTag.count
+            if districTag.count == 0 {
+                btRegionDoneClick.isEnabled = false
+                return 1
+            }else{
+                btRegionDoneClick.isEnabled = true
+                 return districTag.count
+            }
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 0 {
             return cityTag[row]
         } else {
-            return districTag[row]
+            if districTag == []{
+                return "請選擇地區"
+            }else{
+                return districTag[row]
+            }
         }
     }
     //選擇客製化alert的View跳出事件及收回事件
