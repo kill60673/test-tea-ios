@@ -44,7 +44,6 @@ class GetMenuProductApi {
                             let size = ProductSize(id: data["size"][size]["id"].int!, name: data["size"][size]["name"].string!)
                             self.productsize.append(size)
                         }
-                        print("這裡是status",data["status"].string)
                         switch data["status"].string {
                         case "0":
                             for price in 0..<data["price"].count{
@@ -83,11 +82,11 @@ class GetMenuProductApi {
                             print(temp.name)
                         }
                         for add in 0..<data["add"].count{
-                            let add = ProductAdd(id: data["add"][add]["id"].int!, name: data["add"][add]["name"].string!)
+                            let add = ProductAdd(id: data["add"][add]["id"].int!, name: data["add"][add]["name"].string!, price: data["add"][add]["price"].string!)
                             self.productadd.append(add)
                             print(add.name)
                         }
-                        let getmenuproduct = GetMenuProduct(id: data["id"].string!, item_name: data["item_name"].string!)
+                        let getmenuproduct = GetMenuProduct(id: data["id"].string!, item_name: data["item_name"].string!, picture_url: data["picture_url"].string!)
                         self.productlist.append(getmenuproduct)
                         print(self.productlist.count)
                     }
