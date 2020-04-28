@@ -10,9 +10,11 @@ import Foundation
 class GetMenuProduct {
     var id = String()
     var item_name = String()
+    var picture_url = String()
 
-    init(id: String, item_name: String) {
+    init(id: String, item_name: String, picture_url: String) {
         self.id = id
         self.item_name = item_name
+        self.picture_url = picture_url
     }
 }
