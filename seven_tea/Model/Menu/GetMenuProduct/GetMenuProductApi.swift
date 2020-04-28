@@ -65,7 +65,7 @@ class GetMenuProductApi {
                             break
                         default:
                             for price in 0..<data["price"].count{
-                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: "\(data["price"][price]["price"])", area: data["price"][price]["area"].string!)
+                                let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: "\(data["price"][price]["price"])", area: "\(data["price"][price]["area"])")
                                 self.productprice.append(price)
                             }
                             print("近3")

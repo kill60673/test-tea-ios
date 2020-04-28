@@ -17,12 +17,16 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     var getItemPrice = [ProductPrice]()
     let menuDetailService = MenuDetailService()
     var categoryId = ""
+ 
     override func viewDidLoad() {
-           super.viewDidLoad()
-           ItemTableView = itemTableview
-           CategoryTableView = categoryTableview
-           // Do any additional setup after loading the view.
-       }
+        super.viewDidLoad()
+        ItemTableView = itemTableview
+        CategoryTableView = categoryTableview
+        ItemTableView.tableFooterView = UIView()
+        CategoryTableView.tableFooterView = UIView()
+       
+        // Do any additional setup after loading the view.
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if tableView.tag == 0 {
@@ -50,7 +54,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         else {
             self.getItemDetail = GetMenuProductApi.GetStoresApiInstance.getmenuproductlist()
             self.getItemPrice = GetMenuProductApi.GetStoresApiInstance.getproductprice()
-
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuTableViewCell
             cell.lbItemName.text = getItemDetail[indexPath.row].item_name
             if getItemPrice[indexPath.row].size == "M" && getItemPrice[indexPath.row].temp == "冷"{
@@ -73,5 +77,5 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-   
+    
 }
