@@ -9,12 +9,13 @@
 import UIKit
 var ItemTableView: UITableView!
 var CategoryTableView: UITableView!
+var getItemDetail = [GetMenuProduct]()
+var getItemPrice = [ProductPrice]()
+var getitemicetemp = [ProductIceTemp]()
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
     @IBOutlet weak var itemTableview: UITableView!
     @IBOutlet weak var categoryTableview: UITableView!
     var getCategoryDetails = [GetMenuCategory]()
-    var getItemDetail = [GetMenuProduct]()
-    var getItemPrice = [ProductPrice]()
     let menuDetailService = MenuDetailService()
     var categoryId = ""
  
@@ -24,10 +25,18 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         CategoryTableView = categoryTableview
         ItemTableView.tableFooterView = UIView()
         CategoryTableView.tableFooterView = UIView()
-       
+        print("又又我又來了")
+        getItemDetail.removeAll()
+        getItemPrice.removeAll()
+        getitemicetemp.removeAll()
+        ItemTableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func button(_ sender: Any) {
+        print("我有觸發")
+       dismiss(animated: true, completion: nil)
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         if tableView.tag == 0 {
             return 1
@@ -47,13 +56,14 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView.tag == 1 {
             self.getCategoryDetails = GetMenuCategoryApi.GetStoresApiInstance.getlist()
+            getitemicetemp = GetMenuProductApi.GetStoresApiInstance.geticetemp()
             let cell = tableView.dequeueReusableCell(withIdentifier: "Categorycell", for: indexPath) as! CategoryTableViewCell
             cell.lbCategoryName.text = getCategoryDetails[indexPath.row].category_name
             return cell
         }
         else {
-            self.getItemDetail = GetMenuProductApi.GetStoresApiInstance.getmenuproductlist()
-            self.getItemPrice = GetMenuProductApi.GetStoresApiInstance.getproductprice()
+            getItemDetail = GetMenuProductApi.GetStoresApiInstance.getmenuproductlist()
+            getItemPrice = GetMenuProductApi.GetStoresApiInstance.getproductprice()
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuTableViewCell
             cell.lbItemName.text = getItemDetail[indexPath.row].item_name
@@ -68,11 +78,16 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.tag == 0 {
-            print(indexPath.row)
             let menuDetailVc = menuDetailService.alert()
+            menuDetailVc.itemprice = [getItemPrice[indexPath.row]]
+            menuDetailVc.itemdetail = getItemDetail
+            menuDetailVc.itemname = getItemDetail[indexPath.row].item_name
+            menuDetailVc.icetemp = getitemicetemp
+            
             present(menuDetailVc, animated: true)
         }else{
             self.categoryId = getCategoryDetails[indexPath.row].id
+            print("categoryId",self.categoryId)
             GetMenuProductApi.GetStoresApiInstance.getstores(storeId: GetMenuCategoryApi.GetStoresApiInstance.getstoreId(), catrgoryId: self.categoryId)
         }
     }
