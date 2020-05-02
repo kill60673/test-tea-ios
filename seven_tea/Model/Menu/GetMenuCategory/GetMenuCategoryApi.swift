@@ -31,12 +31,10 @@ class GetMenuCategoryApi: NSObject {
                 if json["success"].bool! == true {
                     self.getmenucatrgorylist.removeAll()
                     for i in 0..<json["data"].count {
-                        print("欸要講一下", json["data"][])
                         let getmenucatrgory = GetMenuCategory(id: json["data"][i]["id"].string!, category_name: json["data"][i]["category_name"].string!)
                         self.getmenucatrgorylist.append(getmenucatrgory)
+                        print("鳥蛋",storeId)
                     }
-                    print(self.getmenucatrgorylist.count)
-
                 } else {
                     //主線程
                     DispatchQueue.main.async {

@@ -18,6 +18,8 @@ class GetMenuProductApi {
     var productsugar = [ProductSugar]()
     var producttemp = [ProductTemp]()
     var productadd = [ProductAdd]()
+    var producticetemp = [ProductIceTemp]()
+    var producthottemp = [String]()
     static let GetStoresApiInstance = GetMenuProductApi()
     func getstores(storeId: Int, catrgoryId: String) {
         urlString = ApiUrl.ApiUrlInstance.getmenuproduct+"\(storeId)/\(catrgoryId)"
@@ -38,6 +40,9 @@ class GetMenuProductApi {
                     self.productadd.removeAll()
                     self.productsugar.removeAll()
                     self.producttemp.removeAll()
+                    self.producthottemp.removeAll()
+                    self.producticetemp.removeAll()
+                    
                     for i in 0..<json["data"].count {
                         let data = json["data"][i]
                         for size in 0..<data["size"].count{
@@ -68,27 +73,28 @@ class GetMenuProductApi {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: "\(data["price"][price]["price"])", area: "\(data["price"][price]["area"])")
                                 self.productprice.append(price)
                             }
-                            print("近3")
                             break
+                        }
+                        for icetemp in 0..<data["ice_temp"].count{
+                            let productice = ProductIceTemp(ice: data["ice_temp"][icetemp].string!)
+                            print("沒空啊",productice.ice)
+                            self.producticetemp.append(productice)
+                        }
+                        print("大鳥博格",data["hot_temp"].count)
+                        for hottemp in 0..<data["hot_temp"].count{
+                            self.producthottemp.append((data["hot_temp"][hottemp].string!))
                         }
                         for sugar in 0..<data["sugar"].count{
                             let sugar = ProductSugar(name: data["sugar"][sugar]["name"].string!, is_active: data["sugar"][sugar]["is_active"].bool!)
                             self.productsugar.append(sugar)
-                            print(sugar.name)
                         }
-                        for temp in 0..<data["temp"].count{
-                            let temp = ProductTemp(name: data["temp"][temp]["name"].string!, is_active: data["temp"][temp]["is_active"].bool!)
-                            self.producttemp.append(temp)
-                            print(temp.name)
-                        }
+                        
                         for add in 0..<data["add"].count{
                             let add = ProductAdd(id: data["add"][add]["id"].int!, name: data["add"][add]["name"].string!, price: data["add"][add]["price"].string!)
                             self.productadd.append(add)
-                            print(add.name)
                         }
-                        let getmenuproduct = GetMenuProduct(id: data["id"].string!, item_name: data["item_name"].string!, picture_url: data["picture_url"].string!)
+                        let getmenuproduct = GetMenuProduct(id: data["id"].string!, item_name: data["item_name"].string!, picture_url: data["picture_url"].string!, is_fixed: data["is_fixed"].int!)
                         self.productlist.append(getmenuproduct)
-                        print(self.productlist.count)
                     }
                 } else {
                     //主線程
@@ -137,5 +143,7 @@ class GetMenuProductApi {
     func getCount() -> Int {
         return productlist.count
     }
-    
+    func geticetemp() -> [ProductIceTemp]{
+        return producticetemp
+    }
 }

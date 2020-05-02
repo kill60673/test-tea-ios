@@ -11,7 +11,7 @@
         <!--選擇飲品-->
         <scene sceneID="CTw-Wg-uI3">
             <objects>
-                <viewController storyboardIdentifier="MenuTV" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qpM-rC-FMH" customClass="MenuViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuTV" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qpM-rC-FMH" customClass="MenuViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EWL-Gg-Lxk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,6 +136,14 @@
                                             <outlet property="delegate" destination="qpM-rC-FMH" id="RFi-lF-cSr"/>
                                         </connections>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cf6-a2-vpV">
+                                        <rect key="frame" x="39" y="702" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="button:" destination="qpM-rC-FMH" eventType="touchUpInside" id="lal-1A-gQp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
@@ -200,16 +208,6 @@
                                             <action selector="btTemperatureCold:" destination="atl-DB-EgL" eventType="touchUpInside" id="OkN-J0-wz0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEi-3G-pTz">
-                                        <rect key="frame" x="238" y="291" width="60" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="微糖">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btMicroSugar:" destination="atl-DB-EgL" eventType="touchUpInside" id="SrS-Y3-84J"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-bw-lSo">
                                         <rect key="frame" x="41" y="535" width="53" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -219,36 +217,6 @@
                                         <rect key="frame" x="121" y="535" width="53" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Less"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvP-Fa-aW4">
-                                        <rect key="frame" x="304" y="291" width="60" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="無糖">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btNoSugar:" destination="atl-DB-EgL" eventType="touchUpInside" id="94h-18-2VD"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bx1-6V-BWH">
-                                        <rect key="frame" x="84" y="291" width="60" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="少糖">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btLessSugar:" destination="atl-DB-EgL" eventType="touchUpInside" id="T4u-yX-P0W"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fy-ux-PE6">
-                                        <rect key="frame" x="14" y="291" width="60" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="全糖">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btWholeSugar:" destination="atl-DB-EgL" eventType="touchUpInside" id="4Bw-Yv-Agz"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvX-PV-SAe">
                                         <rect key="frame" x="222" y="73" width="101" height="30"/>
@@ -283,7 +251,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j0w-Oh-gAa">
-                                        <rect key="frame" x="0.0" y="329" width="374" height="2"/>
+                                        <rect key="frame" x="0.0" y="394" width="374" height="2"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -293,7 +261,7 @@
                                         <color key="backgroundColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iIu-Wi-aGu">
-                                        <rect key="frame" x="0.0" y="252" width="374" height="2"/>
+                                        <rect key="frame" x="0.0" y="288" width="374" height="2"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.071000002320000005" green="0.1330000013" blue="0.3919999897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -305,14 +273,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="甜度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IG-Ll-j1f">
-                                        <rect key="frame" x="8" y="262" width="35" height="21"/>
+                                        <rect key="frame" x="8" y="298" width="35" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="加料 $10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzo-fd-jxB">
-                                        <rect key="frame" x="8" y="339" width="68" height="21"/>
+                                        <rect key="frame" x="8" y="404" width="68" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -352,16 +320,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLU-HI-RyH">
-                                        <rect key="frame" x="161" y="291" width="60" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="半糖">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btHalfSugar:" destination="atl-DB-EgL" eventType="touchUpInside" id="isc-cK-B2Z"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="冰度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c38-p5-j0U">
                                         <rect key="frame" x="8" y="187" width="35" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -369,45 +327,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="溫度固定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHg-Cm-5mh">
-                                        <rect key="frame" x="31" y="216" width="311" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IR-XV-Bgf">
-                                        <rect key="frame" x="37" y="216" width="60" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="正常"/>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-o2-3p3">
-                                        <rect key="frame" x="84" y="216" width="60" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="熱"/>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lU8-G7-3Li">
-                                        <rect key="frame" x="203" y="216" width="60" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="微冰"/>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJB-8J-gG6">
-                                        <rect key="frame" x="266" y="216" width="60" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="去冰"/>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIV-DM-Gdp">
-                                        <rect key="frame" x="111" y="216" width="60" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="少冰"/>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6SZ-vy-U3w">
-                                        <rect key="frame" x="27" y="216" width="60" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="溫"/>
-                                    </button>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ik4-3Q-Z0p">
-                                        <rect key="frame" x="8" y="368" width="358" height="60"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ik4-3Q-Z0p">
+                                        <rect key="frame" x="8" y="433" width="358" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q4h-z0-Cup">
@@ -457,6 +378,114 @@
                                             <outlet property="delegate" destination="atl-DB-EgL" id="0bA-Ai-pco"/>
                                         </connections>
                                     </collectionView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sZF-6C-wI4">
+                                        <rect key="frame" x="8" y="327" width="343" height="59"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jFp-Tv-TeA">
+                                            <size key="itemSize" width="154" height="51"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SugarCell" id="XzJ-kZ-HR8" customClass="SugarCollectionViewCell" customModule="seven_tea" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="4" width="154" height="51"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xjc-Vo-bZu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="154" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCx-gk-i88">
+                                                            <rect key="frame" x="8" y="8" width="122" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="Lbg-MR-GaY"/>
+                                                                <constraint firstAttribute="width" constant="100" id="gyz-cV-18o"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="btSugar:" destination="XzJ-kZ-HR8" eventType="touchUpInside" id="8ff-1O-bte"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="uCx-gk-i88" secondAttribute="trailing" constant="8" id="9Tj-Nd-FlU"/>
+                                                        <constraint firstAttribute="bottom" secondItem="uCx-gk-i88" secondAttribute="bottom" constant="11" id="dF8-Dx-byR"/>
+                                                        <constraint firstItem="uCx-gk-i88" firstAttribute="top" secondItem="Xjc-Vo-bZu" secondAttribute="top" constant="11" id="jfI-CN-sB9"/>
+                                                        <constraint firstItem="uCx-gk-i88" firstAttribute="leading" secondItem="Xjc-Vo-bZu" secondAttribute="leading" constant="8" id="usq-KS-c88"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="154" height="51"/>
+                                                <connections>
+                                                    <outlet property="btSugar" destination="uCx-gk-i88" id="31h-QN-KTS"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="atl-DB-EgL" id="RFJ-Ha-zUX"/>
+                                            <outlet property="delegate" destination="atl-DB-EgL" id="xBz-fx-B3n"/>
+                                        </connections>
+                                    </collectionView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EQY-Hb-eor">
+                                        <rect key="frame" x="8" y="215" width="343" height="59"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ik3-xo-HcW">
+                                            <size key="itemSize" width="95" height="51"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TempCell" id="wUF-Xa-piW" customClass="TempCollectionViewCell" customModule="seven_tea" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="4" width="154" height="51"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3P1-DG-pAF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="154" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSo-p8-RJj">
+                                                            <rect key="frame" x="8" y="10" width="122" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="8ER-uG-zDa"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="btTemp:" destination="wUF-Xa-piW" eventType="touchUpInside" id="5qa-1f-wqa"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="uSo-p8-RJj" secondAttribute="bottom" constant="11" id="7fd-GT-o00"/>
+                                                        <constraint firstAttribute="trailing" secondItem="uSo-p8-RJj" secondAttribute="trailing" constant="8" id="BZs-Vw-gct"/>
+                                                        <constraint firstItem="uSo-p8-RJj" firstAttribute="leading" secondItem="3P1-DG-pAF" secondAttribute="leading" constant="8" id="CPp-OG-0z1"/>
+                                                        <constraint firstItem="uSo-p8-RJj" firstAttribute="top" secondItem="3P1-DG-pAF" secondAttribute="top" constant="11" id="P1G-o2-0wv"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="154" height="51"/>
+                                                <connections>
+                                                    <outlet property="btTemp" destination="uSo-p8-RJj" id="wxx-yK-cgp"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="atl-DB-EgL" id="E3G-pD-t2K"/>
+                                            <outlet property="delegate" destination="atl-DB-EgL" id="yyW-qR-7HT"/>
+                                        </connections>
+                                    </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="溫度固定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHg-Cm-5mh">
+                                        <rect key="frame" x="34" y="230" width="311" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -484,29 +513,19 @@
                     <connections>
                         <outlet property="btAddShopingcar" destination="mke-yb-eTU" id="t7G-zR-6gv"/>
                         <outlet property="btClose" destination="V9N-Gw-MQx" id="osx-RI-g9r"/>
-                        <outlet property="btHalfSugar" destination="nLU-HI-RyH" id="HnH-Bx-Z31"/>
-                        <outlet property="btHot" destination="eZs-o2-3p3" id="xQ2-BR-99Y"/>
                         <outlet property="btLess" destination="55m-kg-hbB" id="f5J-CL-xuX"/>
-                        <outlet property="btLessIce" destination="gIV-DM-Gdp" id="GoR-xX-xOp"/>
-                        <outlet property="btLessSugar" destination="bx1-6V-BWH" id="l9r-WI-tl5"/>
-                        <outlet property="btMicroIce" destination="lU8-G7-3Li" id="1AT-2n-ery"/>
-                        <outlet property="btMicroSugar" destination="pEi-3G-pTz" id="jia-MT-tSP"/>
                         <outlet property="btMyFavourite" destination="Ewz-Ws-FdC" id="eCG-Tz-Azi"/>
-                        <outlet property="btNoIce" destination="kJB-8J-gG6" id="Z3a-e0-cZi"/>
-                        <outlet property="btNoSugar" destination="UvP-Fa-aW4" id="JJL-zj-4fG"/>
-                        <outlet property="btNormalTemperature" destination="2IR-XV-Bgf" id="7yz-hZ-1NL"/>
                         <outlet property="btPlus" destination="dk0-bw-lSo" id="aWe-Up-xRV"/>
                         <outlet property="btSizeL" destination="OvX-PV-SAe" id="9Pl-i6-6v7"/>
                         <outlet property="btSizeM" destination="Zkw-CB-c98" id="2K1-1r-w8x"/>
-                        <outlet property="btTemperature" destination="6SZ-vy-U3w" id="pji-i0-RPR"/>
                         <outlet property="btTemperatureCold" destination="1IO-Ah-4Lt" id="4Yk-uw-cgf"/>
                         <outlet property="btTemperatureHot" destination="5xn-hW-dUd" id="uRd-B7-bGM"/>
-                        <outlet property="btWholeSugar" destination="2Fy-ux-PE6" id="iYP-dV-qxw"/>
                         <outlet property="feedCollectionView" destination="ik4-3Q-Z0p" id="upe-I6-tFH"/>
                         <outlet property="lbFixedTemperature" destination="xHg-Cm-5mh" id="H8L-C1-efy"/>
                         <outlet property="lbQuantity" destination="Mgw-yo-4zw" id="Ymy-3U-gVh"/>
                         <outlet property="lbTitle" destination="X47-qd-Vwb" id="FR4-dl-dxg"/>
                         <outlet property="lbTotalAmount" destination="hIY-F7-BlM" id="ZEX-F7-9rZ"/>
+                        <outlet property="tempCollectionview" destination="EQY-Hb-eor" id="ACI-uK-gpN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hh4-oU-0sL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

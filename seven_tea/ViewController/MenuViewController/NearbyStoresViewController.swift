@@ -83,8 +83,8 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
         print("哈哈哈哈哈我是",self.storeId)
         GetMenuCategoryApi.GetStoresApiInstance.getstores(storeId: self.storeId)
         let vc = storyboard?.instantiateViewController(withIdentifier: "MenuTV")
-        show(vc!, sender: self)
-        
+//        show(vc!, sender: self)
+        present(vc!,animated: true)
     }
     //縣市的BT按下去跳出縣市的pick選項
     @IBAction func btCounty(_ sender: Any) {

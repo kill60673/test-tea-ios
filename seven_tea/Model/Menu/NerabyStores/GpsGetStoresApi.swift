@@ -39,8 +39,6 @@ class GpsGetStoresApi: NSObject {
                         let getgpsstores = GetStore(getstore_id: json["data"][0]["id"].int!, tel: json["data"][0]["tel"].string!, storename: json["data"][0]["storename"].string!, address: json["data"][0]["address"].string!, is_open: json["data"][0]["is_open"].bool!, open_time_date: json["data"][0]["opening_time"][0]["date"].string!, end_time: json["data"][0]["opening_time"][0]["end_time"].string!, start_time: json["data"][0]["opening_time"][0]["start_time"].string!)
                         self.getgpsstorelist.append(getgpsstores)
                     }
-                    print(self.getgpsstorelist.count)
-
                 } else {
                     //主線程
                     DispatchQueue.main.async {

@@ -56,6 +56,9 @@
 		84874E202455C04700232FB9 /* ProductSugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E1F2455C04700232FB9 /* ProductSugar.swift */; };
 		84874E222455C09200232FB9 /* ProductAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E212455C09200232FB9 /* ProductAdd.swift */; };
 		84874E2424570F2C00232FB9 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E2324570F2C00232FB9 /* CategoryTableViewCell.swift */; };
+		84874E2624594B5900232FB9 /* TempCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E2524594B5900232FB9 /* TempCollectionViewCell.swift */; };
+		84874E2824594B6600232FB9 /* SugarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E2724594B6600232FB9 /* SugarCollectionViewCell.swift */; };
+		84874E2A2459688400232FB9 /* ProductIceTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E292459688300232FB9 /* ProductIceTemp.swift */; };
 		8490F24C2429B30300A59020 /* NearbyStoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */; };
 		8490F24E2429F59800A59020 /* NearbyStoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */; };
 		8490F253242CA34C00A59020 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F252242CA34C00A59020 /* MenuTableViewCell.swift */; };
@@ -189,6 +192,9 @@
 		84874E1F2455C04700232FB9 /* ProductSugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSugar.swift; sourceTree = "<group>"; };
 		84874E212455C09200232FB9 /* ProductAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAdd.swift; sourceTree = "<group>"; };
 		84874E2324570F2C00232FB9 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		84874E2524594B5900232FB9 /* TempCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempCollectionViewCell.swift; sourceTree = "<group>"; };
+		84874E2724594B6600232FB9 /* SugarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarCollectionViewCell.swift; sourceTree = "<group>"; };
+		84874E292459688300232FB9 /* ProductIceTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIceTemp.swift; sourceTree = "<group>"; };
 		8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresViewController.swift; sourceTree = "<group>"; };
 		8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresTableViewCell.swift; sourceTree = "<group>"; };
 		8490F252242CA34C00A59020 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -424,6 +430,7 @@
 				84874E1B2455BF1A00232FB9 /* ProductPrice.swift */,
 				84874E1F2455C04700232FB9 /* ProductSugar.swift */,
 				84874E212455C09200232FB9 /* ProductAdd.swift */,
+				84874E292459688300232FB9 /* ProductIceTemp.swift */,
 			);
 			path = GetMenuProduct;
 			sourceTree = "<group>";
@@ -439,6 +446,8 @@
 				8425537F243F27B4004C9B23 /* MenuDetailViewController.swift */,
 				8425538524407540004C9B23 /* FeedCollectionViewCell.swift */,
 				84874E2324570F2C00232FB9 /* CategoryTableViewCell.swift */,
+				84874E2524594B5900232FB9 /* TempCollectionViewCell.swift */,
+				84874E2724594B6600232FB9 /* SugarCollectionViewCell.swift */,
 			);
 			path = MenuViewController;
 			sourceTree = "<group>";
@@ -1046,6 +1055,7 @@
 			files = (
 				84F7C88B23EA91A60097EAD0 /* Animate.swift in Sources */,
 				8490F2662435E94B00A59020 /* Order.swift in Sources */,
+				84874E2824594B6600232FB9 /* SugarCollectionViewCell.swift in Sources */,
 				84FADF4623FE88CE00C824C6 /* AppOverAllStyle.swift in Sources */,
 				8490F24E2429F59800A59020 /* NearbyStoresTableViewCell.swift in Sources */,
 				842553A02445A314004C9B23 /* MarketingBannerApi.swift in Sources */,
@@ -1106,6 +1116,7 @@
 				84D09B402418E5070019A0B4 /* FeedBackTableViewCell.swift in Sources */,
 				84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */,
 				84EEC60D23D41503005627FF /* MyFavoriteViewController.swift in Sources */,
+				84874E2A2459688400232FB9 /* ProductIceTemp.swift in Sources */,
 				84FADF3523F7CAB400C824C6 /* UIelementsController.swift in Sources */,
 				84316C1124124600002CD226 /* FrequentlyAskedQuestionsViewController.swift in Sources */,
 				8425539A24459C8F004C9B23 /* SlideBanner.swift in Sources */,
@@ -1126,6 +1137,7 @@
 				84EEC61323D4155C005627FF /* FrequentlyAskedQuestionsApi.swift in Sources */,
 				84EEC5F623D412AF005627FF /* AccountCodable.swift in Sources */,
 				84D09B3C241783D10019A0B4 /* SetEmailViewController.swift in Sources */,
+				84874E2624594B5900232FB9 /* TempCollectionViewCell.swift in Sources */,
 				84EEC5CE23D1C314005627FF /* SceneDelegate.swift in Sources */,
 				8425538C24459826004C9B23 /* MarketingBannerCodable.swift in Sources */,
 				8490F264243318E100A59020 /* OrderColadable.swift in Sources */,
