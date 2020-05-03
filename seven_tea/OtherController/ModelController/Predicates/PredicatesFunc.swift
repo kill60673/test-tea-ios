@@ -147,7 +147,7 @@ class PredicatesFunc {
 //           要放EmailSmsApi
             // 計時器
             ver.triggerTimer(button: btSendVerifyCode)
-
+            getVerifyEmailMessage(email: email)
         } else {
             lbMessage.text = regexmessage
             lbMessage.shake()
