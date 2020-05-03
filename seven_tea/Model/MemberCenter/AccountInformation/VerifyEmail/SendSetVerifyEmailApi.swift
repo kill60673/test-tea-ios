@@ -1,17 +1,18 @@
 //
-//  VerifyEmailApi.swift
+//  SetVerifyEmail.swift
 //  seven_tea
 //
-//  Created by harrison on 2020/4/21.
+//  Created by harrison on 2020/5/3.
 //  Copyright © 2020 harrison公司機. All rights reserved.
 //
 
 import Foundation
-class VerifyEmailApi: NSObject {
-    static let VerifyEmailInstance = VerifyEmailApi()
+import Foundation
+class SendSetVerifyEmailApi: NSObject {
+    static let SetVerifyEmailInstance = SendSetVerifyEmailApi()
     var newToken: String!
-    func verifyEmailApi(token: String,handler : @escaping (Bool) -> Void) {
-        let url = URL(string: ApiUrl.ApiUrlInstance.verifyemail)!
+    func setverifyEmailApi(token: String,handler : @escaping (Bool) -> Void) {
+        let url = URL(string: ApiUrl.ApiUrlInstance.setverifyemail)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

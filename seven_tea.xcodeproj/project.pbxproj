@@ -59,6 +59,8 @@
 		84874E2624594B5900232FB9 /* TempCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E2524594B5900232FB9 /* TempCollectionViewCell.swift */; };
 		84874E2824594B6600232FB9 /* SugarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E2724594B6600232FB9 /* SugarCollectionViewCell.swift */; };
 		84874E2A2459688400232FB9 /* ProductIceTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E292459688300232FB9 /* ProductIceTemp.swift */; };
+		84874E2D245EAC2100232FB9 /* SendSetVerifyEmailApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E2C245EAC2100232FB9 /* SendSetVerifyEmailApi.swift */; };
+		84874E2F245EAC3200232FB9 /* SendSetVerifyEmailCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E2E245EAC3200232FB9 /* SendSetVerifyEmailCodable.swift */; };
 		8490F24C2429B30300A59020 /* NearbyStoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */; };
 		8490F24E2429F59800A59020 /* NearbyStoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */; };
 		8490F253242CA34C00A59020 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F252242CA34C00A59020 /* MenuTableViewCell.swift */; };
@@ -195,6 +197,8 @@
 		84874E2524594B5900232FB9 /* TempCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempCollectionViewCell.swift; sourceTree = "<group>"; };
 		84874E2724594B6600232FB9 /* SugarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarCollectionViewCell.swift; sourceTree = "<group>"; };
 		84874E292459688300232FB9 /* ProductIceTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIceTemp.swift; sourceTree = "<group>"; };
+		84874E2C245EAC2100232FB9 /* SendSetVerifyEmailApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSetVerifyEmailApi.swift; sourceTree = "<group>"; };
+		84874E2E245EAC3200232FB9 /* SendSetVerifyEmailCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSetVerifyEmailCodable.swift; sourceTree = "<group>"; };
 		8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresViewController.swift; sourceTree = "<group>"; };
 		8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresTableViewCell.swift; sourceTree = "<group>"; };
 		8490F252242CA34C00A59020 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -407,6 +411,8 @@
 			children = (
 				84874E07244F048900232FB9 /* VerifyEmailCodable.swift */,
 				84874E09244F04A300232FB9 /* VerifyEmailApi.swift */,
+				84874E2C245EAC2100232FB9 /* SendSetVerifyEmailApi.swift */,
+				84874E2E245EAC3200232FB9 /* SendSetVerifyEmailCodable.swift */,
 			);
 			path = VerifyEmail;
 			sourceTree = "<group>";
@@ -1106,6 +1112,7 @@
 				84C2E2B323EBEB5B008AB33F /* ResetPasswordApi.swift in Sources */,
 				8454AA1B244EC174008FB05E /* GetStoresApi.swift in Sources */,
 				84D09B4D241F21810019A0B4 /* VoucherViewController.swift in Sources */,
+				84874E2D245EAC2100232FB9 /* SendSetVerifyEmailApi.swift in Sources */,
 				84EEC64823D68429005627FF /* Location.swift in Sources */,
 				842553A22445ABF5004C9B23 /* SlideBannerApi.swift in Sources */,
 				84FADF2C23F678B600C824C6 /* SendMemberRegistrViewController.swift in Sources */,
@@ -1154,6 +1161,7 @@
 				84479E932446FEF900D10DBA /* CityTag.swift in Sources */,
 				84874E132452D86200232FB9 /* GetMenuCategoryApi.swift in Sources */,
 				84EEC61D23D415CB005627FF /* MyFavorite.swift in Sources */,
+				84874E2F245EAC3200232FB9 /* SendSetVerifyEmailCodable.swift in Sources */,
 				84316C0F2411FB72002CD226 /* MyFavoriteTableViewCell.swift in Sources */,
 				84255383243F27B5004C9B23 /* MenuViewController.swift in Sources */,
 				84FADF2123F6712800C824C6 /* SendMemberRegistrApi.swift in Sources */,
