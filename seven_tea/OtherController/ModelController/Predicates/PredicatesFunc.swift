@@ -165,7 +165,7 @@ class PredicatesFunc {
              lbMessage.text = regexmessage
              lbMessage.shake()
          } else if (checkValidAccount(input: email) == true) && (checkValidPhoneNumber(input: emailVerfiCode) == true) {
-             memberRegisterMessage.getForgotPasswordSms(account: email, phone: emailVerfiCode)
+             getSetVerifyEmailMessage(email: email, email_vaildate_code: emailVerfiCode)
             //這邊要放設定EmailApi
          }
      }

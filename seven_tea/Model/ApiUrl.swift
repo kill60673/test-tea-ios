@@ -33,6 +33,7 @@ class ApiUrl: NSObject {
     var gpsgetstore: String
     var getmenucategory: String
     var getmenuproduct: String
+    var setverifyemail: String
 
     override init() {
         loginUrl="\(doMain)/api/login"
@@ -59,5 +60,6 @@ class ApiUrl: NSObject {
         gpsgetstore="\(doMain)/api/get-store-distance/"
         getmenucategory="\(doMain)/api/get-menu-category/"
         getmenuproduct="\(doMain)/api/get-menu-item/"
+        setverifyemail="\(doMain)/api/set-verify-email"
     }
 }
