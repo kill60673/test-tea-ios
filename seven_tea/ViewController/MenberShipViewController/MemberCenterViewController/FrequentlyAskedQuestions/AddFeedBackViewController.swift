@@ -23,6 +23,7 @@ class AddFeedBackViewController: UIViewController, UIPickerViewDelegate, UIPicke
         tvContent.delegate = self
         tvContent.setframe(textview: tvContent)
         UIImageView.setframe(view: UIImageView)
+        print("yoyoyooy",feedBackOption)
     }
     @IBAction func btSubmit(_ sender: Any) {
         //送出判斷式連結API
@@ -48,13 +49,13 @@ class AddFeedBackViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return feedbacktype.count
+        return feedBackOption.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return feedbacktype[row]
+        return feedBackOption[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        type = feedbacktype[row]
+        type = feedBackOption[row]
         print("選擇的是\(type)")
     }
 }
