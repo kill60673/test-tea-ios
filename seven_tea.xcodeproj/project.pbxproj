@@ -112,7 +112,7 @@
 		84EEC61D23D415CB005627FF /* MyFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC61C23D415CB005627FF /* MyFavorite.swift */; };
 		84EEC62623D4215C005627FF /* getLoginMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62523D4215C005627FF /* getLoginMessage.swift */; };
 		84EEC62823D4216C005627FF /* SingUpModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62723D4216C005627FF /* SingUpModelController.swift */; };
-		84EEC62D23D421EE005627FF /* AccountinfomationModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62C23D421EE005627FF /* AccountinfomationModelController.swift */; };
+		84EEC62D23D421EE005627FF /* GetMemberCenterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62C23D421EE005627FF /* GetMemberCenterMessage.swift */; };
 		84EEC62F23D4220D005627FF /* MyFavoriteModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC62E23D4220D005627FF /* MyFavoriteModelController.swift */; };
 		84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEC63023D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift */; };
 		84EEC64123D537FC005627FF /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EEC64023D537FC005627FF /* Order.storyboard */; };
@@ -250,7 +250,7 @@
 		84EEC61C23D415CB005627FF /* MyFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavorite.swift; sourceTree = "<group>"; };
 		84EEC62523D4215C005627FF /* getLoginMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getLoginMessage.swift; sourceTree = "<group>"; };
 		84EEC62723D4216C005627FF /* SingUpModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpModelController.swift; sourceTree = "<group>"; };
-		84EEC62C23D421EE005627FF /* AccountinfomationModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountinfomationModelController.swift; sourceTree = "<group>"; };
+		84EEC62C23D421EE005627FF /* GetMemberCenterMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMemberCenterMessage.swift; sourceTree = "<group>"; };
 		84EEC62E23D4220D005627FF /* MyFavoriteModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteModelController.swift; sourceTree = "<group>"; };
 		84EEC63023D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedQuestionsModelController.swift; sourceTree = "<group>"; };
 		84EEC64023D537FC005627FF /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
@@ -433,6 +433,13 @@
 				84874E292459688300232FB9 /* ProductIceTemp.swift */,
 			);
 			path = GetMenuProduct;
+			sourceTree = "<group>";
+		};
+		84874E2B245EA0E000232FB9 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		8490F251242CA33200A59020 /* MenuViewController */ = {
@@ -701,6 +708,7 @@
 		84EEC5FC23D41302005627FF /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				84874E2B245EA0E000232FB9 /* New Group */,
 				84FADF4A23FE8B3200C824C6 /* Predicates */,
 				84FADF4723FE8A8B00C824C6 /* JumpPages */,
 				84EEC62123D42103005627FF /* MemberShip */,
@@ -809,7 +817,7 @@
 		84EEC62B23D4219F005627FF /* AccountInformation */ = {
 			isa = PBXGroup;
 			children = (
-				84EEC62C23D421EE005627FF /* AccountinfomationModelController.swift */,
+				84EEC62C23D421EE005627FF /* GetMemberCenterMessage.swift */,
 			);
 			path = AccountInformation;
 			sourceTree = "<group>";
@@ -1086,7 +1094,7 @@
 				8490F25D242F8A8300A59020 /* OrderViewController.swift in Sources */,
 				84F7C88523E7FE460097EAD0 /* MessageAlert.swift in Sources */,
 				84874E0A244F04A300232FB9 /* VerifyEmailApi.swift in Sources */,
-				84EEC62D23D421EE005627FF /* AccountinfomationModelController.swift in Sources */,
+				84EEC62D23D421EE005627FF /* GetMemberCenterMessage.swift in Sources */,
 				84EEC62F23D4220D005627FF /* MyFavoriteModelController.swift in Sources */,
 				84EEC61523D4156F005627FF /* FrequentlyAskedQuestionsCodable.swift in Sources */,
 				84D09B422418E5220019A0B4 /* FeedBackViewController.swift in Sources */,
