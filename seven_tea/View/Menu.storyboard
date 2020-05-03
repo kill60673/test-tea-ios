@@ -523,6 +523,7 @@
                         <outlet property="feedCollectionView" destination="ik4-3Q-Z0p" id="upe-I6-tFH"/>
                         <outlet property="lbFixedTemperature" destination="xHg-Cm-5mh" id="H8L-C1-efy"/>
                         <outlet property="lbQuantity" destination="Mgw-yo-4zw" id="Ymy-3U-gVh"/>
+                        <outlet property="lbTemperature" destination="c38-p5-j0U" id="aSq-Ag-Ze5"/>
                         <outlet property="lbTitle" destination="X47-qd-Vwb" id="FR4-dl-dxg"/>
                         <outlet property="lbTotalAmount" destination="hIY-F7-BlM" id="ZEX-F7-9rZ"/>
                         <outlet property="tempCollectionview" destination="EQY-Hb-eor" id="ACI-uK-gpN"/>

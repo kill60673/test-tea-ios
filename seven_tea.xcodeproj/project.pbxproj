@@ -64,6 +64,7 @@
 		84874E33245EB28100232FB9 /* FeedBackOptionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E32245EB28100232FB9 /* FeedBackOptionApi.swift */; };
 		84874E35245EB29200232FB9 /* FeedBackOptionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E34245EB29200232FB9 /* FeedBackOptionCodable.swift */; };
 		84874E37245EB3B100232FB9 /* FeedBackOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E36245EB3B100232FB9 /* FeedBackOption.swift */; };
+		84874E39245EC37F00232FB9 /* ProductHotTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E38245EC37F00232FB9 /* ProductHotTemp.swift */; };
 		8490F24C2429B30300A59020 /* NearbyStoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */; };
 		8490F24E2429F59800A59020 /* NearbyStoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */; };
 		8490F253242CA34C00A59020 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F252242CA34C00A59020 /* MenuTableViewCell.swift */; };
@@ -205,6 +206,7 @@
 		84874E32245EB28100232FB9 /* FeedBackOptionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackOptionApi.swift; sourceTree = "<group>"; };
 		84874E34245EB29200232FB9 /* FeedBackOptionCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackOptionCodable.swift; sourceTree = "<group>"; };
 		84874E36245EB3B100232FB9 /* FeedBackOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackOption.swift; sourceTree = "<group>"; };
+		84874E38245EC37F00232FB9 /* ProductHotTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHotTemp.swift; sourceTree = "<group>"; };
 		8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresViewController.swift; sourceTree = "<group>"; };
 		8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresTableViewCell.swift; sourceTree = "<group>"; };
 		8490F252242CA34C00A59020 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				84874E1F2455C04700232FB9 /* ProductSugar.swift */,
 				84874E212455C09200232FB9 /* ProductAdd.swift */,
 				84874E292459688300232FB9 /* ProductIceTemp.swift */,
+				84874E38245EC37F00232FB9 /* ProductHotTemp.swift */,
 			);
 			path = GetMenuProduct;
 			sourceTree = "<group>";
@@ -1093,6 +1096,7 @@
 				84255382243F27B5004C9B23 /* MenuDetailViewController.swift in Sources */,
 				84FADF4923FE8B0100C824C6 /* JumpPage.swift in Sources */,
 				84EEC5D023D1C314005627FF /* ViewController.swift in Sources */,
+				84874E39245EC37F00232FB9 /* ProductHotTemp.swift in Sources */,
 				84F7C89123EAD1C90097EAD0 /* LoginCodable.swift in Sources */,
 				84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */,
 				84D09B47241A2B7C0019A0B4 /* MessageNotifyAPI.swift in Sources */,

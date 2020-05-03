@@ -25,11 +25,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         CategoryTableView = categoryTableview
         ItemTableView.tableFooterView = UIView()
         CategoryTableView.tableFooterView = UIView()
-        print("又又我又來了")
-        getItemDetail.removeAll()
-        getItemPrice.removeAll()
-        getitemicetemp.removeAll()
-        ItemTableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
