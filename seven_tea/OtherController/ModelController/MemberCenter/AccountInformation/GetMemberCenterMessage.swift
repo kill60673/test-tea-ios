@@ -6,7 +6,7 @@
 
 import Foundation
 import UIKit
-func getVerifyEmailMessage(email:String, controller: UIViewController) {
+func getVerifyEmailMessage(email:String) {
        let postSTring  = SendVerifyEmail(email: email)
        let encoder = JSONEncoder()
        if let data = try? encoder.encode(postSTring) {
