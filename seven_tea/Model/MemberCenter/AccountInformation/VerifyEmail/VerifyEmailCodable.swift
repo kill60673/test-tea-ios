@@ -8,6 +8,9 @@
 
 import Foundation
 struct VerifyEmailCodable: Codable {
-    var success: Bool?
+    var success: Bool
     var message: String
+}
+struct SendVerifyEmail: Codable {
+    var email: String
 }
