@@ -61,6 +61,9 @@
 		84874E2A2459688400232FB9 /* ProductIceTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E292459688300232FB9 /* ProductIceTemp.swift */; };
 		84874E2D245EAC2100232FB9 /* SendSetVerifyEmailApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E2C245EAC2100232FB9 /* SendSetVerifyEmailApi.swift */; };
 		84874E2F245EAC3200232FB9 /* SendSetVerifyEmailCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E2E245EAC3200232FB9 /* SendSetVerifyEmailCodable.swift */; };
+		84874E33245EB28100232FB9 /* FeedBackOptionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E32245EB28100232FB9 /* FeedBackOptionApi.swift */; };
+		84874E35245EB29200232FB9 /* FeedBackOptionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E34245EB29200232FB9 /* FeedBackOptionCodable.swift */; };
+		84874E37245EB3B100232FB9 /* FeedBackOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E36245EB3B100232FB9 /* FeedBackOption.swift */; };
 		8490F24C2429B30300A59020 /* NearbyStoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */; };
 		8490F24E2429F59800A59020 /* NearbyStoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */; };
 		8490F253242CA34C00A59020 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F252242CA34C00A59020 /* MenuTableViewCell.swift */; };
@@ -199,6 +202,9 @@
 		84874E292459688300232FB9 /* ProductIceTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIceTemp.swift; sourceTree = "<group>"; };
 		84874E2C245EAC2100232FB9 /* SendSetVerifyEmailApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSetVerifyEmailApi.swift; sourceTree = "<group>"; };
 		84874E2E245EAC3200232FB9 /* SendSetVerifyEmailCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSetVerifyEmailCodable.swift; sourceTree = "<group>"; };
+		84874E32245EB28100232FB9 /* FeedBackOptionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackOptionApi.swift; sourceTree = "<group>"; };
+		84874E34245EB29200232FB9 /* FeedBackOptionCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackOptionCodable.swift; sourceTree = "<group>"; };
+		84874E36245EB3B100232FB9 /* FeedBackOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackOption.swift; sourceTree = "<group>"; };
 		8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresViewController.swift; sourceTree = "<group>"; };
 		8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresTableViewCell.swift; sourceTree = "<group>"; };
 		8490F252242CA34C00A59020 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -448,6 +454,16 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		84874E31245EB26300232FB9 /* FeedVack */ = {
+			isa = PBXGroup;
+			children = (
+				84874E32245EB28100232FB9 /* FeedBackOptionApi.swift */,
+				84874E34245EB29200232FB9 /* FeedBackOptionCodable.swift */,
+				84874E36245EB3B100232FB9 /* FeedBackOption.swift */,
+			);
+			path = FeedVack;
+			sourceTree = "<group>";
+		};
 		8490F251242CA33200A59020 /* MenuViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +690,7 @@
 		84EEC5E823D3015F005627FF /* FrequentlyAskedQuestions */ = {
 			isa = PBXGroup;
 			children = (
+				84874E31245EB26300232FB9 /* FeedVack */,
 				84EEC61223D4155C005627FF /* FrequentlyAskedQuestionsApi.swift */,
 				84EEC61423D4156F005627FF /* FrequentlyAskedQuestionsCodable.swift */,
 				84EEC61623D41586005627FF /* FrequentlyAskedQuestions.swift */,
@@ -1091,6 +1108,7 @@
 				8425539C24459D0D004C9B23 /* PromotionBanner.swift in Sources */,
 				8425538624407540004C9B23 /* FeedCollectionViewCell.swift in Sources */,
 				84479E952446FF0600D10DBA /* DistrictTag.swift in Sources */,
+				84874E33245EB28100232FB9 /* FeedBackOptionApi.swift in Sources */,
 				84D09B442418E6190019A0B4 /* AddFeedBackViewController.swift in Sources */,
 				84255384243F27B5004C9B23 /* MenuDetailService.swift in Sources */,
 				84316BFD240E4EC3002CD226 /* MemberInfoApi.swift in Sources */,
@@ -1112,6 +1130,7 @@
 				84C2E2B323EBEB5B008AB33F /* ResetPasswordApi.swift in Sources */,
 				8454AA1B244EC174008FB05E /* GetStoresApi.swift in Sources */,
 				84D09B4D241F21810019A0B4 /* VoucherViewController.swift in Sources */,
+				84874E37245EB3B100232FB9 /* FeedBackOption.swift in Sources */,
 				84874E2D245EAC2100232FB9 /* SendSetVerifyEmailApi.swift in Sources */,
 				84EEC64823D68429005627FF /* Location.swift in Sources */,
 				842553A22445ABF5004C9B23 /* SlideBannerApi.swift in Sources */,
@@ -1192,6 +1211,7 @@
 				84D09B49241A2C130019A0B4 /* MessageNotifyCodable.swift in Sources */,
 				84EEC61B23D415B5005627FF /* MyFavoriteCodable.swift in Sources */,
 				8490F253242CA34C00A59020 /* MenuTableViewCell.swift in Sources */,
+				84874E35245EB29200232FB9 /* FeedBackOptionCodable.swift in Sources */,
 				8425538A244596B5004C9B23 /* SlideBannerCodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -62,6 +62,7 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
             break
         case 2:
             let vc = storyboard?.instantiateViewController(withIdentifier: "FAQTV")
+            FeedBackOptionApi.CityTagInstance.feedbackoption()
             show(vc!, sender: self)
             break
         case 3:

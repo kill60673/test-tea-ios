@@ -1,36 +1,35 @@
 //
-//  CityTagApi.swift
+//  FeedBackOptionApi.swift
 //  seven_tea
 //
-//  Created by harrison on 2020/4/15.
+//  Created by harrison on 2020/5/3.
 //  Copyright © 2020 harrison公司機. All rights reserved.
 //
 
 import Foundation
-var cityTag = [String]()
-class CityTagAPI: NSObject {
-    static let CityTagInstance = CityTagAPI()
-    var citytaglist = [CityTag]()
-    func citytag() {
+var feedBackOption = [String]()
+class FeedBackOptionApi: NSObject {
+    static let CityTagInstance = FeedBackOptionApi()
+    lazy var feedbackoptionlist = [FeedBackOption]()
+    func feedbackoption() {
 
-        let url = URL(string: ApiUrl.ApiUrlInstance.cityTag)!
+        let url = URL(string: ApiUrl.ApiUrlInstance.feedbackoption)!
 
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
 
         let task = URLSession.shared.dataTask(with: request) { data, response, _ in
-            //            print(responseString)
-
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
                 decoder.decode(CityTagCodable.self, from: data) {
                 if Info.success == true {
-                    self.citytaglist.removeAll()
                     for result in Info.data {
-                        cityTag.append(result)
+                        print("我有進來",result)
+                        feedBackOption.append(result)
                     }
+                    print("外圈",feedBackOption)
                 } else {
                     //主線程
                     DispatchQueue.main.async {
@@ -46,21 +45,13 @@ class CityTagAPI: NSObject {
             }
             //主線程
             DispatchQueue.main.async {
-                //                UIViewController.removeSpinner(spinner: sv as! UIView)
-
             }
         }
         task.resume()
     }
 
     func getCount() -> Int {
-        print("我有幾個", citytaglist.count)
-        return citytaglist.count
+        print("我有幾個", feedbackoptionlist.count)
+        return feedbackoptionlist.count
     }
-    func getList() -> [CityTag] {
-        return citytaglist
-    }
-    //    func getImageURL() -> String{
-    //    }
-
 }
