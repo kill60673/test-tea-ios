@@ -20,7 +20,7 @@ struct AddShopingCar: Codable {
     var sugar: String
     var size: String
     var add: [String]
-    var store_id: Int
+    var store_id: String
     var qty: Int
     var total_price: Int
 }

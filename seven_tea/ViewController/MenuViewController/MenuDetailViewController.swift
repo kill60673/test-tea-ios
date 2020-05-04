@@ -40,6 +40,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     var Sugar = ""
     var itemname = ""
     var itemcategory = ""
+    var storeId = ""
     var tempname = ""
     var sugarname = ""
     override func viewDidLoad() {
@@ -166,6 +167,6 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     @IBAction func btAddShopingCar(_ sender: Any) {
-                getAddShopingCarMessage(item_id: itemid, item_name: itemname, item_category: itemcategory, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: 0, qty: 0, total_price: 0)
+        getAddShopingCarMessage(item_id: itemid, item_name: itemname, item_category: itemcategory, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: self.storeId, qty: 0, total_price: 0)
     }
 }

@@ -10,21 +10,6 @@ import Foundation
 
 class MemberRegiseterSmsApi: NSObject {
     static let MemberRegisterSmsInstance = MemberRegiseterSmsApi()
-
-    //將資料放進object的func
-//    func getMemberRegisterSmsMessage(phone:String)
-//    {
-//        let postSTring  = MemberRegisterSmsMessage(phone: phone)
-//        let encoder = JSONEncoder()
-//        if let data = try? encoder.encode(postSTring)
-//        {
-//            print(postSTring)
-//            self.datas = data
-//            print(data)
-//            SendMemberRegisterSms()
-//        }
-//
-//    }
     func sendMemberRegisterSms(handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.sendMemberRegisterSmsUrl)!
         var request = URLRequest(url: url)
