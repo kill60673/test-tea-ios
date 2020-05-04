@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+var feed = [String]()
+var tempcollectionview: UICollectionView!
 class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+    @IBOutlet weak var sugarCollectionview: UICollectionView!
     @IBOutlet weak var tempCollectionview: UICollectionView!
     @IBOutlet weak var feedCollectionView: UICollectionView!
     @IBOutlet weak var lbTitle: UILabel!
@@ -28,16 +29,21 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var lbTemperature: UILabel!
     var itemprice = [ProductPrice]()
     var itemdetail = [GetMenuProduct]()
-    var icetemp = [ProductIceTemp]()
+    let icetemp = GetMenuProductApi.GetStoresApiInstance.geticetemp()
     var hottemp = [ProductHotTemp]()
     var itemsugar = [ProductSugar]()
     var itemadd = [ProductAdd]()
     var Size = ""
     var Temperature = "Cold"
+    var tmp = ""
+    var itemid = ""
     var Sugar = ""
     var itemname = ""
+    var itemcategory = ""
+    var tempname = ""
+    var sugarname = ""
     override func viewDidLoad() {
-        self.icetemp = GetMenuProductApi.GetStoresApiInstance.geticetemp()
+        tempcollectionview = tempCollectionview
         self.itemsugar = GetMenuProductApi.GetStoresApiInstance.getproductsugar()
         self.itemadd = GetMenuProductApi.GetStoresApiInstance.getproductadd()
         self.hottemp = GetMenuProductApi.GetStoresApiInstance.gethottemp()
@@ -68,11 +74,10 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         switch collectionView.tag {
         case 0:
             if Temperature == "Cold"{
-                return icetemp.count
-            }else{
-                return hottemp.count
+                return self.icetemp.count
+            } else {
+                return self.hottemp.count
             }
-            
         case 1:
             return itemsugar.count
         default:
@@ -84,20 +89,28 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TempCell", for: indexPath) as!
             TempCollectionViewCell
-            if Temperature == "Cold"{
-                cell.btTemp.setTitle(icetemp[indexPath.row].ice, for: .normal)
-            }else{
-                cell.btTemp.setTitle(hottemp[indexPath.row].hot, for: .normal)
+            cell.lbTemp.text = self.icetemp[indexPath.row].ice
+            if cell.lbTemp.text != tempname {
+                cell.lbTemp.backgroundColor = UIColor.white
+                cell.tempView.backgroundColor = UIColor.white
+            } else {
+                cell.lbTemp.backgroundColor = UIColor.yellow
+                cell.tempView.backgroundColor = UIColor.yellow
             }
-            cell.btTemp.oval_button(button: cell.btTemp)
-            cell.btTemp.backgroundColor = UIColor.white
+            cell.tempView.oval_label(view: cell.tempView)
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SugarCell", for: indexPath) as!
             SugarCollectionViewCell
-            cell.btSugar.setTitle(itemsugar[indexPath.row].name, for: .normal)
-            cell.btSugar.oval_button(button: cell.btSugar)
-            cell.btSugar.backgroundColor = UIColor.white
+            cell.lbSugar.text = self.itemsugar[indexPath.row].name
+            if cell.lbSugar.text != self.sugarname {
+                cell.lbSugar.backgroundColor = UIColor.white
+                cell.sugarView.backgroundColor = UIColor.white
+            } else {
+                cell.lbSugar.backgroundColor = UIColor.yellow
+                cell.sugarView.backgroundColor = UIColor.yellow
+            }
+            cell.sugarView.oval_label(view: cell.sugarView)
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCell", for: indexPath) as!
@@ -109,13 +122,24 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        switch collectionView.tag {
+        case 0:
+            self.tempname = self.icetemp[indexPath.row].ice
+                      print("tempname", self.tempname)
+                      tempCollectionview.reloadData()
+        case 1 :
+            self.sugarname = self.itemsugar[indexPath.row].name
+                      print("sugarname", self.sugarname)
+                      sugarCollectionview.reloadData()
+        default:
+            break
+        }
     }
-    
+
     @IBAction func brClose(_ sender: Any) {
         dismiss(animated: true)
     }
-    
+
     @IBAction func btSizeM(_ sender: Any) {
         btSizeM.backgroundColor = UIColor.yellow
         btSizeL.backgroundColor = UIColor.white
@@ -140,5 +164,8 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         tempCollectionview.reloadData()
         lbTemperature.text = "冰度"
     }
-    
+
+    @IBAction func btAddShopingCar(_ sender: Any) {
+                getAddShopingCarMessage(item_id: itemid, item_name: itemname, item_category: itemcategory, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: 0, qty: 0, total_price: 0)
+    }
 }

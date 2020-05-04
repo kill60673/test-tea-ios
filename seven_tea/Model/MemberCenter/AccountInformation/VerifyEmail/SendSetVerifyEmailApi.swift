@@ -11,7 +11,7 @@ import Foundation
 class SendSetVerifyEmailApi: NSObject {
     static let SetVerifyEmailInstance = SendSetVerifyEmailApi()
     var newToken: String!
-    func setverifyEmailApi(token: String,handler : @escaping (Bool) -> Void) {
+    func setverifyEmailApi(token: String, handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.setverifyemail)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -29,7 +29,7 @@ class SendSetVerifyEmailApi: NSObject {
             } else {
                 self.newToken = ""
             }
-            
+
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let memberRegisterInfo = try?

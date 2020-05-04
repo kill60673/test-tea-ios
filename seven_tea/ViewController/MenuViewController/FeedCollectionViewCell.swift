@@ -7,17 +7,17 @@
 //
 
 import UIKit
-var feed = [String]()
 
+var addcolor = ""
 class FeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var btFeed: UIButton!
     @IBAction func btfeed(_ sender: Any) {
         if btFeed.backgroundColor == UIColor.yellow {
             btFeed.backgroundColor = UIColor.white
+            addcolor = "white"
         } else if btFeed.backgroundColor == UIColor.white {
             btFeed.backgroundColor = UIColor.yellow
-            feed += [btFeed.titleLabel!.text!]
+            addcolor = "yellow"
         }
-        print(feed)
     }
 }

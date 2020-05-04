@@ -9,8 +9,7 @@
 import UIKit
 
 class TempCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var btTemp: UIButton!
-    @IBAction func btTemp(_ sender: Any) {
-    }
-    
+    @IBOutlet weak var lbTemp: UILabel!
+    @IBOutlet weak var tempView: UIView!
+
 }

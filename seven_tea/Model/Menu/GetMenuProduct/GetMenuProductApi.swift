@@ -42,54 +42,54 @@ class GetMenuProductApi {
                     self.producttemp.removeAll()
                     self.producthottemp.removeAll()
                     self.producticetemp.removeAll()
-                    
+
                     for i in 0..<json["data"].count {
                         let data = json["data"][i]
-                        for size in 0..<data["size"].count{
+                        for size in 0..<data["size"].count {
                             let size = ProductSize(id: data["size"][size]["id"].int!, name: data["size"][size]["name"].string!)
                             self.productsize.append(size)
                         }
                         switch data["status"].string {
                         case "0":
-                            for price in 0..<data["price"].count{
+                            for price in 0..<data["price"].count {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: "\(data["price"][price]["price"])", area: nil)
                                 self.productprice.append(price)
                             }
                             break
                         case "1":
-                            for price in 0..<data["price"].count{
+                            for price in 0..<data["price"].count {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: "\(data["price"][price]["price"])", area: data["price"][price]["area"].string!)
                                 self.productprice.append(price)
                             }
                             break
                         case "2":
-                            for price in 0..<data["price"].count{
+                            for price in 0..<data["price"].count {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: "\(data["price"][price]["price"])", area: "")
                                 self.productprice.append(price)
                             }
                             break
                         default:
-                            for price in 0..<data["price"].count{
+                            for price in 0..<data["price"].count {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: "\(data["price"][price]["price"])", area: "\(data["price"][price]["area"])")
                                 self.productprice.append(price)
                             }
                             break
                         }
-                        for icetemp in 0..<data["ice_temp"].count{
+                        for icetemp in 0..<data["ice_temp"].count {
                             let productice = ProductIceTemp(ice: data["ice_temp"][icetemp].string!)
                             self.producticetemp.append(productice)
                         }
-                        for hottemp in 0..<data["hot_temp"].count{
+                        for hottemp in 0..<data["hot_temp"].count {
                             let producthot = ProductHotTemp(hot: data["hot_temp"][hottemp].string!)
                             self.producthottemp.append(producthot)
                         }
-                        for sugar in 0..<data["sugar"].count{
+                        for sugar in 0..<data["sugar"].count {
                             let sugar = ProductSugar(name: data["sugar"][sugar]["name"].string!, is_active: data["sugar"][sugar]["is_active"].bool!)
-                            print("一包三十山胞一百",sugar.name)
+                            print("一包三十山胞一百", sugar.name)
                             self.productsugar.append(sugar)
                         }
-                        
-                        for add in 0..<data["add"].count{
+
+                        for add in 0..<data["add"].count {
                             let add = ProductAdd(id: data["add"][add]["id"].int!, name: data["add"][add]["name"].string!, price: data["add"][add]["price"].string!)
                             self.productadd.append(add)
                         }
@@ -102,7 +102,7 @@ class GetMenuProductApi {
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-                
+
             } catch {
                 //主線程
                 DispatchQueue.main.async {
@@ -113,7 +113,7 @@ class GetMenuProductApi {
             //主線程
             DispatchQueue.main.async {
                 if NearByStoresTableView == nil {
-                    
+
                 } else {
                     print("我有進來這裡")
                     ItemTableView.reloadData()
@@ -125,28 +125,28 @@ class GetMenuProductApi {
     func getmenuproductlist() -> [GetMenuProduct] {
         return productlist
     }
-    func getproductsize() -> [ProductSize]{
+    func getproductsize() -> [ProductSize] {
         return productsize
     }
-    func getproductsugar() -> [ProductSugar]{
+    func getproductsugar() -> [ProductSugar] {
         return productsugar
     }
-    func getproducttemp() -> [ProductTemp]{
+    func getproducttemp() -> [ProductTemp] {
         return producttemp
     }
-    func getproductprice() -> [ProductPrice]{
+    func getproductprice() -> [ProductPrice] {
         return productprice
     }
-    func getproductadd() -> [ProductAdd]{
+    func getproductadd() -> [ProductAdd] {
         return productadd
     }
     func getCount() -> Int {
         return productlist.count
     }
-    func geticetemp() -> [ProductIceTemp]{
+    func geticetemp() -> [ProductIceTemp] {
         return producticetemp
     }
-    func gethottemp() -> [ProductHotTemp]{
+    func gethottemp() -> [ProductHotTemp] {
         return producthottemp
     }
 }

@@ -16,7 +16,7 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var imageHot: UIImageView!
     @IBOutlet weak var imageSizeM: UIImageView!
     @IBOutlet weak var imageSizeL: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

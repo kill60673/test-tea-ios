@@ -13,7 +13,7 @@ class GetMenuProduct {
     var picture_url = String()
     var is_fixed = Int()
 
-    init(id: String, item_name: String, picture_url: String,is_fixed: Int) {
+    init(id: String, item_name: String, picture_url: String, is_fixed: Int) {
         self.id = id
         self.item_name = item_name
         self.picture_url = picture_url

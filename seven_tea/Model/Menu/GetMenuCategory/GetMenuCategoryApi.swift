@@ -33,7 +33,7 @@ class GetMenuCategoryApi: NSObject {
                     for i in 0..<json["data"].count {
                         let getmenucatrgory = GetMenuCategory(id: json["data"][i]["id"].string!, category_name: json["data"][i]["category_name"].string!)
                         self.getmenucatrgorylist.append(getmenucatrgory)
-                        print("鳥蛋",storeId)
+                        print("鳥蛋", storeId)
                     }
                 } else {
                     //主線程

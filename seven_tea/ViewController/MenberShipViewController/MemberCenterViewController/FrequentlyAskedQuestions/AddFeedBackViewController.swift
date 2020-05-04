@@ -23,7 +23,7 @@ class AddFeedBackViewController: UIViewController, UIPickerViewDelegate, UIPicke
         tvContent.delegate = self
         tvContent.setframe(textview: tvContent)
         UIImageView.setframe(view: UIImageView)
-        print("yoyoyooy",feedBackOption)
+        print("yoyoyooy", feedBackOption)
     }
     @IBAction func btSubmit(_ sender: Any) {
         //送出判斷式連結API
