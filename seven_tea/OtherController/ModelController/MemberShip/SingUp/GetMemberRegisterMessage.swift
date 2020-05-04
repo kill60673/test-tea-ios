@@ -13,10 +13,10 @@ class GetMemberRegisterMessage: UIViewController {
 
     //    將資料放進object的func
     func getMemberRegisterMessage(phone: String, validator_code: String, controller: UIViewController) {
-        let postSTring  = MemberRegisterMessage(phone: phone, validator_code: validator_code)
+        let postString  = MemberRegisterMessage(phone: phone, validator_code: validator_code)
         let encoder = JSONEncoder()
-        if let data = try? encoder.encode(postSTring) {
-            print(postSTring)
+        if let data = try? encoder.encode(postString) {
+            print(postString)
             datas = data
             print(data)
             SendMemberRegistrApi.MemberRegisterInstance.sendMemberRegister {(result) in
@@ -31,10 +31,10 @@ class GetMemberRegisterMessage: UIViewController {
     }
     //       將資料放進object的func
     func getMemberRegisterMessageInfo(username: String, name: String, sex: String, phone: String, password: String, passwordConfirmation: String, validatorsCode: String) {
-        let postSTring  = MemberRegisterMessageInfo(username: username, name: name, sex: sex, phone: phone, password: password, password_confirmation: passwordConfirmation, validator_code: validatorsCode)
+        let postString  = MemberRegisterMessageInfo(username: username, name: name, sex: sex, phone: phone, password: password, password_confirmation: passwordConfirmation, validator_code: validatorsCode)
         let encoder = JSONEncoder()
-        if let data = try? encoder.encode(postSTring) {
-            print(postSTring)
+        if let data = try? encoder.encode(postString) {
+            print(postString)
             datas = data
             print(data)
             SendMemberRegisterInfoAPI.MemberRegisterInstance.sendMemberRegisterInfo {(result) in
@@ -49,10 +49,10 @@ class GetMemberRegisterMessage: UIViewController {
 
     }
     func getForgotPasswordSms(account: String, phone: String) {
-        let postSTring  = ForgotPasswordSms(username: account, phone: phone)
+        let postString  = ForgotPasswordSms(username: account, phone: phone)
         let encoder = JSONEncoder()
-        if let data = try? encoder.encode(postSTring) {
-            print(postSTring)
+        if let data = try? encoder.encode(postString) {
+            print(postString)
             datas = data
             print(data)
             ForgotPasswordSmsAPI.ForgotPasswordSmsInstance.forgotPasswordSms {(result) in
@@ -65,10 +65,10 @@ class GetMemberRegisterMessage: UIViewController {
         }
     }
     func getResetPassword(userName: String, phone: String, validatorsCode: String, password: String, passwordConfirmation: String) {
-        let postSTring  = ResetPassword(username: userName, phone: phone, validators_code: validatorsCode, password: password, password_confirmation: passwordConfirmation)
+        let postString  = ResetPassword(username: userName, phone: phone, validators_code: validatorsCode, password: password, password_confirmation: passwordConfirmation)
         let encoder = JSONEncoder()
-        if let data = try? encoder.encode(postSTring) {
-            print(postSTring)
+        if let data = try? encoder.encode(postString) {
+            print(postString)
             datas = data
             print(data)
             RestPasswordApi.RestPasswordApiInstance.restPassword { (result) in
@@ -82,10 +82,10 @@ class GetMemberRegisterMessage: UIViewController {
         }
     }
     func getSendResetForgotPassword(userName: String, phone: String, validatorsCode: String, controller: UIViewController ) {
-        let postSTring  = SendResetForgorPasswordMessage(username: userName, phone: phone, validator_code: validatorsCode)
+        let postString  = SendResetForgorPasswordMessage(username: userName, phone: phone, validator_code: validatorsCode)
         let encoder = JSONEncoder()
-        if let data = try? encoder.encode(postSTring) {
-            print(postSTring)
+        if let data = try? encoder.encode(postString) {
+            print(postString)
             datas = data
             SendResetForgotPasswordSmsAPI.SendResetForgotPasswordSmsInstance.sendResetForgotPasswordSms { (result) in
                 if result {

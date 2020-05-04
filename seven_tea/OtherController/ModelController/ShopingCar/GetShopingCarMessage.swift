@@ -8,11 +8,11 @@
 
 import Foundation
 import UIKit
-func getAddShopingCarMessage(item_id: String, item_name: String, item_category: String, tmp: String, sugar: String, size: String, add: [String], store_id: Int, qty: Int, total_price: Int) {
-    let postSTring  = AddShopingCar(item_id: item_id, item_name: item_name, item_category: item_category, tmp: tmp, sugar: sugar, size: size, add: add, store_id: store_id, qty: qty, total_price: total_price)
+func getAddShopingCarMessage(item_id: String, item_name: String, item_category: String, tmp: String, sugar: String, size: String, add: [String], store_id: String, qty: Int, total_price: Int) {
+    let postString  = AddShopingCar(item_id: item_id, item_name: item_name, item_category: item_category, tmp: tmp, sugar: sugar, size: size, add: add, store_id: store_id, qty: qty, total_price: total_price)
     let encoder = JSONEncoder()
-    if let data = try? encoder.encode(postSTring) {
-        print(postSTring)
+    if let data = try? encoder.encode(postString) {
+        print(postString)
         datas = data
         print(data)
         AddShopingCarApi.AddShopingCarInstance.addshopingcar(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in

@@ -21,10 +21,11 @@ class GetMenuProductApi {
     var producticetemp = [ProductIceTemp]()
     var producthottemp = [ProductHotTemp]()
     static let GetStoresApiInstance = GetMenuProductApi()
+    var storeID = ""
     func getstores(storeId: Int, catrgoryId: String) {
         urlString = ApiUrl.ApiUrlInstance.getmenuproduct+"\(storeId)/\(catrgoryId)"
         let url = URL(string: urlString)!
-        print(url)
+        self.storeID = "\(storeId)"
         var request = URLRequest(url: url )
         print("url...", url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -148,5 +149,8 @@ class GetMenuProductApi {
     }
     func gethottemp() -> [ProductHotTemp] {
         return producthottemp
+    }
+    func getstoreId() -> String {
+        return self.storeID
     }
 }
