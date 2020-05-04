@@ -6,7 +6,7 @@
 
 import Foundation
 import UIKit
-func getVerifyEmailMessage(email:String) {
+func getVerifyEmailMessage(email: String) {
     let postSTring  = SendVerifyEmail(email: email)
     let encoder = JSONEncoder()
     if let data = try? encoder.encode(postSTring) {
@@ -21,7 +21,7 @@ func getVerifyEmailMessage(email:String) {
         }
     }
 }
-func getSetVerifyEmailMessage(email:String,email_vaildate_code:String) {
+func getSetVerifyEmailMessage(email: String, email_vaildate_code: String) {
     let postSTring  = SendSetVerifyEmail(email: email, email_validate_code: email_vaildate_code)
     let encoder = JSONEncoder()
     if let data = try? encoder.encode(postSTring) {

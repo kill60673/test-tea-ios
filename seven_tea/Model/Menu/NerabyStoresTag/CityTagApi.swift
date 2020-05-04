@@ -19,7 +19,7 @@ class CityTagAPI: NSObject {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
 
-        let task = URLSession.shared.dataTask(with: request) { data, response, _ in
+        let task = URLSession.shared.dataTask(with: request) { data, _, _ in
             //            print(responseString)
 
             let decoder = JSONDecoder()

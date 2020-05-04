@@ -10,7 +10,7 @@ import Foundation
 class ProductIceTemp {
     var ice = String()
 
-    init(ice:String) {
+    init(ice: String) {
         self.ice = ice
     }
 }

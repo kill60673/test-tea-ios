@@ -10,7 +10,7 @@ import Foundation
 class ProductHotTemp {
     var hot = String()
 
-    init(hot:String) {
+    init(hot: String) {
         self.hot = hot
     }
 }

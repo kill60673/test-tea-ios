@@ -9,8 +9,7 @@
 import UIKit
 
 class SugarCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var btSugar: UIButton!
-    @IBAction func btSugar(_ sender: Any) {
-    }
-    
+    @IBOutlet weak var lbSugar: UILabel!
+    @IBOutlet weak var sugarView: UIView!
+
 }

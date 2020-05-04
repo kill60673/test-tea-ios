@@ -12,7 +12,7 @@ class ProductPrice {
     var temp = String()
     var price = String()
     var area = String()
-    
+
     init(size: String, temp: String?, price: String, area: String?) {
         self.size = size
         self.temp = temp ?? ""

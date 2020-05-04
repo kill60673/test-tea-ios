@@ -26,9 +26,10 @@ extension UIButton {
 }
 extension UILabel {
     func oval_label(label: UILabel) {
-    label.layer.borderWidth = 1.0//外框粗度
+        label.layer.borderWidth = 1.0//外框粗度
         label.layer.cornerRadius = 15
     }
+
 }
 extension UITextView {
     func setframe(textview: UITextView) {
@@ -51,6 +52,10 @@ extension UIView {
         c.isActive = true
         View.layer.cornerRadius = 10
         View.layer.cornerRadius = 10
+    }
+    func oval_label(view: UIView) {
+        view.layer.borderWidth = 1.0//外框粗度
+        view.layer.cornerRadius = 15
     }
 }
 extension UITableView {

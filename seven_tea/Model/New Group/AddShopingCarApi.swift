@@ -1,17 +1,17 @@
 //
-//  VerifyEmailApi.swift
+//  AddShopingCar.swift
 //  seven_tea
 //
-//  Created by harrison on 2020/4/21.
+//  Created by harrison on 2020/5/3.
 //  Copyright © 2020 harrison公司機. All rights reserved.
 //
 
 import Foundation
-class VerifyEmailApi: NSObject {
-    static let VerifyEmailInstance = VerifyEmailApi()
+class AddShopingCarApi: NSObject {
+    static let AddShopingCarInstance = AddShopingCarApi()
     var newToken: String!
-    func verifyEmailApi(token: String, handler : @escaping (Bool) -> Void) {
-        let url = URL(string: ApiUrl.ApiUrlInstance.verifyemail)!
+    func addshopingcar(token: String, handler : @escaping (Bool) -> Void) {
+        let url = URL(string: ApiUrl.ApiUrlInstance.addtoshopingcar)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

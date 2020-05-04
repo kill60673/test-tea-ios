@@ -19,17 +19,17 @@ class FeedBackOptionApi: NSObject {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
 
-        let task = URLSession.shared.dataTask(with: request) { data, response, _ in
+        let task = URLSession.shared.dataTask(with: request) { data, _, _ in
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
                 decoder.decode(CityTagCodable.self, from: data) {
                 if Info.success == true {
                     for result in Info.data {
-                        print("我有進來",result)
+                        print("我有進來", result)
                         feedBackOption.append(result)
                     }
-                    print("外圈",feedBackOption)
+                    print("外圈", feedBackOption)
                 } else {
                     //主線程
                     DispatchQueue.main.async {

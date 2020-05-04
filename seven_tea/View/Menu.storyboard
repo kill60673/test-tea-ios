@@ -312,6 +312,9 @@
                                         <state key="normal" title="加入購物車">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btAddShopingCar:" destination="atl-DB-EgL" eventType="touchUpInside" id="IX0-fC-1pe"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIY-F7-BlM">
                                         <rect key="frame" x="281" y="535" width="70" height="30"/>
@@ -383,44 +386,42 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jFp-Tv-TeA">
-                                            <size key="itemSize" width="154" height="51"/>
+                                            <size key="itemSize" width="81" height="51"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SugarCell" id="XzJ-kZ-HR8" customClass="SugarCollectionViewCell" customModule="seven_tea" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="4" width="154" height="51"/>
+                                                <rect key="frame" x="0.0" y="0.5" width="83" height="58"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xjc-Vo-bZu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="154" height="51"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="83" height="58"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCx-gk-i88">
-                                                            <rect key="frame" x="8" y="8" width="122" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ub-CC-gsi">
+                                                            <rect key="frame" x="8" y="8" width="65" height="35"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="Lbg-MR-GaY"/>
-                                                                <constraint firstAttribute="width" constant="100" id="gyz-cV-18o"/>
+                                                                <constraint firstAttribute="width" constant="60" id="cRq-9U-AJm"/>
+                                                                <constraint firstAttribute="height" constant="31" id="xHP-sD-6bd"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="btSugar:" destination="XzJ-kZ-HR8" eventType="touchUpInside" id="8ff-1O-bte"/>
-                                                            </connections>
-                                                        </button>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="uCx-gk-i88" secondAttribute="trailing" constant="8" id="9Tj-Nd-FlU"/>
-                                                        <constraint firstAttribute="bottom" secondItem="uCx-gk-i88" secondAttribute="bottom" constant="11" id="dF8-Dx-byR"/>
-                                                        <constraint firstItem="uCx-gk-i88" firstAttribute="top" secondItem="Xjc-Vo-bZu" secondAttribute="top" constant="11" id="jfI-CN-sB9"/>
-                                                        <constraint firstItem="uCx-gk-i88" firstAttribute="leading" secondItem="Xjc-Vo-bZu" secondAttribute="leading" constant="8" id="usq-KS-c88"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3Ub-CC-gsi" secondAttribute="trailing" constant="8" id="GAc-O0-fDs"/>
+                                                        <constraint firstAttribute="bottom" secondItem="3Ub-CC-gsi" secondAttribute="bottom" id="N2X-9U-oXe"/>
+                                                        <constraint firstItem="3Ub-CC-gsi" firstAttribute="top" secondItem="Xjc-Vo-bZu" secondAttribute="top" constant="-1" id="QPJ-ZQ-1g8"/>
+                                                        <constraint firstItem="3Ub-CC-gsi" firstAttribute="leading" secondItem="Xjc-Vo-bZu" secondAttribute="leading" constant="8" id="kMo-2u-49W"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
-                                                <size key="customSize" width="154" height="51"/>
+                                                <size key="customSize" width="83" height="58"/>
                                                 <connections>
-                                                    <outlet property="btSugar" destination="uCx-gk-i88" id="31h-QN-KTS"/>
+                                                    <outlet property="lbSugar" destination="3Ub-CC-gsi" id="RsL-bW-MBN"/>
+                                                    <outlet property="sugarView" destination="Xjc-Vo-bZu" id="zmC-ue-8Ch"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -434,43 +435,48 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ik3-xo-HcW">
-                                            <size key="itemSize" width="95" height="51"/>
+                                            <size key="itemSize" width="83" height="58"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TempCell" id="wUF-Xa-piW" customClass="TempCollectionViewCell" customModule="seven_tea" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="4" width="154" height="51"/>
+                                                <rect key="frame" x="0.0" y="0.5" width="83" height="58"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3P1-DG-pAF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="154" height="51"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="83" height="58"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSo-p8-RJj">
-                                                            <rect key="frame" x="8" y="10" width="122" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5Q-8s-6ET">
+                                                            <rect key="frame" x="12" y="13" width="60" height="31"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="100" id="8ER-uG-zDa"/>
+                                                                <constraint firstAttribute="height" constant="31" id="35d-y7-pH3"/>
+                                                                <constraint firstAttribute="width" constant="60" id="koA-aP-Mdp"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="btTemp:" destination="wUF-Xa-piW" eventType="touchUpInside" id="5qa-1f-wqa"/>
-                                                            </connections>
-                                                        </button>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="40"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="uSo-p8-RJj" secondAttribute="bottom" constant="11" id="7fd-GT-o00"/>
-                                                        <constraint firstAttribute="trailing" secondItem="uSo-p8-RJj" secondAttribute="trailing" constant="8" id="BZs-Vw-gct"/>
-                                                        <constraint firstItem="uSo-p8-RJj" firstAttribute="leading" secondItem="3P1-DG-pAF" secondAttribute="leading" constant="8" id="CPp-OG-0z1"/>
-                                                        <constraint firstItem="uSo-p8-RJj" firstAttribute="top" secondItem="3P1-DG-pAF" secondAttribute="top" constant="11" id="P1G-o2-0wv"/>
+                                                        <constraint firstAttribute="bottom" secondItem="y5Q-8s-6ET" secondAttribute="bottom" id="FWx-FH-4wf"/>
+                                                        <constraint firstItem="y5Q-8s-6ET" firstAttribute="top" secondItem="3P1-DG-pAF" secondAttribute="top" id="Wmt-Bn-ePV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="y5Q-8s-6ET" secondAttribute="trailing" constant="8" id="uWL-9Y-1Ar"/>
+                                                        <constraint firstItem="y5Q-8s-6ET" firstAttribute="leading" secondItem="3P1-DG-pAF" secondAttribute="leading" constant="8" id="yTM-1X-biD"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
-                                                <size key="customSize" width="154" height="51"/>
+                                                <size key="customSize" width="83" height="58"/>
                                                 <connections>
-                                                    <outlet property="btTemp" destination="uSo-p8-RJj" id="wxx-yK-cgp"/>
+                                                    <outlet property="lbTemp" destination="y5Q-8s-6ET" id="v6u-MQ-4Lc"/>
+                                                    <outlet property="tempView" destination="3P1-DG-pAF" id="jRy-yy-u7j"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -526,6 +532,7 @@
                         <outlet property="lbTemperature" destination="c38-p5-j0U" id="aSq-Ag-Ze5"/>
                         <outlet property="lbTitle" destination="X47-qd-Vwb" id="FR4-dl-dxg"/>
                         <outlet property="lbTotalAmount" destination="hIY-F7-BlM" id="ZEX-F7-9rZ"/>
+                        <outlet property="sugarCollectionview" destination="sZF-6C-wI4" id="gbX-kU-8VA"/>
                         <outlet property="tempCollectionview" destination="EQY-Hb-eor" id="ACI-uK-gpN"/>
                     </connections>
                 </viewController>

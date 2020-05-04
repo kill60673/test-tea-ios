@@ -80,11 +80,11 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.storeId = getStoreDetails[indexPath.row].getstore_id
-        print("哈哈哈哈哈我是",self.storeId)
+        print("哈哈哈哈哈我是", self.storeId)
         GetMenuCategoryApi.GetStoresApiInstance.getstores(storeId: self.storeId)
         let vc = storyboard?.instantiateViewController(withIdentifier: "MenuTV")
 //        show(vc!, sender: self)
-        present(vc!,animated: true)
+        present(vc!, animated: true)
     }
     //縣市的BT按下去跳出縣市的pick選項
     @IBAction func btCounty(_ sender: Any) {
@@ -136,7 +136,7 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
             if districTag.count == 0 {
                 btRegionDoneClick.isEnabled = false
                 return 1
-            }else{
+            } else {
                 btRegionDoneClick.isEnabled = true
                  return districTag.count
             }
@@ -146,9 +146,9 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
         if pickerView.tag == 0 {
             return cityTag[row]
         } else {
-            if districTag == []{
+            if districTag == [] {
                 return "請選擇地區"
-            }else{
+            } else {
                 return districTag[row]
             }
         }
