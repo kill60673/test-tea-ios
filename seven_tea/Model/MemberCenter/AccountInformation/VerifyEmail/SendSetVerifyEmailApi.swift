@@ -32,17 +32,17 @@ class SendSetVerifyEmailApi: NSObject {
 
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            if let data = data, let memberRegisterInfo = try?
-                decoder.decode(MemberRegisterSmsCodable.self, from: data) {
-                if memberRegisterInfo.success == true {
+            if let data = data, let SendSetVerifyEmail = try?
+                decoder.decode(SendSetVerifyEmailCodable.self, from: data) {
+                if SendSetVerifyEmail.success == true {
                     //主線程
                     DispatchQueue.main.async {
-                        MessageAlert.Instance.message(message: "\(memberRegisterInfo.message)")
+                        MessageAlert.Instance.message(message: "\(SendSetVerifyEmail.message)")
                     }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
-                        MessageAlert.Instance.message(message: "\(memberRegisterInfo.message)")
+                        MessageAlert.Instance.message(message: "\(SendSetVerifyEmail.message)")
                     }
                 }
             } else {

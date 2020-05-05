@@ -8,8 +8,9 @@
 
 import UIKit
 
-var addcolor = ""
+var feed = [String]()
 class FeedCollectionViewCell: UICollectionViewCell {
+    var addcolor = ""
     @IBOutlet weak var btFeed: UIButton!
     @IBAction func btfeed(_ sender: Any) {
         if btFeed.backgroundColor == UIColor.yellow {
@@ -19,5 +20,11 @@ class FeedCollectionViewCell: UICollectionViewCell {
             btFeed.backgroundColor = UIColor.yellow
             addcolor = "yellow"
         }
+        if addcolor == "yellow"{
+           feed += [btFeed.titleLabel!.text!]
+        }else{
+        feed.firstIndex(of:"\(btFeed.titleLabel!.text!)").map{feed.remove(at: $0)}
+        }
     }
+    
 }
