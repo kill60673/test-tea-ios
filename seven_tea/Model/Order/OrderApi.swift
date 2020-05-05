@@ -51,13 +51,11 @@ class OrderApi: NSObject {
                     DispatchQueue.main.async {
 
                         MessageAlert.Instance.message(message: "\(Info.message)")
-                        print("我在這裡裡")
                     }
                 }
             } else {
                 //主線程
                 DispatchQueue.main.async {
-                    print("我在這裡啦")
                     MessageAlert.Instance.message(message: "資料解析錯誤")
                 }
             }
@@ -68,19 +66,6 @@ class OrderApi: NSObject {
                 if OrderTableView != nil {
                       OrderTableView.reloadData()
                 }
-
-//                if(OrderRecordTable != nil){
-//
-//                    if(OrderId.count <= 0){
-//                        OrderRecordTable.isHidden = false
-//                        NoRecordView.isHidden = false
-//                    }else{
-//                        OrderRecordTable.isHidden = false
-//                        NoRecordView.isHidden = false
-//                    }
-//                     OrderRecordTable.reloadData()
-//                }
-
             }
 
         }

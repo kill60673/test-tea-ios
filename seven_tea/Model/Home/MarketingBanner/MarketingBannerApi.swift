@@ -24,7 +24,6 @@ class MarketingBannerAPI: NSObject {
             let responseString = String(data: data!, encoding: .utf8)
             let httpStatus = response as? HTTPURLResponse
 
-//            print(responseString)
 
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601

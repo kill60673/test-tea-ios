@@ -31,7 +31,6 @@ class DistricTagAPI: NSObject {
                     districTag.removeAll()
                     for result in Info.data {
                         districTag.append(result)
-                        print("asdasdasd123", districTag)
                     }
                 } else {
                     //主線程

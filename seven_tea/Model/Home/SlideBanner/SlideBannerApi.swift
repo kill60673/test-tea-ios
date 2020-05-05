@@ -25,7 +25,6 @@ class SlideBannerAPI: NSObject {
             let responseString = String(data: data!, encoding: .utf8)
             let httpStatus = response as? HTTPURLResponse
 
-            //            print(responseString)
 
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
@@ -37,8 +36,6 @@ class SlideBannerAPI: NSObject {
                         let slideBanner = SlideBanner(imageType: result.img_type, pictureURL: result.picture_url, linkURL: result.link_url)
                         self.slidebannerlist.append(slideBanner)
                         SDPicture.append(result.picture_url)
-                        print("我有近這裡")
-                        print("這裡有這幾個", result.picture_url)
                     }
                 } else {
                     //主線程
