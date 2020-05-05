@@ -7,10 +7,10 @@
 //
 
 import Foundation
-class AddShopingCarApi: NSObject {
-    static let AddShopingCarInstance = AddShopingCarApi()
+class AddShoppingCarApi: NSObject {
+    static let AddShoppingCarInstance = AddShoppingCarApi()
     var newToken: String!
-    func addshopingcar(token: String, handler : @escaping (Bool) -> Void) {
+    func addshoppingcar(token: String, handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.addtoshopingcar)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -31,17 +31,17 @@ class AddShopingCarApi: NSObject {
 
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            if let data = data, let memberRegisterInfo = try?
-                decoder.decode(MemberRegisterSmsCodable.self, from: data) {
-                if memberRegisterInfo.success == true {
+            if let data = data, let AddShoppingCar = try?
+                decoder.decode(AddShoppingCarCodable.self, from: data) {
+                if AddShoppingCar.success == true {
                     //主線程
                     DispatchQueue.main.async {
-                        MessageAlert.Instance.message(message: "\(memberRegisterInfo.message)")
+                        MessageAlert.Instance.message(message: "\(AddShoppingCar.message)")
                     }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
-                        MessageAlert.Instance.message(message: "\(memberRegisterInfo.message)")
+                        MessageAlert.Instance.message(message: "\(AddShoppingCar.message)")
                     }
                 }
             } else {

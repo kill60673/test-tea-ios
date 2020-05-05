@@ -31,17 +31,17 @@ class VerifyEmailApi: NSObject {
 
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            if let data = data, let memberRegisterInfo = try?
-                decoder.decode(MemberRegisterSmsCodable.self, from: data) {
-                if memberRegisterInfo.success == true {
+            if let data = data, let verifyEmail = try?
+                decoder.decode(VerifyEmailCodable.self, from: data) {
+                if verifyEmail.success == true {
                     //主線程
                     DispatchQueue.main.async {
-                        MessageAlert.Instance.message(message: "\(memberRegisterInfo.message)")
+                        MessageAlert.Instance.message(message: "\(verifyEmail.message)")
                     }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
-                        MessageAlert.Instance.message(message: "\(memberRegisterInfo.message)")
+                        MessageAlert.Instance.message(message: "\(verifyEmail.message)")
                     }
                 }
             } else {

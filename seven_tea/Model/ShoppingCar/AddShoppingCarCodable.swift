@@ -7,12 +7,12 @@
 //
 
 import Foundation
-struct AddShopingCarCodable: Codable {
+struct AddShoppingCarCodable: Codable {
     var success: Bool
     var message: String
     var data: Datas?
 }
-struct AddShopingCar: Codable {
+struct AddShoppingCar: Codable {
     var item_id: String
     var item_name: String
     var item_category: String

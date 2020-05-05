@@ -7,7 +7,6 @@
 //
 
 import UIKit
-var feed = [String]()
 var tempcollectionview: UICollectionView!
 class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var sugarCollectionview: UICollectionView!
@@ -117,6 +116,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCell", for: indexPath) as!
             FeedCollectionViewCell
             cell.btFeed.setTitle(itemadd[indexPath.row].name, for: .normal)
+            print("\(String(describing: cell.btFeed.titleLabel?.text!))")
             cell.btFeed.oval_button(button: cell.btFeed)
             cell.btFeed.backgroundColor = UIColor.white
             return cell
@@ -168,5 +168,6 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
 
     @IBAction func btAddShopingCar(_ sender: Any) {
         getAddShopingCarMessage(item_id: itemid, item_name: itemname, item_category: itemcategory, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: self.storeId, qty: 0, total_price: 0)
+        feed.removeAll()
     }
 }
