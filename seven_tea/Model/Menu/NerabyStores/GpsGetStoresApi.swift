@@ -58,7 +58,6 @@ class GpsGetStoresApi: NSObject {
                 if NearByStoresTableView == nil {
 
                 } else {
-                    print("我有進來這裡")
                     NearByStoresTableView.reloadData()
                 }
             }

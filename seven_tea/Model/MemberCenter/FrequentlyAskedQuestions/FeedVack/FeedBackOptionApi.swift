@@ -26,15 +26,12 @@ class FeedBackOptionApi: NSObject {
                 decoder.decode(CityTagCodable.self, from: data) {
                 if Info.success == true {
                     for result in Info.data {
-                        print("我有進來", result)
                         feedBackOption.append(result)
                     }
-                    print("外圈", feedBackOption)
                 } else {
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: "\(Info.message)")
-                        print("沒來")
                     }
                 }
             } else {

@@ -38,14 +38,12 @@ class LoginAPI: NSObject {
                             loginView.navigationController?.popViewController(animated: true)
                             //tab 切換的第0個
                             loginView.tabBarController?.selectedIndex = 0
-                            print("456")
                             print(login.data?.token)
                             MessageAlert.Instance.message(message: login.message)
                             handler(true)
                         }
                     } else {
                         DispatchQueue.main.async {
-                            print("123")
                             print(login.data)
                             MessageAlert.Instance.message(message: login.message)
                             handler(false)

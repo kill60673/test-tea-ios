@@ -74,7 +74,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let slidebannerList = SlideBannerAPI.SlideBannerInstance.getList()
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homecell", for: indexPath) as!
             HomeCollectionViewCell
-            print("這邊是index", indexPath.count)
             cell.homeImageView.sd_setImage(with: URL(string: slidebannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "test1"))
             //            cell.imageView?.image = UIImage(named: memberCenterImageList[indexPath.row])
             return cell

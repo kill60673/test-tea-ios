@@ -35,7 +35,6 @@ class CityTagAPI: NSObject {
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: "\(Info.message)")
-                        print("沒來")
                     }
                 }
             } else {

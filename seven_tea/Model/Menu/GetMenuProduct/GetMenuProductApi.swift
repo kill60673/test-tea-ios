@@ -86,7 +86,6 @@ class GetMenuProductApi {
                         }
                         for sugar in 0..<data["sugar"].count {
                             let sugar = ProductSugar(name: data["sugar"][sugar]["name"].string!, is_active: data["sugar"][sugar]["is_active"].bool!)
-                            print("一包三十山胞一百", sugar.name)
                             self.productsugar.append(sugar)
                         }
 
@@ -116,7 +115,6 @@ class GetMenuProductApi {
                 if NearByStoresTableView == nil {
 
                 } else {
-                    print("我有進來這裡")
                     ItemTableView.reloadData()
                 }
             }
