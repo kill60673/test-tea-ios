@@ -43,7 +43,6 @@ class GetMenuProductApi {
                     self.producttemp.removeAll()
                     self.producthottemp.removeAll()
                     self.producticetemp.removeAll()
-
                     for i in 0..<json["data"].count {
                         let data = json["data"][i]
                         for size in 0..<data["size"].count {

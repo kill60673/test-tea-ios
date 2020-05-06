@@ -46,7 +46,7 @@ class ApiUrl: NSObject {
         signPhoneSendSmsUrl="\(doMain)/api/register/send-phone-sms"
         sendMemberRegistrUrl="\(doMain)/api/register/register-button"
         sendMemberRegisterInfoUrl="\(doMain)/api/register/send-register-info"
-        memberInfoUrl="\(doMain)/api/get/user/info"
+        memberInfoUrl="\(doMain)/api/get-member-all-info"
         myFavoriteDrinkInfoUrl="\(doMain)/api/get/my-favorite"
         MessageNotifyUrl="\(doMain)/api/member/message-notify"
         OrderRecordUrl="\(doMain)/api/get/orders/record/"
