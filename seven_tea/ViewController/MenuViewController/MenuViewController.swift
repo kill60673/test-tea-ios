@@ -76,9 +76,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             menuDetailVc.itemprice = [getItemPrice[indexPath.row]]
             menuDetailVc.itemdetail = getItemDetail
             menuDetailVc.itemname = getItemDetail[indexPath.row].item_name
-            menuDetailVc.itemid = getCategoryDetails[indexPath.row].id
+            menuDetailVc.itemid = getItemDetail[indexPath.row].id
             menuDetailVc.itemcategory = self.categoryId
-            menuDetailVc.storeId = GetMenuProductApi.GetStoresApiInstance.getstoreId()
+            menuDetailVc.storeID = GetMenuProductApi.GetStoresApiInstance.getstoreId()
             present(menuDetailVc, animated: true)
         } else {
             self.categoryId = getCategoryDetails[indexPath.row].id

@@ -10,17 +10,17 @@ import Foundation
 struct AddShoppingCarCodable: Codable {
     var success: Bool
     var message: String
-    var data: Datas?
+    var data: String
 }
 struct AddShoppingCar: Codable {
-    var item_id: String
+    var item_id: Int
     var item_name: String
-    var item_category: String
+    var item_category: Int
     var tmp: String
     var sugar: String
     var size: String
     var add: [String]
-    var store_id: String
+    var store_id: Int
     var qty: Int
     var total_price: Int
 }
