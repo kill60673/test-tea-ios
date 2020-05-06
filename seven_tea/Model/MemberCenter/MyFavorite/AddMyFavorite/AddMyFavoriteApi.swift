@@ -7,11 +7,11 @@
 //
 
 import Foundation
-class AddShoppingCarApi: NSObject {
-    static let AddShoppingCarInstance = AddShoppingCarApi()
+class AddMyFavoriteApi: NSObject {
+    static let AddMyFavoriteInstance = AddMyFavoriteApi()
     var newToken: String!
-    func addshoppingcar(token: String, handler : @escaping (Bool) -> Void) {
-        let url = URL(string: ApiUrl.ApiUrlInstance.addtoshopingcar)!
+    func addmyfavorite(token: String, handler : @escaping (Bool) -> Void) {
+        let url = URL(string: ApiUrl.ApiUrlInstance.addfavoriteitem)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -33,18 +33,18 @@ class AddShoppingCarApi: NSObject {
             decoder.dateDecodingStrategy = .iso8601
             if let data = data {
                 do {
-                    let addshoppingcar = try decoder.decode(AddShoppingCarCodable.self, from: data)
-                    if addshoppingcar.success == true {
+                    let addfavoriteitem = try decoder.decode(AddMyFavoriteCodable.self, from: data)
+                    if addfavoriteitem.success == true {
                         DispatchQueue.main.async {
-                            MessageAlert.Instance.message(message: addshoppingcar.message)
+                            MessageAlert.Instance.message(message: addfavoriteitem.message)
                         }
                     } else {
                         DispatchQueue.main.async {
-                            MessageAlert.Instance.message(message: addshoppingcar.message)
+                            MessageAlert.Instance.message(message: addfavoriteitem.message)
                         }
                     }
                 } catch {
-                    print(error)
+                    print("錯誤",error)
                 }
             }
         }

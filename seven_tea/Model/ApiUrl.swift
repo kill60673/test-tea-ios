@@ -36,6 +36,7 @@ class ApiUrl: NSObject {
     var setverifyemail: String
     var feedbackoption: String
     var addtoshopingcar: String
+    var addfavoriteitem: String
 
     override init() {
         loginUrl="\(doMain)/api/login"
@@ -65,5 +66,6 @@ class ApiUrl: NSObject {
         setverifyemail="\(doMain)/api/set-verify-email"
         feedbackoption="\(doMain)/api/get-feedback-option"
         addtoshopingcar="\(doMain)/api/insert-item-into-cart"
+        addfavoriteitem="\(doMain)/api/insert-item-into-favorite-item"
     }
 }

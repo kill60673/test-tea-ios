@@ -69,6 +69,8 @@
 		84874E5F246292B800232FB9 /* MemberInfoCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E5E246292B800232FB9 /* MemberInfoCodable.swift */; };
 		84874E61246292C000232FB9 /* MemberInfoAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E60246292C000232FB9 /* MemberInfoAddress.swift */; };
 		84874E63246292C700232FB9 /* MemberInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E62246292C600232FB9 /* MemberInfoApi.swift */; };
+		84874E6624629F1500232FB9 /* AddMyFavoriteApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E6524629F1500232FB9 /* AddMyFavoriteApi.swift */; };
+		84874E6824629F3B00232FB9 /* AddMyFavoriteCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84874E6724629F3B00232FB9 /* AddMyFavoriteCodable.swift */; };
 		8490F24C2429B30300A59020 /* NearbyStoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */; };
 		8490F24E2429F59800A59020 /* NearbyStoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */; };
 		8490F253242CA34C00A59020 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F252242CA34C00A59020 /* MenuTableViewCell.swift */; };
@@ -215,6 +217,8 @@
 		84874E5E246292B800232FB9 /* MemberInfoCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoCodable.swift; sourceTree = "<group>"; };
 		84874E60246292C000232FB9 /* MemberInfoAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoAddress.swift; sourceTree = "<group>"; };
 		84874E62246292C600232FB9 /* MemberInfoApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoApi.swift; sourceTree = "<group>"; };
+		84874E6524629F1500232FB9 /* AddMyFavoriteApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyFavoriteApi.swift; sourceTree = "<group>"; };
+		84874E6724629F3B00232FB9 /* AddMyFavoriteCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyFavoriteCodable.swift; sourceTree = "<group>"; };
 		8490F24B2429B30300A59020 /* NearbyStoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresViewController.swift; sourceTree = "<group>"; };
 		8490F24D2429F59800A59020 /* NearbyStoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresTableViewCell.swift; sourceTree = "<group>"; };
 		8490F252242CA34C00A59020 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -485,6 +489,15 @@
 			path = ShopingCar;
 			sourceTree = "<group>";
 		};
+		84874E6424629EF400232FB9 /* AddMyFavorite */ = {
+			isa = PBXGroup;
+			children = (
+				84874E6524629F1500232FB9 /* AddMyFavoriteApi.swift */,
+				84874E6724629F3B00232FB9 /* AddMyFavoriteCodable.swift */,
+			);
+			path = AddMyFavorite;
+			sourceTree = "<group>";
+		};
 		8490F251242CA33200A59020 /* MenuViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,6 +716,7 @@
 		84EEC5E723D30147005627FF /* MyFavorite */ = {
 			isa = PBXGroup;
 			children = (
+				84874E6424629EF400232FB9 /* AddMyFavorite */,
 				84EEC61823D415A8005627FF /* MyFavoriteApi.swift */,
 				84EEC61A23D415B5005627FF /* MyFavoriteCodable.swift */,
 				84EEC61C23D415CB005627FF /* MyFavorite.swift */,
@@ -1107,6 +1121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84874E6624629F1500232FB9 /* AddMyFavoriteApi.swift in Sources */,
 				84F7C88B23EA91A60097EAD0 /* Animate.swift in Sources */,
 				84874E61246292C000232FB9 /* MemberInfoAddress.swift in Sources */,
 				8490F2662435E94B00A59020 /* Order.swift in Sources */,
@@ -1144,6 +1159,7 @@
 				84F7C88523E7FE460097EAD0 /* MessageAlert.swift in Sources */,
 				84874E0A244F04A300232FB9 /* VerifyEmailApi.swift in Sources */,
 				84EEC62D23D421EE005627FF /* GetMemberCenterMessage.swift in Sources */,
+				84874E6824629F3B00232FB9 /* AddMyFavoriteCodable.swift in Sources */,
 				84EEC62F23D4220D005627FF /* MyFavoriteModelController.swift in Sources */,
 				84EEC61523D4156F005627FF /* FrequentlyAskedQuestionsCodable.swift in Sources */,
 				84D09B422418E5220019A0B4 /* FeedBackViewController.swift in Sources */,
