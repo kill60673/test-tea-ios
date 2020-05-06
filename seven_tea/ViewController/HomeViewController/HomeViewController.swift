@@ -185,7 +185,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 myLocationManager.startUpdatingLocation()
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
                     print("有取得後續位置")
-                    GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
+//                    GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
                 })
 
             }
