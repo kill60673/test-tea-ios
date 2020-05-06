@@ -17,7 +17,7 @@ class GpsGetStoresApi: NSObject {
     func gpsgetstores(latitude: Double, longitude: Double) {
 
         if latitude == 0.0 {
-            urlString = ApiUrl.ApiUrlInstance.gpsgetstore
+            urlString = ApiUrl.ApiUrlInstance.getstore
         } else {
             urlString = ApiUrl.ApiUrlInstance.gpsgetstore+"\(latitude)/\(longitude)"
         }

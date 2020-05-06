@@ -28,25 +28,23 @@ class AddShoppingCarApi: NSObject {
             } else {
                 self.newToken = ""
             }
-
+            
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            if let data = data, let AddShoppingCar = try?
-                decoder.decode(AddShoppingCarCodable.self, from: data) {
-                if AddShoppingCar.success == true {
-                    //主線程
-                    DispatchQueue.main.async {
-                        MessageAlert.Instance.message(message: "\(AddShoppingCar.message)")
+            if let data = data {
+                do {
+                    let login = try decoder.decode(AddShoppingCarCodable.self, from: data)
+                    if login.success == true {
+                        DispatchQueue.main.async {
+                            MessageAlert.Instance.message(message: login.message)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            MessageAlert.Instance.message(message: login.message)
+                        }
                     }
-                } else {
-                    //主線程
-                    DispatchQueue.main.async {
-                        MessageAlert.Instance.message(message: "\(AddShoppingCar.message)")
-                    }
-                }
-            } else {
-                //主線程
-                DispatchQueue.main.async {
+                } catch {
+                    print(error)
                 }
             }
         }
