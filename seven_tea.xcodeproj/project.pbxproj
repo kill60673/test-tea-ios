@@ -82,6 +82,9 @@
 		8490F264243318E100A59020 /* OrderColadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F263243318E100A59020 /* OrderColadable.swift */; };
 		8490F2662435E94B00A59020 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F2652435E94B00A59020 /* Order.swift */; };
 		8490F26F243DC44200A59020 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F26E243DC44200A59020 /* BannerCollectionViewCell.swift */; };
+		84C0CF632463BA5B006A3DE0 /* GetShoppingCarApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF622463BA5B006A3DE0 /* GetShoppingCarApi.swift */; };
+		84C0CF652463BA69006A3DE0 /* GetShoppingCarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF642463BA69006A3DE0 /* GetShoppingCarItem.swift */; };
+		84C0CF672463BDC2006A3DE0 /* GetShoppingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF662463BDC2006A3DE0 /* GetShoppingDetail.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
@@ -230,6 +233,9 @@
 		8490F263243318E100A59020 /* OrderColadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderColadable.swift; sourceTree = "<group>"; };
 		8490F2652435E94B00A59020 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		8490F26E243DC44200A59020 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		84C0CF622463BA5B006A3DE0 /* GetShoppingCarApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetShoppingCarApi.swift; sourceTree = "<group>"; };
+		84C0CF642463BA69006A3DE0 /* GetShoppingCarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetShoppingCarItem.swift; sourceTree = "<group>"; };
+		84C0CF662463BDC2006A3DE0 /* GetShoppingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetShoppingDetail.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
@@ -477,6 +483,9 @@
 			children = (
 				84874E47245FFB9400232FB9 /* AddShoppingCarApi.swift */,
 				84874E49245FFB9F00232FB9 /* AddShoppingCarCodable.swift */,
+				84C0CF622463BA5B006A3DE0 /* GetShoppingCarApi.swift */,
+				84C0CF642463BA69006A3DE0 /* GetShoppingCarItem.swift */,
+				84C0CF662463BDC2006A3DE0 /* GetShoppingDetail.swift */,
 			);
 			path = ShoppingCar;
 			sourceTree = "<group>";
@@ -1129,6 +1138,7 @@
 				84FADF4623FE88CE00C824C6 /* AppOverAllStyle.swift in Sources */,
 				8490F24E2429F59800A59020 /* NearbyStoresTableViewCell.swift in Sources */,
 				842553A02445A314004C9B23 /* MarketingBannerApi.swift in Sources */,
+				84C0CF672463BDC2006A3DE0 /* GetShoppingDetail.swift in Sources */,
 				84255382243F27B5004C9B23 /* MenuDetailViewController.swift in Sources */,
 				84FADF4923FE8B0100C824C6 /* JumpPage.swift in Sources */,
 				84EEC5D023D1C314005627FF /* ViewController.swift in Sources */,
@@ -1191,10 +1201,12 @@
 				84D09B402418E5070019A0B4 /* FeedBackTableViewCell.swift in Sources */,
 				84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */,
 				84EEC60D23D41503005627FF /* MyFavoriteViewController.swift in Sources */,
+				84C0CF632463BA5B006A3DE0 /* GetShoppingCarApi.swift in Sources */,
 				84874E2A2459688400232FB9 /* ProductIceTemp.swift in Sources */,
 				84FADF3523F7CAB400C824C6 /* UIelementsController.swift in Sources */,
 				84316C1124124600002CD226 /* FrequentlyAskedQuestionsViewController.swift in Sources */,
 				8425539A24459C8F004C9B23 /* SlideBanner.swift in Sources */,
+				84C0CF652463BA69006A3DE0 /* GetShoppingCarItem.swift in Sources */,
 				84FADF1923F66A7F00C824C6 /* MemberRegiseterSmsApi.swift in Sources */,
 				84EEC62623D4215C005627FF /* getLoginMessage.swift in Sources */,
 				84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */,
