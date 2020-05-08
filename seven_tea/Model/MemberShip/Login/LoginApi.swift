@@ -33,12 +33,12 @@ class LoginAPI: NSObject {
                     let login = try decoder.decode(LoginCodable.self, from: data)
                     if login.success == true {
                         DispatchQueue.main.async {
-                            MemberInfoApi.MemberInfoInstance.memberInfo(token: "Bearer \(login.data?.token)")
+                            MemberInfoApi.MemberInfoInstance.memberInfo(token: "Bearer \(login.data.token)")
                             loginView.dismiss(animated: true, completion: nil)
                             loginView.navigationController?.popViewController(animated: true)
                             //tab 切換的第0個
                             loginView.tabBarController?.selectedIndex = 0
-                            print(login.data?.token)
+                            print(login.data.token)
                             MessageAlert.Instance.message(message: login.message)
                             handler(true)
                         }

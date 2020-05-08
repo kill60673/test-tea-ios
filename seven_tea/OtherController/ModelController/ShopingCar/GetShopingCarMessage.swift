@@ -28,3 +28,24 @@ func getAddShopingCarMessage(item_id: Int, item_name: String, item_category: Int
         }
     }
 }
+func upDateShoppingCarMessage(params:[Params]){
+     let postString  = UpdateShoppingParams(params: params)
+        let encoder = JSONEncoder()
+        if let data = try? encoder.encode(postString) {
+            print(postString)
+            datas = data
+            print(data)
+            if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
+                print("is nil")
+            }
+            print("dddd",UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
+            UpdateShoppingCarApi.UpdateShoppingCarInstance.updateshoppingcar(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+                if result {
+                       
+                    return
+                } else {
+                }
+            }
+        }
+    }
+

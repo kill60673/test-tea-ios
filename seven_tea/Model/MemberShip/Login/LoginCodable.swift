@@ -10,10 +10,10 @@ import Foundation
 struct LoginCodable: Codable {
     var success: Bool
     var message: String
-    var data: Datas?
+    var data: Datas
 }
 struct Datas: Codable {
-       var token: String?
+       var token: String
    }
 struct Loginmessage: Codable {
     var username: String
