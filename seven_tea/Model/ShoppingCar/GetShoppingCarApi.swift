@@ -25,14 +25,15 @@ class GetShoppingCarApi {
         request.setValue(token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) {
-            data, response , error in
+           data, response, _ in
             let httpStatus = response as? HTTPURLResponse
             if httpStatus!.allHeaderFields["Authorization"] as? String ?? "" != "" {
+                print("我有進來2")
                 self.newToken = httpStatus!.allHeaderFields["Authorization"] as? String ?? ""
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: httpStatus!.allHeaderFields["Authorization"] as? String ?? "")
-                print("有進來這裡")
             } else {
                 self.newToken = ""
+                 print("我有進來3")
             }
             do {
                 let json = try JSON(data: data!)
@@ -40,16 +41,18 @@ class GetShoppingCarApi {
                     self.getcaritem.removeAll()
                     self.getcardetail.removeAll()
                     for i in 0..<json["data"].count {
-                        let data = json["data"][i]
-                        for item1 in 0..<data["item"].count {
-                            let item = GetShoppingCarItem(id: data["item"][item1]["id"].int!, item_id: data["item"][item1]["item_id"].int!, item_name: data["item"][item1]["item_name"].string!, size: data["item"][item1]["size"].string!, sugar: data["item"][item1]["sugar"].string!, tmp: data["item"][item1]["tmp"].string!, price: data["item"][item1]["price"].int!, qty: data["item"][item1]["qty"].int!)
+                        print(json["data"]["item"].count)
+                        for item1 in 0..<json["data"]["item"].count {
+                            let item = GetShoppingCarItem(id: json["data"]["item"][item1]["id"].int!, item_id: json["data"]["item"][item1]["item_id"].int!, item_name:json["data"]["item"][item1]["item_name"].string!, size: json["data"]["item"][item1]["size"].string!, sugar: json["data"]["item"][item1]["sugar"].string!, tmp: json["data"]["item"][item1]["tmp"].string!, price: json["data"]["item"][item1]["price"].int!, qty: json["data"]["item"][item1]["qty"].int!)
                             self.getcaritem.append(item)
-                            self.add.append( data["item"][item1]["add"].string!)
+                            print("有",item.id)
+                            self.add.append( json["data"]["item"][item1]["add"].string ?? "")
                         }
-                        let getcardetail = GetShoppingCarDetail(store_id: data["store_id"].int!, store_name: data["store_name"].string!, totle_price: data["totle_price"].int!, can_delivery: data["can_delivery"].bool!, gap_to_delivery: data["gap_to_delivery"].int!)
+                        let getcardetail = GetShoppingCarDetail(store_id: json["data"]["store_id"].int!, store_name: json["data"]["store_name"].string!, totle_price: json["data"]["total_price"].int!, can_delivery: json["data"]["can_delivery"].bool!, gap_to_delivery: json["data"]["gap_to_delivery"].int!)
                         self.getcardetail.append(getcardetail)
                     }
                 } else {
+                    print("我有進來4")
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: json["message"].string!)
@@ -65,11 +68,6 @@ class GetShoppingCarApi {
             }
             //主線程
             DispatchQueue.main.async {
-                if NearByStoresTableView == nil {
-                    
-                } else {
-                    ItemTableView.reloadData()
-                }
             }
         }
         task.resume()
@@ -79,6 +77,9 @@ class GetShoppingCarApi {
     }
     func getshoppingcaritem() -> [GetShoppingCarItem]{
         return getcaritem
+    }
+    func getcaritemcount() -> Int{
+        return getcaritem.count
     }
     func getshoppingcaradd() -> [String]{
         return add
