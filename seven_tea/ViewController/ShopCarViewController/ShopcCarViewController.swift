@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
-class ShopCarViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
- 
+var itemqty = [Int]()
+var index_row = 0
+class ShopCarViewController:UIViewController, TableViewCellDelegate,UITableViewDelegate,UITableViewDataSource {
+    static let sdddd = ShopCarViewController()
     @IBOutlet weak var ShoppingCarTableView: UITableView!
     var shoppingcaritem = [GetShoppingCarItem]()
     var shoppingcardetail = [GetShoppingCarDetail]()
@@ -18,10 +19,10 @@ class ShopCarViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.shoppingcaritem = GetShoppingCarApi.GetShoppingCarInstance.getcaritem
         self.shoppingcardetail = GetShoppingCarApi.GetShoppingCarInstance.getcardetail
         ShoppingCarTableView.tableFooterView = UIView()
-          super.viewDidLoad()
-
-          // Do any additional setup after loading the view.
-      }
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -34,9 +35,27 @@ class ShopCarViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.lbItemName.text = self.shoppingcaritem[indexPath.row].item_name
         cell.lbSugar.text = self.shoppingcaritem[indexPath.row].sugar
         cell.lbQty.text = "\(self.shoppingcaritem[indexPath.row].qty)"
+        cell.delegate = self
+        print(shoppingcaritem[indexPath.row].qty)
+        itemqty.append(shoppingcaritem[indexPath.row].qty)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        
+    }
+    func getitemqty() -> [Int]{
+        print("sss",itemqty)
+        return itemqty
+    }
+    func tableviewcelldelegate(sender: ShopCarTableViewCell) {
+        guard let tappedIndexPath = ShoppingCarTableView.indexPath(for: sender)else{return}
+        print("這理事",sender,tappedIndexPath)
+        print("-------")
+        print(sender)
+        print("--------")
+        print(tappedIndexPath)
+        let tappedindex = tappedIndexPath
+        index_row = tappedindex.row
+        print("sssss",tappedindex.row)
     }
 }
