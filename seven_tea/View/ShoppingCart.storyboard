@@ -113,6 +113,9 @@
                                 <rect key="frame" x="275" y="732" width="119" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="下一步"/>
+                                <connections>
+                                    <action selector="NextStep:" destination="cI3-OB-AhQ" eventType="touchUpInside" id="x04-YG-PGl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

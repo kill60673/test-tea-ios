@@ -8,6 +8,8 @@
 
 import UIKit
 var itemqty = [Int]()
+var itemstoreId = [Int]()
+var params = [Params]()
 var index_row = 0
 class ShopCarViewController:UIViewController, TableViewCellDelegate,UITableViewDelegate,UITableViewDataSource {
     static let sdddd = ShopCarViewController()
@@ -37,14 +39,18 @@ class ShopCarViewController:UIViewController, TableViewCellDelegate,UITableViewD
         cell.lbQty.text = "\(self.shoppingcaritem[indexPath.row].qty)"
         cell.delegate = self
         print(shoppingcaritem[indexPath.row].qty)
+        itemstoreId.append(shoppingcaritem[indexPath.row].id)
         itemqty.append(shoppingcaritem[indexPath.row].qty)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+//    func getitemId() -> [Int]{
+//        return itemId
+//    }
     func getitemqty() -> [Int]{
-        print("sss",itemqty)
+//        print("sss",itemqty)
         return itemqty
     }
     func tableviewcelldelegate(sender: ShopCarTableViewCell) {
@@ -57,5 +63,13 @@ class ShopCarViewController:UIViewController, TableViewCellDelegate,UITableViewD
         let tappedindex = tappedIndexPath
         index_row = tappedindex.row
         print("sssss",tappedindex.row)
+    }
+    @IBAction func NextStep(_ sender: Any) {
+        for i in 0..<itemQty.count {
+        print("蛤",itemQty[i])
+            let itmeqty = Params(id: itemstoreId[i], qty: itemQty[i])
+            print("大聲點",itemstoreId[i],itemQty[i])
+            params.append(itmeqty)
+        }
     }
 }

@@ -40,14 +40,14 @@ class GetShoppingCarApi {
                 if json["success"].bool! == true {
                     self.getcaritem.removeAll()
                     self.getcardetail.removeAll()
+                    print("tolkda",json["data"]["item"].count)
+                    for item1 in 0..<json["data"]["item"].count {
+                        let item = GetShoppingCarItem(id: json["data"]["item"][item1]["id"].int!, item_id: json["data"]["item"][item1]["item_id"].int!, item_name:json["data"]["item"][item1]["item_name"].string!, size: json["data"]["item"][item1]["size"].string!, sugar: json["data"]["item"][item1]["sugar"].string!, tmp: json["data"]["item"][item1]["tmp"].string!, price: json["data"]["item"][item1]["price"].int!, qty: json["data"]["item"][item1]["qty"].int!)
+                        self.getcaritem.append(item)
+                        print("有",item.qty)
+                        self.add.append( json["data"]["item"][item1]["add"].string ?? "")
+                    }
                     for i in 0..<json["data"].count {
-                        print(json["data"]["item"].count)
-                        for item1 in 0..<json["data"]["item"].count {
-                            let item = GetShoppingCarItem(id: json["data"]["item"][item1]["id"].int!, item_id: json["data"]["item"][item1]["item_id"].int!, item_name:json["data"]["item"][item1]["item_name"].string!, size: json["data"]["item"][item1]["size"].string!, sugar: json["data"]["item"][item1]["sugar"].string!, tmp: json["data"]["item"][item1]["tmp"].string!, price: json["data"]["item"][item1]["price"].int!, qty: json["data"]["item"][item1]["qty"].int!)
-                            self.getcaritem.append(item)
-                            print("有",item.qty)
-                            self.add.append( json["data"]["item"][item1]["add"].string ?? "")
-                        }
                         let getcardetail = GetShoppingCarDetail(store_id: json["data"]["store_id"].int!, store_name: json["data"]["store_name"].string!, totle_price: json["data"]["total_price"].int!, can_delivery: json["data"]["can_delivery"].bool!, gap_to_delivery: json["data"]["gap_to_delivery"].int!)
                         self.getcardetail.append(getcardetail)
                     }
