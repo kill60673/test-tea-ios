@@ -7,11 +7,11 @@
 //
 
 import Foundation
-class Params:Codable{
-    var id : Int
+class Params: Codable {
+    var id: Int
     var qty: Int
-    
-    init(id:Int,qty:Int) {
+
+    init(id: Int, qty: Int) {
         self.id = id
         self.qty = qty
     }

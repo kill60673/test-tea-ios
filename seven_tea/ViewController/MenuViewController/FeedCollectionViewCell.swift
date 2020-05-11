@@ -22,9 +22,9 @@ class FeedCollectionViewCell: UICollectionViewCell {
         }
         if addcolor == "yellow"{
            feed += [btFeed.titleLabel!.text!]
-        }else{
-        feed.firstIndex(of:"\(btFeed.titleLabel!.text!)").map{feed.remove(at: $0)}
+        } else {
+        feed.firstIndex(of: "\(btFeed.titleLabel!.text!)").map {feed.remove(at: $0)}
         }
     }
-    
+
 }

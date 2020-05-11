@@ -26,9 +26,9 @@ class MemberInfoApi: NSObject {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue(token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
-        print("我進來",token)
+        print("我進來", token)
         let task = URLSession.shared.dataTask(with: request) {
-            data, response , error in
+            data, response, error in
             let httpStatus = response as? HTTPURLResponse
             if httpStatus!.allHeaderFields["Authorization"] as? String ?? "" != "" {
                 self.newToken = httpStatus!.allHeaderFields["Authorization"] as? String ?? ""
@@ -53,11 +53,11 @@ class MemberInfoApi: NSObject {
                     for i in 0..<json["data"].count {
                         print("yaya")
                         let data = json["data"][i]
-                        print("deee",data["address"].count)
+                        print("deee", data["address"].count)
                         for address in 0..<data["address"].count {
                             print("nono")
                             let address1 = MemberInfoAddress(id: data["address"][address]["id"].string!, zipcode: data["address"][address]["zipcode"].string!, city: data["address"][address]["city"].string!, district: data["address"][address]["district"].string!, address: data["address"][address]["address"].string!)
-                            print("e04e0",address1.address)
+                            print("e04e0", address1.address)
                             self.address.append(address1)
                         }
                         print(i)
@@ -69,7 +69,7 @@ class MemberInfoApi: NSObject {
                         self.phone = data["phone"].string!
                         self.email = data["email"].string!
                         self.email_validated = data["email_validated"].int!
-                        print("我是email",self.email)
+                        print("我是email", self.email)
                     }
                     if self.newToken == "" {
                         UserInfo.UserInfoInstance.save(token: token,
@@ -94,12 +94,12 @@ class MemberInfoApi: NSObject {
                 } else {
                     //主線程
                     DispatchQueue.main.async {
-                        print("這裡是false",json["success"].bool!)
-                        print("這裡是錯誤訊息",json["message"].string!)
+                        print("這裡是false", json["success"].bool!)
+                        print("這裡是錯誤訊息", json["message"].string!)
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-                
+
             } catch {
                 //主線程
                 DispatchQueue.main.async {
@@ -114,4 +114,3 @@ class MemberInfoApi: NSObject {
         task.resume()
     }
 }
-

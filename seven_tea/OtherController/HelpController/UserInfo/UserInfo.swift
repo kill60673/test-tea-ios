@@ -13,7 +13,7 @@ class UserInfo: NSObject {
 
     private override init() {
     }
-    func save(token: String,picture_url:String, username: String,name: String,gender:String,email_validated:Int, email: String, phone: String) {
+    func save(token: String, picture_url: String, username: String, name: String, gender: String, email_validated: Int, email: String, phone: String) {
         print("我有近來這邊")
         preferences.set(token, forKey: "token")
         preferences.set(username, forKey: "username")

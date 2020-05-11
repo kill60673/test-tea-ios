@@ -7,13 +7,13 @@
 //
 
 import Foundation
-class MemberInfoAddress{
+class MemberInfoAddress {
     var id: String
     var zipcode: String
     var city: String
     var district: String
     var address: String
-    init(id:String,zipcode:String,city:String,district:String,address:String) {
+    init(id: String, zipcode: String, city: String, district: String, address: String) {
         self.id = id
         self.zipcode = zipcode
         self.city = city

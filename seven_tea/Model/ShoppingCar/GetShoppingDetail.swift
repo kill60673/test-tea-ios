@@ -7,13 +7,13 @@
 //
 
 import Foundation
-class GetShoppingCarDetail{
+class GetShoppingCarDetail {
     var store_id: Int
     var store_name: String
     var totle_price: Int
     var can_delivery: Bool
     var gap_to_delivery: Int
-    init(store_id:Int,store_name:String,totle_price:Int,can_delivery:Bool,gap_to_delivery:Int) {
+    init(store_id: Int, store_name: String, totle_price: Int, can_delivery: Bool, gap_to_delivery: Int) {
         self.store_id = store_id
         self.store_name = store_name
         self.totle_price = totle_price

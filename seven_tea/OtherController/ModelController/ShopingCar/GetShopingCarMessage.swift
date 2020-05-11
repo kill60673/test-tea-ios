@@ -18,7 +18,7 @@ func getAddShopingCarMessage(item_id: Int, item_name: String, item_category: Int
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
             print("is nil")
         }
-        print("dddd",UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
+        print("dddd", UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
         AddShoppingCarApi.AddShoppingCarInstance.addshoppingcar(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                    feed.removeAll()
@@ -28,7 +28,7 @@ func getAddShopingCarMessage(item_id: Int, item_name: String, item_category: Int
         }
     }
 }
-func upDateShoppingCarMessage(params:[Params]){
+func upDateShoppingCarMessage(params: [Params]) {
      let postString  = UpdateShoppingParams(params: params)
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(postString) {
@@ -38,14 +38,13 @@ func upDateShoppingCarMessage(params:[Params]){
             if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
                 print("is nil")
             }
-            print("dddd",UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
+            print("dddd", UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
             UpdateShoppingCarApi.UpdateShoppingCarInstance.updateshoppingcar(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
                 if result {
-                       
+
                     return
                 } else {
                 }
             }
         }
     }
-

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class GetShoppingCarItem{
+class GetShoppingCarItem {
     var id: Int
     var item_id: Int
     var item_name: String
@@ -16,7 +16,7 @@ class GetShoppingCarItem{
     var tmp: String
     var price: Int
     var qty: Int
-    init(id:Int,item_id:Int,item_name:String,size:String,sugar:String,tmp:String,price:Int,qty:Int) {
+    init(id: Int, item_id: Int, item_name: String, size: String, sugar: String, tmp: String, price: Int, qty: Int) {
         self.id = id
         self.item_id = item_id
         self.item_name = item_name

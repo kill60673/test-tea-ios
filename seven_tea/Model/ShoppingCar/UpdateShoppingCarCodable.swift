@@ -16,5 +16,3 @@ struct UpdateShoppingCarCodable: Codable {
 struct UpdateShoppingParams: Codable {
     var params = [Params]()
 }
-
-

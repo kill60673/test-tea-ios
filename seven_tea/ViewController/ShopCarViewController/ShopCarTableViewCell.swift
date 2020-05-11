@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 var qty = 0
 var itemQty = ShopCarViewController.sdddd.getitemqty()
-protocol TableViewCellDelegate{
+protocol TableViewCellDelegate {
     func tableviewcelldelegate(sender: ShopCarTableViewCell)
 }
 
@@ -20,16 +20,16 @@ class ShopCarTableViewCell: UITableViewCell {
     @IBOutlet weak var lbSugar: UILabel!
     @IBOutlet weak var lbItemName: UILabel!
     @IBOutlet weak var lbQty: UILabel!
-    var delegate : TableViewCellDelegate?
+    weak var delegate: TableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
-         
+
         // Initialization code
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
     @IBAction func brPlus(_ sender: Any) {
@@ -37,7 +37,7 @@ class ShopCarTableViewCell: UITableViewCell {
       print(itemQty)
         if itemQty[index_row] >= 99 {
             itemQty[index_row] = 99
-        }else{
+        } else {
             itemQty[index_row] += 1
             lbQty.text = "\(itemQty[index_row])"
         }
@@ -47,7 +47,7 @@ class ShopCarTableViewCell: UITableViewCell {
           if itemQty[index_row] <= 0 {
                   itemQty[index_row] = 0
             //updateShoppincar
-              }else{
+              } else {
                   itemQty[index_row] -= 1
                   lbQty.text = "\(itemQty[index_row])"
               }
