@@ -28,7 +28,7 @@ class AddMyFavoriteApi: NSObject {
             } else {
                 self.newToken = ""
             }
-            
+
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data {
@@ -44,7 +44,7 @@ class AddMyFavoriteApi: NSObject {
                         }
                     }
                 } catch {
-                    print("錯誤",error)
+                    print("錯誤", error)
                 }
             }
         }

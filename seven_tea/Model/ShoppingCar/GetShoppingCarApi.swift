@@ -40,11 +40,11 @@ class GetShoppingCarApi {
                 if json["success"].bool! == true {
                     self.getcaritem.removeAll()
                     self.getcardetail.removeAll()
-                    print("tolkda",json["data"]["item"].count)
+                    print("tolkda", json["data"]["item"].count)
                     for item1 in 0..<json["data"]["item"].count {
-                        let item = GetShoppingCarItem(id: json["data"]["item"][item1]["id"].int!, item_id: json["data"]["item"][item1]["item_id"].int!, item_name:json["data"]["item"][item1]["item_name"].string!, size: json["data"]["item"][item1]["size"].string!, sugar: json["data"]["item"][item1]["sugar"].string!, tmp: json["data"]["item"][item1]["tmp"].string!, price: json["data"]["item"][item1]["price"].int!, qty: json["data"]["item"][item1]["qty"].int!)
+                        let item = GetShoppingCarItem(id: json["data"]["item"][item1]["id"].int!, item_id: json["data"]["item"][item1]["item_id"].int!, item_name: json["data"]["item"][item1]["item_name"].string!, size: json["data"]["item"][item1]["size"].string!, sugar: json["data"]["item"][item1]["sugar"].string!, tmp: json["data"]["item"][item1]["tmp"].string!, price: json["data"]["item"][item1]["price"].int!, qty: json["data"]["item"][item1]["qty"].int!)
                         self.getcaritem.append(item)
-                        print("有",item.qty)
+                        print("有", item.qty)
                         self.add.append( json["data"]["item"][item1]["add"].string ?? "")
                     }
                     for i in 0..<json["data"].count {
@@ -58,7 +58,7 @@ class GetShoppingCarApi {
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-                
+
             } catch {
                 //主線程
                 DispatchQueue.main.async {
@@ -75,13 +75,13 @@ class GetShoppingCarApi {
     func getshoppingcardetail() -> [GetShoppingCarDetail] {
         return getcardetail
     }
-    func getshoppingcaritem() -> [GetShoppingCarItem]{
+    func getshoppingcaritem() -> [GetShoppingCarItem] {
         return getcaritem
     }
-    func getcaritemcount() -> Int{
+    func getcaritemcount() -> Int {
         return getcaritem.count
     }
-    func getshoppingcaradd() -> [String]{
+    func getshoppingcaradd() -> [String] {
         return add
     }
 }

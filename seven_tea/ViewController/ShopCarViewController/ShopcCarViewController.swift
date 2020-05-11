@@ -11,7 +11,7 @@ var itemqty = [Int]()
 var itemstoreId = [Int]()
 var params = [Params]()
 var index_row = 0
-class ShopCarViewController:UIViewController, TableViewCellDelegate,UITableViewDelegate,UITableViewDataSource {
+class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableViewDelegate, UITableViewDataSource {
     static let sdddd = ShopCarViewController()
     @IBOutlet weak var ShoppingCarTableView: UITableView!
     var shoppingcaritem = [GetShoppingCarItem]()
@@ -22,7 +22,7 @@ class ShopCarViewController:UIViewController, TableViewCellDelegate,UITableViewD
         self.shoppingcardetail = GetShoppingCarApi.GetShoppingCarInstance.getcardetail
         ShoppingCarTableView.tableFooterView = UIView()
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,7 +31,7 @@ class ShopCarViewController:UIViewController, TableViewCellDelegate,UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return GetShoppingCarApi.GetShoppingCarInstance.getcaritemcount()
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingCarCell", for: indexPath) as! ShopCarTableViewCell
         cell.lbItemName.text = self.shoppingcaritem[indexPath.row].item_name
@@ -44,31 +44,31 @@ class ShopCarViewController:UIViewController, TableViewCellDelegate,UITableViewD
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
     }
 //    func getitemId() -> [Int]{
 //        return itemId
 //    }
-    func getitemqty() -> [Int]{
+    func getitemqty() -> [Int] {
 //        print("sss",itemqty)
         return itemqty
     }
     func tableviewcelldelegate(sender: ShopCarTableViewCell) {
-        guard let tappedIndexPath = ShoppingCarTableView.indexPath(for: sender)else{return}
-        print("這理事",sender,tappedIndexPath)
+        guard let tappedIndexPath = ShoppingCarTableView.indexPath(for: sender)else {return}
+        print("這理事", sender, tappedIndexPath)
         print("-------")
         print(sender)
         print("--------")
         print(tappedIndexPath)
         let tappedindex = tappedIndexPath
         index_row = tappedindex.row
-        print("sssss",tappedindex.row)
+        print("sssss", tappedindex.row)
     }
     @IBAction func NextStep(_ sender: Any) {
         for i in 0..<itemQty.count {
-        print("蛤",itemQty[i])
+        print("蛤", itemQty[i])
             let itmeqty = Params(id: itemstoreId[i], qty: itemQty[i])
-            print("大聲點",itemstoreId[i],itemQty[i])
+            print("大聲點", itemstoreId[i], itemQty[i])
             params.append(itmeqty)
         }
     }

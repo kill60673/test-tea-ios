@@ -16,10 +16,10 @@ func getAddFavoriteMessage(item_id: Int, item_name: String, item_category: Int, 
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
             print("is nil")
         }
-        print("dddd",UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
+        print("dddd", UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
         AddMyFavoriteApi.AddMyFavoriteInstance.addmyfavorite(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
-                   
+
                 return
             } else {
             }

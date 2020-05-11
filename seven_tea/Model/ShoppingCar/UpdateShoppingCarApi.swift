@@ -28,7 +28,7 @@ class UpdateShoppingCarApi: NSObject {
             } else {
                 self.newToken = ""
             }
-            
+
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data {
