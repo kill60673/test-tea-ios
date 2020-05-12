@@ -20,7 +20,7 @@ class ShopCarTableViewCell: UITableViewCell {
     @IBOutlet weak var lbSugar: UILabel!
     @IBOutlet weak var lbItemName: UILabel!
     @IBOutlet weak var lbQty: UILabel!
-    weak var delegate: TableViewCellDelegate?
+    var delegate: TableViewCellDelegate!
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -46,7 +46,7 @@ class ShopCarTableViewCell: UITableViewCell {
          delegate?.tableviewcelldelegate(sender: self)
           if itemQty[index_row] <= 0 {
                   itemQty[index_row] = 0
-            //updateShoppincar
+            deleteSingleItemMessage(itemid: itemstoreId[index_row])
               } else {
                   itemQty[index_row] -= 1
                   lbQty.text = "\(itemQty[index_row])"

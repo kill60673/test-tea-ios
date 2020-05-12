@@ -88,6 +88,8 @@
 		84C0CF692463F5B2006A3DE0 /* UpdateShoppingCarCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF682463F5B2006A3DE0 /* UpdateShoppingCarCodable.swift */; };
 		84C0CF6B2463F5C0006A3DE0 /* UpdateShoppingCarApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF6A2463F5C0006A3DE0 /* UpdateShoppingCarApi.swift */; };
 		84C0CF6D2463F638006A3DE0 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF6C2463F638006A3DE0 /* Params.swift */; };
+		84C0CF6F246A723F006A3DE0 /* DeleteSingleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF6E246A723F006A3DE0 /* DeleteSingleItem.swift */; };
+		84C0CF71246A743F006A3DE0 /* DeleteSingleItemApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF70246A743F006A3DE0 /* DeleteSingleItemApi.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
@@ -242,6 +244,8 @@
 		84C0CF682463F5B2006A3DE0 /* UpdateShoppingCarCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateShoppingCarCodable.swift; sourceTree = "<group>"; };
 		84C0CF6A2463F5C0006A3DE0 /* UpdateShoppingCarApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateShoppingCarApi.swift; sourceTree = "<group>"; };
 		84C0CF6C2463F638006A3DE0 /* Params.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
+		84C0CF6E246A723F006A3DE0 /* DeleteSingleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSingleItem.swift; sourceTree = "<group>"; };
+		84C0CF70246A743F006A3DE0 /* DeleteSingleItemApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSingleItemApi.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
@@ -495,6 +499,8 @@
 				84C0CF682463F5B2006A3DE0 /* UpdateShoppingCarCodable.swift */,
 				84C0CF6A2463F5C0006A3DE0 /* UpdateShoppingCarApi.swift */,
 				84C0CF6C2463F638006A3DE0 /* Params.swift */,
+				84C0CF6E246A723F006A3DE0 /* DeleteSingleItem.swift */,
+				84C0CF70246A743F006A3DE0 /* DeleteSingleItemApi.swift */,
 			);
 			path = ShoppingCar;
 			sourceTree = "<group>";
@@ -1189,6 +1195,7 @@
 				84EEC5EC23D410B8005627FF /* MemberRegisterSmsCodable.swift in Sources */,
 				84F7C88D23EAD19F0097EAD0 /* LogInViewController.swift in Sources */,
 				84C0CF6D2463F638006A3DE0 /* Params.swift in Sources */,
+				84C0CF71246A743F006A3DE0 /* DeleteSingleItemApi.swift in Sources */,
 				84479E8C2446F9A800D10DBA /* ApiUrl.swift in Sources */,
 				84C2E2B323EBEB5B008AB33F /* ResetPasswordApi.swift in Sources */,
 				8454AA1B244EC174008FB05E /* GetStoresApi.swift in Sources */,
@@ -1214,6 +1221,7 @@
 				84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */,
 				84EEC60D23D41503005627FF /* MyFavoriteViewController.swift in Sources */,
 				84C0CF632463BA5B006A3DE0 /* GetShoppingCarApi.swift in Sources */,
+				84C0CF6F246A723F006A3DE0 /* DeleteSingleItem.swift in Sources */,
 				84874E2A2459688400232FB9 /* ProductIceTemp.swift in Sources */,
 				84FADF3523F7CAB400C824C6 /* UIelementsController.swift in Sources */,
 				84316C1124124600002CD226 /* FrequentlyAskedQuestionsViewController.swift in Sources */,

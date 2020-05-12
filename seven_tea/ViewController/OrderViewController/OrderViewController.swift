@@ -36,7 +36,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
             let dateFormat: DateFormatter = DateFormatter()
             dateFormat.dateFormat = "yyyy-MM-dd"
             let dateString: String = dateFormat.string(from: now)
-            OrderApi.OrderRecordInstance.OrderRecord(Token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, StartDate: dateString, EndDate: dateString, Status: selectStatus)
+            OrderApi.OrderRecordInstance.OrderRecord(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, StartDate: dateString, EndDate: dateString, Status: selectStatus)
         }
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -119,5 +119,5 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         // 將當下時間轉換成設定的時間格式
 
         let dateString: String = dateFormat.string(from: now)
-        OrderApi.OrderRecordInstance.OrderRecord(Token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, StartDate: dateString, EndDate: dateString, Status: selectStatus)    }
+        OrderApi.OrderRecordInstance.OrderRecord(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, StartDate: dateString, EndDate: dateString, Status: selectStatus)    }
 }

@@ -21,30 +21,47 @@ func getAddShopingCarMessage(item_id: Int, item_name: String, item_category: Int
         print("dddd", UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
         AddShoppingCarApi.AddShoppingCarInstance.addshoppingcar(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
-                   feed.removeAll()
+                feed.removeAll()
                 return
             } else {
             }
         }
     }
 }
-func upDateShoppingCarMessage(params: [Params]) {
-     let postString  = UpdateShoppingParams(params: params)
-        let encoder = JSONEncoder()
-        if let data = try? encoder.encode(postString) {
-            print(postString)
-            datas = data
-            print(data)
-            if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
-                print("is nil")
-            }
-            print("dddd", UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
-            UpdateShoppingCarApi.UpdateShoppingCarInstance.updateshoppingcar(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
-                if result {
-
-                    return
-                } else {
-                }
+func updateShoppingCarMessage(params: [Params]) {
+    let postString  = UpdateShoppingParams(params: params)
+    let encoder = JSONEncoder()
+    if let data = try? encoder.encode(postString) {
+        print(postString)
+        datas = data
+        print(data)
+        if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
+            print("is nil")
+        }
+        print("dddd", UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
+        UpdateShoppingCarApi.UpdateShoppingCarInstance.updateshoppingcar(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+            if result {
+                return
+            } else {
             }
         }
     }
+}
+func deleteSingleItemMessage(itemid:Int){
+    let postString  = DeleteSingleItem(id: itemid)
+    let encoder = JSONEncoder()
+    if let data = try? encoder.encode(postString) {
+        print(postString)
+        datas = data
+        print(data)
+        if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
+            print("is nil")
+        }
+        DeleteSingleItemApi.DeleteSingItemInstance.deletesingleitem(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+            if result {
+                return
+            } else {
+            }
+        }
+    }
+}

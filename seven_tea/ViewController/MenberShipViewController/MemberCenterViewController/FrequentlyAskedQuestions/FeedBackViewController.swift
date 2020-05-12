@@ -28,7 +28,7 @@ class FeedBackViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         PersonalMessageTableView = FeedBackTableView
         FeedBackTableView.tableFooterView = UIView()
-        MessageNotifyAPI.MessageNotifyInstance.MessageNotify(Token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String ?? "")
+        MessageNotifyAPI.MessageNotifyInstance.MessageNotify(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String ?? "")
 
     }
 

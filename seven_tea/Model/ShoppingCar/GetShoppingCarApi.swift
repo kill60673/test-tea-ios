@@ -25,15 +25,16 @@ class GetShoppingCarApi {
         request.setValue(token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) {
-           data, response, _ in
-            let httpStatus = response as? HTTPURLResponse
-            if httpStatus!.allHeaderFields["Authorization"] as? String ?? "" != "" {
+            data, response, _ in
+            let httpStatus = response as! HTTPURLResponse
+            print("為什麼999",httpStatus.allHeaderFields["Authorization"])
+            if httpStatus.allHeaderFields["Authorization"] != nil {
                 print("我有進來2")
-                self.newToken = httpStatus!.allHeaderFields["Authorization"] as? String ?? ""
-                UserInfo.UserInfoInstance.update(oldToken: token, newToken: httpStatus!.allHeaderFields["Authorization"] as? String ?? "")
+                self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
+                UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                self.newToken = ""
-                 print("我有進來3")
+                print("tokennnnn",token)
+                print("我有進來3")
             }
             do {
                 let json = try JSON(data: data!)
@@ -58,7 +59,7 @@ class GetShoppingCarApi {
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-
+                
             } catch {
                 //主線程
                 DispatchQueue.main.async {
