@@ -21,14 +21,16 @@ class AddShoppingCarApi: NSObject {
         request.httpBody = postString
         let task = URLSession.shared.dataTask(with: request) {
             data, response, _ in
-            let httpStatus = response as? HTTPURLResponse
-            if httpStatus!.allHeaderFields["Authorization"] as? String ?? "" != "" {
-                self.newToken = httpStatus!.allHeaderFields["Authorization"] as? String ?? ""
-                UserInfo.UserInfoInstance.update(oldToken: token, newToken: httpStatus!.allHeaderFields["Authorization"] as? String ?? "")
+            let httpStatus = response as! HTTPURLResponse
+            print("為什麼999",httpStatus.allHeaderFields["Authorization"])
+            if httpStatus.allHeaderFields["Authorization"] != nil {
+                print("我有進來2")
+                self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
+                UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                self.newToken = ""
+                print("tokennnnn",token)
+                print("我有進來3")
             }
-
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data {

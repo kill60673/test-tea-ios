@@ -29,15 +29,16 @@ class MemberInfoApi: NSObject {
         print("我進來", token)
         let task = URLSession.shared.dataTask(with: request) {
             data, response, error in
-            let httpStatus = response as? HTTPURLResponse
-            if httpStatus!.allHeaderFields["Authorization"] as? String ?? "" != "" {
-                self.newToken = httpStatus!.allHeaderFields["Authorization"] as? String ?? ""
-                UserInfo.UserInfoInstance.update(oldToken: token, newToken: httpStatus!.allHeaderFields["Authorization"] as? String ?? "")
-                print("有進來這裡2")
+            let httpStatus = response as! HTTPURLResponse
+           print("為什麼22",httpStatus.allHeaderFields["Authorization"])
+            if httpStatus.allHeaderFields["Authorization"] != nil {
+                print("我有進來2")
+                self.newToken = "\(httpStatus.allHeaderFields["Authorization"])"
+                UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"])")
             } else {
-                self.newToken = ""
+                print("tokennnnn",token)
+                print("我有進來3")
             }
-            print("有進來這裡3")
             do {
                 print("有進來這裡4")
                 let json = try JSON(data: data!)
