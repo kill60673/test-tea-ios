@@ -48,7 +48,6 @@ class DeleteSingleItemApi: NSObject {
                             }
                         }
                     } catch {
-                        print(error)
                     }
                 }
             }

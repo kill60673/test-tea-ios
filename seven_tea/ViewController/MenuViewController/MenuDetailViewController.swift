@@ -168,6 +168,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
 
     @IBAction func btAddShopingCar(_ sender: Any) {
         getAddShopingCarMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: Int(storeID)!, qty: 1, total_price: 50)
+        GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
     }
     @IBAction func btAddMyFavorite(_ sender: Any) {
         getAddFavoriteMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: Int(storeID)!, price: 50)

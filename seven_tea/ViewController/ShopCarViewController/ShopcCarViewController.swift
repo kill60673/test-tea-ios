@@ -11,6 +11,7 @@ var itemqty = [Int]()
 var itemstoreId = [Int]()
 var params = [Params]()
 var index_row = 0
+var shoppingcartableview = UITableView()
 class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableViewDelegate, UITableViewDataSource {
     static let sdddd = ShopCarViewController()
     @IBOutlet weak var ShoppingCarTableView: UITableView!
@@ -18,8 +19,7 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
     var shoppingcardetail = [GetShoppingCarDetail]()
     override func viewDidLoad() {
         GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
-        self.shoppingcaritem = GetShoppingCarApi.GetShoppingCarInstance.getcaritem
-        self.shoppingcardetail = GetShoppingCarApi.GetShoppingCarInstance.getcardetail
+        shoppingcartableview = ShoppingCarTableView
         ShoppingCarTableView.tableFooterView = UIView()
         super.viewDidLoad()
 

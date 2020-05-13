@@ -12,12 +12,13 @@ var CategoryTableView: UITableView!
 var getItemDetail = [GetMenuProduct]()
 var getItemPrice = [ProductPrice]()
 var getitemicetemp = [ProductIceTemp]()
+var categoryId = ""
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
     @IBOutlet weak var itemTableview: UITableView!
     @IBOutlet weak var categoryTableview: UITableView!
     var getCategoryDetails = [GetMenuCategory]()
     let menuDetailService = MenuDetailService()
-    var categoryId = ""
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,13 +78,13 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             menuDetailVc.itemdetail = getItemDetail
             menuDetailVc.itemname = getItemDetail[indexPath.row].item_name
             menuDetailVc.itemid = getItemDetail[indexPath.row].id
-            menuDetailVc.itemcategory = self.categoryId
+            menuDetailVc.itemcategory = categoryId
             menuDetailVc.storeID = GetMenuProductApi.GetStoresApiInstance.getstoreId()
             present(menuDetailVc, animated: true)
         } else {
-            self.categoryId = getCategoryDetails[indexPath.row].id
-            print("categoryId", self.categoryId)
-            GetMenuProductApi.GetStoresApiInstance.getstores(storeId: GetMenuCategoryApi.GetStoresApiInstance.getstoreId(), catrgoryId: self.categoryId)
+            categoryId = getCategoryDetails[indexPath.row].id
+            print("categoryId", categoryId)
+            GetMenuProductApi.GetStoresApiInstance.getstores(storeId: GetMenuCategoryApi.GetStoresApiInstance.getstoreId(), catrgoryId: categoryId)
         }
     }
 

@@ -48,7 +48,7 @@ func updateShoppingCarMessage(params: [Params]) {
     }
 }
 func deleteSingleItemMessage(itemid:Int){
-    let postString  = DeleteSingleItem(id: itemid)
+    let postString  = DeleteSingleItem(unique_id: itemid)
     let encoder = JSONEncoder()
     if let data = try? encoder.encode(postString) {
         print(postString)
@@ -59,8 +59,10 @@ func deleteSingleItemMessage(itemid:Int){
         }
         DeleteSingleItemApi.DeleteSingItemInstance.deletesingleitem(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
+                print("有觸發")
                 return
             } else {
+                print("沒觸發")
             }
         }
     }
