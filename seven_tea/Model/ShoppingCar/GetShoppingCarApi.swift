@@ -41,6 +41,7 @@ class GetShoppingCarApi {
                 if json["success"].bool! == true {
                     self.getcaritem.removeAll()
                     self.getcardetail.removeAll()
+                    itemstoreId.removeAll()
                     print("tolkda", json["data"]["item"].count)
                     for item1 in 0..<json["data"]["item"].count {
                         print("我有進來撈資料")

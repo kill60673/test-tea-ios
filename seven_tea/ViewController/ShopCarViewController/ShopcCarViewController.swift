@@ -23,12 +23,14 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
         shoppingcartableview = ShoppingCarTableView
         ShoppingCarTableView.tableFooterView = UIView()
         shoppingview = self
+//        GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
+       
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -46,7 +48,7 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
         cell.lbQty.text = "\(self.shoppingcaritem[indexPath.row].qty)"
         cell.delegate = self
         print(self.shoppingcaritem[indexPath.row].qty)
-        itemstoreId.removeAll()
+//        itemstoreId.removeAll()
         itemstoreId.append(self.shoppingcaritem[indexPath.row].id)
         print("diiiiiiii",itemstoreId)
         itemqty.append(self.shoppingcaritem[indexPath.row].qty)
@@ -79,6 +81,8 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
             let itmeqty = Params(id: itemstoreId[i], qty: itemQty[i])
             print("大聲點", itemstoreId[i], itemQty[i])
             params.append(itmeqty)
+//            updateShoppingCarMessage(itemstoreId: itemstoreId[i], qty: itemQty[i])
         }
+        print("123333")
     }
 }
