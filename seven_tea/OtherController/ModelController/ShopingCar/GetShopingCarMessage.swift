@@ -29,11 +29,11 @@ func getAddShopingCarMessage(item_id: Int, item_name: String, item_category: Int
         }
     }
 }
-func updateShoppingCarMessage(params: [Params]) {
+func updateShoppingCarMessage(itemstoreId:Int,qty:Int) {
     let postString  = UpdateShoppingParams(params: params)
     let encoder = JSONEncoder()
     if let data = try? encoder.encode(postString) {
-        print(postString)
+        print("yoyoyoydddd",postString)
         datas = data
         print(data)
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
