@@ -40,14 +40,19 @@ class DeleteSingleItemApi: NSObject {
                         let deletesingleitem = try decoder.decode(DeleteSingleItemCodable.self, from: data)
                         if deletesingleitem.success == true {
                             DispatchQueue.main.async {
+                                print("嗨這裡")
+                                handler(true)
                                 MessageAlert.Instance.message(message: deletesingleitem.message)
                             }
                         } else {
                             DispatchQueue.main.async {
+                                print("嗨那裡")
+                                handler(false)
                                 MessageAlert.Instance.message(message: deletesingleitem.message)
                             }
                         }
                     } catch {
+                        print("嗨不是這裡")
                     }
                 }
             }

@@ -12,7 +12,7 @@ func getAddShopingCarMessage(item_id: Int, item_name: String, item_category: Int
     let postString  = AddShoppingCar(item_id: item_id, item_name: item_name, item_category: item_category, tmp: tmp, sugar: sugar, size: size, add: add, store_id: store_id, qty: qty, total_price: total_price)
     let encoder = JSONEncoder()
     if let data = try? encoder.encode(postString) {
-        print(postString)
+        print("ㄏㄏ",postString)
         datas = data
         print(data)
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
@@ -22,6 +22,7 @@ func getAddShopingCarMessage(item_id: Int, item_name: String, item_category: Int
         AddShoppingCarApi.AddShoppingCarInstance.addshoppingcar(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 feed.removeAll()
+                GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
                 return
             } else {
             }
@@ -60,6 +61,7 @@ func deleteSingleItemMessage(itemid:Int){
         DeleteSingleItemApi.DeleteSingItemInstance.deletesingleitem(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 print("有觸發")
+                GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
                 return
             } else {
                 print("沒觸發")

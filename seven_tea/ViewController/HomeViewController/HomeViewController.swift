@@ -37,6 +37,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         myLocationManager.desiredAccuracy = kCLLocationAccuracyBest
         myLocationManager.requestWhenInUseAuthorization()
         GetStoresApi.GetStoresApiInstance.getstores(city: "", district: "")
+//        GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
+
         bannerImage.sd_setImage(with: URL(string: marketingImageUrl), placeholderImage: UIImage(named: "test1"))
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
     }
