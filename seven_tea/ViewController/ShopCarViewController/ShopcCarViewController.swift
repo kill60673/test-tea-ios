@@ -11,19 +11,24 @@ var itemqty = [Int]()
 var itemstoreId = [Int]()
 var params = [Params]()
 var index_row = 0
+var shoppingview = UIViewController()
+
 var shoppingcartableview = UITableView()
 class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableViewDelegate, UITableViewDataSource {
     static let sdddd = ShopCarViewController()
-    @IBOutlet weak var ShoppingCarTableView: UITableView!
     var shoppingcaritem = [GetShoppingCarItem]()
     var shoppingcardetail = [GetShoppingCarDetail]()
+    @IBOutlet weak var ShoppingCarTableView: UITableView!
     override func viewDidLoad() {
-        GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
         shoppingcartableview = ShoppingCarTableView
         ShoppingCarTableView.tableFooterView = UIView()
+        shoppingview = self
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -31,26 +36,28 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return GetShoppingCarApi.GetShoppingCarInstance.getcaritemcount()
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        self.shoppingcaritem = GetShoppingCarApi.GetShoppingCarInstance.getshoppingcaritem()
+        self.shoppingcardetail = GetShoppingCarApi.GetShoppingCarInstance.getshoppingcardetail()
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingCarCell", for: indexPath) as! ShopCarTableViewCell
         cell.lbItemName.text = self.shoppingcaritem[indexPath.row].item_name
         cell.lbSugar.text = self.shoppingcaritem[indexPath.row].sugar
         cell.lbQty.text = "\(self.shoppingcaritem[indexPath.row].qty)"
         cell.delegate = self
-        print(shoppingcaritem[indexPath.row].qty)
-        itemstoreId.append(shoppingcaritem[indexPath.row].id)
-        itemqty.append(shoppingcaritem[indexPath.row].qty)
+        print(self.shoppingcaritem[indexPath.row].qty)
+        itemstoreId.append(self.shoppingcaritem[indexPath.row].id)
+        itemqty.append(self.shoppingcaritem[indexPath.row].qty)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
     }
-//    func getitemId() -> [Int]{
-//        return itemId
-//    }
+    //    func getitemId() -> [Int]{
+    //        return itemId
+    //    }
     func getitemqty() -> [Int] {
-//        print("sss",itemqty)
+        //        print("sss",itemqty)
         return itemqty
     }
     func tableviewcelldelegate(sender: ShopCarTableViewCell) {
@@ -66,7 +73,7 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
     }
     @IBAction func NextStep(_ sender: Any) {
         for i in 0..<itemQty.count {
-        print("蛤", itemQty[i])
+            print("蛤", itemQty[i])
             let itmeqty = Params(id: itemstoreId[i], qty: itemQty[i])
             print("大聲點", itemstoreId[i], itemQty[i])
             params.append(itmeqty)
