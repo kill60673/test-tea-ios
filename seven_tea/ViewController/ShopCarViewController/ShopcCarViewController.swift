@@ -46,7 +46,9 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
         cell.lbQty.text = "\(self.shoppingcaritem[indexPath.row].qty)"
         cell.delegate = self
         print(self.shoppingcaritem[indexPath.row].qty)
+        itemstoreId.removeAll()
         itemstoreId.append(self.shoppingcaritem[indexPath.row].id)
+        print("diiiiiiii",itemstoreId)
         itemqty.append(self.shoppingcaritem[indexPath.row].qty)
         return cell
     }
