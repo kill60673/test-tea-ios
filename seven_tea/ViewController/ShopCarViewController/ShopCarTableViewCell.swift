@@ -23,18 +23,18 @@ class ShopCarTableViewCell: UITableViewCell {
     var delegate: TableViewCellDelegate!
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     @IBAction func brPlus(_ sender: Any) {
         delegate?.tableviewcelldelegate(sender: self)
-      print(itemQty)
+        print(itemQty)
         if itemQty[index_row] >= 99 {
             itemQty[index_row] = 99
         } else {
@@ -43,13 +43,13 @@ class ShopCarTableViewCell: UITableViewCell {
         }
     }
     @IBAction func btLess(_ sender: Any) {
-         delegate?.tableviewcelldelegate(sender: self)
-          if itemQty[index_row] <= 0 {
-                  itemQty[index_row] = 0
+        delegate?.tableviewcelldelegate(sender: self)
+        if itemQty[index_row] >= 1 {
+            itemQty[index_row] -= 1
+            lbQty.text = "\(itemQty[index_row])"
+        }
+        if itemQty[index_row] < 1{
             deleteSingleItemMessage(itemid: itemstoreId[index_row])
-              } else {
-                  itemQty[index_row] -= 1
-                  lbQty.text = "\(itemQty[index_row])"
-              }
+        }
     }
 }
