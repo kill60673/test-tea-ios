@@ -9,7 +9,7 @@
 import UIKit
 var itemqty = [Int]()
 var itemstoreId = [Int]()
-var params = [Params]()
+var params = [data]()
 var index_row = 0
 var shoppingview = UIViewController()
 
@@ -80,9 +80,9 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
             print("蛤", itemQty[i])
             let itmeqty = Params(id: itemstoreId[i], qty: itemQty[i])
             print("大聲點", itemstoreId[i], itemQty[i])
-            params.append(itmeqty)
-//            updateShoppingCarMessage(itemstoreId: itemstoreId[i], qty: itemQty[i])
+            let Params = data(id: itemstoreId[i], qty: itemQty[i])
+            params.append(Params)
         }
-        print("123333")
+        updateShoppingCarMessage(update: params)
     }
 }
