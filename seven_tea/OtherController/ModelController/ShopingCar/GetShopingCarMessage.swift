@@ -29,8 +29,8 @@ func getAddShopingCarMessage(item_id: Int, item_name: String, item_category: Int
         }
     }
 }
-func updateShoppingCarMessage(itemstoreId:Int,qty:Int) {
-    let postString  = UpdateShoppingParams(params: params)
+func updateShoppingCarMessage(update:[data]) {
+    let postString  = UpdateShoppingParams(params: update)
     let encoder = JSONEncoder()
     if let data = try? encoder.encode(postString) {
         print("yoyoyoydddd",postString)
