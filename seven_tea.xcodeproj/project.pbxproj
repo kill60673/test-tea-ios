@@ -660,6 +660,7 @@
 				8490F25B242F8A6600A59020 /* OrderViewController */,
 				84572B17242207EF00E11696 /* HomeViewController */,
 				84EEC63223D42280005627FF /* MenberShipViewController */,
+				84EEC60323D413EA005627FF /* MemberCenterViewController */,
 				8490F251242CA33200A59020 /* MenuViewController */,
 				8490F256242CB4D400A59020 /* ShopCarViewController */,
 			);
@@ -911,7 +912,6 @@
 			children = (
 				84C2E2B623EBF8E2008AB33F /* ForgotPasswordViewController */,
 				84EEC63423D422BF005627FF /* SingUpViewController */,
-				84EEC60323D413EA005627FF /* MemberCenterViewController */,
 				84EEC63323D422B6005627FF /* LogInViewController */,
 			);
 			path = MenberShipViewController;

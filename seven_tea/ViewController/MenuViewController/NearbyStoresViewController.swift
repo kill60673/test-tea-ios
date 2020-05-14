@@ -33,6 +33,18 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
           super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        if UserInfo.UserInfoInstance.preferences.object(forKey: "token") != nil {
+            nearbystoresTableView.isHidden = false
+            nearbystoresTableView.isHidden = false
+        } else {
+            nearbystoresTableView.isHidden = true
+            nearbystoresTableView.isHidden = true
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewContorller = storyboard.instantiateViewController(withIdentifier: "LoginVc")
+            show(viewContorller, sender: self)
+        }
+    }
     //克制pickerview跳出事件的客製化view必且設立位置
     override func viewWillAppear(_ animated: Bool) {
         view.addSubview(CountyView)

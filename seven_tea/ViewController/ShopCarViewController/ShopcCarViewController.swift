@@ -29,9 +29,20 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
-       
+        if UserInfo.UserInfoInstance.preferences.object(forKey: "token") != nil {
+            ShoppingCarTableView.isHidden = false
+            ShoppingCarTableView.isHidden = false
+             GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
+        } else {
+            ShoppingCarTableView.isHidden = true
+            ShoppingCarTableView.isHidden = true
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewContorller = storyboard.instantiateViewController(withIdentifier: "LoginVc")
+            show(viewContorller, sender: self)
+        }
     }
+
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
