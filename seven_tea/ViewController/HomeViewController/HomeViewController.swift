@@ -25,9 +25,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     let marketingBannerList = MarketingBannerAPI.MarketingBannerInstance.getList()
     override func viewDidLoad() {
         super.viewDidLoad()
-//        LoadingBannerAPI.LoadingBannerInstance.loadingbanner()
-//        SlideBannerAPI.SlideBannerInstance.slidebanner()
-//        PromotionBannerAPI.PromotionBannerInstance.promotionbanner()
+        LoadingBannerAPI.LoadingBannerInstance.loadingbanner()
+        SlideBannerAPI.SlideBannerInstance.slidebanner()
+        PromotionBannerAPI.PromotionBannerInstance.promotionbanner()
         SlideBannerTable = homeCollectionView
         PromotionBannerTable = bannerCollectionView
         homeTableView.tableFooterView = UIView()

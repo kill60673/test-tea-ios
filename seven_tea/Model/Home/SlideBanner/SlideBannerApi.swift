@@ -13,9 +13,7 @@ class SlideBannerAPI: NSObject {
     var slidebannerlist = [SlideBanner]()
 
     func slidebanner() {
-
         let url = URL(string: ApiUrl.ApiUrlInstance.slideBanner )!
-
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
