@@ -133,7 +133,7 @@
         <!--訂單確認-->
         <scene sceneID="z5W-5O-2wj">
             <objects>
-                <viewController id="PHe-mg-sPD" customClass="ConfirmOrderViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SandShoppingCarVC" id="PHe-mg-sPD" customClass="ConfirmOrderViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R8J-Na-IPO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -431,6 +431,9 @@
                                 <state key="normal" title="同步會員資訊">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btSynchronizeMemberInfo:" destination="PHe-mg-sPD" eventType="touchUpInside" id="GWI-CO-010"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9R-vb-8dz">
                                 <rect key="frame" x="106" y="420" width="300" height="34"/>
@@ -589,6 +592,9 @@
                         <outlet property="btCommonly_three" destination="WhR-NE-oKH" id="g9Z-ID-wZj"/>
                         <outlet property="btCommonly_two" destination="a6Z-9W-K8c" id="2Ot-x2-nHQ"/>
                         <outlet property="btPayMent" destination="PZC-16-A2O" id="cEO-CH-R7e"/>
+                        <outlet property="tfAddress" destination="haa-Zu-sx6" id="MSO-o2-wdb"/>
+                        <outlet property="tfPhoneNumber" destination="ErH-2p-ehS" id="x0k-N1-ktl"/>
+                        <outlet property="tfRecipient" destination="s9R-vb-8dz" id="COY-eo-eMw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6Y-UR-gtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

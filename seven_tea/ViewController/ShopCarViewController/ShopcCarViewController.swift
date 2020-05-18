@@ -95,5 +95,7 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
             params.append(Params)
         }
         updateShoppingCarMessage(update: params)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SandShoppingCarVC")
+        show(vc!, sender: self)
     }
 }
