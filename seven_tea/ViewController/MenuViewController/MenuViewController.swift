@@ -24,9 +24,15 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         ItemTableView = itemTableview
         CategoryTableView = categoryTableview
+        getitemicetemp.removeAll()
+        getItemPrice.removeAll()
+        getItemDetail.removeAll()
         ItemTableView.tableFooterView = UIView()
         CategoryTableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        itemTableview.reloadData()
     }
 
     @IBAction func button(_ sender: Any) {

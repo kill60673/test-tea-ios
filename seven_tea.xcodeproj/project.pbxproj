@@ -90,6 +90,8 @@
 		84C0CF6D2463F638006A3DE0 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF6C2463F638006A3DE0 /* Params.swift */; };
 		84C0CF6F246A723F006A3DE0 /* DeleteSingleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF6E246A723F006A3DE0 /* DeleteSingleItem.swift */; };
 		84C0CF71246A743F006A3DE0 /* DeleteSingleItemApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF70246A743F006A3DE0 /* DeleteSingleItemApi.swift */; };
+		84C0CF73246E84A2006A3DE0 /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF72246E84A2006A3DE0 /* ConfirmOrderViewController.swift */; };
+		84C0CF75246E84BE006A3DE0 /* ConfirmOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF74246E84BE006A3DE0 /* ConfirmOrderTableViewCell.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
@@ -246,6 +248,8 @@
 		84C0CF6C2463F638006A3DE0 /* Params.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
 		84C0CF6E246A723F006A3DE0 /* DeleteSingleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSingleItem.swift; sourceTree = "<group>"; };
 		84C0CF70246A743F006A3DE0 /* DeleteSingleItemApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSingleItemApi.swift; sourceTree = "<group>"; };
+		84C0CF72246E84A2006A3DE0 /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
+		84C0CF74246E84BE006A3DE0 /* ConfirmOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderTableViewCell.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
@@ -388,13 +392,6 @@
 				84316C01240E5CFF002CD226 /* AllList.swift */,
 			);
 			path = AllList;
-			sourceTree = "<group>";
-		};
-		84316C05240FA8A0002CD226 /* TableViewFunc */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableViewFunc;
 			sourceTree = "<group>";
 		};
 		84479E8D2446FCF100D10DBA /* Menu */ = {
@@ -544,6 +541,8 @@
 			children = (
 				8490F257242CB50700A59020 /* ShopcCarViewController.swift */,
 				8490F259242CB51500A59020 /* ShopCarTableViewCell.swift */,
+				84C0CF72246E84A2006A3DE0 /* ConfirmOrderViewController.swift */,
+				84C0CF74246E84BE006A3DE0 /* ConfirmOrderTableViewCell.swift */,
 			);
 			path = ShopCarViewController;
 			sourceTree = "<group>";
@@ -776,7 +775,6 @@
 		84EEC5FB23D412F9005627FF /* HelpController */ = {
 			isa = PBXGroup;
 			children = (
-				84316C05240FA8A0002CD226 /* TableViewFunc */,
 				84316C00240E5CCC002CD226 /* AllList */,
 				84FADF4423FE88B200C824C6 /* AppOverAllStyle */,
 				84FADF3323F7CA6100C824C6 /* UIelementsController */,
@@ -1212,6 +1210,7 @@
 				84874E1E2455BFF800232FB9 /* ProductTemp.swift in Sources */,
 				84EEC61923D415A8005627FF /* MyFavoriteApi.swift in Sources */,
 				84479E972447001D00D10DBA /* CityTagApi.swift in Sources */,
+				84C0CF75246E84BE006A3DE0 /* ConfirmOrderTableViewCell.swift in Sources */,
 				84874E112452D6E800232FB9 /* GetMenuCategory.swift in Sources */,
 				84C2E2B823EBF921008AB33F /* ForgotPasswordViewController.swift in Sources */,
 				84D09B3E2418B4250019A0B4 /* SetNameViewController.swift in Sources */,
@@ -1244,6 +1243,7 @@
 				84EEC61323D4155C005627FF /* FrequentlyAskedQuestionsApi.swift in Sources */,
 				84EEC5F623D412AF005627FF /* AccountCodable.swift in Sources */,
 				84D09B3C241783D10019A0B4 /* SetEmailViewController.swift in Sources */,
+				84C0CF73246E84A2006A3DE0 /* ConfirmOrderViewController.swift in Sources */,
 				84874E2624594B5900232FB9 /* TempCollectionViewCell.swift in Sources */,
 				84EEC5CE23D1C314005627FF /* SceneDelegate.swift in Sources */,
 				8425538C24459826004C9B23 /* MarketingBannerCodable.swift in Sources */,
