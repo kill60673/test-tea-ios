@@ -12,6 +12,7 @@ import SwiftyJSON
 class GetShoppingCarApi {
     var getcaritem = [GetShoppingCarItem]()
     var getcardetail = [GetShoppingCarDetail]()
+    var getfeedlist = [GetFeedList]()
     var add = [String]()
     var urlString = ""
     var newToken = ""
@@ -41,14 +42,22 @@ class GetShoppingCarApi {
                 if json["success"].bool! == true {
                     self.getcaritem.removeAll()
                     self.getcardetail.removeAll()
+                    self.getfeedlist.removeAll()
                     itemstoreId.removeAll()
                     print("tolkda", json["data"]["item"].count)
+                    print("媽媽",json["data"]["item"].count)
                     for item1 in 0..<json["data"]["item"].count {
                         print("我有進來撈資料")
                         let item = GetShoppingCarItem(id: json["data"]["item"][item1]["id"].int!, item_id: json["data"]["item"][item1]["item_id"].int!, item_name: json["data"]["item"][item1]["item_name"].string!, size: json["data"]["item"][item1]["size"].string!, sugar: json["data"]["item"][item1]["sugar"].string!, tmp: json["data"]["item"][item1]["tmp"].string!, price: json["data"]["item"][item1]["price"].int!, qty: json["data"]["item"][item1]["qty"].int!)
                         self.getcaritem.append(item)
                         print("有", item.qty)
-                        self.add.append( json["data"]["item"][item1]["add"].string ?? "")
+                        for add in 0..<json["data"]["item"][item1]["add"].count{
+                            self.add.append(json["data"]["item"][item1]["add"][add].string!)
+                        }
+                        let feedlist = GetFeedList(feed: self.add, itemIndexId:json["data"]["item"][item1]["id"].int! )
+                        print("feedlist",json["data"]["item"][item1]["id"].int!,feedlist.feed)
+                        self.getfeedlist.append(feedlist)
+                        self.add.removeAll()
                     }
                     for i in 0..<json["data"].count {
                         let getcardetail = GetShoppingCarDetail(store_id: json["data"]["store_id"].int!, store_name: json["data"]["store_name"].string!, totle_price: json["data"]["total_price"].int!, can_delivery: json["data"]["can_delivery"].bool!, gap_to_delivery: json["data"]["gap_to_delivery"].int!)
@@ -81,12 +90,13 @@ class GetShoppingCarApi {
         return getcardetail
     }
     func getshoppingcaritem() -> [GetShoppingCarItem] {
+        shoppingcardetailtableview.reloadData()
         return getcaritem
     }
     func getcaritemcount() -> Int {
         return getcaritem.count
     }
-    func getshoppingcaradd() -> [String] {
-        return add
+    func getshoppingcaradd() -> [GetFeedList] {
+        return getfeedlist
     }
 }

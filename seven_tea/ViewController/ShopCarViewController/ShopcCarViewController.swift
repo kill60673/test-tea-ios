@@ -12,7 +12,6 @@ var itemstoreId = [Int]()
 var params = [data]()
 var index_row = 0
 var shoppingview = UIViewController()
-
 var shoppingcartableview = UITableView()
 class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableViewDelegate, UITableViewDataSource {
     static let sdddd = ShopCarViewController()
@@ -23,7 +22,7 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
         shoppingcartableview = ShoppingCarTableView
         ShoppingCarTableView.tableFooterView = UIView()
         shoppingview = self
-//        GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
+        //        GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
@@ -32,7 +31,7 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") != nil {
             ShoppingCarTableView.isHidden = false
             ShoppingCarTableView.isHidden = false
-             GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
+            GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
         } else {
             ShoppingCarTableView.isHidden = true
             ShoppingCarTableView.isHidden = true
@@ -41,8 +40,8 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
             show(viewContorller, sender: self)
         }
     }
-
-
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -59,7 +58,6 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
         cell.lbQty.text = "\(self.shoppingcaritem[indexPath.row].qty)"
         cell.delegate = self
         print(self.shoppingcaritem[indexPath.row].qty)
-//        itemstoreId.removeAll()
         itemstoreId.append(self.shoppingcaritem[indexPath.row].id)
         print("diiiiiiii",itemstoreId)
         itemqty.append(self.shoppingcaritem[indexPath.row].qty)
@@ -68,11 +66,7 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-    //    func getitemId() -> [Int]{
-    //        return itemId
-    //    }
     func getitemqty() -> [Int] {
-        //        print("sss",itemqty)
         return itemqty
     }
     func tableviewcelldelegate(sender: ShopCarTableViewCell) {

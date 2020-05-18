@@ -12,6 +12,8 @@ class ConfirmOrderTableViewCell: UITableViewCell {
     @IBOutlet weak var lbPrice: UIView!
     @IBOutlet weak var lbQty: UILabel!
     @IBOutlet weak var lbFeed: UILabel!
+    @IBOutlet weak var lbTmp: UILabel!
+    @IBOutlet weak var lbSugar: UILabel!
     @IBOutlet weak var imageSize: UIImageView!
     @IBOutlet weak var lbItemName: UILabel!
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PHe-mg-sPD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cI3-OB-AhQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -154,45 +154,61 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="七盞烏奶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbQ-Mn-Qt8">
-                                                    <rect key="frame" x="19" y="10" width="76" height="21"/>
+                                                    <rect key="frame" x="7" y="11" width="76" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="微糖/去冰/珍珠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHr-7v-gb9">
-                                                    <rect key="frame" x="135" y="10" width="115" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.68000000000000005" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOE-gv-HJB">
-                                                    <rect key="frame" x="295" y="11" width="34" height="21"/>
+                                                    <rect key="frame" x="334" y="12" width="25" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sb-zA-JKl">
-                                                    <rect key="frame" x="362" y="11" width="32" height="21"/>
+                                                    <rect key="frame" x="362" y="12" width="52" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qzt-VJ-bme">
-                                                    <rect key="frame" x="98" y="10" width="29" height="22"/>
+                                                    <rect key="frame" x="86" y="11" width="29" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sugar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOn-xh-vce">
+                                                    <rect key="frame" x="119" y="12" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="tmp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZT-p2-K9i">
+                                                    <rect key="frame" x="168" y="12" width="36" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="add" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ae-0t-FF5">
+                                                    <rect key="frame" x="207" y="12" width="119" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageSize" destination="qzt-VJ-bme" id="z0i-nj-TRB"/>
-                                            <outlet property="lbFeed" destination="UHr-7v-gb9" id="uW4-N2-3me"/>
+                                            <outlet property="lbFeed" destination="8ae-0t-FF5" id="8aP-A2-kSp"/>
                                             <outlet property="lbItemName" destination="WbQ-Mn-Qt8" id="3KV-4o-Cv6"/>
                                             <outlet property="lbPrice" destination="bmT-DJ-BoD" id="ani-Fg-YwZ"/>
                                             <outlet property="lbQty" destination="hOE-gv-HJB" id="t3Z-gS-Ftl"/>
+                                            <outlet property="lbSugar" destination="AOn-xh-vce" id="nDX-EY-DXF"/>
+                                            <outlet property="lbTmp" destination="rZT-p2-K9i" id="9c3-RC-txH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -202,10 +218,10 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新莊區-新泰店" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbJ-eD-OD2">
-                                <rect key="frame" x="282" y="57" width="112" height="21"/>
+                                <rect key="frame" x="237" y="57" width="157" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Dfn-Dr-N9H"/>
-                                    <constraint firstAttribute="width" constant="112" id="UoQ-sO-8PO"/>
+                                    <constraint firstAttribute="width" constant="157" id="UoQ-sO-8PO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -588,10 +604,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="訂單確認" id="J6b-WJ-uS7"/>
                     <connections>
+                        <outlet property="ShoppingDetailTableView" destination="QX1-2A-ii3" id="n38-KK-GA3"/>
                         <outlet property="btCommonly_one" destination="QFl-Pa-IGn" id="qxJ-Yf-uvu"/>
                         <outlet property="btCommonly_three" destination="WhR-NE-oKH" id="g9Z-ID-wZj"/>
                         <outlet property="btCommonly_two" destination="a6Z-9W-K8c" id="2Ot-x2-nHQ"/>
                         <outlet property="btPayMent" destination="PZC-16-A2O" id="cEO-CH-R7e"/>
+                        <outlet property="lbStoreName" destination="qbJ-eD-OD2" id="DRy-De-nkB"/>
                         <outlet property="tfAddress" destination="haa-Zu-sx6" id="MSO-o2-wdb"/>
                         <outlet property="tfPhoneNumber" destination="ErH-2p-ehS" id="x0k-N1-ktl"/>
                         <outlet property="tfRecipient" destination="s9R-vb-8dz" id="COY-eo-eMw"/>
