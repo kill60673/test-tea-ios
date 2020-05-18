@@ -40,6 +40,7 @@ class ApiUrl: NSObject {
     var getshoppingcar: String
     var updateshoppingcar: String
     var updateitemtozero: String
+    var synchornizememberinfo: String
 
     override init() {
         loginUrl="\(doMain)/api/login"
@@ -73,5 +74,6 @@ class ApiUrl: NSObject {
         getshoppingcar="\(doMain)/api/get-member-cart"
         updateshoppingcar="\(doMain)/api/update-cart-item-count"
         updateitemtozero="\(doMain)/api/update-cart-single-item-to-zero"
+        synchornizememberinfo="\(doMain)/api/synchronize-member-info"
     }
 }

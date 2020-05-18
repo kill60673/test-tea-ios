@@ -92,6 +92,8 @@
 		84C0CF71246A743F006A3DE0 /* DeleteSingleItemApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF70246A743F006A3DE0 /* DeleteSingleItemApi.swift */; };
 		84C0CF73246E84A2006A3DE0 /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF72246E84A2006A3DE0 /* ConfirmOrderViewController.swift */; };
 		84C0CF75246E84BE006A3DE0 /* ConfirmOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF74246E84BE006A3DE0 /* ConfirmOrderTableViewCell.swift */; };
+		84C0CF7B247240CD006A3DE0 /* SynchronizeMemberInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF7A247240CD006A3DE0 /* SynchronizeMemberInfo.swift */; };
+		84C0CF8124724107006A3DE0 /* SynchronizeMemberInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CF8024724107006A3DE0 /* SynchronizeMemberInfoApi.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
@@ -250,6 +252,8 @@
 		84C0CF70246A743F006A3DE0 /* DeleteSingleItemApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSingleItemApi.swift; sourceTree = "<group>"; };
 		84C0CF72246E84A2006A3DE0 /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
 		84C0CF74246E84BE006A3DE0 /* ConfirmOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderTableViewCell.swift; sourceTree = "<group>"; };
+		84C0CF7A247240CD006A3DE0 /* SynchronizeMemberInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizeMemberInfo.swift; sourceTree = "<group>"; };
+		84C0CF8024724107006A3DE0 /* SynchronizeMemberInfoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizeMemberInfoApi.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
@@ -498,6 +502,8 @@
 				84C0CF6C2463F638006A3DE0 /* Params.swift */,
 				84C0CF6E246A723F006A3DE0 /* DeleteSingleItem.swift */,
 				84C0CF70246A743F006A3DE0 /* DeleteSingleItemApi.swift */,
+				84C0CF7A247240CD006A3DE0 /* SynchronizeMemberInfo.swift */,
+				84C0CF8024724107006A3DE0 /* SynchronizeMemberInfoApi.swift */,
 			);
 			path = ShoppingCar;
 			sourceTree = "<group>";
@@ -1253,6 +1259,7 @@
 				84479E932446FEF900D10DBA /* CityTag.swift in Sources */,
 				84874E132452D86200232FB9 /* GetMenuCategoryApi.swift in Sources */,
 				84EEC61D23D415CB005627FF /* MyFavorite.swift in Sources */,
+				84C0CF7B247240CD006A3DE0 /* SynchronizeMemberInfo.swift in Sources */,
 				84874E2F245EAC3200232FB9 /* SendSetVerifyEmailCodable.swift in Sources */,
 				84316C0F2411FB72002CD226 /* MyFavoriteTableViewCell.swift in Sources */,
 				84255383243F27B5004C9B23 /* MenuViewController.swift in Sources */,
@@ -1265,6 +1272,7 @@
 				84EEC5FA23D412C9005627FF /* AccountApi.swift in Sources */,
 				8490F2622433182F00A59020 /* OrderApi.swift in Sources */,
 				84874E1C2455BF1A00232FB9 /* ProductPrice.swift in Sources */,
+				84C0CF8124724107006A3DE0 /* SynchronizeMemberInfoApi.swift in Sources */,
 				8490F25F2431C1D500A59020 /* OrderTableViewCell.swift in Sources */,
 				84479EA12449812900D10DBA /* GetStore.swift in Sources */,
 				84FADF1D23F66E9200C824C6 /* MemberRegistrtCodable.swift in Sources */,
