@@ -13,35 +13,35 @@ class OrderApi: NSObject {
     var orderlist = [Order]()
     var newToken: String!
     func OrderRecord(token: String, StartDate: String, EndDate: String, Status: Int) {
-        
+
         let url = URL(string: ApiUrl.ApiUrlInstance.OrderRecordUrl + "\(StartDate)/\(EndDate)/\(Status)")!
-        
+
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue(token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
-        
+
         let task = URLSession.shared.dataTask(with: request) { data, response, _ in
-            
+
             let responseString = String(data: data!, encoding: .utf8)
             print(responseString)
             //print(responseString)
             let httpStatus = response as! HTTPURLResponse
-            print("為什麼999",httpStatus.allHeaderFields["Authorization"])
+            print("為什麼999", httpStatus.allHeaderFields["Authorization"])
             if httpStatus.allHeaderFields["Authorization"] != nil {
                 print("我有進來2")
                 self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                print("tokennnnn",token)
+                print("tokennnnn", token)
                 print("我有進來3")
             }
             let decoder = JSONDecoder()
-            
+
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
                 decoder.decode(OrderCodable.self, from: data) {
-                
+
                 //如果是result＝＝0先清掉頁面上的資料 然後再把裡面資料用for迴圈丟進去
                 if Info.result == 0 {
                     self.orderlist.removeAll()
@@ -52,7 +52,7 @@ class OrderApi: NSObject {
                 } else {
                     //主線程
                     DispatchQueue.main.async {
-                        
+
                         MessageAlert.Instance.message(message: "\(Info.message)")
                     }
                 }
@@ -62,18 +62,18 @@ class OrderApi: NSObject {
                     MessageAlert.Instance.message(message: "資料解析錯誤")
                 }
             }
-            
+
             //主線程
             DispatchQueue.main.async {
-                
+
                 if OrderTableView != nil {
                     OrderTableView.reloadData()
                 }
             }
-            
+
         }
         task.resume()
-        
+
     }
     func getCount() -> Int {
         return orderlist.count
@@ -81,5 +81,5 @@ class OrderApi: NSObject {
     func getList() -> [Order] {
         return orderlist
     }
-    
+
 }

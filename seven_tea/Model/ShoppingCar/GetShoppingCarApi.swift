@@ -28,13 +28,13 @@ class GetShoppingCarApi {
         let task = URLSession.shared.dataTask(with: request) {
             data, response, _ in
             let httpStatus = response as! HTTPURLResponse
-            print("為什麼999",httpStatus.allHeaderFields["Authorization"])
+            print("為什麼999", httpStatus.allHeaderFields["Authorization"])
             if httpStatus.allHeaderFields["Authorization"] != nil {
                 print("我有進來2")
                 self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                print("tokennnnn",token)
+                print("tokennnnn", token)
                 print("我有進來3")
             }
             do {
@@ -45,17 +45,17 @@ class GetShoppingCarApi {
                     self.getfeedlist.removeAll()
                     itemstoreId.removeAll()
                     print("tolkda", json["data"]["item"].count)
-                    print("媽媽",json["data"]["item"].count)
+                    print("媽媽", json["data"]["item"].count)
                     for item1 in 0..<json["data"]["item"].count {
                         print("我有進來撈資料")
                         let item = GetShoppingCarItem(id: json["data"]["item"][item1]["id"].int!, item_id: json["data"]["item"][item1]["item_id"].int!, item_name: json["data"]["item"][item1]["item_name"].string!, size: json["data"]["item"][item1]["size"].string!, sugar: json["data"]["item"][item1]["sugar"].string!, tmp: json["data"]["item"][item1]["tmp"].string!, price: json["data"]["item"][item1]["price"].int!, qty: json["data"]["item"][item1]["qty"].int!)
                         self.getcaritem.append(item)
                         print("有", item.qty)
-                        for add in 0..<json["data"]["item"][item1]["add"].count{
+                        for add in 0..<json["data"]["item"][item1]["add"].count {
                             self.add.append(json["data"]["item"][item1]["add"][add].string!)
                         }
-                        let feedlist = GetFeedList(feed: self.add, itemIndexId:json["data"]["item"][item1]["id"].int! )
-                        print("feedlist",json["data"]["item"][item1]["id"].int!,feedlist.feed)
+                        let feedlist = GetFeedList(feed: self.add, itemIndexId: json["data"]["item"][item1]["id"].int! )
+                        print("feedlist", json["data"]["item"][item1]["id"].int!, feedlist.feed)
                         self.getfeedlist.append(feedlist)
                         self.add.removeAll()
                     }
@@ -71,7 +71,7 @@ class GetShoppingCarApi {
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-                
+
             } catch {
                 //主線程
                 DispatchQueue.main.async {

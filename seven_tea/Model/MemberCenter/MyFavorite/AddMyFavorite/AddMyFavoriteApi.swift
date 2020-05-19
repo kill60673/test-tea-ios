@@ -22,13 +22,13 @@ class AddMyFavoriteApi: NSObject {
         let task = URLSession.shared.dataTask(with: request) {
             data, response, _ in
             let httpStatus = response as! HTTPURLResponse
-            print("為什麼999",httpStatus.allHeaderFields["Authorization"])
+            print("為什麼999", httpStatus.allHeaderFields["Authorization"])
             if httpStatus.allHeaderFields["Authorization"] != nil {
                 print("我有進來2")
                 self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                print("tokennnnn",token)
+                print("tokennnnn", token)
                 print("我有進來3")
             }
             let decoder = JSONDecoder()

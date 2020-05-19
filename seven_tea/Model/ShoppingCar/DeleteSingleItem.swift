@@ -7,11 +7,11 @@
 //
 
 import Foundation
-struct DeleteSingleItemCodable:Codable  {
+struct DeleteSingleItemCodable: Codable {
     var success: Bool
     var message: String
     var data: String
 }
-struct DeleteSingleItem: Codable{
-    var unique_id:Int
+struct DeleteSingleItem: Codable {
+    var unique_id: Int
 }

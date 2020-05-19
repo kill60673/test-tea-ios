@@ -8,7 +8,7 @@
 
 import UIKit
 var shoppingcardetailtableview = UITableView()
-class ConfirmOrderViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIPickerViewDataSource, UIPickerViewDelegate, UIPopoverPresentationControllerDelegate,UITextFieldDelegate {
+class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UIPopoverPresentationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var btPayMent: UIButton!
     @IBOutlet weak var lbStoreName: UILabel!
     @IBOutlet weak var btCommonly_one: UIButton!
@@ -38,7 +38,7 @@ class ConfirmOrderViewController: UIViewController,UITableViewDelegate,UITableVi
         self.shoppingcaritem = GetShoppingCarApi.GetShoppingCarInstance.getshoppingcaritem()
         self.shoppingcardetail = GetShoppingCarApi.GetShoppingCarInstance.getshoppingcardetail()
         self.feedlist = GetShoppingCarApi.GetShoppingCarInstance.getshoppingcaradd()
-        print(self.feedlist.count,"庭宇")
+        print(self.feedlist.count, "庭宇")
         ShoppingDetailTableView.reloadData()
         lbStoreName.text = shoppingcardetail[0].store_name
         ShoppingDetailTableView.tableFooterView = UIView()
@@ -73,8 +73,8 @@ class ConfirmOrderViewController: UIViewController,UITableViewDelegate,UITableVi
         cell.lbItemName.text = self.shoppingcaritem[indexPath.row].item_name
         cell.lbSugar.text = self.shoppingcaritem[indexPath.row].sugar
         cell.lbTmp.text = self.shoppingcaritem[indexPath.row].tmp
-        if self.shoppingcaritem[indexPath.row].id == feedlist[indexPath.row].itemIndexId{
-            print(feedlist[indexPath.row].feed,"搭特銷")
+        if self.shoppingcaritem[indexPath.row].id == feedlist[indexPath.row].itemIndexId {
+            print(feedlist[indexPath.row].feed, "搭特銷")
             let feedliststring = feedlist[indexPath.row].feed.joined(separator: "/")
             cell.lbFeed.text = feedliststring
             print(feedliststring)
@@ -91,11 +91,11 @@ class ConfirmOrderViewController: UIViewController,UITableViewDelegate,UITableVi
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
-    
+
     func pickerView( _ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
             return SendHour.count
-        }else{
+        } else {
             return SendMin.count
         }
     }
@@ -104,40 +104,40 @@ class ConfirmOrderViewController: UIViewController,UITableViewDelegate,UITableVi
         if component == 0 {
             hour = SendHour[row]
             return  SendHour[row]
-        }else{
+        } else {
             min = SendMin[row]
             return SendMin[row]
         }
     }
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 0{
+        if component == 0 {
             hour = SendHour[row]
             Min()
-        }else{
+        } else {
             min = SendMin[row]
         }
         PickerTextFiled.text = "\(hour)\(min)"
     }
-    func Min(){
+    func Min() {
         // 獲取當前時間
-        let now:Date = Date()
+        let now: Date = Date()
         // 建立時間格式
-        let dateFormat:DateFormatter = DateFormatter()
-        let dateFormat2:DateFormatter = DateFormatter()
+        let dateFormat: DateFormatter = DateFormatter()
+        let dateFormat2: DateFormatter = DateFormatter()
         dateFormat.dateFormat = "HH"
         dateFormat2.dateFormat = "mm"
         // 將當下時間轉換成設定的時間格式
-        let hourdate:Int = Int(dateFormat.string(from: now))!
-        let mindate:Int = Int(dateFormat2.string(from: now))!
+        let hourdate: Int = Int(dateFormat.string(from: now))!
+        let mindate: Int = Int(dateFormat2.string(from: now))!
         SendMin.removeAll()
         var selecthour = 0
         if hour.count == 2 {
             selecthour = Int(hour.prefix(1))!
-        }else{
+        } else {
             selecthour = Int(hour.prefix(2))!
         }
         SendMin.removeAll()
-        if((mindate + 30) >= 60 && (selecthour-1) <= hourdate ){
+        if (mindate + 30) >= 60 && (selecthour-1) <= hourdate {
             SendHour.removeAll()
             for i in (hourdate + 1)...21 {
                 SendHour.append("\(i)點")
@@ -146,16 +146,16 @@ class ConfirmOrderViewController: UIViewController,UITableViewDelegate,UITableVi
                 SendMin.append("\(i)分")
             }
             hour = SendHour[0]
-        }else{
+        } else {
             if selecthour > hourdate {
                 for i in stride(from: 0, to: 60, by: 30) {
-                    if(mindate < 60 ){
+                    if mindate < 60 {
                         SendMin.append("\(i)分")
                     }
                 }
-            }else{
+            } else {
                 for i in stride(from: mindate + 30, to: 60, by: 30) {
-                    if(mindate < 60 ){
+                    if mindate < 60 {
                         SendMin.append("\(i)分")
                     }
                 }
@@ -167,44 +167,44 @@ class ConfirmOrderViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     func CheckTime() -> Bool {
           // 獲取當前時間
-          let now:Date = Date()
+          let now: Date = Date()
           // 建立時間格式
-          let dateFormat:DateFormatter = DateFormatter()
-          let dateFormat2:DateFormatter = DateFormatter()
+          let dateFormat: DateFormatter = DateFormatter()
+          let dateFormat2: DateFormatter = DateFormatter()
           dateFormat.dateFormat = "HH"
           dateFormat2.dateFormat = "mm"
           // 將當下時間轉換成設定的時間格式
-          let hourdate:Int = Int(dateFormat.string(from: now))!
-          let mindate:Int = Int(dateFormat2.string(from: now))!
+          let hourdate: Int = Int(dateFormat.string(from: now))!
+          let mindate: Int = Int(dateFormat2.string(from: now))!
           var selectHour = 0
           var selectMin = 0
           if hour.count == 2 {
               selectHour = Int(hour.prefix(1))!
-          }else{
+          } else {
               selectHour = Int(hour.prefix(2))!
           }
-          if min.count == 2  {
+          if min.count == 2 {
               selectMin = Int(min.prefix(1))!
-          }else{
+          } else {
               selectMin = Int(min.prefix(2))!
           }
           if (((selectHour * 60 + selectMin) - (hourdate * 60 + mindate)) >= 15) && PickerTextFiled.text! != "" {
               return true
-          }else{
+          } else {
               return false
           }
       }
       //計算小時
-      func Hour(){
+      func Hour() {
           // 獲取當前時間
-          let now:Date = Date()
+          let now: Date = Date()
           // 建立時間格式
-          let dateFormat:DateFormatter = DateFormatter()
-          let dateFormat2:DateFormatter = DateFormatter()
+          let dateFormat: DateFormatter = DateFormatter()
+          let dateFormat2: DateFormatter = DateFormatter()
           dateFormat.dateFormat = "HH"
           dateFormat2.dateFormat = "mm"
           // 將當下時間轉換成設定的時間格式
-          let hourdate:Int = Int(dateFormat.string(from: now))!
+          let hourdate: Int = Int(dateFormat.string(from: now))!
           SendHour.removeAll()
           for i in hourdate...21 {
               SendHour.append("\(i)點")
@@ -212,7 +212,7 @@ class ConfirmOrderViewController: UIViewController,UITableViewDelegate,UITableVi
           hour = SendHour[0]
           pickerView.reloadAllComponents()
       }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
