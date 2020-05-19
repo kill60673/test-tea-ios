@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class DeleteSingleItemApi: NSObject {
-    static let DeleteSingItemInstance = DeleteSingleItemApi()
+    static let DeleteSingleItemInstance = DeleteSingleItemApi()
     var newToken: String!
         func deletesingleitem(token: String, handler : @escaping (Bool) -> Void) {
             let url = URL(string: ApiUrl.ApiUrlInstance.updateitemtozero)!

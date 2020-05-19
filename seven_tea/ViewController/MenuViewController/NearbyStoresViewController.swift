@@ -36,9 +36,7 @@ class NearbyStoresViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidAppear(_ animated: Bool) {
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") != nil {
             nearbystoresTableView.isHidden = false
-            nearbystoresTableView.isHidden = false
         } else {
-            nearbystoresTableView.isHidden = true
             nearbystoresTableView.isHidden = true
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewContorller = storyboard.instantiateViewController(withIdentifier: "LoginVc")
