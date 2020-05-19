@@ -90,7 +90,7 @@ class GetShoppingCarApi {
         return getcardetail
     }
     func getshoppingcaritem() -> [GetShoppingCarItem] {
-        shoppingcardetailtableview.reloadData()
+        print("這裡是getitem")
         return getcaritem
     }
     func getcaritemcount() -> Int {

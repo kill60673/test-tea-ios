@@ -137,7 +137,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
 
-    @IBAction func brClose(_ sender: Any) {
+    @IBAction func btClose(_ sender: Any) {
         feed.removeAll()
         dismiss(animated: true)
     }

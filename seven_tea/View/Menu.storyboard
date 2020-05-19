@@ -233,7 +233,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="close"/>
                                         <connections>
-                                            <action selector="brClose:" destination="atl-DB-EgL" eventType="touchUpInside" id="szX-kA-DS3"/>
+                                            <action selector="btClose:" destination="atl-DB-EgL" eventType="touchUpInside" id="szX-kA-DS3"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="規格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-Eu-PYZ">

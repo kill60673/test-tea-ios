@@ -58,7 +58,7 @@ func deleteSingleItemMessage(itemid:Int){
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
             print("is nil")
         }
-        DeleteSingleItemApi.DeleteSingItemInstance.deletesingleitem(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+        DeleteSingleItemApi.DeleteSingleItemInstance.deletesingleitem(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 print("有觸發")
                 GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)

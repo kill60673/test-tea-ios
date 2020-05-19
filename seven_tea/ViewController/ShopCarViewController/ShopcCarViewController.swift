@@ -82,9 +82,8 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
     }
     @IBAction func NextStep(_ sender: Any) {
         for i in 0..<itemQty.count {
-            print("蛤", itemQty[i])
-            let itmeqty = Params(id: itemstoreId[i], qty: itemQty[i])
-            print("大聲點", itemstoreId[i], itemQty[i])
+             print("index",itemQty.count)
+            print("＝＝",itemstoreId[i],itemQty[i])
             let Params = data(id: itemstoreId[i], qty: itemQty[i])
             params.append(Params)
         }
