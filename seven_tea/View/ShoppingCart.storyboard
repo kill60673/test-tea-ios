@@ -510,6 +510,9 @@
                                 <state key="normal" title="結帳">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btPayMent:" destination="PHe-mg-sPD" eventType="touchUpInside" id="eA5-RX-FRo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhR-NE-oKH">
                                 <rect key="frame" x="156" y="522" width="61" height="30"/>
@@ -604,6 +607,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="訂單確認" id="J6b-WJ-uS7"/>
                     <connections>
+                        <outlet property="PickerTextFiled" destination="hCp-dM-0Vz" id="QKn-ur-c44"/>
                         <outlet property="ShoppingDetailTableView" destination="QX1-2A-ii3" id="n38-KK-GA3"/>
                         <outlet property="btCommonly_one" destination="QFl-Pa-IGn" id="qxJ-Yf-uvu"/>
                         <outlet property="btCommonly_three" destination="WhR-NE-oKH" id="g9Z-ID-wZj"/>
