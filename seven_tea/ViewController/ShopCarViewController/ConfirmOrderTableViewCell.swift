@@ -16,7 +16,7 @@ class ConfirmOrderTableViewCell: UITableViewCell {
     @IBOutlet weak var lbSugar: UILabel!
     @IBOutlet weak var imageSize: UIImageView!
     @IBOutlet weak var lbItemName: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

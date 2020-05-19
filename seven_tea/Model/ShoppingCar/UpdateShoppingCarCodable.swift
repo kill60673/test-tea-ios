@@ -17,9 +17,9 @@ struct UpdateShoppingParams: Codable {
     var params = [data]()
 }
 struct data: Codable {
-    var id : Int
-    var qty : Int
-    init(id:Int,qty:Int) {
+    var id: Int
+    var qty: Int
+    init(id: Int, qty: Int) {
         self.id = id
         self.qty = qty
     }

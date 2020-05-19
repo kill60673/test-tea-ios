@@ -7,10 +7,10 @@
 //
 
 import Foundation
-class GetFeedList{
+class GetFeedList {
     var feed = [String]()
     var itemIndexId = Int()
-    init(feed:[String],itemIndexId:Int) {
+    init(feed: [String], itemIndexId: Int) {
         self.feed = feed
         self.itemIndexId = itemIndexId
     }

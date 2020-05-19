@@ -24,7 +24,7 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
         shoppingview = self
         //        GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -40,15 +40,14 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
             show(viewContorller, sender: self)
         }
     }
-    
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return GetShoppingCarApi.GetShoppingCarInstance.getcaritemcount()
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         self.shoppingcaritem = GetShoppingCarApi.GetShoppingCarInstance.getshoppingcaritem()
         self.shoppingcardetail = GetShoppingCarApi.GetShoppingCarInstance.getshoppingcardetail()
@@ -59,12 +58,12 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
         cell.delegate = self
         print(self.shoppingcaritem[indexPath.row].qty)
         itemstoreId.append(self.shoppingcaritem[indexPath.row].id)
-        print("diiiiiiii",itemstoreId)
+        print("diiiiiiii", itemstoreId)
         itemqty.append(self.shoppingcaritem[indexPath.row].qty)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
     }
     func getitemqty() -> [Int] {
         return itemqty
@@ -82,8 +81,8 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
     }
     @IBAction func NextStep(_ sender: Any) {
         for i in 0..<itemQty.count {
-             print("index",itemQty.count)
-            print("＝＝",itemstoreId[i],itemQty[i])
+             print("index", itemQty.count)
+            print("＝＝", itemstoreId[i], itemQty[i])
             let Params = data(id: itemstoreId[i], qty: itemQty[i])
             params.append(Params)
         }

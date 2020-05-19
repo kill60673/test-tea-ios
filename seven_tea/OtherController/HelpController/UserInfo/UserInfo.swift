@@ -46,6 +46,6 @@ class UserInfo: NSObject {
             preferences.set(newToken, forKey: "token")
             // 建立新的Token
         }
-        print("這個token",UserInfo.UserInfoInstance.preferences.object(forKey: "token")!)
+        print("這個token", UserInfo.UserInfoInstance.preferences.object(forKey: "token")!)
     }
 }

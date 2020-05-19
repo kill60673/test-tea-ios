@@ -16,11 +16,11 @@ class SycchronizeMemberInfoApi {
     var memberinfo = [SynchronizeMemberInfo]()
     var address = [SynchronizeMemberAddress]()
     static let SycchronizeMemberInfoApiInstance = SycchronizeMemberInfoApi()
-    func getmemberinfo(token:String) {
+    func getmemberinfo(token: String) {
         urlString = ApiUrl.ApiUrlInstance.synchornizememberinfo
         let url = URL(string: urlString)!
         var request = URLRequest(url: url )
-        print("ㄎㄎ",token)
+        print("ㄎㄎ", token)
         print("url...", url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue(token, forHTTPHeaderField: "Authorization")
@@ -28,18 +28,18 @@ class SycchronizeMemberInfoApi {
         let task = URLSession.shared.dataTask(with: request) {
             data, response, error in
             let httpStatus = response as! HTTPURLResponse
-            print("為什麼9991",httpStatus.allHeaderFields["Authorization"])
+            print("為什麼9991", httpStatus.allHeaderFields["Authorization"])
             if httpStatus.allHeaderFields["Authorization"] != nil {
                 print("我有進來2")
                 self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                print("tokennnnn",token)
+                print("tokennnnn", token)
                 print("我有進來3")
             }
             do {
                 let json = try JSON(data: data!)
-                print("reeeeeeee",json["success"].bool!)
+                print("reeeeeeee", json["success"].bool!)
                 if json["success"].bool! == true {
                     self.address.removeAll()
                     self.memberinfo.removeAll()
@@ -49,13 +49,13 @@ class SycchronizeMemberInfoApi {
                         for address in 0..<data["address"].count {
                             let address = SynchronizeMemberAddress(id: data["address"][address]["id"].string!, zipcode: data["address"][address]["zipcode"].string!, city: data["address"][address]["city"].string!, district: data["address"][address]["district"].string!, address: data["address"][address]["address"].string!)
                             self.address.append(address)
-                            print("eeeeee",address.address)
+                            print("eeeeee", address.address)
                         }
-                       
+
                         print(data["name"].string!)
                         print(data["phone"].string!)
                         let getmenuproduct = SynchronizeMemberInfo(id: data["id"].int!, name: data["name"].string!, phone: data["phone"].string!)
-                        
+
                         self.memberinfo.append(getmenuproduct)
                     }
                 } else {
@@ -64,7 +64,7 @@ class SycchronizeMemberInfoApi {
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-                
+
             } catch {
                 //主線程
                 DispatchQueue.main.async {

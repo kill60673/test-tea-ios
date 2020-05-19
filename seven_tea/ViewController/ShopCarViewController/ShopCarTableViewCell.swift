@@ -23,13 +23,13 @@ class ShopCarTableViewCell: UITableViewCell {
     var delegate: TableViewCellDelegate!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         // Initialization code
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
     @IBAction func brPlus(_ sender: Any) {
@@ -48,7 +48,7 @@ class ShopCarTableViewCell: UITableViewCell {
             itemQty[index_row] -= 1
             lbQty.text = "\(itemQty[index_row])"
         }
-        if itemQty[index_row] < 1{
+        if itemQty[index_row] < 1 {
             deleteSingleItemMessage(itemid: itemstoreId[index_row])
         }
     }
