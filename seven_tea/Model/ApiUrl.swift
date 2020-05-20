@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 class ApiUrl: NSObject {
     static let ApiUrlInstance = ApiUrl()
-    var doMain: String = "http://127.0.0.1:8000"
+    var doMain: String = "http://192.168.0.128:8060/"
     var loginUrl: String
     var sendMemberRegisterSmsUrl: String
     var forgotPasswordSmsUrl: String
