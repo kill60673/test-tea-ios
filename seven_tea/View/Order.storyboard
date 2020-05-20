@@ -391,6 +391,7 @@
                         <outlet property="LbNoData" destination="zQ7-sj-unp" id="brV-SK-pa1"/>
                         <outlet property="OrderTableView" destination="xbd-nE-YOb" id="H4g-kp-ck5"/>
                         <outlet property="OrderViewController" destination="XJf-gk-LzN" id="c2P-L6-XMM"/>
+                        <outlet property="orderTableView" destination="xbd-nE-YOb" id="gbn-tl-0lU"/>
                         <outlet property="statusSelect" destination="MTO-Bz-dAV" id="Hcz-eS-FmN"/>
                     </connections>
                 </viewController>
