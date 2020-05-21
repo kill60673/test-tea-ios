@@ -20,6 +20,7 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tfAddress: UITextField!
     @IBOutlet weak var ShoppingDetailTableView: UITableView!
     @IBOutlet weak var tfTaxCode: UITextField!
+    @IBOutlet weak var sgMethod: UISegmentedControl!
     @IBOutlet weak var PickerTextFiled: UITextField!
     var shoppingcaritem = [GetShoppingCarItem]()
     var shoppingcardetail = [GetShoppingCarDetail]()
@@ -34,9 +35,8 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
     var hour = "0"
     var min = ""
     var arrivaltime = ""
-    var Getmethod = 99
+    var Getmethod = "take_our"
     var PayMethod = 99
-    var delivery = "delivery"
     var pickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +63,10 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         super.viewWillAppear(animated)
         Hour()
         Min()
-        PickerTextFiled.text = "\(self.day) \(SendHour[0])\(SendMin[0])"
+        PickerTextFiled.text = "\(self.day) \(SendHour[0]):\(SendMin[0])"
         self.arrivaltime = "\(self.day) \(SendHour[0]):\(SendMin[0])"
+        print("\(self.day) \(SendHour[0]):\(SendMin[0])")
+        print(self.arrivaltime)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -127,8 +129,8 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         } else {
             min = SendMin[row]
         }
-        PickerTextFiled.text = "\(self.day) \(hour)\(min)"
-//        self.arrivaltime = "\(self.day) \(hour)\(min)"
+        PickerTextFiled.text = "\(self.day) \(hour):\(min)"
+        self.arrivaltime = "\(self.day) \(hour):\(min)"
     }
     func Min() {
         // 獲取當前時間
@@ -138,11 +140,10 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         let dateFormat2: DateFormatter = DateFormatter()
         let dateday: DateFormatter = DateFormatter()
         dateday.dateFormat = "yyyy-MM-dd"
-//        print("白癡喔",dateday)
+        //        print("白癡喔",dateday)
         dateFormat.dateFormat = "HH"
         dateFormat2.dateFormat = "mm"
         self.day = String(dateday.string(from: now))
-        print("白癡喔",self.day)
         // 將當下時間轉換成設定的時間格式
         let hourdate: Int = Int(dateFormat.string(from: now))!
         let mindate: Int = Int(dateFormat2.string(from: now))!
@@ -237,23 +238,63 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
     @IBAction func btPayMent(_ sender: Any) {
-        ConfirmView.navigationController?.popViewController(animated: true)
-//        if self.memberaddress[0].address != tfAddress.text {
-//            memberaddress.removeAll()
-//            let memberitemaddress = SynchronizeMemberAddress(id: nil, zipcode: nil, city: nil, district: nil, address: tfAddress.text!)
-//            self.memberaddress.append(memberitemaddress)
-//        }else{
-//
-//        }
+      
+        memberaddress.removeAll()
+        let memberitemaddress = SynchronizeMemberAddress(id: nil, zipcode: nil, city: nil, district: nil, address: tfAddress.text!)
+        self.memberaddress.append(memberitemaddress)
         //tab 切換的第0個
-        ConfirmView.tabBarController?.selectedIndex = 0
+        print(memberaddress[0])
         print(self.arrivaltime,"欸仲圻")
         print(tfRecipient.text!,"欸中期二號")
         print(tfPhoneNumber.text!,"ddd")
-        ConfirmCartOrderMessage(store_id: shoppingcardetail[0].store_id, total_qty: shoppingcardetail[0].total_qty , total_price: shoppingcardetail[0].totle_price, get_method: delivery, arrival_time: self.arrivaltime, recipient: tfRecipient.text!, recipient_tel: tfPhoneNumber.text!, tax_code: tfTaxCode.text ?? "", pay_method: "cash", item: ConfirmCaritem, address: self.memberaddress)
+        if tfRecipient.text != "" && tfAddress.text != "" && tfPhoneNumber.text != "" {
+             ConfirmCartOrderMessage(store_id: shoppingcardetail[0].store_id, total_qty: shoppingcardetail[0].total_qty , total_price: shoppingcardetail[0].totle_price, get_method: self.Getmethod, arrival_time: self.arrivaltime, recipient: tfRecipient.text!, recipient_tel: tfPhoneNumber.text!, tax_code: tfTaxCode.text ?? "", pay_method: "cash", item: ConfirmCaritem, address: self.memberaddress)
+            ConfirmView.navigationController?.popViewController(animated: true)
+            ConfirmView.tabBarController?.selectedIndex = 0
+        }
     }
     @IBAction func btCommonlyOne(_ sender: Any) {
-        let memberaddress = SynchronizeMemberAddress(id: address[0].id, zipcode: address[0].zipcode, city: address[0].city, district: address[0].district, address: address[0].address)
-        self.memberaddress.append(memberaddress)
+        self.memberaddress.removeAll()
+        if address[0].id != nil {
+            let memberaddress = SynchronizeMemberAddress(id: address[0].id, zipcode: address[0].zipcode, city: address[0].city, district: address[0].district, address: address[0].address)
+            self.memberaddress.append(memberaddress)
+            tfAddress.text = "\(memberaddress.city!)\(memberaddress.district!)\(memberaddress.address)"
+        }
     }
+    @IBAction func btCommonlyTwo(_ sender: Any) {
+        self.memberaddress.removeAll()
+        if address[1].id != nil {
+            let memberaddress = SynchronizeMemberAddress(id: address[1].id, zipcode: address[1].zipcode, city: address[1].city, district: address[1].district, address: address[1].address)
+            self.memberaddress.append(memberaddress)
+            tfAddress.text = "\(memberaddress.city!)\(memberaddress.district!)\(memberaddress.address)"
+        }
+    }
+    
+    @IBAction func btCommonlyThree(_ sender: Any) {
+        self.memberaddress.removeAll()
+        if address[2].id != nil {
+            let memberaddress = SynchronizeMemberAddress(id: address[2].id, zipcode: address[2].zipcode, city: address[2].city, district: address[2].district, address: address[2].address)
+            self.memberaddress.append(memberaddress)
+            tfAddress.text = "\(memberaddress.city!)\(memberaddress.district!)\(memberaddress.address)"
+        }
+    }
+    
+    @IBAction func segmentedControlValueChanged(_ sender: Any) {
+        setGetmethod()
+        print(self.Getmethod)
+    }
+    func setGetmethod() {
+        // 依照被選取項目的index來決定男女
+        let selectedIndex = sgMethod.selectedSegmentIndex
+        switch selectedIndex {
+        case 0:
+            self.Getmethod = "take_our"
+        case 1:
+            self.Getmethod = "delivery"
+        default:
+            break
+        }
+        // 依照被選取項目的index來取得該選項文字，並顯示在lbMessage上
+    }
+    
 }

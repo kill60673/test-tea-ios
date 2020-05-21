@@ -319,6 +319,9 @@
                                     <segment title="店取"/>
                                     <segment title="外送"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="PHe-mg-sPD" eventType="valueChanged" id="z0l-s4-VoY"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定時間" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1il-Am-S7C">
                                 <rect key="frame" x="133" y="371" width="86" height="31"/>
@@ -411,6 +414,9 @@
                                     <constraint firstAttribute="width" constant="61" id="G5e-tY-Ip6"/>
                                 </constraints>
                                 <state key="normal" title="常用2"/>
+                                <connections>
+                                    <action selector="btCommonlyTwo:" destination="PHe-mg-sPD" eventType="touchUpInside" id="k1t-QP-2Lh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="統一編號:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMG-6P-Wm5">
                                 <rect key="frame" x="9" y="618" width="89" height="20.5"/>
@@ -524,6 +530,9 @@
                                     <constraint firstAttribute="width" constant="61" id="s7l-sG-QhG"/>
                                 </constraints>
                                 <state key="normal" title="常用3"/>
+                                <connections>
+                                    <action selector="btCommonlyThree:" destination="PHe-mg-sPD" eventType="touchUpInside" id="8re-xt-4Qc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="訂購店家:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJr-0Z-FGD">
                                 <rect key="frame" x="20.5" y="49" width="74" height="38.5"/>
@@ -617,6 +626,7 @@
                         <outlet property="btCommonly_two" destination="a6Z-9W-K8c" id="2Ot-x2-nHQ"/>
                         <outlet property="btPayMent" destination="PZC-16-A2O" id="cEO-CH-R7e"/>
                         <outlet property="lbStoreName" destination="qbJ-eD-OD2" id="DRy-De-nkB"/>
+                        <outlet property="sgMethod" destination="dhM-1p-KXt" id="f5I-rS-6kt"/>
                         <outlet property="tfAddress" destination="haa-Zu-sx6" id="MSO-o2-wdb"/>
                         <outlet property="tfPhoneNumber" destination="ErH-2p-ehS" id="x0k-N1-ktl"/>
                         <outlet property="tfRecipient" destination="s9R-vb-8dz" id="COY-eo-eMw"/>
