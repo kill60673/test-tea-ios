@@ -47,9 +47,9 @@ class SycchronizeMemberInfoApi {
                     for i in 0..<json["data"].count {
                         let data = json["data"][i]
                         for address in 0..<data["address"].count {
-                            let address = SynchronizeMemberAddress(id: data["address"][address]["id"].string!, zipcode: data["address"][address]["zipcode"].string!, city: data["address"][address]["city"].string!, district: data["address"][address]["district"].string!, address: data["address"][address]["address"].string!)
-                            self.address.append(address)
-                            print("eeeeee", address.address)
+                            let memberaddress = SynchronizeMemberAddress(id: data["address"][address]["id"].string!, zipcode: data["address"][address]["zipcode"].string!, city: data["address"][address]["city"].string!, district: data["address"][address]["district"].string!, address: data["address"][address]["address"].string!)
+                            self.address.append(memberaddress)
+                            print("eeeeee", memberaddress)
                         }
 
                         print(data["name"].string!)

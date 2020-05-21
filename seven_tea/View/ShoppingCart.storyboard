@@ -400,6 +400,9 @@
                                     <constraint firstAttribute="height" constant="30" id="hPr-z6-nfi"/>
                                 </constraints>
                                 <state key="normal" title="常用1"/>
+                                <connections>
+                                    <action selector="btCommonlyOne:" destination="PHe-mg-sPD" eventType="touchUpInside" id="bDJ-dp-cnV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6Z-9W-K8c">
                                 <rect key="frame" x="83" y="522" width="61" height="30"/>
@@ -617,6 +620,7 @@
                         <outlet property="tfAddress" destination="haa-Zu-sx6" id="MSO-o2-wdb"/>
                         <outlet property="tfPhoneNumber" destination="ErH-2p-ehS" id="x0k-N1-ktl"/>
                         <outlet property="tfRecipient" destination="s9R-vb-8dz" id="COY-eo-eMw"/>
+                        <outlet property="tfTaxCode" destination="guO-Oh-Lxm" id="wQP-jq-FtX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6Y-UR-gtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

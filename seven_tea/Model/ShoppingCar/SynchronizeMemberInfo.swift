@@ -18,13 +18,13 @@ class SynchronizeMemberInfo {
         self.phone = phone
     }
 }
-class SynchronizeMemberAddress {
-    var id = String()
-    var zipcode = String()
-    var city = String()
-    var district = String()
-    var address = String()
-    init (id: String, zipcode: String, city: String, district: String, address: String) {
+struct SynchronizeMemberAddress : Codable{
+    var id : String?
+    var zipcode : String?
+    var city : String?
+    var district : String?
+    var address : String
+    init (id: String?, zipcode: String?, city: String?, district: String?, address: String) {
         self.id = id
         self.zipcode = zipcode
         self.city = city
