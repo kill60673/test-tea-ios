@@ -22,11 +22,11 @@ struct ConfirmCartOrder: Codable {
     var recipient: String
     var recipient_tel: String
     var tax_code: String
-    var pay_method: String
-    var item: [item]
-    var address: [address]
+    var pay_method: String?
+    var item: [ConfirmCartitem]
+    var address: [SynchronizeMemberAddress]
 }
-struct item: Codable {
+struct ConfirmCartitem: Codable {
     var id: String
     var qty: Int
     var item_id: Int
@@ -48,17 +48,4 @@ struct item: Codable {
         self.price = price
     }
 }
-struct address: Codable {
-    var id: String
-    var zipcode: String
-    var city: String
-    var district: String
-    var address: String
-    init(id: String, zipcode: String, city: String, district: String, address: String) {
-        self.id = id
-        self.zipcode = zipcode
-        self.city = city
-        self.district = district
-        self.address = address
-    }
-}
+

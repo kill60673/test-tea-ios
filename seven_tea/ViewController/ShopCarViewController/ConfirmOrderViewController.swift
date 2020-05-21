@@ -19,11 +19,14 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tfPhoneNumber: UITextField!
     @IBOutlet weak var tfAddress: UITextField!
     @IBOutlet weak var ShoppingDetailTableView: UITableView!
+    @IBOutlet weak var tfTaxCode: UITextField!
     @IBOutlet weak var PickerTextFiled: UITextField!
     var shoppingcaritem = [GetShoppingCarItem]()
     var shoppingcardetail = [GetShoppingCarDetail]()
     var memberinfo = [SynchronizeMemberInfo]()
     var address = [SynchronizeMemberAddress]()
+    var memberaddress = [SynchronizeMemberAddress]()
+    var ConfirmCaritem = [ConfirmCartitem]()
     var feedlist = [GetFeedList]()
     var SendHour = [String]()
     var SendMin = [String]()
@@ -61,7 +64,7 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         Hour()
         Min()
         PickerTextFiled.text = "\(self.day) \(SendHour[0])\(SendMin[0])"
-//        self.arrivaltime = "\(self.day) \(SendHour[0])\(SendMin[0])"
+        self.arrivaltime = "\(self.day) \(SendHour[0]):\(SendMin[0])"
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -86,6 +89,8 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
             print(feedliststring)
         }
         cell.lbQty.text = "\(self.shoppingcaritem[indexPath.row].qty)"
+        let item = ConfirmCartitem(id: String(self.shoppingcaritem[indexPath.row].id), qty: self.shoppingcaritem[indexPath.row].qty, item_id: self.shoppingcaritem[indexPath.row].item_id, item_name: self.shoppingcaritem[indexPath.row].item_name, size: shoppingcaritem[indexPath.row].size, sugar: self.shoppingcaritem[indexPath.row].sugar, tmp: self.shoppingcaritem[indexPath.row].tmp, add: feedlist[indexPath.row].feed, price: shoppingcaritem[indexPath.row].price)
+        self.ConfirmCaritem.append(item)
         return cell
     }
     @IBAction func btSynchronizeMemberInfo(_ sender: Any) {
@@ -232,11 +237,23 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
     @IBAction func btPayMent(_ sender: Any) {
-        MessageAlert.Instance.message(message: "成功下訂訂單")
-        ConfirmView.dismiss(animated: true, completion: nil)
         ConfirmView.navigationController?.popViewController(animated: true)
+//        if self.memberaddress[0].address != tfAddress.text {
+//            memberaddress.removeAll()
+//            let memberitemaddress = SynchronizeMemberAddress(id: nil, zipcode: nil, city: nil, district: nil, address: tfAddress.text!)
+//            self.memberaddress.append(memberitemaddress)
+//        }else{
+//
+//        }
         //tab 切換的第0個
         ConfirmView.tabBarController?.selectedIndex = 0
-//        ConfirmCartOrderMessage(store_id: shoppingcardetail[0].store_id, total_qty: shoppingcardetail[0].total_qty , total_price: shoppingcardetail[0].totle_price, get_method: delivery, arrival_time: <#T##String#>, recipient: <#T##String#>, recipient_tel: <#T##String#>, tax_code: <#T##String#>, pay_method: <#T##String#>, item: <#T##[item]#>, address: <#T##[address]#>)
+        print(self.arrivaltime,"欸仲圻")
+        print(tfRecipient.text!,"欸中期二號")
+        print(tfPhoneNumber.text!,"ddd")
+        ConfirmCartOrderMessage(store_id: shoppingcardetail[0].store_id, total_qty: shoppingcardetail[0].total_qty , total_price: shoppingcardetail[0].totle_price, get_method: delivery, arrival_time: self.arrivaltime, recipient: tfRecipient.text!, recipient_tel: tfPhoneNumber.text!, tax_code: tfTaxCode.text ?? "", pay_method: "cash", item: ConfirmCaritem, address: self.memberaddress)
+    }
+    @IBAction func btCommonlyOne(_ sender: Any) {
+        let memberaddress = SynchronizeMemberAddress(id: address[0].id, zipcode: address[0].zipcode, city: address[0].city, district: address[0].district, address: address[0].address)
+        self.memberaddress.append(memberaddress)
     }
 }
