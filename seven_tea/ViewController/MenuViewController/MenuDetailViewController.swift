@@ -33,6 +33,8 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     var itemsugar = [ProductSugar]()
     var itemadd = [ProductAdd]()
     var Size = ""
+    var size_M = "no_open"
+    var size_L = "no_open"
     var Temperature = "Cold"
     var tmp = ""
     var itemid = ""
@@ -42,6 +44,8 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     var storeID = ""
     var tempname = ""
     var sugarname = ""
+    var qty = 0
+    var total_price = 0
     override func viewDidLoad() {
         tempcollectionview = tempCollectionview
         self.itemsugar = GetMenuProductApi.GetStoresApiInstance.getproductsugar()
@@ -58,6 +62,12 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         super.viewDidLoad()
         lbTitle.text = itemname
         view?.backgroundColor = UIColor(white: 1, alpha: 0)
+        if self.size_M == "no_open"{
+            btSizeM.isHidden = true
+        }
+        if self.size_L == "no_open"{
+            btSizeL.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -168,10 +178,24 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     @IBAction func btAddShopingCar(_ sender: Any) {
-        getAddShopingCarMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: Int(storeID)!, qty: 1, total_price: 50)
+        getAddShopingCarMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: Int(storeID)!, qty: qty, total_price: 50)
         print("爆破", itemid, itemname, itemcategory, tempname, sugarname, Size, feed, storeID)
     }
     @IBAction func btAddMyFavorite(_ sender: Any) {
         getAddFavoriteMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: Int(storeID)!, price: 50)
+    }
+    
+    @IBAction func btLess(_ sender: Any) {
+        if self.qty > 0 {
+            self.qty -= 1
+        }
+        lbQuantity.text = "\(self.qty)"
+    }
+    
+    @IBAction func btPlus(_ sender: Any) {
+        if self.qty < 99 {
+        self.qty += 1
+        }
+        lbQuantity.text = "\(self.qty)"
     }
 }
