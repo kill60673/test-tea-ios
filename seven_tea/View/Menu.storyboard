@@ -212,11 +212,17 @@
                                         <rect key="frame" x="41" y="535" width="53" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Plus"/>
+                                        <connections>
+                                            <action selector="btPlus:" destination="atl-DB-EgL" eventType="touchUpInside" id="izg-pq-U8Y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55m-kg-hbB">
-                                        <rect key="frame" x="121" y="535" width="53" height="30"/>
+                                        <rect key="frame" x="132" y="535" width="53" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Less"/>
+                                        <connections>
+                                            <action selector="btLess:" destination="atl-DB-EgL" eventType="touchUpInside" id="xdA-lf-nug"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvX-PV-SAe">
                                         <rect key="frame" x="222" y="73" width="101" height="30"/>
@@ -294,7 +300,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgw-yo-4zw">
-                                        <rect key="frame" x="102" y="540" width="11" height="21"/>
+                                        <rect key="frame" x="102" y="540" width="22" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>

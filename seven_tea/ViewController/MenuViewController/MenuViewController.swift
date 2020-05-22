@@ -12,13 +12,14 @@ var CategoryTableView: UITableView!
 var getItemDetail = [GetMenuProduct]()
 var getItemPrice = [ProductPrice]()
 var getitemicetemp = [ProductIceTemp]()
+var getproductsize = [ProductSize]()
 var categoryId = ""
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
     @IBOutlet weak var itemTableview: UITableView!
     @IBOutlet weak var categoryTableview: UITableView!
     var getCategoryDetails = [GetMenuCategory]()
     let menuDetailService = MenuDetailService()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ItemTableView = itemTableview
@@ -64,7 +65,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             getItemDetail = GetMenuProductApi.GetStoresApiInstance.getmenuproductlist()
             getItemPrice = GetMenuProductApi.GetStoresApiInstance.getproductprice()
-
+            getproductsize = GetMenuProductApi.GetStoresApiInstance.getproductsize()
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuTableViewCell
             cell.lbItemName.text = getItemDetail[indexPath.row].item_name
             if getItemPrice[indexPath.row].size == "M" && getItemPrice[indexPath.row].temp == "冷"{
@@ -85,6 +86,16 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             menuDetailVc.itemid = getItemDetail[indexPath.row].id
             menuDetailVc.itemcategory = categoryId
             menuDetailVc.storeID = GetMenuProductApi.GetStoresApiInstance.getstoreId()
+            if getproductsize.count == 1 && getproductsize[0].name == "M" {
+                menuDetailVc.size_M = "is_open"
+            }
+            if getproductsize.count == 1 && getproductsize[0].name == "L" {
+                menuDetailVc.size_L = "is_ope"
+            }
+            if getproductsize.count == 2 {
+                menuDetailVc.size_M = "is_open"
+                menuDetailVc.size_L = "is_open"
+            }
             present(menuDetailVc, animated: true)
         } else {
             categoryId = getCategoryDetails[indexPath.row].id
