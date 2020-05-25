@@ -19,7 +19,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var categoryTableview: UITableView!
     var getCategoryDetails = [GetMenuCategory]()
     let menuDetailService = MenuDetailService()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         ItemTableView = itemTableview

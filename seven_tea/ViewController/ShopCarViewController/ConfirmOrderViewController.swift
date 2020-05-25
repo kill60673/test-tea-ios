@@ -104,7 +104,7 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
-    
+
     func pickerView( _ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
             return SendHour.count
@@ -112,7 +112,7 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
             return SendMin.count
         }
     }
-    
+
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
             hour = SendHour[row]
@@ -232,23 +232,23 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         hour = SendHour[0]
         pickerView.reloadAllComponents()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     @IBAction func btPayMent(_ sender: Any) {
-      
+
         memberaddress.removeAll()
         let memberitemaddress = SynchronizeMemberAddress(id: nil, zipcode: nil, city: nil, district: nil, address: tfAddress.text!)
         self.memberaddress.append(memberitemaddress)
         //tab 切換的第0個
         print(memberaddress[0])
-        print(self.arrivaltime,"欸仲圻")
-        print(tfRecipient.text!,"欸中期二號")
-        print(tfPhoneNumber.text!,"ddd")
+        print(self.arrivaltime, "欸仲圻")
+        print(tfRecipient.text!, "欸中期二號")
+        print(tfPhoneNumber.text!, "ddd")
         if tfRecipient.text != "" && tfAddress.text != "" && tfPhoneNumber.text != "" {
-             ConfirmCartOrderMessage(store_id: shoppingcardetail[0].store_id, total_qty: shoppingcardetail[0].total_qty , total_price: shoppingcardetail[0].totle_price, get_method: self.Getmethod, arrival_time: self.arrivaltime, recipient: tfRecipient.text!, recipient_tel: tfPhoneNumber.text!, tax_code: tfTaxCode.text ?? "", pay_method: "cash", item: ConfirmCaritem, address: self.memberaddress)
+             ConfirmCartOrderMessage(store_id: shoppingcardetail[0].store_id, total_qty: shoppingcardetail[0].total_qty, total_price: shoppingcardetail[0].totle_price, get_method: self.Getmethod, arrival_time: self.arrivaltime, recipient: tfRecipient.text!, recipient_tel: tfPhoneNumber.text!, tax_code: tfTaxCode.text ?? "", pay_method: "cash", item: ConfirmCaritem, address: self.memberaddress)
             ConfirmView.navigationController?.popViewController(animated: true)
             ConfirmView.tabBarController?.selectedIndex = 0
         }
@@ -269,7 +269,7 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
             tfAddress.text = "\(memberaddress.city!)\(memberaddress.district!)\(memberaddress.address)"
         }
     }
-    
+
     @IBAction func btCommonlyThree(_ sender: Any) {
         self.memberaddress.removeAll()
         if address[2].id != nil {
@@ -278,7 +278,7 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
             tfAddress.text = "\(memberaddress.city!)\(memberaddress.district!)\(memberaddress.address)"
         }
     }
-    
+
     @IBAction func segmentedControlValueChanged(_ sender: Any) {
         setGetmethod()
         print(self.Getmethod)
@@ -296,5 +296,5 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         }
         // 依照被選取項目的index來取得該選項文字，並顯示在lbMessage上
     }
-    
+
 }

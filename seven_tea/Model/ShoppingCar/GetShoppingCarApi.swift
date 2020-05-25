@@ -60,7 +60,7 @@ class GetShoppingCarApi {
                         self.add.removeAll()
                     }
                     for i in 0..<json["data"].count {
-                        let getcardetail = GetShoppingCarDetail(store_id: json["data"]["store_id"].int!, store_name: json["data"]["store_name"].string!, totle_price: json["data"]["total_price"].int!, can_delivery: json["data"]["can_delivery"].bool!, gap_to_delivery: json["data"]["gap_to_delivery"].int!,total_qty: json["data"]["total_qty"].int!)
+                        let getcardetail = GetShoppingCarDetail(store_id: json["data"]["store_id"].int!, store_name: json["data"]["store_name"].string!, totle_price: json["data"]["total_price"].int!, can_delivery: json["data"]["can_delivery"].bool!, gap_to_delivery: json["data"]["gap_to_delivery"].int!, total_qty: json["data"]["total_qty"].int!)
                         self.getcardetail.append(getcardetail)
                     }
                 } else {

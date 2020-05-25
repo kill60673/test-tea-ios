@@ -48,4 +48,3 @@ struct ConfirmCartitem: Codable {
         self.price = price
     }
 }
-
