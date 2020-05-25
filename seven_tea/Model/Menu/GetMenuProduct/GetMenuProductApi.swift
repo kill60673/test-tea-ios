@@ -20,6 +20,8 @@ class GetMenuProductApi {
     var productadd = [ProductAdd]()
     var producticetemp = [ProductIceTemp]()
     var producthottemp = [ProductHotTemp]()
+    var itemprice = [String:Int]()
+    var feedprice = [String:Int]()
     static let GetStoresApiInstance = GetMenuProductApi()
     var storeID = ""
     func getstores(storeId: Int, catrgoryId: String) {
@@ -54,24 +56,34 @@ class GetMenuProductApi {
                             for price in 0..<data["price"].count {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: "\(data["price"][price]["price"])", area: nil)
                                 self.productprice.append(price)
+                                self.itemprice["\(price.size)\(price.temp)"] = Int(price.price)
+                                print("這裡是xxx",self.itemprice)
+                                print("這裡是itemprice0",price.temp,price.size,price.price,self.itemprice)
                             }
                             break
                         case "1":
                             for price in 0..<data["price"].count {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: "\(data["price"][price]["price"])", area: data["price"][price]["area"].string!)
                                 self.productprice.append(price)
+                                self.itemprice["\(price.size)\(price.temp)"] = Int(price.price)
+                                print("這裡是itemprice1",price.temp,price.size,price.price,self.itemprice)
                             }
                             break
                         case "2":
                             for price in 0..<data["price"].count {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: "\(data["price"][price]["price"])", area: "")
                                 self.productprice.append(price)
+                                self.itemprice["\(price.size)\(price.temp)"] = Int(price.price)
+                                print("這裡是itemprice2",price.temp,price.size,price.price,self.itemprice)
                             }
+                            print ("total xxx",self.itemprice)
                             break
                         default:
                             for price in 0..<data["price"].count {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: "\(data["price"][price]["price"])", area: "\(data["price"][price]["area"])")
                                 self.productprice.append(price)
+                                self.itemprice["\(price.size)\(price.temp)"] = Int(price.price)
+                                print("這裡是itemprice3",self.itemprice)
                             }
                             break
                         }
@@ -87,10 +99,12 @@ class GetMenuProductApi {
                             let sugar = ProductSugar(name: data["sugar"][sugar]["name"].string!, is_active: data["sugar"][sugar]["is_active"].bool!)
                             self.productsugar.append(sugar)
                         }
-
+                        
                         for add in 0..<data["add"].count {
                             let add = ProductAdd(id: data["add"][add]["id"].int!, name: data["add"][add]["name"].string!, price: data["add"][add]["price"].string!)
                             self.productadd.append(add)
+                            self.feedprice["\(add.name)"] = Int(add.price)
+                            print("這裡是feed",self.feedprice)
                         }
                         let getmenuproduct = GetMenuProduct(id: data["id"].string!, item_name: data["item_name"].string!, picture_url: data["picture_url"].string!, is_fixed: data["is_fixed"].int!)
                         self.productlist.append(getmenuproduct)
@@ -101,7 +115,7 @@ class GetMenuProductApi {
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-
+                
             } catch {
                 //主線程
                 DispatchQueue.main.async {
@@ -112,7 +126,7 @@ class GetMenuProductApi {
             //主線程
             DispatchQueue.main.async {
                 if NearByStoresTableView == nil {
-
+                    
                 } else {
                     ItemTableView.reloadData()
                 }
@@ -149,5 +163,11 @@ class GetMenuProductApi {
     }
     func getstoreId() -> String {
         return self.storeID
+    }
+    func getItemPrice() -> [String:Int]{
+        return self.itemprice
+    }
+    func getFeedPrice() -> [String:Int]{
+        return self.feedprice
     }
 }
