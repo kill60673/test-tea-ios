@@ -25,6 +25,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         } else {
         feed.firstIndex(of: "\(btFeed.titleLabel!.text!)").map {feed.remove(at: $0)}
         }
+        MenuDetailViewController.MenuDetailInstance.operation()
     }
 
 }

@@ -80,7 +80,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.tag == 0 {
             let menuDetailVc = menuDetailService.alert()
-            menuDetailVc.itemprice = [getItemPrice[indexPath.row]]
+//            menuDetailVc.itemprice = [getItemPrice[indexPath.row]]
             menuDetailVc.itemdetail = getItemDetail
             menuDetailVc.itemname = getItemDetail[indexPath.row].item_name
             menuDetailVc.itemid = getItemDetail[indexPath.row].id
