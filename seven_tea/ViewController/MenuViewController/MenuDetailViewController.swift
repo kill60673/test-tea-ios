@@ -39,7 +39,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     var hottemp = [ProductHotTemp]()
     var itemsugar = [ProductSugar]()
     var itemadd = [ProductAdd]()
-    
+
     var size_M = "no_open"
     var size_L = "no_open"
     var tmp = ""
@@ -152,7 +152,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
             break
         }
     }
-    
+
     @IBAction func btClose(_ sender: Any) {
         feed.removeAll()
         itemprice = 0
@@ -160,7 +160,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         menudetailqty = 0
         dismiss(animated: true)
     }
-    
+
     @IBAction func btSizeM(_ sender: Any) {
         btSizeM.backgroundColor = UIColor.yellow
         btSizeL.backgroundColor = UIColor.white
@@ -189,7 +189,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         lbTemperature.text = "冰度"
         operation()
     }
-    
+
     @IBAction func btAddShopingCar(_ sender: Any) {
         getAddShopingCarMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: Int(storeID)!, qty: menudetailqty, total_price: 50)
         print("爆破", itemid, itemname, itemcategory, tempname, sugarname, Size, feed, storeID)
@@ -197,7 +197,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     @IBAction func btAddMyFavorite(_ sender: Any) {
         getAddFavoriteMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: Int(storeID)!, price: 50)
     }
-    
+
     @IBAction func btLess(_ sender: Any) {
         if menudetailqty > 0 {
             menudetailqty -= 1
@@ -205,7 +205,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         lbQuantity.text = "\(menudetailqty)"
         operation()
     }
-    
+
     @IBAction func btPlus(_ sender: Any) {
         if menudetailqty < 99 {
             menudetailqty += 1
@@ -213,21 +213,21 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         lbQuantity.text = "\(menudetailqty)"
         operation()
     }
-    func operation(){
+    func operation() {
         let itempricelist = GetMenuProductApi.GetStoresApiInstance.getItemPrice()
         let feedpricelist = GetMenuProductApi.GetStoresApiInstance.getFeedPrice()
         feedprice = 0
-        for i in 0..<feed.count{
+        for i in 0..<feed.count {
             feedprice += feedpricelist["\(feed[i])"] ?? 0
-            print(feedprice,"feedprice在這裏")
+            print(feedprice, "feedprice在這裏")
             print(feed[i])
         }
         print(Size)
         print(Temperature)
         itemprice = itempricelist["\(Size)\(Temperature)"] ?? 0
-        print(itemprice,"這邊啊你")
+        print(itemprice, "這邊啊你")
         self.total_price = (itemprice + feedprice) * menudetailqty
-        print(self.total_price,"totlepriceeeeee")
+        print(self.total_price, "totlepriceeeeee")
         lbtotalprice.text = "$\(self.total_price)"
     }
 }
