@@ -191,7 +191,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     @IBAction func btAddShopingCar(_ sender: Any) {
-        getAddShopingCarMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: Int(storeID)!, qty: menudetailqty, total_price: 50)
+        getAddShopingCarMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: Int(storeID)!, qty: menudetailqty, total_price: self.total_price)
         print("爆破", itemid, itemname, itemcategory, tempname, sugarname, Size, feed, storeID)
     }
     @IBAction func btAddMyFavorite(_ sender: Any) {

@@ -158,7 +158,7 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         if (mindate + 30) >= 60 && (selecthour-1) <= hourdate {
             SendHour.removeAll()
             for i in (hourdate + 1)...21 {
-                SendHour.append("\(i):")
+                SendHour.append("\(i)")
             }
             for i in stride(from: ((mindate + 30) - 60), to: 60, by: 30) {
                 SendMin.append("\(i)")
