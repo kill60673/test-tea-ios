@@ -35,7 +35,7 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
     var hour = "0"
     var min = ""
     var arrivaltime = ""
-    var Getmethod = "take_our"
+    var Getmethod = "take_out"
     var PayMethod = 99
     var pickerView: UIPickerView!
     override func viewDidLoad() {
@@ -288,7 +288,7 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         let selectedIndex = sgMethod.selectedSegmentIndex
         switch selectedIndex {
         case 0:
-            self.Getmethod = "take_our"
+            self.Getmethod = "take_out"
         case 1:
             self.Getmethod = "delivery"
         default:

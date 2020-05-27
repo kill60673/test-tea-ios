@@ -39,6 +39,7 @@ class AddShoppingCarApi: NSObject {
                     if addshoppingcar.success == true {
                         DispatchQueue.main.async {
                             MessageAlert.Instance.message(message: addshoppingcar.message)
+                            menudetailqty = 0
                         }
                     } else {
                         DispatchQueue.main.async {
