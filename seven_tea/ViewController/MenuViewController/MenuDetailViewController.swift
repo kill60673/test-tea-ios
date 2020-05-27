@@ -10,9 +10,9 @@ import UIKit
 var tempcollectionview: UICollectionView!
 var feedprice = 0
 var itemprice = 0
-var Temperature = "冷"
+var temperature = ""
 var menudetailqty = 0
-var Size = ""
+var itemsize = ""
 var lbtotalprice = UILabel()
 class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var sugarCollectionview: UICollectionView!
@@ -39,7 +39,6 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     var hottemp = [ProductHotTemp]()
     var itemsugar = [ProductSugar]()
     var itemadd = [ProductAdd]()
-
     var size_M = "no_open"
     var size_L = "no_open"
     var tmp = ""
@@ -51,6 +50,8 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     var tempname = ""
     var sugarname = ""
     var total_price = 0
+    var status = ""
+    var changtemp = ""
     override func viewDidLoad() {
         tempcollectionview = tempCollectionview
         self.itemsugar = GetMenuProductApi.GetStoresApiInstance.getproductsugar()
@@ -67,6 +68,8 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         lbFixedTemperature.oval_label(label: lbFixedTemperature)
         super.viewDidLoad()
         lbTitle.text = itemname
+        print(self.size_M,"M ")
+        print(self.size_L,"L")
         view?.backgroundColor = UIColor(white: 1, alpha: 0)
         if self.size_M == "no_open"{
             btSizeM.isHidden = true
@@ -89,7 +92,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView.tag {
         case 0:
-            if Temperature == "冷"{
+            if changtemp == ""{
                 return self.icetemp.count
             } else {
                 return self.hottemp.count
@@ -105,7 +108,11 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TempCell", for: indexPath) as!
             TempCollectionViewCell
-            cell.lbTemp.text = self.icetemp[indexPath.row].ice
+            if changtemp == ""{
+                cell.lbTemp.text = self.icetemp[indexPath.row].ice
+            }else{
+                cell.lbTemp.text = self.hottemp[indexPath.row].hot
+            }
             if cell.lbTemp.text != tempname {
                 cell.lbTemp.backgroundColor = UIColor.white
                 cell.tempView.backgroundColor = UIColor.white
@@ -141,7 +148,11 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView.tag {
         case 0:
-            self.tempname = self.icetemp[indexPath.row].ice
+            if changtemp == ""{
+                 self.tempname = self.icetemp[indexPath.row].ice
+            }else{
+                 self.tempname = self.hottemp[indexPath.row].hot
+            }
             print("tempname", self.tempname)
             tempCollectionview.reloadData()
         case 1 :
@@ -164,19 +175,24 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     @IBAction func btSizeM(_ sender: Any) {
         btSizeM.backgroundColor = UIColor.yellow
         btSizeL.backgroundColor = UIColor.white
-        Size = "M"
+        itemsize = "M"
         operation()
     }
     @IBAction func btSizeL(_ sender: Any) {
         btSizeL.backgroundColor = UIColor.yellow
         btSizeM.backgroundColor = UIColor.white
-        Size = "L"
+        itemsize = "L"
         operation()
     }
     @IBAction func btTemperatureHot(_ sender: Any) {
         btTemperatureHot.backgroundColor = UIColor.yellow
         btTemperatureCold.backgroundColor = UIColor.white
-        Temperature = "熱"
+        if status == "0" || status == "1"{
+            temperature = ""
+        }else{
+            temperature = "熱"
+        }
+        changtemp = "hot"
         tempCollectionview.reloadData()
         lbTemperature.text = "熱度"
         operation()
@@ -184,18 +200,23 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     @IBAction func btTemperatureCold(_ sender: Any) {
         btTemperatureCold.backgroundColor = UIColor.yellow
         btTemperatureHot.backgroundColor = UIColor.white
-        Temperature = "冷"
+        if status == "0" || status == "1"{
+            temperature = ""
+        }else{
+            temperature = "冷"
+        }
+        changtemp = ""
         tempCollectionview.reloadData()
         lbTemperature.text = "冰度"
         operation()
     }
 
     @IBAction func btAddShopingCar(_ sender: Any) {
-        getAddShopingCarMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: Int(storeID)!, qty: menudetailqty, total_price: self.total_price)
-        print("爆破", itemid, itemname, itemcategory, tempname, sugarname, Size, feed, storeID)
+        getAddShopingCarMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: itemsize, add: feed, store_id: Int(storeID)!, qty: menudetailqty, total_price: self.total_price)
+        print("爆破", itemid, itemname, itemcategory, tempname, sugarname, itemsize, feed, storeID)
     }
     @IBAction func btAddMyFavorite(_ sender: Any) {
-        getAddFavoriteMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: Size, add: feed, store_id: Int(storeID)!, price: 50)
+        getAddFavoriteMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: itemsize, add: feed, store_id: Int(storeID)!, price: self.total_price)
     }
 
     @IBAction func btLess(_ sender: Any) {
@@ -222,9 +243,9 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
             print(feedprice, "feedprice在這裏")
             print(feed[i])
         }
-        print(Size)
-        print(Temperature)
-        itemprice = itempricelist["\(Size)\(Temperature)"] ?? 0
+        print(itemsize)
+        print(temperature)
+        itemprice = itempricelist["\(itemsize)\(temperature)"] ?? 0
         print(itemprice, "這邊啊你")
         self.total_price = (itemprice + feedprice) * menudetailqty
         print(self.total_price, "totlepriceeeeee")
