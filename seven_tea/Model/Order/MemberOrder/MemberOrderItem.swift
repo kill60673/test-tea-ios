@@ -1,0 +1,31 @@
+//
+//  MemberOrderItem.swift
+//  seven_tea
+//
+//  Created by harrison on 2020/5/28.
+//  Copyright © 2020 harrison公司機. All rights reserved.
+//
+
+import Foundation
+class MemberOrderItem: Codable {
+    var id: String
+    var qty: Int
+    var tmp: String
+    var size: String
+    var price: Int
+    var sugar: String
+    var item_id: Int
+    var item_name: String
+    var add: [MemberItemAdd]
+    init(id: String, qty: Int, tmp: String, size: String, price: Int, sugar: String, item_id: Int, item_name: String, add: [MemberItemAdd]) {
+        self.id = id
+        self.qty = qty
+        self.tmp = tmp
+        self.size = size
+        self.price = price
+        self.sugar = sugar
+        self.item_id = item_id
+        self.item_name = item_name
+        self.add = add
+    }
+}

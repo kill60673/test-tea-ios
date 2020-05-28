@@ -14,11 +14,11 @@ class GetMenuProduct {
     var is_fixed = Int()
     var add = [ProductAdd]()
     var size = [ProductSize]()
-    var itempricedictionary = [String:Int]()
+    var itempricedictionary = [String: Int]()
     var itempricedetail = [ProductPrice]()
     var status = String()
-    
-    init(id: String, item_name: String, picture_url: String, is_fixed: Int, add :[ProductAdd], size : [ProductSize], itemprice: [String:Int] , itempricedetail : [ProductPrice],status : String) {
+
+    init(id: String, item_name: String, picture_url: String, is_fixed: Int, add: [ProductAdd], size: [ProductSize], itemprice: [String: Int], itempricedetail: [ProductPrice], status: String) {
         self.id = id
         self.item_name = item_name
         self.picture_url = picture_url

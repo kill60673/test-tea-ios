@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 class SendSetVerifyEmailApi: NSObject {
     static let SetVerifyEmailInstance = SendSetVerifyEmailApi()
-    var newToken: String! 
+    var newToken: String!
     func setverifyEmailApi(token: String, handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.setverifyemail)!
         var request = URLRequest(url: url)

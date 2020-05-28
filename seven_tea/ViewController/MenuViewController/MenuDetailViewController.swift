@@ -68,8 +68,8 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         lbFixedTemperature.oval_label(label: lbFixedTemperature)
         super.viewDidLoad()
         lbTitle.text = itemname
-        print(self.size_M,"M ")
-        print(self.size_L,"L")
+        print(self.size_M, "M ")
+        print(self.size_L, "L")
         view?.backgroundColor = UIColor(white: 1, alpha: 0)
         if self.size_M == "no_open"{
             btSizeM.isHidden = true
@@ -110,7 +110,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
             TempCollectionViewCell
             if changtemp == ""{
                 cell.lbTemp.text = self.icetemp[indexPath.row].ice
-            }else{
+            } else {
                 cell.lbTemp.text = self.hottemp[indexPath.row].hot
             }
             if cell.lbTemp.text != tempname {
@@ -150,7 +150,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         case 0:
             if changtemp == ""{
                  self.tempname = self.icetemp[indexPath.row].ice
-            }else{
+            } else {
                  self.tempname = self.hottemp[indexPath.row].hot
             }
             print("tempname", self.tempname)
@@ -189,7 +189,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         btTemperatureCold.backgroundColor = UIColor.white
         if status == "0" || status == "1"{
             temperature = ""
-        }else{
+        } else {
             temperature = "熱"
         }
         changtemp = "hot"
@@ -202,7 +202,7 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         btTemperatureHot.backgroundColor = UIColor.white
         if status == "0" || status == "1"{
             temperature = ""
-        }else{
+        } else {
             temperature = "冷"
         }
         changtemp = ""

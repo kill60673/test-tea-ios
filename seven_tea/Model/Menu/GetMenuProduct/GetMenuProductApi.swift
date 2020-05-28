@@ -50,10 +50,10 @@ class GetMenuProductApi {
                         let data = json["data"][i]
                         for sizeindex in 0..<data["size"].count {
                             let size = ProductSize(id: data["size"][sizeindex]["id"].int!, name: data["size"][sizeindex]["name"].string!)
-                            print("就是size",size.name)
+                            print("就是size", size.name)
                             self.productsize.append(size)
                             print(self.productsize)
-                            print("sizeindex",sizeindex)
+                            print("sizeindex", sizeindex)
                         }
                         print("yousize")
                         switch data["status"].string {
@@ -99,7 +99,7 @@ class GetMenuProductApi {
                         for hottemp in 0..<data["hot_temp"].count {
                             let producthot = ProductHotTemp(hot: data["hot_temp"][hottemp].string!)
                             self.producthottemp.append(producthot)
-                            print("沒被撞過？",producthot.hot)
+                            print("沒被撞過？", producthot.hot)
                         }
                         for sugar in 0..<data["sugar"].count {
                             let sugar = ProductSugar(name: data["sugar"][sugar]["name"].string!, is_active: data["sugar"][sugar]["is_active"].bool!)
@@ -113,9 +113,9 @@ class GetMenuProductApi {
                             print("這裡是feed", self.feedprice)
                         }
                         let getmenuproduct = GetMenuProduct(id: data["id"].string!, item_name: data["item_name"].string!, picture_url: data["picture_url"].string!, is_fixed: data["is_fixed"].int!, add: self.productadd, size: self.productsize, itemprice: self.itemprice, itempricedetail: self.productprice, status: data["status"].string!)
-                        print("可達鴨",getmenuproduct.add)
-                        print("頂著",getmenuproduct.itempricedictionary)
-                        print("鐵甲蛹",getmenuproduct.size)
+                        print("可達鴨", getmenuproduct.add)
+                        print("頂著", getmenuproduct.itempricedictionary)
+                        print("鐵甲蛹", getmenuproduct.size)
                         self.productlist.append(getmenuproduct)
                         self.productsize.removeAll()
                     }
@@ -154,7 +154,7 @@ class GetMenuProductApi {
         return productsugar
     }
     func getproducttemp() -> [ProductTemp] {
-       
+
         return producttemp
     }
     func getproductprice() -> [ProductPrice] {
