@@ -72,7 +72,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            if getItemDetail[indexPath.row].size[indexPath.row].name
             cell.lbSizeMPrice.text = "無販售"
             cell.lbSizeLPrice.text = "無販售"
-            print("xxxs0",indexPath.row)
+            print("xxxs0", indexPath.row)
             print(getItemPrice.count)
 //            if getItemDetail[indexPath.row].size[0].name == "M"{
 //                let itemsize = getItemDetail[indexPath.row].itempricedetail[0].size
@@ -82,21 +82,21 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                cell.lbSizeMPrice.text = "\(getItemDetail[indexPath.row].itempricedictionary["\(itemsize)\(itemtemp)"] ?? 0)"
 //            }
                 print("\(getItemDetail[indexPath.row].item_name)")
-                print("iiicount",getItemDetail[indexPath.row].itempricedetail.count)
-                for i in 0..<getItemDetail[indexPath.row].itempricedetail.count{
+                print("iiicount", getItemDetail[indexPath.row].itempricedetail.count)
+                for i in 0..<getItemDetail[indexPath.row].itempricedetail.count {
                     let itemsize = getItemDetail[indexPath.row].itempricedetail[i].size
                     let itemtemp = getItemDetail[indexPath.row].itempricedetail[i].temp
                     let itemprice = getItemDetail[indexPath.row].itempricedetail[i].price
-                    print("itemsizeindex",getItemDetail[indexPath.row].itempricedetail[i].size)
-                    print("itemSize",itemsize)
+                    print("itemsizeindex", getItemDetail[indexPath.row].itempricedetail[i].size)
+                    print("itemSize", itemsize)
                     if itemsize == "M" && itemprice != "" {
                         cell.lbSizeMPrice.text = "\(getItemDetail[indexPath.row].itempricedictionary["\(itemsize)\(itemtemp)"] ?? 0)"
-                        print("sizem",getItemDetail[indexPath.row].itempricedictionary["\(itemsize)\(itemtemp)"])
+                        print("sizem", getItemDetail[indexPath.row].itempricedictionary["\(itemsize)\(itemtemp)"])
                     }
                     if itemsize == "L" && itemprice != ""{
                         cell.lbSizeLPrice.text = "\(getItemDetail[indexPath.row].itempricedictionary["\(itemsize)\(itemtemp)"] ?? 0)"
                         print("有進來")
-                        print("sizel",getItemDetail[indexPath.row].itempricedictionary["\(itemsize)\(itemtemp)"])
+                        print("sizel", getItemDetail[indexPath.row].itempricedictionary["\(itemsize)\(itemtemp)"])
                     }
                 }
 //            if getItemPrice[indexPath.row].size == "M"{
@@ -126,8 +126,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             menuDetailVc.itemcategory = categoryId
             menuDetailVc.status = getItemDetail[indexPath.row].status
             menuDetailVc.storeID = GetMenuProductApi.GetStoresApiInstance.getstoreId()
-            print(getproductsize.count,"ㄅ")
-            print(getItemDetail[indexPath.row].size.count,"indexpathrow")
+            print(getproductsize.count, "ㄅ")
+            print(getItemDetail[indexPath.row].size.count, "indexpathrow")
             if getItemDetail[indexPath.row].size.count == 1 && getItemDetail[indexPath.row].size[0].name == "M" {
                 menuDetailVc.size_M = "is_open"
                 print("有open")

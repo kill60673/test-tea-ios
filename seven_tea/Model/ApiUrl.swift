@@ -48,7 +48,7 @@ class ApiUrl: NSObject {
     var getmembercancelorder: String //訂單-訂單查詢-已取消訂單
     var getmemberorderdetail: String //訂單-訂單查詢-取得訂單詳細資料
     //api/register/check-register-code 會員-註冊-傳送手機及驗證碼 少這隻
-    
+
     override init() {
         loginUrl="\(doMain)/api/login"
         sendMemberRegisterSmsUrl="\(doMain)/api/register/send-phone-sms"
