@@ -9,18 +9,14 @@
 import UIKit
 
 class OrderTableViewCell: UITableViewCell {
-    @IBOutlet weak var orderStatusColor: UILabel!
-
     @IBOutlet weak var orderView: UIView!
-    @IBOutlet weak var orderTime: UILabel!
-    @IBOutlet weak var orderNo: UILabel!
-    @IBOutlet weak var orderName: UILabel!
-    @IBOutlet weak var orderPhone: UILabel!
-    @IBOutlet weak var orderGetMethod: UILabel!
-    @IBOutlet weak var orderGetTime: UILabel!
-    @IBOutlet weak var orderAddress: UILabel!
-    @IBOutlet weak var orderStore: UILabel!
-    @IBOutlet weak var orderSerialNumber: UILabel!
+    @IBOutlet weak var LbOrderNumber: UILabel!
+    @IBOutlet weak var LbOrderStatus: UILabel!
+    @IBOutlet weak var LbStore: UILabel!
+    @IBOutlet weak var btNext: UIButton!
+    @IBOutlet weak var LbItemName: UILabel!
+    @IBOutlet weak var LbTotalPrice: UILabel!
+    @IBOutlet weak var LbTotalQty: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,5 +28,8 @@ class OrderTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    @IBAction func BtNextPage(_ sender: Any) {
+     
+    }
+    
 }
