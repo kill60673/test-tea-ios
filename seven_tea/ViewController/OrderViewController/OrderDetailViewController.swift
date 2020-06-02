@@ -9,7 +9,7 @@
 import UIKit
 var OrderDetailTableView: UITableView!
 var OrderDetailController: UIViewController!
-class OrderDetailViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class OrderDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var lbOrderNo: UILabel!
     @IBOutlet weak var lbOrderStatus: UILabel!
     @IBOutlet weak var orderDetailTableView: UITableView!
@@ -25,14 +25,14 @@ class OrderDetailViewController: UIViewController,UITableViewDataSource,UITableV
     @IBOutlet weak var lbNote: UILabel!
     @IBOutlet weak var btCancel: UIButton!
     var orderdetaillist = [GetMemberOrderDetail]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         GetMemberOrderDetailApi.GetMemberOrderMemberApiInstance.getmemberorderitem(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, order_no: itemdetailnumber)
         orderDetailTableView.tableFooterView = UIView()
         OrderDetailTableView = orderDetailTableView
         btCancel.customized_button(button: btCancel)
-        print("ddaass",itemdetailnumber)
+        print("ddaass", itemdetailnumber)
         OrderDetailController = self
         // Do any additional setup after loading the view.
     }
@@ -62,13 +62,13 @@ class OrderDetailViewController: UIViewController,UITableViewDataSource,UITableV
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return GetMemberOrderDetailApi.GetMemberOrderMemberApiInstance.getorderitemcount()
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderDetailCell", for: indexPath)as!
         OrderDetailTableViewCell
         self.orderdetaillist = GetMemberOrderDetailApi.GetMemberOrderMemberApiInstance.getmemberorderdetail()
         let orderfeed = GetMemberOrderDetailApi.GetMemberOrderMemberApiInstance.feedname
-        let feedname = orderfeed.joined(separator:"/")
+        let feedname = orderfeed.joined(separator: "/")
         let itemprice = self.orderdetaillist[indexPath.row].item[indexPath.row].price * self.orderdetaillist[indexPath.row].item[indexPath.row].qty
         cell.lbItemName.text = self.orderdetaillist[indexPath.row].item[indexPath.row].item_name
         cell.lbItemQty.text = "x\(self.orderdetaillist[indexPath.row].item[indexPath.row].qty)"
