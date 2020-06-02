@@ -14,6 +14,7 @@ class GetMemberOrderDetailApi {
     var memberorderdetailitem = [GetMemberOrderDetailItem]()
     var memberorderdetail = [GetMemberOrderDetail]()
     var memberorderdtailaddress = [GetMemberOrderDetailAddress]()
+    var feedname = [String]()
     var urlString = ""
     var newToken = ""
     static let GetMemberOrderMemberApiInstance = GetMemberOrderDetailApi()
@@ -49,10 +50,11 @@ class GetMemberOrderDetailApi {
                         let data = json["data"][i]
                         for item in 0..<data["item"].count {
                             let itemdata = data["item"][item]
-                            for add in 0..<itemdata["add"].count{
-                                let add = MemberItemAdd(id: itemdata["add"][add]["id"].int!, name: itemdata["add"][add]["name"].string!)
+                            for indexadd in 0..<itemdata["add"].count{
+                                let add = MemberItemAdd(id: itemdata["add"][indexadd]["id"].int!, name: itemdata["add"][indexadd]["name"].string!)
                                 print("你是get嗎",add.id)
                                 self.memberorderitemafeedlist.append(add)
+                                self.feedname.append(itemdata["add"][indexadd]["name"].string!)
                             }
                             let memberorderitem = GetMemberOrderDetailItem(id: data["item"][item]["id"].string!, qty: data["item"][item]["qty"].int!, tmp: data["item"][item]["tmp"].string!, size: data["item"][item]["size"].string!, price: data["item"][item]["price"].int!, sugar: data["item"][item]["sugar"].string!, item_id: data["item"][item]["item_id"].int!, item_name: data["item"][item]["item_name"].string!, add: self.memberorderitemafeedlist)
                             self.memberorderdetailitem.append(memberorderitem)
@@ -63,6 +65,7 @@ class GetMemberOrderDetailApi {
                         let memberorder = GetMemberOrderDetail(order_no: data["order_no"].string!, order_status: data["order_status"].string!, store: data["store"].string!, total_qty:  data["total_qty"].int!, total_price: data["total_price"].int!, item: self.memberorderdetailitem, recipient: data["recipient"].string!, recipient_tel: data["recipient_tel"].string!, tax_code: data["tax_code"].string ?? "", pay_method: data["pay_method"].string!, note: data["note"].string ?? "", created_at: data["created_at"].string!, address: self.memberorderdtailaddress)
                         self.memberorderdetail.append(memberorder)
                         print("有",memberorder.store)
+                        print("髒腳蛇")
                     }
                 } else {
                     //主線程
@@ -81,19 +84,23 @@ class GetMemberOrderDetailApi {
             }
             //主線程
             DispatchQueue.main.async {
-                if OrderTableView != nil {
+                if OrderDetailTableView != nil {
                     print("有近Reload")
-                    OrderTableView.reloadData()
+                    OrderDetailTableView.reloadData()
                 }
             }
         }
         task.resume()
+        print("我去幹她")
     }
-    func getmemberneworder() -> [GetMemberOrderDetail] {
-        print("是可達鴨頂著鐵甲蛹",self.memberorderdetail.count)
+    func getmemberorderdetail() -> [GetMemberOrderDetail] {
+        print("是可達鴨頂著鐵甲蛹",self.memberorderdetail)
         return self.memberorderdetail
     }
-    func getordercount() -> Int{
-        return self.memberorderdetail.count
+    func getorderitemcount() -> Int{
+        return self.memberorderdetailitem.count
+    }
+    func getfeedname() -> [String]{
+        return self.feedname
     }
 }
