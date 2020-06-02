@@ -324,15 +324,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvp-xP-uxj">
-                                                    <rect key="frame" x="307" y="22" width="19" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvp-xP-uxj">
+                                                    <rect key="frame" x="285" y="22" width="33" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35T-SN-hjF">
-                                                    <rect key="frame" x="334" y="22" width="40" height="21"/>
+                                                    <rect key="frame" x="326" y="22" width="48" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -346,32 +346,36 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sugar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xor-p2-8Mk">
-                                                    <rect key="frame" x="119" y="22" width="49" height="21"/>
+                                                    <rect key="frame" x="119" y="22" width="39" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tmp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16K-kg-XHT">
-                                                    <rect key="frame" x="173" y="22" width="40" height="21"/>
+                                                    <rect key="frame" x="159" y="22" width="40" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2f-7o-fuj">
-                                                    <rect key="frame" x="214" y="22" width="85" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2f-7o-fuj">
+                                                    <rect key="frame" x="192" y="22" width="85" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lbItemName" destination="05Z-8M-qqD" id="O4M-6U-AFv"/>
+                                            <outlet property="lbFeed" destination="Z2f-7o-fuj" id="e3k-Zh-M5F"/>
+                                            <outlet property="lbItemName" destination="Ri6-O9-tdC" id="Qec-6H-ARg"/>
                                             <outlet property="lbItemPrice" destination="35T-SN-hjF" id="9Ub-2M-Kj3"/>
                                             <outlet property="lbItemQty" destination="vvp-xP-uxj" id="Oot-yq-vve"/>
+                                            <outlet property="lbSize" destination="yQJ-38-xXS" id="7a7-fR-pKT"/>
+                                            <outlet property="lbSugar" destination="xor-p2-8Mk" id="Ij2-DN-XdN"/>
+                                            <outlet property="lbTmp" destination="16K-kg-XHT" id="dVu-At-C1p"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -595,12 +599,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="訂單明細" id="LrW-MS-8mS"/>
                     <connections>
+                        <outlet property="btCancel" destination="FpL-MW-d6h" id="WJe-me-JYy"/>
                         <outlet property="lbAddress" destination="P1W-NH-FFR" id="xjP-78-GLt"/>
                         <outlet property="lbCreatedAt" destination="RIY-He-yPj" id="hVn-bJ-HrL"/>
                         <outlet property="lbNote" destination="Vrh-yq-Pax" id="aww-CP-1Vj"/>
-                        <outlet property="lbOayMethod" destination="lna-SX-KHI" id="s0f-x1-qFq"/>
                         <outlet property="lbOrderNo" destination="r83-ya-aTo" id="q6r-z4-IjA"/>
                         <outlet property="lbOrderStatus" destination="Apj-7g-cbK" id="UwI-h9-Y1x"/>
+                        <outlet property="lbPayMethod" destination="lna-SX-KHI" id="s0f-x1-qFq"/>
                         <outlet property="lbRecipient" destination="uzJ-eG-SAd" id="CpW-pJ-6h6"/>
                         <outlet property="lbRecipientTel" destination="VO8-1s-LbW" id="iaX-qy-W7Z"/>
                         <outlet property="lbStord" destination="GG9-Pz-vNL" id="lAw-3b-ziG"/>

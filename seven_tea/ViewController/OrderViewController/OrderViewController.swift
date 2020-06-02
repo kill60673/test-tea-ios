@@ -12,7 +12,7 @@ var AllCount = 0
 var AllPrince = 0
 var SelectOrderNo: String!
 var OrderController: UIViewController!
-   var itemorder_no = [String]()
+var itemorder_no = [String]()
 class OrderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,MemberDetailTableViewCellDelegate {
     static let OrderItemInstance = OrderViewController()
     @IBOutlet weak var orderTableView: UITableView!
@@ -20,7 +20,6 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var LbNoData: UILabel!
     @IBOutlet var orderViewController: UIView!
     var itemname = ""
- 
     var selectStatus = 0
     var orderList = [MemberNewOrder]()
   
