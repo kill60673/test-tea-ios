@@ -21,7 +21,7 @@ class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var LbItemName: UILabel!
     @IBOutlet weak var LbTotalPrice: UILabel!
     @IBOutlet weak var LbTotalQty: UILabel!
-    weak var delegate: MemberDetailTableViewCellDelegate!
+    var delegate: MemberDetailTableViewCellDelegate!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
