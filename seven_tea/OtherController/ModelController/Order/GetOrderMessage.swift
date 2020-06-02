@@ -28,3 +28,22 @@ func ConfirmCartOrderMessage(store_id: Int, total_qty: Int, total_price: Int, ge
 
     }
 }
+func cancelOrderMessage(order_no:String) {
+    let postString  = ordernumber(order_no: order_no)
+    let encoder = JSONEncoder()
+    if let data = try? encoder.encode(postString) {
+        print("yoyoyoydddd", postString)
+        datas = data
+        print(data)
+        if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
+            print("is nil")
+        }
+        print("dddd", UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
+        CancelOrderApi.CancelOrderApiInstance.updateshoppingcar(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+            if result {
+                return
+            } else {
+            }
+        }
+    }
+}
