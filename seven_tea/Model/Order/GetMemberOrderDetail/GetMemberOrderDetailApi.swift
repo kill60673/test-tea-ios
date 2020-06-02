@@ -91,7 +91,6 @@ class GetMemberOrderDetailApi {
             }
         }
         task.resume()
-        print("我去幹她")
     }
     func getmemberorderdetail() -> [GetMemberOrderDetail] {
         print("是可達鴨頂著鐵甲蛹",self.memberorderdetail)

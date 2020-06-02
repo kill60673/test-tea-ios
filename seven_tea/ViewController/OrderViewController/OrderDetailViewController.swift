@@ -8,6 +8,7 @@
 
 import UIKit
 var OrderDetailTableView: UITableView!
+var OrderDetailController: UIViewController!
 class OrderDetailViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var lbOrderNo: UILabel!
     @IBOutlet weak var lbOrderStatus: UILabel!
@@ -32,6 +33,7 @@ class OrderDetailViewController: UIViewController,UITableViewDataSource,UITableV
         OrderDetailTableView = orderDetailTableView
         btCancel.customized_button(button: btCancel)
         print("ddaass",itemdetailnumber)
+        OrderDetailController = self
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +52,9 @@ class OrderDetailViewController: UIViewController,UITableViewDataSource,UITableV
         lbRecipient.text = self.orderdetaillist[0].recipient
         lbRecipientTel.text = self.orderdetaillist[0].recipient_tel
         lbOrderStatus.text = self.orderdetaillist[0].order_status
+        if self.orderdetaillist[0].order_status != "待確認"{
+            btCancel.isHidden = true
+        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -73,5 +78,8 @@ class OrderDetailViewController: UIViewController,UITableViewDataSource,UITableV
         cell.lbSize.text = "\(self.orderdetaillist[indexPath.row].item[indexPath.row].size)"
         cell.lbFeed.text = feedname
         return cell
+    }
+    @IBAction func btCancel(_ sender: Any) {
+        cancelOrderMessage(order_no: itemdetailnumber)
     }
 }
