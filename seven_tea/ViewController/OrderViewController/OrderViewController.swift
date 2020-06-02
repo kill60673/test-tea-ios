@@ -13,7 +13,7 @@ var AllPrince = 0
 var SelectOrderNo: String!
 var OrderController: UIViewController!
 var itemorder_no = [String]()
-class OrderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,MemberDetailTableViewCellDelegate {
+class OrderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MemberDetailTableViewCellDelegate {
     static let OrderItemInstance = OrderViewController()
     @IBOutlet weak var orderTableView: UITableView!
     @IBOutlet weak var statusSelect: UISegmentedControl!
@@ -22,7 +22,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     var itemname = ""
     var selectStatus = 0
     var orderList = [MemberNewOrder]()
-  
+
     override func viewDidLoad() {
         super.viewDidLoad()
         OrderController = self
@@ -70,10 +70,10 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         print("有重跑")
         self.orderList = MemberNewOrderApi.MemberNewOrderApiInstance.getmemberneworder()
         let itemnamearray = self.orderList[indexPath.row].itemname
-        let itemname = itemnamearray.joined(separator:"/")
+        let itemname = itemnamearray.joined(separator: "/")
         cell.LbStore.text = self.orderList[indexPath.row].store
         cell.LbItemName.text = itemname
-        print("還是痞咖區",itemname)
+        print("還是痞咖區", itemname)
         cell.LbTotalQty.text = "共\(self.orderList[indexPath.row].total_qty)杯"
         cell.LbTotalPrice.text = "總計$\(self.orderList[indexPath.row].total_price)元"
         cell.LbOrderNumber.text = self.orderList[indexPath.row].order_no
@@ -83,7 +83,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     @IBAction func statusSelect(_ sender: Any) {
-        
+
         switch statusSelect.selectedSegmentIndex {
         case 0:
             selectStatus = 0

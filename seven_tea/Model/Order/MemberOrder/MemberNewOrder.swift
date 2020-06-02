@@ -15,8 +15,8 @@ class MemberNewOrder: Codable {
     var total_qty: Int
     var total_price: Int
     var item: [MemberOrderItem]
-    var itemname : [String]
-    init(get_method: String, order_no: String, order_status: String, store: String, total_qty: Int, total_price: Int, item: [MemberOrderItem],itemname:[String]) {
+    var itemname: [String]
+    init(get_method: String, order_no: String, order_status: String, store: String, total_qty: Int, total_price: Int, item: [MemberOrderItem], itemname: [String]) {
         self.get_method = get_method
         self.order_no = order_no
         self.order_status = order_status

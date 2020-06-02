@@ -21,7 +21,7 @@ class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var LbItemName: UILabel!
     @IBOutlet weak var LbTotalPrice: UILabel!
     @IBOutlet weak var LbTotalQty: UILabel!
-    var delegate: MemberDetailTableViewCellDelegate!
+    weak var delegate: MemberDetailTableViewCellDelegate!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,6 +36,6 @@ class OrderTableViewCell: UITableViewCell {
     @IBAction func BtNextPage(_ sender: Any) {
         delegate?.tableviewcelldelegate(sender: self)
         itemdetailnumber = itemorderno[index_row]
-        print("這裡有暗道",itemorderno[index_row])
+        print("這裡有暗道", itemorderno[index_row])
     }
 }

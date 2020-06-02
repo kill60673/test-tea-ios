@@ -20,7 +20,7 @@ class ShopCarTableViewCell: UITableViewCell {
     @IBOutlet weak var lbSugar: UILabel!
     @IBOutlet weak var lbItemName: UILabel!
     @IBOutlet weak var lbQty: UILabel!
-    var delegate: TableViewCellDelegate!
+    weak var delegate: TableViewCellDelegate!
     override func awakeFromNib() {
         super.awakeFromNib()
 

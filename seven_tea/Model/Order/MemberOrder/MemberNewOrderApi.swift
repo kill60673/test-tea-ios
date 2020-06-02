@@ -17,7 +17,7 @@ class MemberNewOrderApi {
     var urlString = ""
     var newToken = ""
     static let MemberNewOrderApiInstance = MemberNewOrderApi()
-    func getmemberorderitem(token: String,selectStatus:Int) {
+    func getmemberorderitem(token: String, selectStatus: Int) {
         switch selectStatus {
         case  0:
             urlString = ApiUrl.ApiUrlInstance.getmemberneworder
@@ -71,18 +71,18 @@ class MemberNewOrderApi {
                         let data = json["data"][i]
                         for item in 0..<data["item"].count {
                             let itemdata = data["item"][item]
-                            for add in 0..<itemdata["add"].count{
+                            for add in 0..<itemdata["add"].count {
                                 let add = MemberItemAdd(id: itemdata["add"][add]["id"].int!, name: itemdata["add"][add]["name"].string!)
                                 self.memberitemaddlist.append(add)
                             }
-                            let memberorderitem = MemberOrderItem(id: data["item"][item]["id"].string!, qty:  data["item"][item]["qty"].int!, tmp:  data["item"][item]["tmp"].string!, size:  data["item"][item]["size"].string!, price:  data["item"][item]["price"].int!, sugar: data["item"][item]["sugar"].string!, item_id:  data["item"][item]["item_id"].int!, item_name:  data["item"][item]["item_name"].string!, add: self.memberitemaddlist)
+                            let memberorderitem = MemberOrderItem(id: data["item"][item]["id"].string!, qty: data["item"][item]["qty"].int!, tmp: data["item"][item]["tmp"].string!, size: data["item"][item]["size"].string!, price: data["item"][item]["price"].int!, sugar: data["item"][item]["sugar"].string!, item_id: data["item"][item]["item_id"].int!, item_name: data["item"][item]["item_name"].string!, add: self.memberitemaddlist)
                             self.memberorderitem.append(memberorderitem)
                             let name = data["item"][item]["item_name"].string!
                             self.itemnamelist.append(name)
                         }
-                        let memberorder = MemberNewOrder(get_method: data["get_method"].string!, order_no: data["order_no"].string!, order_status: data["order_status"].string!, store: data["store"].string!, total_qty: data["total_qty"].int!, total_price: data["total_price"].int!, item: self.memberorderitem,itemname: self.itemnamelist)
+                        let memberorder = MemberNewOrder(get_method: data["get_method"].string!, order_no: data["order_no"].string!, order_status: data["order_status"].string!, store: data["store"].string!, total_qty: data["total_qty"].int!, total_price: data["total_price"].int!, item: self.memberorderitem, itemname: self.itemnamelist)
                         self.memberneworder.append(memberorder)
-                        print("有",memberorder.store)
+                        print("有", memberorder.store)
                         self.itemnamelist.removeAll()
                     }
                 } else {
@@ -92,7 +92,7 @@ class MemberNewOrderApi {
 //                        MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-                
+
             } catch {
                 //主線程
                 DispatchQueue.main.async {
@@ -111,10 +111,10 @@ class MemberNewOrderApi {
         task.resume()
     }
     func getmemberneworder() -> [MemberNewOrder] {
-        print("猜猜看農死啥",self.memberneworder.count)
+        print("猜猜看農死啥", self.memberneworder.count)
         return self.memberneworder
     }
-    func getordercount() -> Int{
+    func getordercount() -> Int {
         return self.memberneworder.count
     }
 }
