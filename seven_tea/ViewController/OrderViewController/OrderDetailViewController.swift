@@ -9,10 +9,24 @@
 import UIKit
 
 class OrderDetailViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    @IBOutlet weak var lbOrderNo: UILabel!
+    @IBOutlet weak var lbOrderStatus: UILabel!
     @IBOutlet weak var orderDetailTableView: UITableView!
+    @IBOutlet weak var lbStord: UILabel!
+    @IBOutlet weak var lbCreatedAt: UILabel!
+    @IBOutlet weak var lbTotalQty: UILabel!
+    @IBOutlet weak var lbTotalPrice: UILabel!
+    @IBOutlet weak var lbRecipient: UILabel!
+    @IBOutlet weak var lbRecipientTel: UILabel!
+    @IBOutlet weak var lbAddress: UILabel!
+    @IBOutlet weak var lbOayMethod: UILabel!
+    @IBOutlet weak var lbTaxCode: UILabel!
+    @IBOutlet weak var lbNote: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        GetMemberOrderDetailApi.GetMemberOrderMemberApiInstance.getmemberorderitem(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, order_no: itemdetailnumber)
         orderDetailTableView.tableFooterView = UIView()
+        print("ddaass",itemdetailnumber)
         // Do any additional setup after loading the view.
     }
     func numberOfSections(in tableView: UITableView) -> Int {

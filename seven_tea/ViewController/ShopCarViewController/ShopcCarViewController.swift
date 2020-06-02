@@ -54,7 +54,8 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingCarCell", for: indexPath) as! ShopCarTableViewCell
         cell.lbItemName.text = self.shoppingcaritem[indexPath.row].item_name
         cell.lbSugar.text = self.shoppingcaritem[indexPath.row].sugar
-        cell.lbQty.text = "\(self.shoppingcaritem[indexPath.row].qty)"
+        cell.lbQty.text = "共\(self.shoppingcaritem[indexPath.row].qty)杯"
+        cell.lbPrice.text = "$\(self.shoppingcaritem[indexPath.row].price)"
         cell.delegate = self
         print(self.shoppingcaritem[indexPath.row].qty)
         itemstoreId.append(self.shoppingcaritem[indexPath.row].id)

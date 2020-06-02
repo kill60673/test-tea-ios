@@ -18,7 +18,7 @@ class GetMemberOrderDetailApi {
     var newToken = ""
     static let GetMemberOrderMemberApiInstance = GetMemberOrderDetailApi()
     func getmemberorderitem(token: String,order_no:String) {
-        urlString = ApiUrl.ApiUrlInstance.getmemberorderdetail+"/\(order_no)"
+        urlString = ApiUrl.ApiUrlInstance.getmemberorderdetail+"\(order_no)"
         let url = URL(string: urlString)!
         var request = URLRequest(url: url )
         print("ㄎㄎ", token)
@@ -51,16 +51,16 @@ class GetMemberOrderDetailApi {
                             let itemdata = data["item"][item]
                             for add in 0..<itemdata["add"].count{
                                 let add = MemberItemAdd(id: itemdata["add"][add]["id"].int!, name: itemdata["add"][add]["name"].string!)
+                                print("你是get嗎",add.id)
                                 self.memberorderitemafeedlist.append(add)
                             }
-                            let memberorderitem = GetMemberOrderDetailItem(id: data["item"][item]["id"].string!, qty: data["item"][item]["qty"].int!, tmp: data["item"][item]["tmp"].string!, size: data["item"][item]["size"].string!, total_price: data["item"][item]["total_price"].int!, sugar: data["item"][item]["sugar"].string!, item_id: data["item"][item]["item_id"].int!, item_name: data["item"][item]["item_name"].string!, add: self.memberorderitemafeedlist, store_id: data["item"][item]["store_id"].int!, item_category: data["item"][item]["item_category"].string!)
+                            let memberorderitem = GetMemberOrderDetailItem(id: data["item"][item]["id"].string!, qty: data["item"][item]["qty"].int!, tmp: data["item"][item]["tmp"].string!, size: data["item"][item]["size"].string!, price: data["item"][item]["price"].int!, sugar: data["item"][item]["sugar"].string!, item_id: data["item"][item]["item_id"].int!, item_name: data["item"][item]["item_name"].string!, add: self.memberorderitemafeedlist)
                             self.memberorderdetailitem.append(memberorderitem)
                         }
-                        for address in 0..<data["address"].count{
-                            let memberorderdetailaddress = GetMemberOrderDetailAddress(zipcode: data["address"][address]["zipcode"].string ?? "", city: data["address"][address]["city"].string ?? "", district: data["address"][address]["district"].string ?? "", address: data["address"][address]["address"].string!)
-                            self.memberorderdtailaddress.append(memberorderdetailaddress)
-                        }
-                        let memberorder = GetMemberOrderDetail(order_no: data["order_no"].string!, order_status: data["order_status"].string!, store: data["store"].string!, total_qty:  data["total_qty"].int!, total_price: data["total_price"].int!, item: self.memberorderdetailitem, recipient: data["recipient"].string!, recipient_tel: data["recipient_tel"].string!, tax_code: data["tax_code"].string!, pay_method: data["pay_method"].string!, note: data["note"].string!, created_at: data["created_at"].string!, address: self.memberorderdtailaddress)
+                        let memberorderdetailaddress = GetMemberOrderDetailAddress(zipcode: data["address"]["zipcode"].string ?? "", city: data["address"]["city"].string ?? "", district: data["address"]["district"].string ?? "", address: data["address"]["address"].string!)
+                        self.memberorderdtailaddress.append(memberorderdetailaddress)
+                        print("我發現",data["order_no"].string!)
+                        let memberorder = GetMemberOrderDetail(order_no: data["order_no"].string!, order_status: data["order_status"].string!, store: data["store"].string!, total_qty:  data["total_qty"].int!, total_price: data["total_price"].int!, item: self.memberorderdetailitem, recipient: data["recipient"].string!, recipient_tel: data["recipient_tel"].string!, tax_code: data["tax_code"].string ?? "", pay_method: data["pay_method"].string!, note: data["note"].string ?? "", created_at: data["created_at"].string!, address: self.memberorderdtailaddress)
                         self.memberorderdetail.append(memberorder)
                         print("有",memberorder.store)
                     }
@@ -68,7 +68,7 @@ class GetMemberOrderDetailApi {
                     //主線程
                     self.memberorderdetail.removeAll()
                     DispatchQueue.main.async {
-                        //                        MessageAlert.Instance.message(message: json["message"].string!)
+                        MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
                 

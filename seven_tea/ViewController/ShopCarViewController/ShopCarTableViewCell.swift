@@ -39,14 +39,14 @@ class ShopCarTableViewCell: UITableViewCell {
             itemQty[index_row] = 99
         } else {
             itemQty[index_row] += 1
-            lbQty.text = "\(itemQty[index_row])"
+            lbQty.text = "共\(itemQty[index_row])杯"
         }
     }
     @IBAction func btLess(_ sender: Any) {
         delegate?.tableviewcelldelegate(sender: self)
         if itemQty[index_row] >= 1 {
             itemQty[index_row] -= 1
-            lbQty.text = "\(itemQty[index_row])"
+            lbQty.text = "共\(itemQty[index_row])杯"
         }
         if itemQty[index_row] < 1 {
             deleteSingleItemMessage(itemid: itemstoreId[index_row])
