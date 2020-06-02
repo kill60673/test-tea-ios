@@ -120,7 +120,8 @@
                                                                 <color key="titleColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
-                                                                <segue destination="jya-4e-5Ly" kind="show" id="nya-81-Gtk"/>
+                                                                <action selector="BtNextPage:" destination="f3G-ci-aZR" eventType="touchUpInside" id="LvO-Zu-fXH"/>
+                                                                <segue destination="jya-4e-5Ly" kind="show" id="3cX-AL-uCL"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共10杯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouj-M4-74T">
@@ -238,8 +239,8 @@
                     <navigationItem key="navigationItem" title="訂單確認" id="Bjj-ka-pX6"/>
                     <connections>
                         <outlet property="LbNoData" destination="zQ7-sj-unp" id="brV-SK-pa1"/>
-                        <outlet property="OrderViewController" destination="XJf-gk-LzN" id="c2P-L6-XMM"/>
                         <outlet property="orderTableView" destination="xbd-nE-YOb" id="gbn-tl-0lU"/>
+                        <outlet property="orderViewController" destination="XJf-gk-LzN" id="c2P-L6-XMM"/>
                         <outlet property="statusSelect" destination="MTO-Bz-dAV" id="Hcz-eS-FmN"/>
                     </connections>
                 </viewController>
@@ -250,7 +251,7 @@
         <!--訂單明細-->
         <scene sceneID="Rtz-ZK-RdG">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="jya-4e-5Ly" customClass="OrderDetailViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderDetailVC" modalPresentationStyle="fullScreen" id="jya-4e-5Ly" customClass="OrderDetailViewController" customModule="seven_tea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="098-31-dgV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -594,6 +595,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="訂單明細" id="LrW-MS-8mS"/>
                     <connections>
+                        <outlet property="lbAddress" destination="P1W-NH-FFR" id="xjP-78-GLt"/>
+                        <outlet property="lbCreatedAt" destination="RIY-He-yPj" id="hVn-bJ-HrL"/>
+                        <outlet property="lbNote" destination="Vrh-yq-Pax" id="aww-CP-1Vj"/>
+                        <outlet property="lbOayMethod" destination="lna-SX-KHI" id="s0f-x1-qFq"/>
+                        <outlet property="lbOrderNo" destination="r83-ya-aTo" id="q6r-z4-IjA"/>
+                        <outlet property="lbOrderStatus" destination="Apj-7g-cbK" id="UwI-h9-Y1x"/>
+                        <outlet property="lbRecipient" destination="uzJ-eG-SAd" id="CpW-pJ-6h6"/>
+                        <outlet property="lbRecipientTel" destination="VO8-1s-LbW" id="iaX-qy-W7Z"/>
+                        <outlet property="lbStord" destination="GG9-Pz-vNL" id="lAw-3b-ziG"/>
+                        <outlet property="lbTaxCode" destination="f8y-OT-Fqy" id="dhm-5l-gtk"/>
+                        <outlet property="lbTotalPrice" destination="Mic-VU-Ieh" id="2tV-9Y-ovO"/>
+                        <outlet property="lbTotalQty" destination="c7s-Xp-uOk" id="PI6-Kh-OYl"/>
                         <outlet property="orderDetailTableView" destination="dmt-dP-VIy" id="e9E-vG-zQU"/>
                     </connections>
                 </viewController>

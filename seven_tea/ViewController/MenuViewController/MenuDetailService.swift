@@ -17,3 +17,4 @@ class MenuDetailService {
         return menuDetailVC
     }
 }
+

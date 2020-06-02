@@ -15,9 +15,9 @@ class GetMemberOrderDetail: Codable {
     var total_price: Int
     var recipient : String
     var recipient_tel : String
-    var tax_code : String
+    var tax_code : String?
     var pay_method : String
-    var note : String
+    var note : String?
     var created_at : String
     var item: [GetMemberOrderDetailItem]
     var address : [GetMemberOrderDetailAddress]
