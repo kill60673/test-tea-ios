@@ -33,6 +33,7 @@ class ApiUrl: NSObject {
     var getmenuproduct: String //首頁-選擇商品-透過店家及分類取得商品資料
     var setverifyemail: String //會員中心-帳戶資料-綁定信箱-修改驗證信箱
     var feedbackoption: String //會員中心-常見問題-取得意見回饋分類
+    var getfeedback: String //會員中心-獲取意見回饋
     var addtoshopingcar: String //訂單-購物車-新增飲品至購物車
     var addfavoriteitem: String //會員中心-我的最愛-加入我的最愛飲品
     var getshoppingcar: String //訂單-購物車-取得會員購物車
@@ -90,5 +91,6 @@ class ApiUrl: NSObject {
         getmembercancelorder="\(doMain)/api/get-member-cancel-order"
         getmemberorderdetail="\(doMain)/api/get-member-order-detail/"
         cancelorder="\(doMain)/api/cancel-order"
+        getfeedback="\(doMain)/api/get-feedback/"
     }
 }

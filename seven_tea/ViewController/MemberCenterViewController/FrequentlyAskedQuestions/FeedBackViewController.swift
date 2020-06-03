@@ -7,57 +7,61 @@
 //
 
 import UIKit
-var Id = [Int]()
-var Topic = [String]()
-var Content = [String]()
-var Time = [String]()
-var UserName = [String]()
-var SendName = [String]()
+import Foundation
 var PersonalMessageTableView: UITableView!
-var DetailTitle: String!
-var DetailName: String!
-var DetailContent: String!
-var DetailTime: String!
-
 class FeedBackViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var FeedBackTableView: UITableView!
+    @IBOutlet weak var statusSelect: UISegmentedControl!
     static let FeedbackInstance = FeedBackViewController()
-
+    var reply = 0
+    var feedbacklist = [GetFeedBack]()
     override func viewDidLoad() {
         super.viewDidLoad()
         PersonalMessageTableView = FeedBackTableView
         FeedBackTableView.tableFooterView = UIView()
-        MessageNotifyAPI.MessageNotifyInstance.MessageNotify(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String ?? "")
-
+        GetFeedBackApi.GetFeedBackApiiInstance.getfeedback(token:UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String ?? "", reply: 0)
+        self.feedbacklist = GetFeedBackApi.GetFeedBackApiiInstance.getfeedbacklist()
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return Id.count
+        
+        return GetFeedBackApi.GetFeedBackApiiInstance.getfeedbackcount()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        self.feedbacklist = GetFeedBackApi.GetFeedBackApiiInstance.getfeedbacklist()
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedBackCell", for: indexPath) as! FeedBackTableViewCell
-        cell.lbTitle.text = Topic[indexPath.row]
-        cell.ibContent.text = Content[indexPath.row]
-        cell.lbTime.text = Time[indexPath.row]
-
+        cell.lbTitle.text = feedbacklist[indexPath.row].title
+        cell.ibContent.text = feedbacklist[indexPath.row].content
+        cell.lbTime.text = feedbacklist[indexPath.row].update_time
+        cell.ibType.text = feedbacklist[indexPath.row].type
+        if self.reply == 0 {
+            cell.lbReply.text = "未回覆"
+        }else{
+            cell.lbReply.text = "已回覆"
+        }
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        DetailTitle = Topic[indexPath.row]
-        DetailName = SendName[indexPath.row]
-        DetailContent = Content[indexPath.row]
-        DetailTime = Time[indexPath.row]
-
         let vc = storyboard?.instantiateViewController(withIdentifier: "Detail")
         show(vc!, sender: self)
-
+    }
+    @IBAction func statusSelect(_ sender: Any) {
+        switch statusSelect.selectedSegmentIndex {
+        case 0:
+            reply = 0
+            print("跑到０")
+            break
+        default:
+            reply = 1
+            print("跑到1")
+            break
+        }
+    GetFeedBackApi.GetFeedBackApiiInstance.getfeedback(token:UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, reply: self.reply)
     }
 }

@@ -56,7 +56,7 @@ class GetMemberOrderDetailApi {
                                 self.memberorderitemafeedlist.append(add)
                                 self.feedname.append(itemdata["add"][indexadd]["name"].string!)
                             }
-                            let memberorderitem = GetMemberOrderDetailItem(id: data["item"][item]["id"].string!, qty: data["item"][item]["qty"].int!, tmp: data["item"][item]["tmp"].string!, size: data["item"][item]["size"].string!, price: data["item"][item]["price"].int!, sugar: data["item"][item]["sugar"].string!, item_id: data["item"][item]["item_id"].int!, item_name: data["item"][item]["item_name"].string!, add: self.memberorderitemafeedlist)
+                            let memberorderitem = GetMemberOrderDetailItem(id: data["item"][item]["id"].int!, qty: data["item"][item]["qty"].int!, tmp: data["item"][item]["tmp"].string!, size: data["item"][item]["size"].string!, price: data["item"][item]["price"].int!, sugar: data["item"][item]["sugar"].string!, item_id: data["item"][item]["item_id"].int!, item_name: data["item"][item]["item_name"].string!, add: self.memberorderitemafeedlist)
                             self.memberorderdetailitem.append(memberorderitem)
                         }
                         let memberorderdetailaddress = GetMemberOrderDetailAddress(zipcode: data["address"]["zipcode"].string ?? "", city: data["address"]["city"].string ?? "", district: data["address"]["district"].string ?? "", address: data["address"]["address"].string!)

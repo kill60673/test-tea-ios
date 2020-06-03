@@ -8,7 +8,7 @@
 
 import Foundation
 class MemberOrderItem: Codable {
-    var id: String
+    var id: Int
     var qty: Int
     var tmp: String
     var size: String
@@ -17,7 +17,7 @@ class MemberOrderItem: Codable {
     var item_id: Int
     var item_name: String
     var add: [MemberItemAdd]
-    init(id: String, qty: Int, tmp: String, size: String, price: Int, sugar: String, item_id: Int, item_name: String, add: [MemberItemAdd]) {
+    init(id: Int, qty: Int, tmp: String, size: String, price: Int, sugar: String, item_id: Int, item_name: String, add: [MemberItemAdd]) {
         self.id = id
         self.qty = qty
         self.tmp = tmp
