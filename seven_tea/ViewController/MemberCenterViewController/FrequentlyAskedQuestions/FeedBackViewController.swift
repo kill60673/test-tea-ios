@@ -48,8 +48,16 @@ class FeedBackViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "Detail")
-        show(vc!, sender: self)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "FeedBackDetailVc")
+            as! FeedBackDetailViewController
+        vc.feedbackcreatetime = feedbacklist[indexPath.row].create_time
+        vc.feedbackcontent = feedbacklist[indexPath.row].content
+        vc.feedbacktype = feedbacklist[indexPath.row].type
+        vc.feedbacktitle = feedbacklist[indexPath.row].title
+        vc.feedbackreplycontent = feedbacklist[indexPath.row].reply
+        vc.feedbackupdatetime = feedbacklist[indexPath.row].update_time
+        vc.feedbackreplytype = self.reply
+        show(vc, sender: self)
     }
     @IBAction func statusSelect(_ sender: Any) {
         switch statusSelect.selectedSegmentIndex {
@@ -62,6 +70,6 @@ class FeedBackViewController: UIViewController, UITableViewDelegate, UITableView
             print("跑到1")
             break
         }
-    GetFeedBackApi.GetFeedBackApiiInstance.getfeedback(token:UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, reply: self.reply)
+        GetFeedBackApi.GetFeedBackApiiInstance.getfeedback(token:UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, reply: self.reply)
     }
 }
