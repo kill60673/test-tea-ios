@@ -1,4 +1,3 @@
-
 //
 //  FeedBackDetailViewController.swift
 //  seven_tea
@@ -34,10 +33,10 @@ class FeedBackDetailViewController: UIViewController {
         lbUpdateTime.text = feedbackupdatetime
         lbTitle.text = feedbacktitle
         lbType.text = feedbacktype
-        if feedbackreplytype == 0{
+        if feedbackreplytype == 0 {
             lbReply.text = "未回覆"
             replyView.isHidden = true
-        }else{
+        } else {
             lbReply.text = "已回覆"
             replyView.isHidden = false
         }

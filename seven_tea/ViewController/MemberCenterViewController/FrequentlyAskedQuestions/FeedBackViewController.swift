@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 var PersonalMessageTableView: UITableView!
 class FeedBackViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
     @IBOutlet weak var FeedBackTableView: UITableView!
     @IBOutlet weak var statusSelect: UISegmentedControl!
     static let FeedbackInstance = FeedBackViewController()
@@ -20,16 +20,16 @@ class FeedBackViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         PersonalMessageTableView = FeedBackTableView
         FeedBackTableView.tableFooterView = UIView()
-        GetFeedBackApi.GetFeedBackApiiInstance.getfeedback(token:UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String ?? "", reply: 0)
+        GetFeedBackApi.GetFeedBackApiiInstance.getfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String ?? "", reply: 0)
         self.feedbacklist = GetFeedBackApi.GetFeedBackApiiInstance.getfeedbacklist()
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         return GetFeedBackApi.GetFeedBackApiiInstance.getfeedbackcount()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,12 +41,12 @@ class FeedBackViewController: UIViewController, UITableViewDelegate, UITableView
         cell.ibType.text = feedbacklist[indexPath.row].type
         if self.reply == 0 {
             cell.lbReply.text = "未回覆"
-        }else{
+        } else {
             cell.lbReply.text = "已回覆"
         }
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "FeedBackDetailVc")
             as! FeedBackDetailViewController
@@ -70,6 +70,6 @@ class FeedBackViewController: UIViewController, UITableViewDelegate, UITableView
             print("跑到1")
             break
         }
-        GetFeedBackApi.GetFeedBackApiiInstance.getfeedback(token:UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, reply: self.reply)
+        GetFeedBackApi.GetFeedBackApiiInstance.getfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, reply: self.reply)
     }
 }
