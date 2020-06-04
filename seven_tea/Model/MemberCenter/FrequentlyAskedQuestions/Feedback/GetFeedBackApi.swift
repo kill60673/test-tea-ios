@@ -44,7 +44,7 @@ class GetFeedBackApi {
                         self.getfeedback.removeAll()
                         for i in 0..<json["data"].count {
                             let data = json["data"][i]
-                            let feedback = GetFeedBack(id: data["id"].int!, update_time: data["update_time"].string!, title: data["title"].string!, content: data["content"].string!, reply: data["reply"].string!,type:data["type"].string!)
+                            let feedback = GetFeedBack(id: data["id"].int!, update_time: data["update_time"].string!, title: data["title"].string!, content: data["content"].string!, reply: data["reply"].string!,type:data["type"].string!, create_time: data["create_time"].string!)
                             self.getfeedback.append(feedback)
                         }
                         MessageAlert.Instance.message(message: json["message"].string!)

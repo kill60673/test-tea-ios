@@ -14,12 +14,14 @@ class GetFeedBack{
     var content: String
     var reply: String
     var type: String
-    init(id:Int,update_time:String,title:String,content:String,reply:String,type:String){
+    var create_time: String
+    init(id:Int,update_time:String,title:String,content:String,reply:String,type:String,create_time:String){
         self.id = id
         self.update_time = update_time
         self.title = title
         self.content = content
         self.reply = reply
         self.type = type
+        self.create_time = create_time
     }
 }
