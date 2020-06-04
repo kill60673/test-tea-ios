@@ -7,15 +7,15 @@
 //
 
 import Foundation
-class GetFeedBack{
-    var id : Int
+class GetFeedBack {
+    var id: Int
     var update_time: String
     var title: String
     var content: String
     var reply: String
     var type: String
     var create_time: String
-    init(id:Int,update_time:String,title:String,content:String,reply:String,type:String,create_time:String){
+    init(id: Int, update_time: String, title: String, content: String, reply: String, type: String, create_time: String) {
         self.id = id
         self.update_time = update_time
         self.title = title
