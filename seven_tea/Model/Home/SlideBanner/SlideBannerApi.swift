@@ -27,14 +27,13 @@ class SlideBannerAPI: NSObject {
                 if json["success"].bool! == true {
                     self.slidebannerlist.removeAll()
                     for i in 0..<json["data"].count {
-                        let slidebanner = SlideBanner(imageType:  json["data"]["img_type"].string!, pictureURL:  json["data"]["picture_url"].string!, linkURL:  json["data"]["link_url"].string!)
+                        let slidebanner = SlideBanner(imageType:  json["data"][i]["img_type"].string!, pictureURL:  json["data"][i]["picture_url"].string!, linkURL:  json["data"][i]["link_url"].string!)
                         self.slidebannerlist.append(slidebanner)
                     }
                 } else {
                     print("我有進來4")
                     //主線程
                     DispatchQueue.main.async {
-                        shoppingview.tabBarController?.selectedIndex = 0
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }

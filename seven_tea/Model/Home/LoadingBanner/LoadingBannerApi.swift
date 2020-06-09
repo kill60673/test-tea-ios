@@ -7,54 +7,50 @@
 //
 
 import Foundation
+import SwiftyJSON
 class LoadingBannerAPI: NSObject {
     static let LoadingBannerInstance = LoadingBannerAPI()
     var loadingbannerlist = [LoadingBanner]()
     func loadingbanner() {
-
         let url = URL(string: ApiUrl.ApiUrlInstance.loadingBanner )!
-
         var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.httpMethod = "GET"
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, _ in
-
-            let responseString = String(data: data!, encoding: .utf8)
-            let httpStatus = response as? HTTPURLResponse
-
-//            print(responseString)
-
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            if let data = data, let Info = try?
-                decoder.decode(LoadingBannerCodable.self, from: data) {
-                if Info.success == true {
-                    self.loadingbannerlist.removeAll()
-                    for result in Info.data {
-                        let loadingBanner = LoadingBanner(imageType: result.img_type, pictureURL: result.picture_url, linkURL: result.link_url)
-                        self.loadingbannerlist.append(loadingBanner)
+            request.setValue("application/json", forHTTPHeaderField: "Accept")
+            request.httpMethod = "GET"
+            let task = URLSession.shared.dataTask(with: request) {
+                data, response, _ in
+                let httpStatus = response as! HTTPURLResponse
+                do {
+                    let json = try JSON(data: data!)
+                    if json["success"].bool! == true {
+                        self.loadingbannerlist.removeAll()
+                        for i in 0..<json["data"].count {
+                            print(json["data"][i]["img_type"].string!)
+                            print(json["data"][i]["picture_url"].string!)
+                            print(json["data"][i]["link_url"].string ?? "")
+                            let loadingbanner = LoadingBanner(imageType: json["data"][i]["img_type"].string!, pictureURL: json["data"][i]["picture_url"].string!, linkURL: json["data"][i]["link_url"].string ?? "")
+                            self.loadingbannerlist.append(loadingbanner)
+                        }
+                    } else {
+                        print("我有進來4")
+                        //主線程
+                        DispatchQueue.main.async {
+                            MessageAlert.Instance.message(message: json["message"].string!)
+                        }
                     }
-                } else {
+                    
+                } catch {
                     //主線程
                     DispatchQueue.main.async {
-                        MessageAlert.Instance.message(message: "\(Info.message)")
+                        MessageAlert.Instance.message(message: "資料解析錯誤")
+                        print("這邊是錯誤", error)
                     }
                 }
-            } else {
                 //主線程
                 DispatchQueue.main.async {
-                    MessageAlert.Instance.message(message: "資料解析錯誤")
                 }
             }
-            //主線程
-            DispatchQueue.main.async {
-//                UIViewController.removeSpinner(spinner: sv as! UIView)
-            }
+            task.resume()
         }
-        task.resume()
-    }
-
     func getCount() -> Int {
         return loadingbannerlist.count
     }

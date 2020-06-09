@@ -7,53 +7,48 @@
 //
 
 import Foundation
+import SwiftyJSON
 class PromotionBannerAPI: NSObject {
     static let PromotionBannerInstance = PromotionBannerAPI()
     lazy var promotionbannerlist = [PromotionBanner]()
     func promotionbanner() {
-
-        let url = URL(string: ApiUrl.ApiUrlInstance.promotionBanner )!
-
+        let url = URL(string: ApiUrl.ApiUrlInstance.promotionBanner)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, _ in
-
-            let responseString = String(data: data!, encoding: .utf8)
-            let httpStatus = response as? HTTPURLResponse
-
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            if let data = data, let Info = try?
-                decoder.decode(PromotionBannerCodable.self, from: data) {
-                if Info.success == true {
+        let task = URLSession.shared.dataTask(with: request) {
+            data, response, _ in
+            let httpStatus = response as! HTTPURLResponse
+            do {
+                let json = try JSON(data: data!)
+                if json["success"].bool! == true {
                     self.promotionbannerlist.removeAll()
-                    for result in Info.data! {
-                        let promotionBanner = PromotionBanner(pictureURL: (result.picture_url)!)
+                    for i in 0..<json["data"].count {
+                        let promotionBanner = PromotionBanner(pictureURL: json["data"][i]["picture_url"].string!)
                         self.promotionbannerlist.append(promotionBanner)
                     }
                 } else {
+                    print("我有進來4")
                     //主線程
                     DispatchQueue.main.async {
-                        MessageAlert.Instance.message(message: "\(Info.message)")
+                        MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-            } else {
+                
+            } catch {
                 //主線程
                 DispatchQueue.main.async {
                     MessageAlert.Instance.message(message: "資料解析錯誤")
+                    print("這邊是錯誤", error)
                 }
             }
             //主線程
             DispatchQueue.main.async {
-                //                UIViewController.removeSpinner(spinner: sv as! UIView)
                 PromotionBannerTable.reloadData()
             }
         }
         task.resume()
     }
-
     func getCount() -> Int {
         return promotionbannerlist.count
     }
@@ -62,5 +57,5 @@ class PromotionBannerAPI: NSObject {
     }
     //    func getImageURL() -> String{
     //    }
-
+    
 }
