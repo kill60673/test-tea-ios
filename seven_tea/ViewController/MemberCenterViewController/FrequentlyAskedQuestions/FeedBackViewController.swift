@@ -20,8 +20,8 @@ class FeedBackViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         PersonalMessageTableView = FeedBackTableView
         FeedBackTableView.tableFooterView = UIView()
-        GetFeedBackApi.GetFeedBackApiiInstance.getfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String ?? "", reply: 0)
-        self.feedbacklist = GetFeedBackApi.GetFeedBackApiiInstance.getfeedbacklist()
+        GetFeedBackApi.GetFeedBackApiInstance.getfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String ?? "", reply: 0)
+        self.feedbacklist = GetFeedBackApi.GetFeedBackApiInstance.getfeedbacklist()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,10 +30,10 @@ class FeedBackViewController: UIViewController, UITableViewDelegate, UITableView
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return GetFeedBackApi.GetFeedBackApiiInstance.getfeedbackcount()
+        return GetFeedBackApi.GetFeedBackApiInstance.getfeedbackcount()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        self.feedbacklist = GetFeedBackApi.GetFeedBackApiiInstance.getfeedbacklist()
+        self.feedbacklist = GetFeedBackApi.GetFeedBackApiInstance.getfeedbacklist()
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedBackCell", for: indexPath) as! FeedBackTableViewCell
         cell.lbTitle.text = feedbacklist[indexPath.row].title
         cell.ibContent.text = feedbacklist[indexPath.row].content
@@ -70,6 +70,6 @@ class FeedBackViewController: UIViewController, UITableViewDelegate, UITableView
             print("跑到1")
             break
         }
-        GetFeedBackApi.GetFeedBackApiiInstance.getfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, reply: self.reply)
+        GetFeedBackApi.GetFeedBackApiInstance.getfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, reply: self.reply)
     }
 }

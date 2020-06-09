@@ -13,7 +13,7 @@ class GetMemberOrderDetailApi {
     var memberorderitemafeedlist = [MemberItemAdd]()
     var memberorderdetailitem = [GetMemberOrderDetailItem]()
     var memberorderdetail = [GetMemberOrderDetail]()
-    var memberorderdtailaddress = [GetMemberOrderDetailAddress]()
+    var memberorderdetailaddress = [GetMemberOrderDetailAddress]()
     var feedname = [String]()
     var urlString = ""
     var newToken = ""
@@ -60,9 +60,9 @@ class GetMemberOrderDetailApi {
                             self.memberorderdetailitem.append(memberorderitem)
                         }
                         let memberorderdetailaddress = GetMemberOrderDetailAddress(zipcode: data["address"]["zipcode"].string ?? "", city: data["address"]["city"].string ?? "", district: data["address"]["district"].string ?? "", address: data["address"]["address"].string!)
-                        self.memberorderdtailaddress.append(memberorderdetailaddress)
+                        self.memberorderdetailaddress.append(memberorderdetailaddress)
                         print("我發現", data["order_no"].string!)
-                        let memberorder = GetMemberOrderDetail(order_no: data["order_no"].string!, order_status: data["order_status"].string!, store: data["store"].string!, total_qty: data["total_qty"].int!, total_price: data["total_price"].int!, item: self.memberorderdetailitem, recipient: data["recipient"].string!, recipient_tel: data["recipient_tel"].string!, tax_code: data["tax_code"].string ?? "", pay_method: data["pay_method"].string!, note: data["note"].string ?? "", created_at: data["created_at"].string!, address: self.memberorderdtailaddress)
+                        let memberorder = GetMemberOrderDetail(order_no: data["order_no"].string!, order_status: data["order_status"].string!, store: data["store"].string!, total_qty: data["total_qty"].int!, total_price: data["total_price"].int!, item: self.memberorderdetailitem, recipient: data["recipient"].string!, recipient_tel: data["recipient_tel"].string!, tax_code: data["tax_code"].string ?? "", pay_method: data["pay_method"].string!, note: data["note"].string ?? "", created_at: data["created_at"].string!, address: self.memberorderdetailaddress)
                         self.memberorderdetail.append(memberorder)
                         print("有", memberorder.store)
                         print("髒腳蛇")
