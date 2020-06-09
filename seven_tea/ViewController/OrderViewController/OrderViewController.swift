@@ -32,7 +32,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         // 將當下時間轉換成設定的時間格式
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") != nil {
-            MemberNewOrderApi.MemberNewOrderApiInstance.getmemberorderitem(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, selectStatus: 0)
+            MemberNewOrderApi.MemberNewOrderApiInstance.getmemberorderitem(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, selectStatus: selectStatus)
         }
     }
     override func viewDidAppear(_ animated: Bool) {
