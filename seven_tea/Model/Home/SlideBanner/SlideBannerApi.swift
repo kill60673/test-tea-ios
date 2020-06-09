@@ -15,7 +15,7 @@ class SlideBannerAPI: NSObject {
     func slidebanner() {
         let url = URL(string: ApiUrl.ApiUrlInstance.slideBanner )!
         print("我一直找不到欸")
-        print("ㄎㄎbnsl",url,"ㄎㄎbnsl")
+        print("ㄎㄎbnsl", url, "ㄎㄎbnsl")
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
@@ -27,7 +27,7 @@ class SlideBannerAPI: NSObject {
                 if json["success"].bool! == true {
                     self.slidebannerlist.removeAll()
                     for i in 0..<json["data"].count {
-                        let slidebanner = SlideBanner(imageType:  json["data"][i]["img_type"].string!, pictureURL:  json["data"][i]["picture_url"].string!, linkURL:  json["data"][i]["link_url"].string!)
+                        let slidebanner = SlideBanner(imageType: json["data"][i]["img_type"].string!, pictureURL: json["data"][i]["picture_url"].string!, linkURL: json["data"][i]["link_url"].string!)
                         self.slidebannerlist.append(slidebanner)
                     }
                 } else {
@@ -37,7 +37,7 @@ class SlideBannerAPI: NSObject {
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-                
+
             } catch {
                 //主線程
                 DispatchQueue.main.async {
@@ -58,5 +58,5 @@ class SlideBannerAPI: NSObject {
     func getList() -> [SlideBanner] {
         return slidebannerlist
     }
-    
+
 }

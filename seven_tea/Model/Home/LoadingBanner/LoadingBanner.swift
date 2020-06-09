@@ -9,9 +9,9 @@
 import Foundation
 
 class LoadingBanner: NSObject {
-    var imageType : String
-    var pictureURL : String
-    var linkURL : String?
+    var imageType: String
+    var pictureURL: String
+    var linkURL: String?
 
     init(imageType: String, pictureURL: String, linkURL: String) {
         self.imageType = imageType

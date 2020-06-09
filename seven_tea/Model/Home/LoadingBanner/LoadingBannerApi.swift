@@ -37,7 +37,7 @@ class LoadingBannerAPI: NSObject {
                             MessageAlert.Instance.message(message: json["message"].string!)
                         }
                     }
-                    
+
                 } catch {
                     //主線程
                     DispatchQueue.main.async {
@@ -57,5 +57,4 @@ class LoadingBannerAPI: NSObject {
     func getList() -> [LoadingBanner] {
         return loadingbannerlist
     }
-
 }
