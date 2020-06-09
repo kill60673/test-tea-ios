@@ -14,7 +14,7 @@ class GetFeedBackApi {
     var getfeedback = [GetFeedBack]()
     var urlString = ""
     var newToken = ""
-    static let GetFeedBackApiiInstance = GetFeedBackApi()
+    static let GetFeedBackApiInstance = GetFeedBackApi()
     func getfeedback(token: String, reply: Int) {
         urlString = ApiUrl.ApiUrlInstance.getfeedback+"\(reply)"
         let url = URL(string: urlString)!
