@@ -56,7 +56,7 @@ class GetFeedBackApi {
                         MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-
+                
             } catch {
                 //主線程
                 DispatchQueue.main.async {

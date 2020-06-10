@@ -16,17 +16,20 @@ class AddFeedBackViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var btSubmit: UIBarButtonItem!
     @IBOutlet weak var UIImageView: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    var feedbackoption = [FeedBackOption]()
     var type = "未選擇意見類型"
+    var typeid = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         tfTitle.delegate = self
         tvContent.delegate = self
         tvContent.setframe(textview: tvContent)
         UIImageView.setframe(view: UIImageView)
-        print("yoyoyooy", feedBackOption)
+        feedbackoption = FeedBackOptionApi.FeedBackOptionApiInstance.getlist()
     }
     @IBAction func btSubmit(_ sender: Any) {
         //送出判斷式連結API
+        GetCreateFeedBackMessage.gettCreateFeedBackInstance.getCreateFeedBackMessage(title: tfTitle.text ?? "" , feedback_type_id: self.typeid, content: tvContent.text ?? "", feedback_images: [])
     }
     @IBAction func btPickImage(_ sender: Any) {
         getphotoalert()
@@ -49,13 +52,14 @@ class AddFeedBackViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return feedBackOption.count
+        return FeedBackOptionApi.FeedBackOptionApiInstance.getCount()
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return feedBackOption[row]
+        return feedbackoption[row].name
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        type = feedBackOption[row]
+        type = feedbackoption[row].name
+        self.typeid = feedbackoption[row].id
         print("選擇的是\(type)")
     }
 }

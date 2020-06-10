@@ -7,48 +7,64 @@
 //
 
 import Foundation
-var feedBackOption = [String]()
+import SwiftyJSON
 class FeedBackOptionApi: NSObject {
-    static let CityTagInstance = FeedBackOptionApi()
-    lazy var feedbackoptionlist = [FeedBackOption]()
+    static let FeedBackOptionApiInstance = FeedBackOptionApi()
+    var feedbackoptionlist = [FeedBackOption]()
     func feedbackoption() {
-
         let url = URL(string: ApiUrl.ApiUrlInstance.feedbackoption)!
-
+        
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
-
-        let task = URLSession.shared.dataTask(with: request) { data, _, _ in
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            if let data = data, let Info = try?
-                decoder.decode(CityTagCodable.self, from: data) {
-                if Info.success == true {
-                    for result in Info.data {
-                        feedBackOption.append(result)
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            data, response, error in
+            let httpStatus = response as! HTTPURLResponse
+            do {
+                let json = try JSON(data: data!)
+                print("reeeeeeee", json["success"].bool!)
+                if json["success"].bool! == true {
+                    DispatchQueue.main.async {
+                        self.feedbackoptionlist.removeAll()
+                        for i in 0..<json["data"].count {
+                            let data = json["data"][i]
+                            let feedback = FeedBackOption(name: data["name"].string!, id: data["id"].int!)
+                            self.feedbackoptionlist.append(feedback)
+                        }
+                        MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 } else {
                     //主線程
+                    self.feedbackoptionlist.removeAll()
                     DispatchQueue.main.async {
-                        MessageAlert.Instance.message(message: "\(Info.message)")
+                        MessageAlert.Instance.message(message: json["message"].string!)
                     }
                 }
-            } else {
+                
+            } catch {
                 //主線程
                 DispatchQueue.main.async {
                     MessageAlert.Instance.message(message: "資料解析錯誤")
+                    print("這邊是錯誤", error)
                 }
             }
             //主線程
             DispatchQueue.main.async {
+                if PersonalMessageTableView != nil {
+                    print("有近Reload")
+                    PersonalMessageTableView.reloadData()
+                }
             }
         }
         task.resume()
     }
-
+    
     func getCount() -> Int {
         print("我有幾個", feedbackoptionlist.count)
         return feedbackoptionlist.count
+    }
+    func  getlist() ->[FeedBackOption]{
+        return feedbackoptionlist
     }
 }
