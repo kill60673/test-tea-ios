@@ -8,8 +8,10 @@
 
 import Foundation
 class FeedBackOption: NSObject {
-    var feedbackOption = [String]()
-    init(feedbackOption: [String]) {
-        self.feedbackOption = feedbackOption
+    var name :String
+    var id :Int
+    init(name: String,id : Int) {
+        self.name = name
+        self.id = id
     }
 }

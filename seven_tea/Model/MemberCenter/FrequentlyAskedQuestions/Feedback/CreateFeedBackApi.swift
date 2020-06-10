@@ -10,17 +10,29 @@ import Foundation
 import UIKit
 class CreateFeedBackApi: NSObject {
     static let CreateFeedBackApiInstance = CreateFeedBackApi()
+    var newToken = ""
     //將資料放進object的func
     // 登入用API
-    func createfeedback(handler : @escaping (Bool) -> Void) {
+    func createfeedback(token: String,handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.createfeedback)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "POST"
         request.httpBody = datas
         let task = URLSession.shared.dataTask(with: request) {
-            data, _, _ in
+            data, response, _ in
+            let httpStatus = response as! HTTPURLResponse
+            print("為什麼9991", httpStatus.allHeaderFields["Authorization"])
+            if httpStatus.allHeaderFields["Authorization"] != nil {
+                print("我有進來2")
+                self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
+                UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
+            } else {
+                print("tokennnnn", token)
+                print("我有進來3")
+            }
             let responseString = String(data: data!, encoding: .utf8)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
