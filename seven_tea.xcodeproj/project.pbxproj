@@ -113,6 +113,8 @@
 		84C0CFAD248769A3006A3DE0 /* GetFeedBackApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFAC248769A3006A3DE0 /* GetFeedBackApi.swift */; };
 		84C0CFAF248769B5006A3DE0 /* GetFeedBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFAE248769B5006A3DE0 /* GetFeedBack.swift */; };
 		84C0CFB124889379006A3DE0 /* FeedBackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFB024889379006A3DE0 /* FeedBackDetailViewController.swift */; };
+		84C0CFB324907C7D006A3DE0 /* CreateFeedBackCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFB224907C7D006A3DE0 /* CreateFeedBackCodable.swift */; };
+		84C0CFB524907C9F006A3DE0 /* CreateFeedBackApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFB424907C9F006A3DE0 /* CreateFeedBackApi.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
@@ -290,6 +292,8 @@
 		84C0CFAC248769A3006A3DE0 /* GetFeedBackApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedBackApi.swift; sourceTree = "<group>"; };
 		84C0CFAE248769B5006A3DE0 /* GetFeedBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedBack.swift; sourceTree = "<group>"; };
 		84C0CFB024889379006A3DE0 /* FeedBackDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackDetailViewController.swift; sourceTree = "<group>"; };
+		84C0CFB224907C7D006A3DE0 /* CreateFeedBackCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFeedBackCodable.swift; sourceTree = "<group>"; };
+		84C0CFB424907C9F006A3DE0 /* CreateFeedBackApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFeedBackApi.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
@@ -521,6 +525,8 @@
 				84874E36245EB3B100232FB9 /* FeedBackOption.swift */,
 				84C0CFAC248769A3006A3DE0 /* GetFeedBackApi.swift */,
 				84C0CFAE248769B5006A3DE0 /* GetFeedBack.swift */,
+				84C0CFB224907C7D006A3DE0 /* CreateFeedBackCodable.swift */,
+				84C0CFB424907C9F006A3DE0 /* CreateFeedBackApi.swift */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -1247,6 +1253,7 @@
 				84255382243F27B5004C9B23 /* MenuDetailViewController.swift in Sources */,
 				84FADF4923FE8B0100C824C6 /* JumpPage.swift in Sources */,
 				84EEC5D023D1C314005627FF /* ViewController.swift in Sources */,
+				84C0CFB524907C9F006A3DE0 /* CreateFeedBackApi.swift in Sources */,
 				84874E39245EC37F00232FB9 /* ProductHotTemp.swift in Sources */,
 				84F7C89123EAD1C90097EAD0 /* LoginCodable.swift in Sources */,
 				84EEC63123D4222E005627FF /* FrequentlyAskedQuestionsModelController.swift in Sources */,
@@ -1260,6 +1267,7 @@
 				84FADF2623F675D200C824C6 /* SendMemberRegisterInfoViewController.swift in Sources */,
 				84874E4F24600E4300232FB9 /* GetShopingCarMessage.swift in Sources */,
 				84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */,
+				84C0CFB324907C7D006A3DE0 /* CreateFeedBackCodable.swift in Sources */,
 				8425539C24459D0D004C9B23 /* PromotionBanner.swift in Sources */,
 				84C0CF92247F90B7006A3DE0 /* MemberOrderItem.swift in Sources */,
 				84C0CF832472647B006A3DE0 /* GetFeedList.swift in Sources */,
