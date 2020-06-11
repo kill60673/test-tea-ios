@@ -12,6 +12,7 @@ class SetNameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var btSubmit: UIButton!
     var name = ""
+    var type = "name"
     override func viewDidLoad() {
         super.viewDidLoad()
         tfName.delegate = self
@@ -21,6 +22,7 @@ class SetNameViewController: UIViewController, UITextFieldDelegate {
     @IBAction func btSubmit(_ sender: Any) {
         self.name = tfName.text ?? ""
         if name != "" {
+            getEditNameMessage(type: type, name: self.name)
             //修改名子的api
         }
     }

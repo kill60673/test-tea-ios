@@ -10,6 +10,7 @@ import UIKit
 
 class GenderTableViewController: UITableViewController {
     var isFinished = [Bool]()
+    var sex = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,12 @@ class GenderTableViewController: UITableViewController {
     //設立只能點選一個勾 選了另一個會跳掉
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        if genderList[indexPath.row] == "男"{
+            self.sex = "male"
+        }else{
+            self.sex = "female"
+        }
+        getEditSexMessage(type: "sex", sex: self.sex)
     }
 
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
