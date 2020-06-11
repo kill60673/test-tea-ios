@@ -7,3 +7,12 @@
 //
 
 import Foundation
+struct EditMemberInfoCodable: Codable {
+    var success: Bool
+    var message: String
+    var data: String
+}
+struct EdifMemberInfoMessage: Codable {
+    var type : String
+    var params : String
+}

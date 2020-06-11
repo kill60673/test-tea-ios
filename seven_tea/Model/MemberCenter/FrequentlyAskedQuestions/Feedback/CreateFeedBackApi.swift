@@ -39,7 +39,7 @@ class CreateFeedBackApi: NSObject {
             // 做 do catch 如果任何例外事件 就在catch print出error
             if let data = data {
                 do {
-                    let createfeedback = try decoder.decode(LoginCodable.self, from: data)
+                    let createfeedback = try decoder.decode(CreateFeedBackCodable.self, from: data)
                     if createfeedback.success == true {
                         DispatchQueue.main.async {
                             MessageAlert.Instance.message(message: createfeedback.message)
