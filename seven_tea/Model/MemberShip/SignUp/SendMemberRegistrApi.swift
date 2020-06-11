@@ -11,7 +11,7 @@ var datas = Data()
 class SendMemberRegistrApi: NSObject {
     static let MemberRegisterInstance = SendMemberRegistrApi()
     func sendMemberRegister( handler : @escaping (Bool) -> Void) {
-        let url = URL(string: ApiUrl.ApiUrlInstance.sendMemberRegistrUrl)!
+        let url = URL(string: ApiUrl.ApiUrlInstance.checkregistercode)!
         var request = URLRequest(url: url)
 //        request.setValue("application/json" , forHTTPHeaderField : "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
