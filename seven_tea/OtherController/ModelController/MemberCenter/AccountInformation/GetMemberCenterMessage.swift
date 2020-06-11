@@ -81,3 +81,18 @@ func getEditMemberPasswordMessage(old_password:String,new_password:String,new_pa
         }
     }
 }
+func getNotificationStatusMessage(type:String,status:Int){
+    let postString = SetNotificationStatusMessage(type: type, status: status)
+    let encoder = JSONEncoder()
+    if let data = try? encoder.encode(postString) {
+        print(postString)
+        datas = data
+        print(data)
+        SetNotificationStatusApi.SetNotificationStatusApiInstance.setnotificationstatus(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+            if result {
+                return
+            } else {
+            }
+        }
+    }
+}

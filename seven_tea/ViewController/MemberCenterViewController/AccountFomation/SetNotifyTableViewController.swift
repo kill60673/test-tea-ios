@@ -9,7 +9,8 @@
 import UIKit
 
 class SetNotifyTableViewController: UITableViewController {
-
+    var type = ""
+    var status = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
@@ -41,7 +42,17 @@ class SetNotifyTableViewController: UITableViewController {
                 return cell
     }
     @objc func switchChanged(_ sender: UISwitch!) {
-
+        if sender.tag == 0 {
+            self.type = "app"
+        }else{
+            self.type = "email"
+        }
+        if sender.isOn == true{
+            self.status = 1
+        }else{
+            self.status = 0
+        }
+        getNotificationStatusMessage(type: self.type, status: self.status)
              print("table row switch Changed \(sender.tag)")
              print("The switch is \(sender.isOn ? "ON" : "OFF")")
        }

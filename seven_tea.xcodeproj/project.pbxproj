@@ -119,6 +119,8 @@
 		84C0CFBA2491FF7F006A3DE0 /* EditMemberInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFB92491FF7F006A3DE0 /* EditMemberInfo.swift */; };
 		84C0CFBD24920883006A3DE0 /* EditMemberPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFBC24920883006A3DE0 /* EditMemberPassword.swift */; };
 		84C0CFBF2492089D006A3DE0 /* EditMemberPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFBE2492089D006A3DE0 /* EditMemberPasswordApi.swift */; };
+		84C0CFC224921EC9006A3DE0 /* SetNotificationStatusApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFC124921EC9006A3DE0 /* SetNotificationStatusApi.swift */; };
+		84C0CFC424921EF1006A3DE0 /* SetNotificationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFC324921EF1006A3DE0 /* SetNotificationStatus.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
@@ -302,6 +304,8 @@
 		84C0CFB92491FF7F006A3DE0 /* EditMemberInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemberInfo.swift; sourceTree = "<group>"; };
 		84C0CFBC24920883006A3DE0 /* EditMemberPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemberPassword.swift; sourceTree = "<group>"; };
 		84C0CFBE2492089D006A3DE0 /* EditMemberPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemberPasswordApi.swift; sourceTree = "<group>"; };
+		84C0CFC124921EC9006A3DE0 /* SetNotificationStatusApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNotificationStatusApi.swift; sourceTree = "<group>"; };
+		84C0CFC324921EF1006A3DE0 /* SetNotificationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNotificationStatus.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
@@ -698,6 +702,15 @@
 			path = EditMemberPassword;
 			sourceTree = "<group>";
 		};
+		84C0CFC024921EA0006A3DE0 /* SetNotificationStatus */ = {
+			isa = PBXGroup;
+			children = (
+				84C0CFC124921EC9006A3DE0 /* SetNotificationStatusApi.swift */,
+				84C0CFC324921EF1006A3DE0 /* SetNotificationStatus.swift */,
+			);
+			path = SetNotificationStatus;
+			sourceTree = "<group>";
+		};
 		84C2E2A923EBDD4C008AB33F /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -883,6 +896,7 @@
 		84EEC5E923D30162005627FF /* AccountInformation */ = {
 			isa = PBXGroup;
 			children = (
+				84C0CFC024921EA0006A3DE0 /* SetNotificationStatus */,
 				84C0CFBB2492085F006A3DE0 /* EditMemberPassword */,
 				84C0CFB62491FF4C006A3DE0 /* EditMemberInfo */,
 				84874E06244F043C00232FB9 /* VerifyEmail */,
@@ -1364,6 +1378,7 @@
 				84EEC62623D4215C005627FF /* getLoginMessage.swift in Sources */,
 				84C0CFBD24920883006A3DE0 /* EditMemberPassword.swift in Sources */,
 				84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */,
+				84C0CFC224921EC9006A3DE0 /* SetNotificationStatusApi.swift in Sources */,
 				84D09B3A24177FA10019A0B4 /* SetPasswordViewController.swift in Sources */,
 				84EEC62823D4216C005627FF /* SingUpModelController.swift in Sources */,
 				84FADF1B23F66CBE00C824C6 /* MemberRegisterInfoCodable.swift in Sources */,
@@ -1402,6 +1417,7 @@
 				84874E2424570F2C00232FB9 /* CategoryTableViewCell.swift in Sources */,
 				8490F26F243DC44200A59020 /* BannerCollectionViewCell.swift in Sources */,
 				84874E48245FFB9400232FB9 /* AddShoppingCarApi.swift in Sources */,
+				84C0CFC424921EF1006A3DE0 /* SetNotificationStatus.swift in Sources */,
 				84EEC60523D41483005627FF /* MenberCenterViewController.swift in Sources */,
 				84EEC5FA23D412C9005627FF /* AccountApi.swift in Sources */,
 				84C0CF9D2484A8E2006A3DE0 /* GetMemberOrderDetail.swift in Sources */,
