@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EditMemberPasswordApi.swift
 //  seven_tea
 //
 //  Created by harrison on 2020/6/11.
@@ -8,13 +8,13 @@
 
 import Foundation
 import UIKit
-class EditMemberInfoApi: NSObject {
-    static let EditMemberInfoApiInstance = EditMemberInfoApi()
+class EditMemberPasswordApi: NSObject {
+    static let EditMemberPasswordApiInstance = EditMemberPasswordApi()
     var newToken = ""
     //將資料放進object的func
     // 登入用API
-    func editmemberinfo(token: String,handler : @escaping (Bool) -> Void) {
-        let url = URL(string: ApiUrl.ApiUrlInstance.editmemberinfo)!
+    func editmemberpassword(token: String,handler : @escaping (Bool) -> Void) {
+        let url = URL(string: ApiUrl.ApiUrlInstance.editmemberpassword)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -39,16 +39,16 @@ class EditMemberInfoApi: NSObject {
             // 做 do catch 如果任何例外事件 就在catch print出error
             if let data = data {
                 do {
-                    let editmemberinfo = try decoder.decode(EditMemberInfoCodable.self, from: data)
-                    if editmemberinfo.success == true {
+                    let editmemberpassword = try decoder.decode(EditMemberPasswordCodable.self, from: data)
+                    if editmemberpassword.success == true {
                         DispatchQueue.main.async {
-                            MessageAlert.Instance.message(message: editmemberinfo.message)
+                            MessageAlert.Instance.message(message: editmemberpassword.message)
                             handler(true)
                         }
                     } else {
                         DispatchQueue.main.async {
-                            print(editmemberinfo.data)
-                            MessageAlert.Instance.message(message: editmemberinfo.message)
+                            print(editmemberpassword.data)
+                            MessageAlert.Instance.message(message: editmemberpassword.message)
                             handler(false)
                         }
                     }
