@@ -36,3 +36,33 @@ func getSetVerifyEmailMessage(email: String, email_vaildate_code: String) {
         }
     }
 }
+func getEditNameMessage(type:String,name:String){
+    let postString = EdifMemberInfoMessage(type: type, params: name)
+    let encoder = JSONEncoder()
+    if let data = try? encoder.encode(postString) {
+        print(postString)
+        datas = data
+        print(data)
+        EditMemberInfoApi.EditMemberInfoApiInstance.createfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+            if result {
+                return
+            } else {
+            }
+        }
+    }
+}
+func getEditSexMessage(type:String,sex:String){
+    let postString = EdifMemberInfoMessage(type: type, params: sex)
+    let encoder = JSONEncoder()
+    if let data = try? encoder.encode(postString) {
+        print(postString)
+        datas = data
+        print(data)
+        EditMemberInfoApi.EditMemberInfoApiInstance.createfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+            if result {
+                return
+            } else {
+            }
+        }
+    }
+}
