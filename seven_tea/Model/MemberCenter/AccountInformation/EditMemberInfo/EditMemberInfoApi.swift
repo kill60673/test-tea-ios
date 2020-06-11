@@ -1,20 +1,20 @@
 //
-//  CreateFeedBackApi.swift
+//  File.swift
 //  seven_tea
 //
-//  Created by harrison on 2020/6/10.
+//  Created by harrison on 2020/6/11.
 //  Copyright © 2020 harrison公司機. All rights reserved.
 //
 
 import Foundation
 import UIKit
-class CreateFeedBackApi: NSObject {
-    static let CreateFeedBackApiInstance = CreateFeedBackApi()
+class EditMemberInfoApi: NSObject {
+    static let EditMemberInfoApiInstance = EditMemberInfoApi()
     var newToken = ""
     //將資料放進object的func
     // 登入用API
     func createfeedback(token: String,handler : @escaping (Bool) -> Void) {
-        let url = URL(string: ApiUrl.ApiUrlInstance.createfeedback)!
+        let url = URL(string: ApiUrl.ApiUrlInstance.editmemberinfo)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -39,16 +39,16 @@ class CreateFeedBackApi: NSObject {
             // 做 do catch 如果任何例外事件 就在catch print出error
             if let data = data {
                 do {
-                    let createfeedback = try decoder.decode(CreateFeedBackCodable.self, from: data)
-                    if createfeedback.success == true {
+                    let editmemberinfo = try decoder.decode(EditMemberInfoCodable.self, from: data)
+                    if editmemberinfo.success == true {
                         DispatchQueue.main.async {
-                            MessageAlert.Instance.message(message: createfeedback.message)
+                            MessageAlert.Instance.message(message: editmemberinfo.message)
                             handler(true)
                         }
                     } else {
                         DispatchQueue.main.async {
-                            print(createfeedback.data)
-                            MessageAlert.Instance.message(message: createfeedback.message)
+                            print(editmemberinfo.data)
+                            MessageAlert.Instance.message(message: editmemberinfo.message)
                             handler(false)
                         }
                     }
