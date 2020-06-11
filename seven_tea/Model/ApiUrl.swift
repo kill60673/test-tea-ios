@@ -52,6 +52,7 @@ class ApiUrl: NSObject {
     var cancelorder: String //訂單-訂單查詢-取消訂單
     var checkregistercode: String //會員-註冊-傳送手機及驗證碼
     var editmemberinfo: String //會員中心-帳戶資料-修改會員資料
+    var editmemberpassword: String //會員中心-帳戶資料-修改會員密碼
 
     override init() {
         loginUrl="\(doMain)/api/login"
@@ -97,5 +98,6 @@ class ApiUrl: NSObject {
         createfeedback="\(doMain)/api/create-feedback"
         checkregistercode="\(doMain)/api/register/check-register-code"
         editmemberinfo="\(doMain)/api/edit-member-info"
+        editmemberpassword="\(doMain)/api/edit-member-password"
     }
 }

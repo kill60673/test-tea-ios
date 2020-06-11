@@ -31,5 +31,6 @@ class SetPasswordViewController: UIViewController, UITextFieldDelegate {
         self.oldpassword = tfOldPassword.text ?? ""
         self.newpassword = tfNewPassword.text ?? ""
         self.checkpassword = tfCheckPassword.text ?? ""
+        getEditMemberPasswordMessage(old_password: self.oldpassword, new_password: self.newpassword, new_password_confirmation: self.checkpassword)
     }
 }

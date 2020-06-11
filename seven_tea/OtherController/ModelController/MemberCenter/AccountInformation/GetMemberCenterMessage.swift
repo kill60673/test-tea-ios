@@ -43,7 +43,7 @@ func getEditNameMessage(type:String,name:String){
         print(postString)
         datas = data
         print(data)
-        EditMemberInfoApi.EditMemberInfoApiInstance.createfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+        EditMemberInfoApi.EditMemberInfoApiInstance.editmemberinfo(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return
             } else {
@@ -58,7 +58,22 @@ func getEditSexMessage(type:String,sex:String){
         print(postString)
         datas = data
         print(data)
-        EditMemberInfoApi.EditMemberInfoApiInstance.createfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+        EditMemberInfoApi.EditMemberInfoApiInstance.editmemberinfo(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+            if result {
+                return
+            } else {
+            }
+        }
+    }
+}
+func getEditMemberPasswordMessage(old_password:String,new_password:String,new_password_confirmation:String){
+    let postString = EditMemberPasswordMessage(old_password: old_password, new_password: new_password, new_password_confirmation: new_password_confirmation)
+    let encoder = JSONEncoder()
+    if let data = try? encoder.encode(postString) {
+        print(postString)
+        datas = data
+        print(data)
+        EditMemberInfoApi.EditMemberInfoApiInstance.editmemberinfo(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return
             } else {
