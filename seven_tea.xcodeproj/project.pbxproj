@@ -121,6 +121,9 @@
 		84C0CFBF2492089D006A3DE0 /* EditMemberPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFBE2492089D006A3DE0 /* EditMemberPasswordApi.swift */; };
 		84C0CFC224921EC9006A3DE0 /* SetNotificationStatusApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFC124921EC9006A3DE0 /* SetNotificationStatusApi.swift */; };
 		84C0CFC424921EF1006A3DE0 /* SetNotificationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFC324921EF1006A3DE0 /* SetNotificationStatus.swift */; };
+		84C0CFC72493299B006A3DE0 /* ServiceAndPrivacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFC62493299B006A3DE0 /* ServiceAndPrivacy.swift */; };
+		84C0CFC9249329B3006A3DE0 /* ServiceAndPrivacyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFC8249329B3006A3DE0 /* ServiceAndPrivacyApi.swift */; };
+		84C0CFCC24932BC9006A3DE0 /* ServiceAndPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFCB24932BC9006A3DE0 /* ServiceAndPrivacyViewController.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
@@ -306,6 +309,9 @@
 		84C0CFBE2492089D006A3DE0 /* EditMemberPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemberPasswordApi.swift; sourceTree = "<group>"; };
 		84C0CFC124921EC9006A3DE0 /* SetNotificationStatusApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNotificationStatusApi.swift; sourceTree = "<group>"; };
 		84C0CFC324921EF1006A3DE0 /* SetNotificationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNotificationStatus.swift; sourceTree = "<group>"; };
+		84C0CFC62493299B006A3DE0 /* ServiceAndPrivacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAndPrivacy.swift; sourceTree = "<group>"; };
+		84C0CFC8249329B3006A3DE0 /* ServiceAndPrivacyApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAndPrivacyApi.swift; sourceTree = "<group>"; };
+		84C0CFCB24932BC9006A3DE0 /* ServiceAndPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAndPrivacyViewController.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
@@ -711,6 +717,23 @@
 			path = SetNotificationStatus;
 			sourceTree = "<group>";
 		};
+		84C0CFC524932966006A3DE0 /* ServiceAndPrivacy */ = {
+			isa = PBXGroup;
+			children = (
+				84C0CFC62493299B006A3DE0 /* ServiceAndPrivacy.swift */,
+				84C0CFC8249329B3006A3DE0 /* ServiceAndPrivacyApi.swift */,
+			);
+			path = ServiceAndPrivacy;
+			sourceTree = "<group>";
+		};
+		84C0CFCA24932B8E006A3DE0 /* ServiceAndPrivacy */ = {
+			isa = PBXGroup;
+			children = (
+				84C0CFCB24932BC9006A3DE0 /* ServiceAndPrivacyViewController.swift */,
+			);
+			path = ServiceAndPrivacy;
+			sourceTree = "<group>";
+		};
 		84C2E2A923EBDD4C008AB33F /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -842,6 +865,7 @@
 		84EEC5E423D30108005627FF /* MemberCenter */ = {
 			isa = PBXGroup;
 			children = (
+				84C0CFC524932966006A3DE0 /* ServiceAndPrivacy */,
 				84EEC5E923D30162005627FF /* AccountInformation */,
 				84EEC5E823D3015F005627FF /* FrequentlyAskedQuestions */,
 				84EEC5E723D30147005627FF /* MyFavorite */,
@@ -943,6 +967,7 @@
 				84EEC60B23D414E0005627FF /* MyFavorite */,
 				84EEC60923D414BB005627FF /* FrequentlyAskedQuestions */,
 				84EEC60723D414A3005627FF /* AccountFomation */,
+				84C0CFCA24932B8E006A3DE0 /* ServiceAndPrivacy */,
 				84D09B4B241F20D80019A0B4 /* Voucher */,
 			);
 			path = MemberCenterViewController;
@@ -1352,6 +1377,7 @@
 				84FADF1F23F66FDA00C824C6 /* SendMemberRegisterInfoApi.swift in Sources */,
 				84D09B3324163FA50019A0B4 /* GenderTableViewController.swift in Sources */,
 				8490F258242CB50700A59020 /* ShopcCarViewController.swift in Sources */,
+				84C0CFC9249329B3006A3DE0 /* ServiceAndPrivacyApi.swift in Sources */,
 				84479E8F2446FD2300D10DBA /* CityTagCodable.swift in Sources */,
 				84874E1E2455BFF800232FB9 /* ProductTemp.swift in Sources */,
 				84EEC61923D415A8005627FF /* MyFavoriteApi.swift in Sources */,
@@ -1360,6 +1386,7 @@
 				84C0CFAB24864739006A3DE0 /* CancelOrderCodable.swift in Sources */,
 				84874E112452D6E800232FB9 /* GetMenuCategory.swift in Sources */,
 				84C2E2B823EBF921008AB33F /* ForgotPasswordViewController.swift in Sources */,
+				84C0CFCC24932BC9006A3DE0 /* ServiceAndPrivacyViewController.swift in Sources */,
 				84D09B3E2418B4250019A0B4 /* SetNameViewController.swift in Sources */,
 				84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */,
 				84316C092410D0A9002CD226 /* AccountFomationViewController.swift in Sources */,
@@ -1390,6 +1417,7 @@
 				84EEC5F423D4127C005627FF /* UserInfo.swift in Sources */,
 				84C0CFA9248645F3006A3DE0 /* CancelOrderApi.swift in Sources */,
 				84C0CF9A24826C34006A3DE0 /* OrderDetailTableViewCell.swift in Sources */,
+				84C0CFC72493299B006A3DE0 /* ServiceAndPrivacy.swift in Sources */,
 				84EEC5F823D412BB005627FF /* Account.swift in Sources */,
 				84FADF2423F674B400C824C6 /* VerificationCodeTimer.swift in Sources */,
 				84EEC61323D4155C005627FF /* FrequentlyAskedQuestionsApi.swift in Sources */,
