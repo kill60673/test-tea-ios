@@ -54,6 +54,7 @@ class ApiUrl: NSObject {
     var editmemberinfo: String //會員中心-帳戶資料-修改會員資料
     var editmemberpassword: String //會員中心-帳戶資料-修改會員密碼
     var setnotificationstatus: String //會員中心-帳戶資料-設定推播通知是否啟用
+    var privacyandpolicy: String
 
     override init() {
         loginUrl="\(doMain)/api/login"
@@ -101,5 +102,6 @@ class ApiUrl: NSObject {
         editmemberinfo="\(doMain)/api/edit-member-info"
         editmemberpassword="\(doMain)/api/edit-member-password"
         setnotificationstatus="\(doMain)/api/set-notification-status"
+        privacyandpolicy="\(doMain)/api/get-privacy-and-policy"
     }
 }
