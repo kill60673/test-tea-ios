@@ -14,7 +14,7 @@ class ApiUrl: NSObject {
     var forgotPasswordSmsUrl: String //忘記密碼-傳送手機驗證碼
     var sendResetForgotPasswordUrl: String //忘記密碼-確認忘記密碼驗證資訊
     var restPasswordUrl: String //忘記密碼-設定新密碼
-    var sendMemberRegistrUrl: String //會員-註冊-送出註冊資訊
+    var sendMemberRegisterUrl: String //會員-註冊-送出註冊資訊
     var sendMemberRegisterInfoUrl: String //舊有使用需盤點
     var memberInfoUrl: String //會員中心-帳戶資料-取得會員詳細資料
     var myFavoriteDrinkInfoUrl: String //舊 有使用需盤點
@@ -54,7 +54,7 @@ class ApiUrl: NSObject {
     var editmemberinfo: String //會員中心-帳戶資料-修改會員資料
     var editmemberpassword: String //會員中心-帳戶資料-修改會員密碼
     var setnotificationstatus: String //會員中心-帳戶資料-設定推播通知是否啟用
-    var privacyandpolicy: String
+    var privacyandpolicy: String //會員中心-隱私與服務條款
 
     override init() {
         loginUrl="\(doMain)/api/login"
@@ -62,7 +62,7 @@ class ApiUrl: NSObject {
         forgotPasswordSmsUrl="\(doMain)/api/send-forgot-password-sms"
         sendResetForgotPasswordUrl="\(doMain)/api/check-forgot-password-code"
         restPasswordUrl="\(doMain)/api/reset-password"
-        sendMemberRegistrUrl="\(doMain)/api/register/register"
+        sendMemberRegisterUrl="\(doMain)/api/register/register"
         sendMemberRegisterInfoUrl="\(doMain)/api/register/send-register-info"
         memberInfoUrl="\(doMain)/api/get-member-all-info"
         myFavoriteDrinkInfoUrl="\(doMain)/api/get/my-favorite"

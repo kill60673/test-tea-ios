@@ -29,7 +29,7 @@ class AddFeedBackViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     @IBAction func btSubmit(_ sender: Any) {
         //送出判斷式連結API
-        GetCreateFeedBackMessage.gettCreateFeedBackInstance.getCreateFeedBackMessage(title: tfTitle.text ?? "" , feedback_type_id: self.typeid, content: tvContent.text ?? "", feedback_images: [])
+        GetCreateFeedBackMessage.getCreateFeedBackInstance.getCreateFeedBackMessage(title: tfTitle.text ?? "" , feedback_type_id: self.typeid, content: tvContent.text ?? "", feedback_images: [])
     }
     @IBAction func btPickImage(_ sender: Any) {
         getphotoalert()
