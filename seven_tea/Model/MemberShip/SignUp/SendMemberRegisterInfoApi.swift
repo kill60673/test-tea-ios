@@ -7,7 +7,7 @@ import UIKit
 class SendMemberRegisterInfoAPI: NSObject {
     static let MemberRegisterInstance = SendMemberRegisterInfoAPI()
     func sendMemberRegisterInfo( handler : @escaping (Bool) -> Void) {
-        let url = URL(string: ApiUrl.ApiUrlInstance.sendMemberRegistrUrl)!
+        let url = URL(string: ApiUrl.ApiUrlInstance.sendMemberRegisterUrl)!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
