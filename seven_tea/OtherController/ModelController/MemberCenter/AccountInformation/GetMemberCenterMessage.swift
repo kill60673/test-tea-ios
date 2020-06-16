@@ -96,3 +96,33 @@ func getNotificationStatusMessage(type:String,status:Int){
         }
     }
 }
+func getAddLoveAddressMessage(city: String, district:String, address:String) {
+    let postString  = AddLoveAddress(city: city, district: district, address: address)
+    let encoder = JSONEncoder()
+    if let data = try? encoder.encode(postString) {
+        print(postString)
+        datas = data
+        print(data)
+        AddLoveAddressApi.AddLoveAddressApiInstance.verifyEmailApi(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+            if result {
+                return
+            } else {
+            }
+        }
+    }
+}
+func getDeleteLoveAddressMessage(id:String) {
+    let postString  = DeleteLoveAddress(id: id)
+    let encoder = JSONEncoder()
+    if let data = try? encoder.encode(postString) {
+        print(postString)
+        datas = data
+        print(data)
+        DeleteLoveAddressApi.DeleteLoveAddressApiInstance.verifyEmailApi(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
+            if result {
+                return
+            } else {
+            }
+        }
+    }
+}
