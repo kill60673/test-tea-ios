@@ -124,6 +124,10 @@
 		84C0CFC72493299B006A3DE0 /* ServiceAndPrivacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFC62493299B006A3DE0 /* ServiceAndPrivacy.swift */; };
 		84C0CFC9249329B3006A3DE0 /* ServiceAndPrivacyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFC8249329B3006A3DE0 /* ServiceAndPrivacyApi.swift */; };
 		84C0CFCC24932BC9006A3DE0 /* ServiceAndPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFCB24932BC9006A3DE0 /* ServiceAndPrivacyViewController.swift */; };
+		84C0CFCF24986132006A3DE0 /* AddLoveAddressApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFCE24986132006A3DE0 /* AddLoveAddressApi.swift */; };
+		84C0CFD12498614D006A3DE0 /* AddLoveAddressCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFD02498614D006A3DE0 /* AddLoveAddressCodable.swift */; };
+		84C0CFD324986162006A3DE0 /* DeleteLoveAddressCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFD224986162006A3DE0 /* DeleteLoveAddressCodable.swift */; };
+		84C0CFD52498617A006A3DE0 /* DeleteLoveAddressApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0CFD42498617A006A3DE0 /* DeleteLoveAddressApi.swift */; };
 		84C2E2AB23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */; };
 		84C2E2AD23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */; };
 		84C2E2AF23EBE084008AB33F /* SendResetForgotPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */; };
@@ -312,6 +316,10 @@
 		84C0CFC62493299B006A3DE0 /* ServiceAndPrivacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAndPrivacy.swift; sourceTree = "<group>"; };
 		84C0CFC8249329B3006A3DE0 /* ServiceAndPrivacyApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAndPrivacyApi.swift; sourceTree = "<group>"; };
 		84C0CFCB24932BC9006A3DE0 /* ServiceAndPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAndPrivacyViewController.swift; sourceTree = "<group>"; };
+		84C0CFCE24986132006A3DE0 /* AddLoveAddressApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLoveAddressApi.swift; sourceTree = "<group>"; };
+		84C0CFD02498614D006A3DE0 /* AddLoveAddressCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLoveAddressCodable.swift; sourceTree = "<group>"; };
+		84C0CFD224986162006A3DE0 /* DeleteLoveAddressCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLoveAddressCodable.swift; sourceTree = "<group>"; };
+		84C0CFD42498617A006A3DE0 /* DeleteLoveAddressApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLoveAddressApi.swift; sourceTree = "<group>"; };
 		84C2E2AA23EBDD7F008AB33F /* ForgerPasswordSmsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgerPasswordSmsApi.swift; sourceTree = "<group>"; };
 		84C2E2AC23EBDE93008AB33F /* ForgotPasswordSmsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSmsCodable.swift; sourceTree = "<group>"; };
 		84C2E2AE23EBE084008AB33F /* SendResetForgotPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetForgotPasswordApi.swift; sourceTree = "<group>"; };
@@ -734,6 +742,17 @@
 			path = ServiceAndPrivacy;
 			sourceTree = "<group>";
 		};
+		84C0CFCD249860B7006A3DE0 /* LoveAddress */ = {
+			isa = PBXGroup;
+			children = (
+				84C0CFCE24986132006A3DE0 /* AddLoveAddressApi.swift */,
+				84C0CFD02498614D006A3DE0 /* AddLoveAddressCodable.swift */,
+				84C0CFD42498617A006A3DE0 /* DeleteLoveAddressApi.swift */,
+				84C0CFD224986162006A3DE0 /* DeleteLoveAddressCodable.swift */,
+			);
+			path = LoveAddress;
+			sourceTree = "<group>";
+		};
 		84C2E2A923EBDD4C008AB33F /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -920,6 +939,7 @@
 		84EEC5E923D30162005627FF /* AccountInformation */ = {
 			isa = PBXGroup;
 			children = (
+				84C0CFCD249860B7006A3DE0 /* LoveAddress */,
 				84C0CFC024921EA0006A3DE0 /* SetNotificationStatus */,
 				84C0CFBB2492085F006A3DE0 /* EditMemberPassword */,
 				84C0CFB62491FF4C006A3DE0 /* EditMemberInfo */,
@@ -1335,6 +1355,7 @@
 				84874E4F24600E4300232FB9 /* GetShopingCarMessage.swift in Sources */,
 				84FADF3123F78AB300C824C6 /* RegexMessage.swift in Sources */,
 				84C0CFB324907C7D006A3DE0 /* CreateFeedBackCodable.swift in Sources */,
+				84C0CFD52498617A006A3DE0 /* DeleteLoveAddressApi.swift in Sources */,
 				8425539C24459D0D004C9B23 /* PromotionBanner.swift in Sources */,
 				84C0CF92247F90B7006A3DE0 /* MemberOrderItem.swift in Sources */,
 				84C0CF832472647B006A3DE0 /* GetFeedList.swift in Sources */,
@@ -1399,6 +1420,7 @@
 				84874E2A2459688400232FB9 /* ProductIceTemp.swift in Sources */,
 				84FADF3523F7CAB400C824C6 /* UIelementsController.swift in Sources */,
 				84316C1124124600002CD226 /* FrequentlyAskedQuestionsViewController.swift in Sources */,
+				84C0CFD12498614D006A3DE0 /* AddLoveAddressCodable.swift in Sources */,
 				8425539A24459C8F004C9B23 /* SlideBanner.swift in Sources */,
 				84C0CF652463BA69006A3DE0 /* GetShoppingCarItem.swift in Sources */,
 				84FADF1923F66A7F00C824C6 /* MemberRegiseterSmsApi.swift in Sources */,
@@ -1408,6 +1430,7 @@
 				84C0CFC224921EC9006A3DE0 /* SetNotificationStatusApi.swift in Sources */,
 				84D09B3A24177FA10019A0B4 /* SetPasswordViewController.swift in Sources */,
 				84EEC62823D4216C005627FF /* SingUpModelController.swift in Sources */,
+				84C0CFCF24986132006A3DE0 /* AddLoveAddressApi.swift in Sources */,
 				84FADF1B23F66CBE00C824C6 /* MemberRegisterInfoCodable.swift in Sources */,
 				84874E0E2452B37400232FB9 /* GpsGetStoresApi.swift in Sources */,
 				84874E08244F048900232FB9 /* VerifyEmailCodable.swift in Sources */,
@@ -1428,6 +1451,7 @@
 				84EEC5CE23D1C314005627FF /* SceneDelegate.swift in Sources */,
 				8425538C24459826004C9B23 /* MarketingBannerCodable.swift in Sources */,
 				8490F264243318E100A59020 /* OrderColadable.swift in Sources */,
+				84C0CFD324986162006A3DE0 /* DeleteLoveAddressCodable.swift in Sources */,
 				84874E182454306700232FB9 /* GetMenuProductApi.swift in Sources */,
 				84FADF4E23FE8B9500C824C6 /* GetMemberRegisterMessage.swift in Sources */,
 				84479E932446FEF900D10DBA /* CityTag.swift in Sources */,

@@ -55,6 +55,8 @@ class ApiUrl: NSObject {
     var editmemberpassword: String //會員中心-帳戶資料-修改會員密碼
     var setnotificationstatus: String //會員中心-帳戶資料-設定推播通知是否啟用
     var privacyandpolicy: String //會員中心-隱私與服務條款
+    var addloveaddress: String //會員中心-帳戶資料-新增最愛地址
+    var deleteloveaddress: String //會員中心-帳戶資料-刪除最愛地址
 
     override init() {
         loginUrl="\(doMain)/api/login"
@@ -103,5 +105,7 @@ class ApiUrl: NSObject {
         editmemberpassword="\(doMain)/api/edit-member-password"
         setnotificationstatus="\(doMain)/api/set-notification-status"
         privacyandpolicy="\(doMain)/api/get-privacy-and-policy"
+        addloveaddress="\(doMain)/api/add-love-address"
+        deleteloveaddress="\(doMain)/api/delete-love-address"
     }
 }
