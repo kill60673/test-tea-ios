@@ -30,8 +30,9 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var btMyFavourite: UIButton!
     @IBOutlet weak var lbQuantity: UILabel!
     @IBOutlet weak var lbTotalAmount: UILabel!
-    @IBOutlet weak var lbFixedTemperature: UILabel!
+    @IBOutlet weak var lbFixedTemperatureCold: UILabel!
     @IBOutlet weak var lbTemperature: UILabel!
+    @IBOutlet weak var lbFlxedTemperatureHot: UILabel!
     static let MenuDetailInstance = MenuDetailViewController()
     //    var itemprice = [ProductPrice]()
     var itemdetail = [GetMenuProduct]()
@@ -62,10 +63,12 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         btSizeM.oval_button(button: btSizeM)
         btTemperatureHot.oval_button(button: btTemperatureHot)
         btTemperatureCold.oval_button(button: btTemperatureCold)
-        lbFixedTemperature.isHidden = true
+        lbFixedTemperatureCold.isHidden = true
+        lbFlxedTemperatureHot.isHidden = true
         btAddShopingcar.customized_button(button: btAddShopingcar)
         btMyFavourite.customized_button(button: btMyFavourite)
-        lbFixedTemperature.oval_label(label: lbFixedTemperature)
+        lbFixedTemperatureCold.oval_label(label: lbFixedTemperatureCold)
+        lbFlxedTemperatureHot.oval_label(label: lbFlxedTemperatureHot)
         super.viewDidLoad()
         lbTitle.text = itemname
         print(self.size_M, "M ")
@@ -104,6 +107,13 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if itemdetail[0].is_fixed == 1 {
+            lbFixedTemperatureCold.isHidden = false
+            tempname = "固定冷"
+        }else if itemdetail[0].is_fixed == 2 {
+            lbFlxedTemperatureHot.isHidden = false
+            tempname = "固定熱"
+        }
         switch collectionView.tag {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TempCell", for: indexPath) as!

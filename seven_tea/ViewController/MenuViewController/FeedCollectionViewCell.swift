@@ -29,3 +29,4 @@ class FeedCollectionViewCell: UICollectionViewCell {
     }
 
 }
+

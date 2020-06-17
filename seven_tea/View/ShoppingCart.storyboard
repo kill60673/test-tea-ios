@@ -124,6 +124,8 @@
                     <navigationItem key="navigationItem" title="購物車" id="21m-EG-hfz"/>
                     <connections>
                         <outlet property="ShoppingCarTableView" destination="2eM-pA-8Pb" id="IGh-ZA-nBV"/>
+                        <outlet property="lbDelivery" destination="w8m-Fd-7iu" id="q8A-Vt-u4F"/>
+                        <outlet property="lbTatlePrice" destination="GaG-MW-ewl" id="ooX-8k-tqa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TH-Kq-QKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -205,7 +207,7 @@
                                             <outlet property="imageSize" destination="qzt-VJ-bme" id="z0i-nj-TRB"/>
                                             <outlet property="lbFeed" destination="8ae-0t-FF5" id="8aP-A2-kSp"/>
                                             <outlet property="lbItemName" destination="WbQ-Mn-Qt8" id="3KV-4o-Cv6"/>
-                                            <outlet property="lbPrice" destination="bmT-DJ-BoD" id="ani-Fg-YwZ"/>
+                                            <outlet property="lbPrice" destination="8sb-zA-JKl" id="uBU-Oh-2Io"/>
                                             <outlet property="lbQty" destination="hOE-gv-HJB" id="t3Z-gS-Ftl"/>
                                             <outlet property="lbSugar" destination="AOn-xh-vce" id="nDX-EY-DXF"/>
                                             <outlet property="lbTmp" destination="rZT-p2-K9i" id="9c3-RC-txH"/>
@@ -625,6 +627,9 @@
                         <outlet property="btCommonly_three" destination="WhR-NE-oKH" id="g9Z-ID-wZj"/>
                         <outlet property="btCommonly_two" destination="a6Z-9W-K8c" id="2Ot-x2-nHQ"/>
                         <outlet property="btPayMent" destination="PZC-16-A2O" id="cEO-CH-R7e"/>
+                        <outlet property="lbConfirmOrderTotalPrice" destination="qwW-yB-Qs0" id="h8d-Ir-cdJ"/>
+                        <outlet property="lbShoppingTotalPrice" destination="B6j-nJ-RTo" id="eE9-QU-Lgq"/>
+                        <outlet property="lbShoppingTotalQty" destination="XgP-IV-8h4" id="xCH-JY-mJH"/>
                         <outlet property="lbStoreName" destination="qbJ-eD-OD2" id="DRy-De-nkB"/>
                         <outlet property="sgMethod" destination="dhM-1p-KXt" id="f5I-rS-6kt"/>
                         <outlet property="tfAddress" destination="haa-Zu-sx6" id="MSO-o2-wdb"/>
