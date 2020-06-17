@@ -9,7 +9,7 @@
 import UIKit
 
 class ConfirmOrderTableViewCell: UITableViewCell {
-    @IBOutlet weak var lbPrice: UIView!
+    @IBOutlet weak var lbPrice: UILabel!
     @IBOutlet weak var lbQty: UILabel!
     @IBOutlet weak var lbFeed: UILabel!
     @IBOutlet weak var lbTmp: UILabel!

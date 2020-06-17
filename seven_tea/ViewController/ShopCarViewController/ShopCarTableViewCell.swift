@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 var qty = 0
 var itemQty = ShopCarViewController.sdddd.getitemqty()
+var itemName = ShopCarViewController.sdddd.getitemname()
+var itemPrice = ShopCarViewController.sdddd.getitemprice()
 protocol TableViewCellDelegate {
     func tableviewcelldelegate(sender: ShopCarTableViewCell)
 }
@@ -23,13 +25,13 @@ class ShopCarTableViewCell: UITableViewCell {
     var delegate: TableViewCellDelegate!
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     @IBAction func brPlus(_ sender: Any) {
@@ -40,6 +42,10 @@ class ShopCarTableViewCell: UITableViewCell {
         } else {
             itemQty[index_row] += 1
             lbQty.text = "共\(itemQty[index_row])杯"
+            shoppingcaritemprice[itemName[index_row]] = itemPrice[index_row]
+            getitemtotalpriceplus()
+            lbshoppingtotalprice.text = "$\(shoppingcartotalprice)"
+            delivery()
         }
     }
     @IBAction func btLess(_ sender: Any) {
@@ -47,9 +53,34 @@ class ShopCarTableViewCell: UITableViewCell {
         if itemQty[index_row] >= 1 {
             itemQty[index_row] -= 1
             lbQty.text = "共\(itemQty[index_row])杯"
+            shoppingcaritemprice[itemName[index_row]] = itemPrice[index_row]
+            getitemtotalpriceless()
+            lbshoppingtotalprice.text = "$\(shoppingcartotalprice)"
+            delivery()
         }
         if itemQty[index_row] < 1 {
             deleteSingleItemMessage(itemid: itemstoreId[index_row])
+        }
+    }
+    func getitemtotalpriceplus(){
+        for i in 0..<shoppingcaritemprice.count{
+            shoppingcartotalprice += shoppingcaritemprice[itemname[i]]!
+            shoppingdelivery -= shoppingcaritemprice[itemname[i]]!
+        }
+    }
+    func getitemtotalpriceless(){
+        for i in 0..<shoppingcaritemprice.count{
+            shoppingcartotalprice -= shoppingcaritemprice[itemname[i]]!
+            if shoppingcartotalprice < 300 {
+            shoppingdelivery += shoppingcaritemprice[itemname[i]]!
+            }
+        }
+    }
+    func delivery(){
+        if shoppingcartotalprice >= 300 {
+            lbshoppingdelivery.text = "已達到可外送金額"
+        }else{
+            lbshoppingdelivery.text = "還差\(shoppingdelivery)可達外送金額"
         }
     }
 }

@@ -22,6 +22,9 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tfTaxCode: UITextField!
     @IBOutlet weak var sgMethod: UISegmentedControl!
     @IBOutlet weak var PickerTextFiled: UITextField!
+    @IBOutlet weak var lbShoppingTotalQty: UILabel!
+    @IBOutlet weak var lbShoppingTotalPrice: UILabel!
+    @IBOutlet weak var lbConfirmOrderTotalPrice: UILabel!
     var shoppingcaritem = [GetShoppingCarItem]()
     var shoppingcardetail = [GetShoppingCarDetail]()
     var memberinfo = [SynchronizeMemberInfo]()
@@ -91,8 +94,12 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
             print(feedliststring)
         }
         cell.lbQty.text = "\(self.shoppingcaritem[indexPath.row].qty)"
+        cell.lbPrice.text = "\(self.shoppingcaritem[indexPath.row].price)"
         let item = ConfirmCartitem(id: String(self.shoppingcaritem[indexPath.row].id), qty: self.shoppingcaritem[indexPath.row].qty, item_id: self.shoppingcaritem[indexPath.row].item_id, item_name: self.shoppingcaritem[indexPath.row].item_name, size: shoppingcaritem[indexPath.row].size, sugar: self.shoppingcaritem[indexPath.row].sugar, tmp: self.shoppingcaritem[indexPath.row].tmp, add: feedlist[indexPath.row].feed, price: shoppingcaritem[indexPath.row].price)
         self.ConfirmCaritem.append(item)
+        lbShoppingTotalQty.text = "總計\(shoppingcardetail[0].total_qty)杯"
+        lbShoppingTotalPrice.text = "總計＄\(shoppingcardetail[0].totle_price)元"
+        lbConfirmOrderTotalPrice.text = "總計＄\(shoppingcardetail[0].totle_price)元"
         return cell
     }
     @IBAction func btSynchronizeMemberInfo(_ sender: Any) {

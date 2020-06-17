@@ -494,8 +494,15 @@
                                             <outlet property="delegate" destination="atl-DB-EgL" id="yyW-qR-7HT"/>
                                         </connections>
                                     </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="溫度固定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHg-Cm-5mh">
-                                        <rect key="frame" x="34" y="230" width="311" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="只販售冷飲" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHg-Cm-5mh">
+                                        <rect key="frame" x="34" y="216" width="311" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="只販售熱飲" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGc-1c-Kbg">
+                                        <rect key="frame" x="34" y="215" width="311" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -536,7 +543,8 @@
                         <outlet property="btTemperatureCold" destination="1IO-Ah-4Lt" id="4Yk-uw-cgf"/>
                         <outlet property="btTemperatureHot" destination="5xn-hW-dUd" id="uRd-B7-bGM"/>
                         <outlet property="feedCollectionView" destination="ik4-3Q-Z0p" id="upe-I6-tFH"/>
-                        <outlet property="lbFixedTemperature" destination="xHg-Cm-5mh" id="H8L-C1-efy"/>
+                        <outlet property="lbFixedTemperatureCold" destination="xHg-Cm-5mh" id="H8L-C1-efy"/>
+                        <outlet property="lbFlxedTemperatureHot" destination="EGc-1c-Kbg" id="r30-F9-slV"/>
                         <outlet property="lbQuantity" destination="Mgw-yo-4zw" id="Ymy-3U-gVh"/>
                         <outlet property="lbTemperature" destination="c38-p5-j0U" id="aSq-Ag-Ze5"/>
                         <outlet property="lbTitle" destination="X47-qd-Vwb" id="FR4-dl-dxg"/>
