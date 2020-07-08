@@ -19,26 +19,21 @@ class ServiceAndPrivacyApi {
         urlString = ApiUrl.ApiUrlInstance.privacyandpolicy
         let url = URL(string: urlString)!
         var request = URLRequest(url: url )
-        print("ㄎㄎ", token)
-        print("url...", url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue(token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) {
             data, response, error in
             let httpStatus = response as! HTTPURLResponse
-            print("為什麼9991", httpStatus.allHeaderFields["Authorization"])
             if httpStatus.allHeaderFields["Authorization"] != nil {
-                print("我有進來2")
                 self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                print("tokennnnn", token)
+                print("token is", token)
                 print("我有進來3")
             }
             do {
                 let json = try JSON(data: data!)
-                print("reeeeeeee", json["success"].bool!)
                 if json["success"].bool! == true {
                     DispatchQueue.main.async {
                         self.content = json["data"]["content"].string!

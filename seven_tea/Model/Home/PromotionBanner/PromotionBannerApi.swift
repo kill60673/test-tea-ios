@@ -28,7 +28,6 @@ class PromotionBannerAPI: NSObject {
                         self.promotionbannerlist.append(promotionBanner)
                     }
                 } else {
-                    print("我有進來4")
                     //主線程
                     DispatchQueue.main.async {
                         MessageAlert.Instance.message(message: json["message"].string!)

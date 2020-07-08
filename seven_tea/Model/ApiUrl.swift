@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 class ApiUrl: NSObject {
     static let ApiUrlInstance = ApiUrl()
-    var doMain: String = "http://127.0.0.1:8000"
+    var doMain: String = "https://uat.taiwan7tea.com.tw"
     var loginUrl: String //會員-登入
     var sendMemberRegisterSmsUrl: String //會員-註冊-驗證碼-簡訊發送
     var forgotPasswordSmsUrl: String //忘記密碼-傳送手機驗證碼

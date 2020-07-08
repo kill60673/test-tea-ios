@@ -24,10 +24,8 @@ class LoginAPI: NSObject {
         let task = URLSession.shared.dataTask(with: request) {
             data, _, _ in
             let responseString = String(data: data!, encoding: .utf8)
-            //            print(responseString as Any)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            // 做 do catch 如果任何例外事件 就在catch print出error
             if let data = data {
                 do {
                     let login = try decoder.decode(LoginCodable.self, from: data)
@@ -38,7 +36,7 @@ class LoginAPI: NSObject {
                             loginView.navigationController?.popViewController(animated: true)
                             //tab 切換的第0個
                             loginView.tabBarController?.selectedIndex = 0
-                            print(login.data.token)
+                            print("login data token",login.data.token)
                             MessageAlert.Instance.message(message: login.message)
                             handler(true)
                         }

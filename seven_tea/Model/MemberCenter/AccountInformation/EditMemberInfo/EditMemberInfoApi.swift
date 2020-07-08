@@ -24,19 +24,14 @@ class EditMemberInfoApi: NSObject {
         let task = URLSession.shared.dataTask(with: request) {
             data, response, _ in
             let httpStatus = response as! HTTPURLResponse
-            print("為什麼9991", httpStatus.allHeaderFields["Authorization"])
             if httpStatus.allHeaderFields["Authorization"] != nil {
-                print("我有進來2")
                 self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                print("tokennnnn", token)
-                print("我有進來3")
             }
             let responseString = String(data: data!, encoding: .utf8)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            // 做 do catch 如果任何例外事件 就在catch print出error
             if let data = data {
                 do {
                     let editmemberinfo = try decoder.decode(EditMemberInfoCodable.self, from: data)

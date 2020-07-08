@@ -29,7 +29,6 @@ class GetMenuProductApi {
         let url = URL(string: urlString)!
         self.storeID = "\(storeId)"
         var request = URLRequest(url: url )
-        print("url...", url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) {
@@ -50,20 +49,14 @@ class GetMenuProductApi {
                         let data = json["data"][i]
                         for sizeindex in 0..<data["size"].count {
                             let size = ProductSize(id: data["size"][sizeindex]["id"].int!, name: data["size"][sizeindex]["name"].string!)
-                            print("就是size", size.name)
                             self.productsize.append(size)
-                            print(self.productsize)
-                            print("sizeindex", sizeindex)
                         }
-                        print("yousize")
                         switch data["status"].string {
                         case "0":
                             for price in 0..<data["price"].count {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: "\(data["price"][price]["price"])", area: nil)
                                 self.productprice.append(price)
                                 self.itemprice["\(price.size)\(price.temp)"] = Int(price.price)
-                                print("這裡是xxx", self.itemprice)
-                                print("這裡是itemprice0", price.temp, price.size, price.price, self.itemprice)
                             }
                             break
                         case "1":
@@ -71,7 +64,6 @@ class GetMenuProductApi {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: nil, price: "\(data["price"][price]["price"])", area: nil)
                                 self.productprice.append(price)
                                 self.itemprice["\(price.size)\(price.temp)"] = Int(price.price)
-                                print("這裡是itemprice1", price.temp, price.size, price.price, self.itemprice)
                             }
                             break
                         case "2":
@@ -79,16 +71,13 @@ class GetMenuProductApi {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: "\(data["price"][price]["price"])", area: nil)
                                 self.productprice.append(price)
                                 self.itemprice["\(price.size)\(price.temp)"] = Int(price.price)
-                                print("這裡是itemprice2", price.temp, price.size, price.price, self.itemprice)
                             }
-                            print("total xxx", self.itemprice)
                             break
                         default:
                             for price in 0..<data["price"].count {
                                 let price = ProductPrice(size: data["price"][price]["size"].string!, temp: data["price"][price]["temp"].string!, price: "\(data["price"][price]["price"])", area: nil)
                                 self.productprice.append(price)
                                 self.itemprice["\(price.size)\(price.temp)"] = Int(price.price)
-                                print("這裡是itemprice3", self.itemprice)
                             }
                             break
                         }
@@ -99,7 +88,6 @@ class GetMenuProductApi {
                         for hottemp in 0..<data["hot_temp"].count {
                             let producthot = ProductHotTemp(hot: data["hot_temp"][hottemp].string!)
                             self.producthottemp.append(producthot)
-                            print("沒被撞過？", producthot.hot)
                         }
                         for sugar in 0..<data["sugar"].count {
                             let sugar = ProductSugar(name: data["sugar"][sugar]["name"].string!, is_active: data["sugar"][sugar]["is_active"].bool!)
@@ -110,12 +98,8 @@ class GetMenuProductApi {
                             let add = ProductAdd(id: data["add"][add]["id"].int!, name: data["add"][add]["name"].string!, price: data["add"][add]["price"].string!)
                             self.productadd.append(add)
                             self.feedprice["\(add.name)"] = Int(add.price)
-                            print("這裡是feed", self.feedprice)
                         }
                         let getmenuproduct = GetMenuProduct(id: data["id"].string!, item_name: data["item_name"].string!, picture_url: data["picture_url"].string!, is_fixed: data["is_fixed"].int!, add: self.productadd, size: self.productsize, itemprice: self.itemprice, itempricedetail: self.productprice, status: data["status"].string!)
-                        print("可達鴨", getmenuproduct.add)
-                        print("頂著", getmenuproduct.itempricedictionary)
-                        print("鐵甲蛹", getmenuproduct.size)
                         self.productlist.append(getmenuproduct)
                         self.productsize.removeAll()
                     }

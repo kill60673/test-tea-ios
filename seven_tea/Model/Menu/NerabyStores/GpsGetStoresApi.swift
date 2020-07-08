@@ -22,9 +22,7 @@ class GpsGetStoresApi: NSObject {
             urlString = ApiUrl.ApiUrlInstance.gpsgetstore+"\(latitude)/\(longitude)"
         }
         let url = URL(string: urlString)!
-        print(url)
         var request = URLRequest(url: url )
-        print("url...", url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) {

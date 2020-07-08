@@ -21,48 +21,36 @@ class MemberNewOrderApi {
         switch selectStatus {
         case  0:
             urlString = ApiUrl.ApiUrlInstance.getmemberneworder
-            print("進到API0")
             break
         case  1:
             urlString = ApiUrl.ApiUrlInstance.getmemberconfirmorder
-            print("進到API1")
             break
         case 2:
             urlString = ApiUrl.ApiUrlInstance.getmemberindeliveryorder
-            print("進到API2")
             break
         case 3:
             urlString = ApiUrl.ApiUrlInstance.getmembercompleteorder
-            print("進到API3")
             break
         default:
             urlString = ApiUrl.ApiUrlInstance.getmembercancelorder
-            print("進到API4")
             break
         }
-        print("出來了")
         let url = URL(string: urlString)!
         var request = URLRequest(url: url )
-        print("ㄎㄎ", token)
-        print("url...", url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue(token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) {
             data, response, error in
             let httpStatus = response as! HTTPURLResponse
-            print("為什麼9991", httpStatus.allHeaderFields["Authorization"])
             if httpStatus.allHeaderFields["Authorization"] != nil {
-                print("我有進來2")
                 self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                print("tokennnnn", token)
-                print("我有進來3")
+                print("token is", token)
             }
             do {
                 let json = try JSON(data: data!)
-                print("reeeeeeee", json["success"].bool!)
                 if json["success"].bool! == true {
                     self.memberitemaddlist.removeAll()
                     self.memberorderitem.removeAll()
@@ -82,7 +70,6 @@ class MemberNewOrderApi {
                         }
                         let memberorder = MemberNewOrder(get_method: data["get_method"].string!, order_no: data["order_no"].string!, order_status: data["order_status"].string!, store: data["store"].string!, total_qty: data["total_qty"].int!, total_price: data["total_price"].int!, item: self.memberorderitem, itemname: self.itemnamelist)
                         self.memberneworder.append(memberorder)
-                        print("有", memberorder.store)
                         self.itemnamelist.removeAll()
                     }
                 } else {
@@ -103,7 +90,6 @@ class MemberNewOrderApi {
             //主線程
             DispatchQueue.main.async {
                 if OrderTableView != nil {
-                    print("有近Reload")
                     OrderTableView.reloadData()
                 }
             }
@@ -111,7 +97,6 @@ class MemberNewOrderApi {
         task.resume()
     }
     func getmemberneworder() -> [MemberNewOrder] {
-        print("猜猜看農死啥", self.memberneworder.count)
         return self.memberneworder
     }
     func getordercount() -> Int {

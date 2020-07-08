@@ -1643,6 +1643,7 @@
 			baseConfigurationReference = CC0F84A34AE3A05ED5B91CDE /* Pods-seven_tea.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GZ936X7T88;
 				INFOPLIST_FILE = seven_tea/Info.plist;
@@ -1652,8 +1653,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seven.seven-tea";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1662,6 +1664,7 @@
 			baseConfigurationReference = 34C1A446550C46E86D532640 /* Pods-seven_tea.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GZ936X7T88;
 				INFOPLIST_FILE = seven_tea/Info.plist;
@@ -1671,8 +1674,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seven.seven-tea";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

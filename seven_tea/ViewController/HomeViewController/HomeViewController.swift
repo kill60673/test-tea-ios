@@ -39,7 +39,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         GetStoresApi.GetStoresApiInstance.getstores(city: "", district: "")
 //        GetShoppingCarApi.GetShoppingCarInstance.getstores(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
 
-        bannerImage.sd_setImage(with: URL(string: marketingImageUrl), placeholderImage: UIImage(named: "test1"))
+        bannerImage.sd_setImage(with: URL(string: marketingImageUrl), placeholderImage: UIImage(named: "Preset"))
         Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(changeBanner), userInfo: nil, repeats: true)
     }
     //輪播廣告的控制
@@ -76,14 +76,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let slidebannerList = SlideBannerAPI.SlideBannerInstance.getList()
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homecell", for: indexPath) as!
             HomeCollectionViewCell
-            cell.homeImageView.sd_setImage(with: URL(string: slidebannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "test1"))
+            cell.homeImageView.sd_setImage(with: URL(string: slidebannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "Preset"))
             //            cell.imageView?.image = UIImage(named: memberCenterImageList[indexPath.row])
             return cell
         } else {
             let promotionbannerList = PromotionBannerAPI.PromotionBannerInstance.getList()
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as!
             BannerCollectionViewCell
-            cell.image.sd_setImage(with: URL(string: promotionbannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "test1"))
+            cell.image.sd_setImage(with: URL(string: promotionbannerList[indexPath.row].pictureURL), placeholderImage: UIImage(named: "Preset"))
             return cell
         }
     }
@@ -187,7 +187,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 myLocationManager.startUpdatingLocation()
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
                     print("有取得後續位置")
-//                    GpsGetStoresApi.GpsGetStoresApiInstance.gpsgetstores(latitude: SelfLatitude, longitude: SelfLongitude)
                 })
 
             }
@@ -195,7 +194,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             // 印出目前所在位置座標
-    //        print("aaaaaaaaaa")
             let currentLocation: CLLocation = locations[0] as CLLocation
             SelfLatitude =  currentLocation.coordinate.latitude
             SelfLongitude =  currentLocation.coordinate.longitude

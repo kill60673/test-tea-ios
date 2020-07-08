@@ -23,7 +23,6 @@ class FeedBackOptionApi: NSObject {
             let httpStatus = response as! HTTPURLResponse
             do {
                 let json = try JSON(data: data!)
-                print("reeeeeeee", json["success"].bool!)
                 if json["success"].bool! == true {
                     DispatchQueue.main.async {
                         self.feedbackoptionlist.removeAll()
@@ -52,7 +51,6 @@ class FeedBackOptionApi: NSObject {
             //主線程
             DispatchQueue.main.async {
                 if PersonalMessageTableView != nil {
-                    print("有近Reload")
                     PersonalMessageTableView.reloadData()
                 }
             }
@@ -61,7 +59,7 @@ class FeedBackOptionApi: NSObject {
     }
     
     func getCount() -> Int {
-        print("我有幾個", feedbackoptionlist.count)
+        print("我有幾個feed back option count", feedbackoptionlist.count)
         return feedbackoptionlist.count
     }
     func  getlist() ->[FeedBackOption]{

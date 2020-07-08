@@ -12,13 +12,11 @@ func ConfirmCartOrderMessage(store_id: Int, total_qty: Int, total_price: Int, ge
     let postString  = ConfirmCartOrder(store_id: store_id, total_qty: total_qty, total_price: total_price, get_method: get_method, arrival_time: arrival_time, recipient: recipient, recipient_tel: recipient_tel, tax_code: tax_code, pay_method: pay_method, item: item, address: address)
     let encoder = JSONEncoder()
     if let data = try? encoder.encode(postString) {
-        print("ㄏㄏ", postString)
         datas = data
         print(data)
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
             print("is nil")
         }
-        print("dddd", UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
         ConfirmCartOrderApi.ConfirmCartOrderApiInstance.confirmcartorder(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return
@@ -32,13 +30,11 @@ func cancelOrderMessage(order_no: String) {
     let postString  = ordernumber(order_no: order_no)
     let encoder = JSONEncoder()
     if let data = try? encoder.encode(postString) {
-        print("yoyoyoydddd", postString)
+        print(postString)
         datas = data
-        print(data)
         if UserInfo.UserInfoInstance.preferences.object(forKey: "token") as? String == nil {
             print("is nil")
         }
-        print("dddd", UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String)
         CancelOrderApi.CancelOrderApiInstance.updateshoppingcar(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return

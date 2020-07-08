@@ -24,14 +24,10 @@ class LoadingBannerAPI: NSObject {
                     if json["success"].bool! == true {
                         self.loadingbannerlist.removeAll()
                         for i in 0..<json["data"].count {
-                            print(json["data"][i]["img_type"].string!)
-                            print(json["data"][i]["picture_url"].string!)
-                            print(json["data"][i]["link_url"].string ?? "")
                             let loadingbanner = LoadingBanner(imageType: json["data"][i]["img_type"].string!, pictureURL: json["data"][i]["picture_url"].string!, linkURL: json["data"][i]["link_url"].string ?? "")
                             self.loadingbannerlist.append(loadingbanner)
                         }
                     } else {
-                        print("我有進來4")
                         //主線程
                         DispatchQueue.main.async {
                             MessageAlert.Instance.message(message: json["message"].string!)

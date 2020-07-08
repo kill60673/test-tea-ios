@@ -32,9 +32,7 @@ class OrderDetailViewController: UIViewController, UITableViewDataSource, UITabl
         orderDetailTableView.tableFooterView = UIView()
         OrderDetailTableView = orderDetailTableView
         btCancel.customized_button(button: btCancel)
-        print("ddaass", itemdetailnumber)
         OrderDetailController = self
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         self.orderdetaillist = GetMemberOrderDetailApi.GetMemberOrderMemberApiInstance.getmemberorderdetail()

@@ -63,11 +63,9 @@ class FeedBackViewController: UIViewController, UITableViewDelegate, UITableView
         switch statusSelect.selectedSegmentIndex {
         case 0:
             reply = 0
-            print("跑到０")
             break
         default:
             reply = 1
-            print("跑到1")
             break
         }
         GetFeedBackApi.GetFeedBackApiInstance.getfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, reply: self.reply)

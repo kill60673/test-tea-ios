@@ -24,17 +24,12 @@ class OrderApi: NSObject {
         let task = URLSession.shared.dataTask(with: request) { data, response, _ in
 
             let responseString = String(data: data!, encoding: .utf8)
-            print(responseString)
-            //print(responseString)
             let httpStatus = response as! HTTPURLResponse
-            print("為什麼999", httpStatus.allHeaderFields["Authorization"])
             if httpStatus.allHeaderFields["Authorization"] != nil {
-                print("我有進來2")
                 self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                print("tokennnnn", token)
-                print("我有進來3")
+                print("token is", token)
             }
             let decoder = JSONDecoder()
 
@@ -52,7 +47,6 @@ class OrderApi: NSObject {
                 } else {
                     //主線程
                     DispatchQueue.main.async {
-
                         MessageAlert.Instance.message(message: "\(Info.message)")
                     }
                 }

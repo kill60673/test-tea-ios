@@ -36,6 +36,5 @@ class OrderTableViewCell: UITableViewCell {
     @IBAction func BtNextPage(_ sender: Any) {
         delegate?.tableviewcelldelegate(sender: self)
         itemdetailnumber = itemorderno[index_row]
-        print("這裡有暗道", itemorderno[index_row])
     }
 }
