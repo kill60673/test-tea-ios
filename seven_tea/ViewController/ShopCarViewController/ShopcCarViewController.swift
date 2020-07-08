@@ -75,9 +75,7 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
             lbshoppingdelivery.text = "還差\(self.shoppingcardetail[0].gap_to_delivery)可達外送金額"
         }
         cell.delegate = self
-        print(self.shoppingcaritem[indexPath.row].qty)
         itemstoreId.append(self.shoppingcaritem[indexPath.row].id)
-        print("diiiiiiii", itemstoreId)
         itemqty.append(self.shoppingcaritem[indexPath.row].qty)
         itemname.append(self.shoppingcaritem[indexPath.row].item_name)
         caritemprice.append(self.shoppingcaritem[indexPath.row].price)
@@ -100,19 +98,15 @@ class ShopCarViewController: UIViewController, TableViewCellDelegate, UITableVie
     }
     func tableviewcelldelegate(sender: ShopCarTableViewCell) {
         guard let tappedIndexPath = ShoppingCarTableView.indexPath(for: sender)else {return}
-        print("這理事", sender, tappedIndexPath)
         print("-------")
         print(sender)
         print("--------")
         print(tappedIndexPath)
         let tappedindex = tappedIndexPath
         index_row = tappedindex.row
-        print("sssss", tappedindex.row)
     }
     @IBAction func NextStep(_ sender: Any) {
         for i in 0..<itemQty.count {
-            print("index", itemQty.count)
-            print("＝＝", itemstoreId[i], itemQty[i])
             let Params = data(id: itemstoreId[i], qty: itemQty[i])
             params.append(Params)
         }

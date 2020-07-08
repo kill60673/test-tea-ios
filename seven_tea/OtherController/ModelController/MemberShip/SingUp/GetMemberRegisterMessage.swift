@@ -18,7 +18,6 @@ class GetMemberRegisterMessage: UIViewController {
         if let data = try? encoder.encode(postString) {
             print(postString)
             datas = data
-            print(data)
             SendMemberRegistrApi.MemberRegisterInstance.sendMemberRegister {(result) in
                 if result {
                     return
@@ -36,7 +35,6 @@ class GetMemberRegisterMessage: UIViewController {
         if let data = try? encoder.encode(postString) {
             print(postString)
             datas = data
-            print(data)
             SendMemberRegisterInfoAPI.MemberRegisterInstance.sendMemberRegisterInfo {(result) in
                 if result {
                     return
@@ -54,7 +52,6 @@ class GetMemberRegisterMessage: UIViewController {
         if let data = try? encoder.encode(postString) {
             print(postString)
             datas = data
-            print(data)
             ForgotPasswordSmsAPI.ForgotPasswordSmsInstance.forgotPasswordSms {(result) in
                 if result {
                     return
@@ -70,7 +67,6 @@ class GetMemberRegisterMessage: UIViewController {
         if let data = try? encoder.encode(postString) {
             print(postString)
             datas = data
-            print(data)
             RestPasswordApi.RestPasswordApiInstance.restPassword { (result) in
                 if result {
                     return
@@ -104,7 +100,6 @@ class GetMemberRegisterMessage: UIViewController {
         if let data = try? encoder.encode(postSTring) {
             print(postSTring)
             datas = data
-            print(data)
             MemberRegiseterSmsApi.MemberRegisterSmsInstance.sendMemberRegisterSms { (result) in
                 if result {
                     return

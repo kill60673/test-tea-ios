@@ -15,7 +15,6 @@ extension UIViewController {
     func jumpRestPassword(account: String, phone: String, validators_Code: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil) //if bundle is nil the main bundle will be used
         let vc = storyboard.instantiateViewController(withIdentifier: "RestPassword") as? ResetPasswordViewController
-        print("aaaaa", storyboard, storyboard.instantiateViewController(withIdentifier: "RestPassword"))
         vc?.name = account
         vc?.phonenumber = phone
         vc?.uservalidatorscode = validators_Code

@@ -14,7 +14,6 @@ class GetCreateFeedBackMessage: UIViewController {
         if let data = try? encoder.encode(postString) {
             print(postString)
             datas = data
-            print("1234567", data)
             CreateFeedBackApi.CreateFeedBackApiInstance.createfeedback(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
                 if result {
                     return

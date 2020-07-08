@@ -48,7 +48,6 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         self.shoppingcaritem = GetShoppingCarApi.GetShoppingCarInstance.getshoppingcaritem()
         self.shoppingcardetail = GetShoppingCarApi.GetShoppingCarInstance.getshoppingcardetail()
         self.feedlist = GetShoppingCarApi.GetShoppingCarInstance.getshoppingcaradd()
-        print(self.feedlist.count, "庭宇")
         ConfirmView = self
         ShoppingDetailTableView.reloadData()
         lbStoreName.text = shoppingcardetail[0].store_name
@@ -68,8 +67,6 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         Min()
         PickerTextFiled.text = "\(self.day) \(SendHour[0]):\(SendMin[0])"
         self.arrivaltime = "\(self.day) \(SendHour[0]):\(SendMin[0])"
-        print("\(self.day) \(SendHour[0]):\(SendMin[0])")
-        print(self.arrivaltime)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -82,16 +79,19 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         self.view.endEditing(true)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("阿囉哈")
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConfirmOrderCell", for: indexPath) as! ConfirmOrderTableViewCell
         cell.lbItemName.text = self.shoppingcaritem[indexPath.row].item_name
         cell.lbSugar.text = self.shoppingcaritem[indexPath.row].sugar
         cell.lbTmp.text = self.shoppingcaritem[indexPath.row].tmp
         if self.shoppingcaritem[indexPath.row].id == feedlist[indexPath.row].itemIndexId {
-            print(feedlist[indexPath.row].feed, "搭特銷")
             let feedliststring = feedlist[indexPath.row].feed.joined(separator: "/")
             cell.lbFeed.text = feedliststring
             print(feedliststring)
+        }
+        if self.shoppingcaritem[indexPath.row].size == "M" {
+            cell.imageSize = UIImageView(image: UIImage(named: "m"))
+        }else{
+            cell.imageSize = UIImageView(image: UIImage(named: "l"))
         }
         cell.lbQty.text = "\(self.shoppingcaritem[indexPath.row].qty)"
         cell.lbPrice.text = "\(self.shoppingcaritem[indexPath.row].price)"
@@ -147,7 +147,6 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         let dateFormat2: DateFormatter = DateFormatter()
         let dateday: DateFormatter = DateFormatter()
         dateday.dateFormat = "yyyy-MM-dd"
-        //        print("白癡喔",dateday)
         dateFormat.dateFormat = "HH"
         dateFormat2.dateFormat = "mm"
         self.day = String(dateday.string(from: now))
@@ -250,10 +249,6 @@ class ConfirmOrderViewController: UIViewController, UITableViewDelegate, UITable
         let memberitemaddress = SynchronizeMemberAddress(id: nil, zipcode: nil, city: nil, district: nil, address: tfAddress.text!)
         self.memberaddress.append(memberitemaddress)
         //tab 切換的第0個
-        print(memberaddress[0])
-        print(self.arrivaltime, "欸仲圻")
-        print(tfRecipient.text!, "欸中期二號")
-        print(tfPhoneNumber.text!, "ddd")
         if tfRecipient.text != "" && tfAddress.text != "" && tfPhoneNumber.text != "" {
              ConfirmCartOrderMessage(store_id: shoppingcardetail[0].store_id, total_qty: shoppingcardetail[0].total_qty, total_price: shoppingcardetail[0].totle_price, get_method: self.Getmethod, arrival_time: self.arrivaltime, recipient: tfRecipient.text!, recipient_tel: tfPhoneNumber.text!, tax_code: tfTaxCode.text ?? "", pay_method: "cash", item: ConfirmCaritem, address: self.memberaddress)
             ConfirmView.navigationController?.popViewController(animated: true)

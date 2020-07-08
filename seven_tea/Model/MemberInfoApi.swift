@@ -26,24 +26,17 @@ class MemberInfoApi: NSObject {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue(token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
-        print("我進來", token)
         let task = URLSession.shared.dataTask(with: request) {
             data, response, error in
             let httpStatus = response as! HTTPURLResponse
-           print("為什麼22", httpStatus.allHeaderFields["Authorization"])
             if httpStatus.allHeaderFields["Authorization"] != nil {
-                print("我有進來2")
-                self.newToken = "\(httpStatus.allHeaderFields["Authorization"])"
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"])")
             } else {
-                print("tokennnnn", token)
-                print("我有進來3")
+                print("token is ", token)
             }
             do {
-                print("有進來這裡4")
                 let json = try JSON(data: data!)
                 if json["success"].bool! == true {
-                    print("嘿嘿")
                     self.picture_url.removeAll()
                     self.username.removeAll()
                     self.name.removeAll()
@@ -52,17 +45,11 @@ class MemberInfoApi: NSObject {
                     self.phone.removeAll()
                     self.address.removeAll()
                     for i in 0..<json["data"].count {
-                        print("yaya")
                         let data = json["data"][i]
-                        print("deee", data["address"].count)
                         for address in 0..<data["address"].count {
-                            print("nono")
                             let address1 = MemberInfoAddress(id: data["address"][address]["id"].string!, zipcode: data["address"][address]["zipcode"].string!, city: data["address"][address]["city"].string!, district: data["address"][address]["district"].string!, address: data["address"][address]["address"].string!)
-                            print("e04e0", address1.address)
                             self.address.append(address1)
                         }
-                        print(i)
-                        print(json["data"][i]["name"].string!)
                         self.picture_url = data["picture_url"].string!
                         self.username = data["username"].string!
                         self.name = data["name"].string!
@@ -70,7 +57,7 @@ class MemberInfoApi: NSObject {
                         self.phone = data["phone"].string!
                         self.email = data["email"].string!
                         self.email_validated = data["email_validated"].int!
-                        print("我是email", self.email)
+                        print("email is ", self.email)
                     }
                     if self.newToken == "" {
                         UserInfo.UserInfoInstance.save(token: token,

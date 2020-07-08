@@ -36,7 +36,6 @@ class ShopCarTableViewCell: UITableViewCell {
     }
     @IBAction func brPlus(_ sender: Any) {
         delegate?.tableviewcelldelegate(sender: self)
-        print(itemQty)
         if itemQty[index_row] >= 99 {
             itemQty[index_row] = 99
         } else {

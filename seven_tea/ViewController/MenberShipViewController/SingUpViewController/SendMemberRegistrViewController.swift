@@ -23,14 +23,11 @@ class SendMemberRegistrViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(sex)
         sendMemberRegistrView = self
         btNextStep.customized_button(button: btNextStep)
 
         tfUserName.delegate = self
         tfName.delegate = self
-        print("aaa"+phone+",bbb"+uservalidatorscode)
-
         //使用手勢 用tap把鍵盤收起來
         keyboad()
     }

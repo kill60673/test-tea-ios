@@ -20,7 +20,6 @@ class MenberCenterViewController: UIViewController, UIPickerViewDelegate, UIPick
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(memberCenterList)
         memberInfoView = self
         memberView.isHidden = true
         memberTableView.isHidden = true

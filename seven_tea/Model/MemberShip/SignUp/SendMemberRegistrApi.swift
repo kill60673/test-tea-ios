@@ -13,7 +13,7 @@ class SendMemberRegistrApi: NSObject {
     func sendMemberRegister( handler : @escaping (Bool) -> Void) {
         let url = URL(string: ApiUrl.ApiUrlInstance.checkregistercode)!
         var request = URLRequest(url: url)
-//        request.setValue("application/json" , forHTTPHeaderField : "Accept")
+        //        request.setValue("application/json" , forHTTPHeaderField : "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         let postString = datas
@@ -28,22 +28,22 @@ class SendMemberRegistrApi: NSObject {
                 if memberRegister.success == true {
                     //主線程
                     DispatchQueue.main.async {
-//                      MessageAlert.Instance.message(message: "\(memberRegister.message)")
+                        //                      MessageAlert.Instance.message(message: "\(memberRegister.message)")
                         handler(true)
-                            print("資料成功")
+                        print("資料成功")
                     }
                 } else {
                     //主線程
                     DispatchQueue.main.async {
-                            MessageAlert.Instance.message(message: "\(memberRegister.message)")
-                            handler(false)
-                               print("資料失敗")
+                        MessageAlert.Instance.message(message: "\(memberRegister.message)")
+                        handler(false)
+                        print("資料失敗")
                     }
                 }
             } else {
                 //主線程
                 DispatchQueue.main.async {
-
+                    
                 }
             }
         }

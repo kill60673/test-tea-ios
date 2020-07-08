@@ -71,8 +71,6 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         lbFlxedTemperatureHot.oval_label(label: lbFlxedTemperatureHot)
         super.viewDidLoad()
         lbTitle.text = itemname
-        print(self.size_M, "M ")
-        print(self.size_L, "L")
         view?.backgroundColor = UIColor(white: 1, alpha: 0)
         if self.size_M == "no_open"{
             btSizeM.isHidden = true
@@ -223,7 +221,6 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
 
     @IBAction func btAddShopingCar(_ sender: Any) {
         getAddShopingCarMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: itemsize, add: feed, store_id: Int(storeID)!, qty: menudetailqty, total_price: self.total_price)
-        print("爆破", itemid, itemname, itemcategory, tempname, sugarname, itemsize, feed, storeID)
     }
     @IBAction func btAddMyFavorite(_ sender: Any) {
         getAddFavoriteMessage(item_id: Int(itemid)!, item_name: itemname, item_category: Int(itemcategory)!, tmp: tempname, sugar: sugarname, size: itemsize, add: feed, store_id: Int(storeID)!, price: self.total_price)
@@ -250,15 +247,9 @@ class MenuDetailViewController: UIViewController, UICollectionViewDataSource, UI
         feedprice = 0
         for i in 0..<feed.count {
             feedprice += feedpricelist["\(feed[i])"] ?? 0
-            print(feedprice, "feedprice在這裏")
-            print(feed[i])
         }
-        print(itemsize)
-        print(temperature)
         itemprice = itempricelist["\(itemsize)\(temperature)"] ?? 0
-        print(itemprice, "這邊啊你")
         self.total_price = (itemprice + feedprice) * menudetailqty
-        print(self.total_price, "totlepriceeeeee")
         lbtotalprice.text = "$\(self.total_price)"
     }
 }

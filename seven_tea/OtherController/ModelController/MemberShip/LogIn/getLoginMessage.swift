@@ -13,8 +13,6 @@ class GetLoginMessage: UIViewController {
         if let data = try? encoder.encode(postString) {
             print(postString)
             datas = data
-            print("1234567", data)
-
             LoginAPI.LoginInstance.login {(result) in
                 if result {
                     return

@@ -33,6 +33,5 @@ class VerificationCodeTimer {
         count = 60
         //做bt裡面時間倒數 倒數完才可以使用
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(VerificationCodeTimer.showSmsCountDown), userInfo: nil, repeats: true)
-        print("我有跑到這裡")
     }
 }

@@ -20,14 +20,11 @@ class MyFavoriteDrinkInfoAPI: NSObject {
 
             let responseString = String(data: data!, encoding: .utf8)
             let httpStatus = response as! HTTPURLResponse
-            print("為什麼999", httpStatus.allHeaderFields["Authorization"])
             if httpStatus.allHeaderFields["Authorization"] != nil {
-                print("我有進來2")
                 self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                print("tokennnnn", token)
-                print("我有進來3")
+                print("token is", token)
             }
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601

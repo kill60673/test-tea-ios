@@ -18,7 +18,6 @@ class SendResetForgotPasswordSmsAPI: NSObject {
         request.httpMethod = "POST"
         let postString = datas
         request.httpBody = postString
-//        print(postString)
         let task = URLSession.shared.dataTask(with: request) {
             data, _, _ in
             //            let responseString = String(data: data!, encoding: .utf8)
@@ -26,8 +25,6 @@ class SendResetForgotPasswordSmsAPI: NSObject {
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let sendResetPassword = try?
                 decoder.decode(SendResetForgotPasswordCodable.self, from: data) {
-                //print(data)
-                //print(SendResetPassword)
                 if sendResetPassword.success == true {
                     //主線程
                     DispatchQueue.main.async {

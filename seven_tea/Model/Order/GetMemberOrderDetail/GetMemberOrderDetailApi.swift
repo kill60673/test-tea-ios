@@ -22,26 +22,20 @@ class GetMemberOrderDetailApi {
         urlString = ApiUrl.ApiUrlInstance.getmemberorderdetail+"\(order_no)"
         let url = URL(string: urlString)!
         var request = URLRequest(url: url )
-        print("ㄎㄎ", token)
-        print("url...", url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue(token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) {
             data, response, error in
             let httpStatus = response as! HTTPURLResponse
-            print("為什麼9991", httpStatus.allHeaderFields["Authorization"])
             if httpStatus.allHeaderFields["Authorization"] != nil {
-                print("我有進來2")
                 self.newToken = "\(httpStatus.allHeaderFields["Authorization"]!)"
                 UserInfo.UserInfoInstance.update(oldToken: token, newToken: "\(httpStatus.allHeaderFields["Authorization"]!)")
             } else {
-                print("tokennnnn", token)
-                print("我有進來3")
+                print("token is", token)
             }
             do {
                 let json = try JSON(data: data!)
-                print("reeeeeeee", json["success"].bool!)
                 if json["success"].bool! == true {
                     self.memberorderitemafeedlist.removeAll()
                     self.memberorderdetailitem.removeAll()
@@ -52,7 +46,6 @@ class GetMemberOrderDetailApi {
                             let itemdata = data["item"][item]
                             for indexadd in 0..<itemdata["add"].count {
                                 let add = MemberItemAdd(id: itemdata["add"][indexadd]["id"].int!, name: itemdata["add"][indexadd]["name"].string!)
-                                print("你是get嗎", add.id)
                                 self.memberorderitemafeedlist.append(add)
                                 self.feedname.append(itemdata["add"][indexadd]["name"].string!)
                             }
@@ -61,11 +54,8 @@ class GetMemberOrderDetailApi {
                         }
                         let memberorderdetailaddress = GetMemberOrderDetailAddress(zipcode: data["address"]["zipcode"].string ?? "", city: data["address"]["city"].string ?? "", district: data["address"]["district"].string ?? "", address: data["address"]["address"].string!)
                         self.memberorderdetailaddress.append(memberorderdetailaddress)
-                        print("我發現", data["order_no"].string!)
                         let memberorder = GetMemberOrderDetail(order_no: data["order_no"].string!, order_status: data["order_status"].string!, store: data["store"].string!, total_qty: data["total_qty"].int!, total_price: data["total_price"].int!, item: self.memberorderdetailitem, recipient: data["recipient"].string!, recipient_tel: data["recipient_tel"].string!, tax_code: data["tax_code"].string ?? "", pay_method: data["pay_method"].string!, note: data["note"].string ?? "", created_at: data["created_at"].string!, address: self.memberorderdetailaddress)
                         self.memberorderdetail.append(memberorder)
-                        print("有", memberorder.store)
-                        print("髒腳蛇")
                     }
                 } else {
                     //主線程
@@ -93,7 +83,6 @@ class GetMemberOrderDetailApi {
         task.resume()
     }
     func getmemberorderdetail() -> [GetMemberOrderDetail] {
-        print("是可達鴨頂著鐵甲蛹", self.memberorderdetail)
         return self.memberorderdetail
     }
     func getorderitemcount() -> Int {

@@ -12,7 +12,6 @@ func getVerifyEmailMessage(email: String) {
     if let data = try? encoder.encode(postString) {
         print(postString)
         datas = data
-        print(data)
         VerifyEmailApi.VerifyEmailInstance.verifyEmailApi(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return
@@ -27,7 +26,6 @@ func getSetVerifyEmailMessage(email: String, email_vaildate_code: String) {
     if let data = try? encoder.encode(postString) {
         print(postString)
         datas = data
-        print(data)
         SendSetVerifyEmailApi.SetVerifyEmailInstance.setverifyEmailApi(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return
@@ -42,7 +40,6 @@ func getEditNameMessage(type:String,name:String){
     if let data = try? encoder.encode(postString) {
         print(postString)
         datas = data
-        print(data)
         EditMemberInfoApi.EditMemberInfoApiInstance.editmemberinfo(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return
@@ -57,7 +54,6 @@ func getEditSexMessage(type:String,sex:String){
     if let data = try? encoder.encode(postString) {
         print(postString)
         datas = data
-        print(data)
         EditMemberInfoApi.EditMemberInfoApiInstance.editmemberinfo(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return
@@ -72,7 +68,6 @@ func getEditMemberPasswordMessage(old_password:String,new_password:String,new_pa
     if let data = try? encoder.encode(postString) {
         print(postString)
         datas = data
-        print(data)
         EditMemberInfoApi.EditMemberInfoApiInstance.editmemberinfo(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return
@@ -87,7 +82,6 @@ func getNotificationStatusMessage(type:String,status:Int){
     if let data = try? encoder.encode(postString) {
         print(postString)
         datas = data
-        print(data)
         SetNotificationStatusApi.SetNotificationStatusApiInstance.setnotificationstatus(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return
@@ -102,7 +96,6 @@ func getAddLoveAddressMessage(city: String, district:String, address:String) {
     if let data = try? encoder.encode(postString) {
         print(postString)
         datas = data
-        print(data)
         AddLoveAddressApi.AddLoveAddressApiInstance.verifyEmailApi(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return
@@ -117,7 +110,6 @@ func getDeleteLoveAddressMessage(id:String) {
     if let data = try? encoder.encode(postString) {
         print(postString)
         datas = data
-        print(data)
         DeleteLoveAddressApi.DeleteLoveAddressApiInstance.verifyEmailApi(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String) {(result) in
             if result {
                 return

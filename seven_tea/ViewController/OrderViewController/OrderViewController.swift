@@ -67,13 +67,11 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath)as! OrderTableViewCell
-        print("有重跑")
         self.orderList = MemberNewOrderApi.MemberNewOrderApiInstance.getmemberneworder()
         let itemnamearray = self.orderList[indexPath.row].itemname
         let itemname = itemnamearray.joined(separator: "/")
         cell.LbStore.text = self.orderList[indexPath.row].store
         cell.LbItemName.text = itemname
-        print("還是痞咖區", itemname)
         cell.LbTotalQty.text = "共\(self.orderList[indexPath.row].total_qty)杯"
         cell.LbTotalPrice.text = "總計$\(self.orderList[indexPath.row].total_price)元"
         cell.LbOrderNumber.text = self.orderList[indexPath.row].order_no
@@ -87,37 +85,31 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         switch statusSelect.selectedSegmentIndex {
         case 0:
             selectStatus = 0
-            print("跑到０")
             break
         case 1:
             selectStatus = 1
-            print("跑到1")
             break
         case 2:
             selectStatus = 2
-            print("跑到2")
             break
         case 3:
             selectStatus = 3
-            print("跑到3")
             break
         default:
             selectStatus = 4
-            print("跑到4")
             break
         }
         MemberNewOrderApi.MemberNewOrderApiInstance.getmemberorderitem(token: UserInfo.UserInfoInstance.preferences.object(forKey: "token") as! String, selectStatus: selectStatus)
     }
     func tableviewcelldelegate(sender: OrderTableViewCell) {
            guard let tappedIndexPath = orderTableView.indexPath(for: sender)else {return}
-                 print("這理事", sender, tappedIndexPath)
                  print("-------")
                  print(sender)
                  print("--------")
                  print(tappedIndexPath)
                  let tappedindex = tappedIndexPath
                  index_row = tappedindex.row
-                 print("sssss", tappedindex.row)
+                 print("tapedindex row is", tappedindex.row)
       }
     func getorderno() -> [String] {
         return itemorder_no

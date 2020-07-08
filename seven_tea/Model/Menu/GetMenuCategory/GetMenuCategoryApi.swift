@@ -18,10 +18,8 @@ class GetMenuCategoryApi: NSObject {
     func getstores(storeId: Int) {
         urlString = ApiUrl.ApiUrlInstance.getmenucategory+"\(storeId)"
         let url = URL(string: urlString)!
-        print(url)
         self.storeID = storeId
         var request = URLRequest(url: url )
-        print("url...", url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) {

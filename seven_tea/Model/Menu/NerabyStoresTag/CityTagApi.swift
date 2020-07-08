@@ -12,16 +12,11 @@ class CityTagAPI: NSObject {
     static let CityTagInstance = CityTagAPI()
     var citytaglist = [CityTag]()
     func citytag() {
-
         let url = URL(string: ApiUrl.ApiUrlInstance.cityTag)!
-
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
-
         let task = URLSession.shared.dataTask(with: request) { data, _, _ in
-            //            print(responseString)
-
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let Info = try?
@@ -45,21 +40,16 @@ class CityTagAPI: NSObject {
             }
             //主線程
             DispatchQueue.main.async {
-                //                UIViewController.removeSpinner(spinner: sv as! UIView)
-
             }
         }
         task.resume()
     }
 
     func getCount() -> Int {
-        print("我有幾個", citytaglist.count)
+        print("我有幾個citytag", citytaglist.count)
         return citytaglist.count
     }
     func getList() -> [CityTag] {
         return citytaglist
     }
-    //    func getImageURL() -> String{
-    //    }
-
 }
