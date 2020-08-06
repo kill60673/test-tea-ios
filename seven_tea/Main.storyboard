@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qzn-vg-vGR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qzn-vg-vGR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -73,7 +73,7 @@
                                     <action selector="btSignUp:" destination="c5P-0Z-ERW" eventType="touchUpInside" id="kMl-If-GYx"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="iRz-qb-L7A">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="open" translatesAutoresizingMaskIntoConstraints="NO" id="iRz-qb-L7A">
                                 <rect key="frame" x="97" y="108" width="220" height="194"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="194" id="0ch-2Y-YiE"/>
@@ -348,7 +348,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="wP5-nP-q5Z">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="open" translatesAutoresizingMaskIntoConstraints="NO" id="wP5-nP-q5Z">
                                 <rect key="frame" x="86" y="136" width="242" height="109"/>
                             </imageView>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN3-KF-KLY">
@@ -888,10 +888,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="242" height="238"/>
         <image name="book.fill" catalog="system" width="128" height="100"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="open" width="72" height="72"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="tray.2" catalog="system" width="128" height="114"/>
     </resources>
